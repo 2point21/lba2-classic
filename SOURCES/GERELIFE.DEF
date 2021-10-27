@@ -1,0 +1,3 @@
+extern void DoFuncLife(T_OBJET *);
+extern short DoTest(void);
+extern void DoLife(short );

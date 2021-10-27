@@ -1,0 +1,3 @@
+NAME lba2win
+FIL boxzbuf.obj,linerain.obj,compress.obj,copy.obj,fire.obj,flow_a.obj,func.obj,grille_a.obj,plasma.obj,decors.obj,globext.obj,loadisle.obj,maptools.obj,terrain.obj,ambiance.obj,animtex.obj,bezier.obj,buggy.obj,cheatcod.obj,comporte.obj,config.obj,credits.obj,dart.obj,diskfunc.obj,extfunc.obj,extra.obj,fiche.obj,flow.obj,gamemenu.obj,gerelife.obj,geretrak.obj,global.obj,grille.obj,holobody.obj,hologlob.obj,holoplan.obj,impact.obj,incrust.obj,input.obj,intext.obj,invent.obj,joystick.obj,lzss.obj,mem.obj,message.obj,music.obj,object.obj,patch.obj,perso.obj,playacf.obj,pof.obj,rain.obj,savegame.obj,scan.obj,sort.obj,validpos.obj,version.obj,wagon.obj,zv.obj
+LIBR c:\dxsdk\sdk\lib\ddraw.lib

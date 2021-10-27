@@ -1,0 +1,3 @@
+extern void GetDiskEnv(unsigned char *);
+extern void RestoreDiskEnv(void);
+extern short LoadScene(short );

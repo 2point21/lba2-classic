@@ -1,0 +1,6 @@
+extern void *DosMalloc(long ,unsigned long *);
+extern void DosFree(unsigned long );
+extern void *SmartMalloc(long );
+extern void *Malloc(long );
+extern void Free(void *);
+extern void *Mshrink(void *,unsigned long );

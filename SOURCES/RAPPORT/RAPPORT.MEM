@@ -1,0 +1,45 @@
+----------------------------------------------------------------- 
+File anim.mem:
+ HOT-DEM2.A3D                  9928  (BIGGEST ENTITY)
+ AVERAGE SIZE: 1296
+-----------------------------------------------------------------  
+File body.mem:
+ COUPLE.O3D                   13480  (BIGGEST ENTITY)
+ AVERAGE SIZE: 5621
+-----------------------------------------------------------------  
+File file3d.mem:
+ NULOS.3DC                      903  (BIGGEST ENTITY)
+ AVERAGE SIZE: 119
+----------------------------------------------------------------- 
+File objfix.mem:
+ CLEF.F3D                     10830  (BIGGEST ENTITY)
+ AVERAGE SIZE: 3700
+----------------------------------------------------------------- 
+File flow.mem:
+ BALLEXPL.FLW                    36  (BIGGEST ENTITY)
+ AVERAGE SIZE: 36
+----------------------------------------------------------------- 
+File impact.mem:
+ SEB.IMC                         26  (BIGGEST ENTITY)
+ AVERAGE SIZE: 26
+----------------------------------------------------------------- 
+File anim3ds.mem:
+  29                  8141  (BIGGEST ENTITY)
+ AVERAGE SIZE: 6593
+----------------------------------------------------------------- 
+File sprites.mem:
+ 183                  7184  (BIGGEST ENTITY)
+ AVERAGE SIZE: 1124
+----------------------------------------------------------------- 
+File spriraw.mem:
+ 117                  6700  (BIGGEST ENTITY)
+ AVERAGE SIZE: 456
+----------------------------------------------------------------- 
+File text.mem:
+ FR_000.DIA                   35596  (BIGGEST ENTITY)
+ AVERAGE SIZE: 4785
+----------------------------------------------------------------- 
+File samples.mem:
+ LOGO22.WAV                  798396  (BIGGEST ENTITY)
+ AVERAGE SIZE: 23479
+----------------------------------------------------------------- 

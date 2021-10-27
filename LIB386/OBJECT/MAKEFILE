@@ -1,0 +1,42 @@
+# name the compiler
+!ifdef %NT
+WL = $(%WATCOM)\binnt\wlib
+!else
+WL = $(%WATCOM)\binw\wlib
+!endif
+
+!ifdef %MASM
+ASM= $(%MASM)\bin\ml
+!else
+ASM= f:\compil\masm611\bin\ml
+!endif
+
+OBJETS=	AFF_OBJ.OBJ
+
+
+!ifeq BT NT
+DEF	= _WIN32
+LIB     = NT_OBJ
+!else
+DEF	= _DOS4GW
+LIB     = DOS_OBJ
+!endif
+
+LFLAGS = /c /q /b
+AFLAGS = /nologo /Cx /Zm /c /W0 /Sa /D$(DEF) /Zd /Cp
+
+.SILENT
+
+$(LIB).LIB: $(OBJETS)
+	*$(WL) $(LFLAGS) $(LIB) $?
+	PRNTITRE G "$(LIB)"
+
+.c.obj:
+	PRNTITRE M "$*.C"
+	$(CC) $* $(CFLAGS)
+
+.asm.obj:
+	PRNTITRE M "$*.ASM"
+	$(ASM) $(AFLAGS) $*.ASM
+
+

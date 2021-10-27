@@ -1,0 +1,86 @@
+LoadMalloc_HQR
+
+	PtrPalNormal	f:\projet\lba2\graph\tools\palette.fog	66340
+	PtrPalPluie	f:\projet\lba2\graph\tools\palpluie.fog	66340
+	PtrPalEclair	f:\projet\lba2\graph\tools\paleclai.pal	768
+	PtrPalBlack	f:\projet\lba2\graph\tools\palblack.pal	768
+
+	ListComportement[0]	f:\projet\lba2\graph\3D\hero.3dc	696
+	ListComportement[1]	F:\projet\lba2\graph\3D\sportif.3DC	644
+	ListComportement[2]	F:\projet\lba2\graph\3D\agressif.3DC	634
+	ListComportement[3]	F:\projet\lba2\graph\3D\discret.3DC	600
+	ListComportement[4]	F:\projet\lba2\graph\3D\heroprot.3DC	558
+	ListComportement[5]	F:\projet\lba2\graph\3D\herodoub.3DC	250
+	ListComportement[6]	F:\projet\lba2\graph\3D\heroconq.3DC    402
+	ListComportement[7]	F:\projet\lba2\graph\3D\heroscin.3DC	159
+	ListComportement[8]	F:\projet\lba2\graph\3D\herojet.3DC     565
+	ListComportement[9]	F:\projet\lba2\graph\3D\heroscis.3DC    209
+	ListComportement[10]	F:\projet\lba2\graph\3D\heroscen.3DC	180
+	ListComportement[11]	F:\projet\lba2\graph\3D\herosces.3DC    236
+
+	ListAnim3DS
+
+	BufferTexture	f:\projet\lba2\graph\3d\tex_obj.pct	65536
+
+	PtrZvExtra	f:\projet\lba2\sprite3D\goodies.gpc	3920
+	PtrZvExtraRaw	f:\projet\lba2\sprite3D\goodraw.gpc	2544
+	PtrZvAnim3DS	f:\projet\lba2\anim3ds\anim3ds.gpc	576
+	LbaFont	f:\projet\lba2\sprite3D\lbafont.gpm	18895
+
+SmartMalloc
+
+	BufSpeak	640*480+RECOVER_AREA	307700
+	BufText		BIG_FILE_DIA    40500	(40000L+RECOVER_AREA)
+	BufOrder	BIG_FILE_ORD    1524	(1024L+RECOVER_AREA)
+	BufferAnim	SIZE_BUFFER_ANIM	5000
+
+Malloc
+
+	Screen	640*480	307200
+	ScreenAux	640*480	307200
+
+	Masque	SIZE_MASQUE_BUFFER	60000
+	ListMasque	sizeof(T_MASQUE)*100	1600	(16*100)
+	ListTriExt	sizeof(T_LIST_TRI)*MAX_OBJET_DECORS	3200	(16*200)
+	ListRec	sizeof(T_REC)*MAX_REC	131072	(16*8192)
+	IsleMapIndex	256	256
+	ObjTexture	256*256+RECOVER_AREA	66036
+	GroundTexture	256*256+RECOVER_AREA	66036
+
+	ListFlowDots	sizeof(S_ONE_DOT)*MAX_FLOW_DOTS*MAX_FLOWS	40000	(40*100*10)
+
+	listplayername	MAX_PLAYER*(MAX_SIZE_PLAYER_NAME+1)	5050	(50*101)
+	ptrlist	MAX_PLAYER*sizeof(char*)	50*4	200
+
+	ptr3do	f:\projet\lba2\graph\3d\object\gameover.f3d	5690
+
+	BufCube SIZE_CUBE_X*SIZE_CUBE_Y*SIZE_CUBE_Z*2L	204800	(64*25*64*2)
+	BufferBrick	BkgHeader.Max_Size_Brick_Cube+RECOVER_AREA	(+500)
+
+	BufferStdOut	BUFSIZ*2	8192	(4096*2)
+
+	SkySeaTexture	256*256+RECOVER_AREA	66036
+
+HQR_Init_Ressource
+
+	HQR_Isle	IsleMem,200	1003444	(1000000+144+14*200+500)
+	HQR_Isle_Obj	IsleObjMem,200	303444	(300000+144+14*200+500)
+	HQR_Flows	FlowMem,300	9844	(5000+144+14*300+500)
+	HQR_Samples	SampleMem,SampleMem/5000	1003444	(1000000+144+14*200+500)
+	HQRPtrSprite	SpriteMem,SpriteMem/1000	51344	(50000+144+14*50+500)
+	HQRPtrSpriteRaw	SpriteRawMem,SpriteRawMem/100	12044	(10000+144+14*100+500)
+	HQRPtrAnim3DS	Anim3DSMem,100	302044	(300000+144+14*100+500)
+	HQR_Impact	ImpactMem,ImpactMem/100	12044	(10000+144+14*100+500)
+	HQR_Anims	AnimMem,AnimMem/800	82044	(80000+144+14*100+500)
+	HQR_Bodys	BodyMem,BodyMem/1000	152744	(150000+144+14*150+500)
+	HQR_ObjFix	ObjFixMem,ObjFixMem/1000	152744	(150000+144+14*150+500)
+
+HQM_Alloc
+
+	BufMap	Size_HQR(BKG_HQR_NAME,id_gri )	25748	(Biggest Gri= 2_bu01.gri)
+	TabBlock	Size_HQR(BKG_HQR_NAME,id_bll )	10635	(Biggest Bll= Blaf.bll)
+	BufferMaskBrick	size
+
+HQM_Init_Memory
+
+		HQMMem	400000

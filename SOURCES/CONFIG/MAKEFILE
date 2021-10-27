@@ -1,0 +1,67 @@
+# name the compilers
+
+!ifdef %RAMSYS
+
+WATCOM	= e:\compil\watcom
+ASM	= e:\compil\masm611\bin\ml
+PCHDIR	= e:\
+
+!else
+
+WATCOM	= $(%WATCOM)
+!ifdef %MASM
+ASM	= $(%MASM)\bin\ml
+!else
+ASM	= f:\compil\masm611\bin\ml
+!endif
+PCHDIR	= f:
+
+!endif
+
+!ifdef %NT
+CP = $(WATCOM)\binnt\wpp386
+CC = $(WATCOM)\binnt\wcc386
+WL = $(WATCOM)\binnt\wlib
+LL = $(WATCOM)\binnt\wlink
+!else
+CP = $(WATCOM)\binw\wpp386
+CC = $(WATCOM)\binw\wcc386
+WL = $(WATCOM)\binw\wlib
+LL = $(WATCOM)\binw\wlink
+!endif
+
+AFLAGS  = /Cx /Zm /Zi /c /W0 /Sa /nologo
+CFLAGS  = /oneatxz /zp2 /5r /zq /s /w3 /bt=DOS /fh=$(PCHDIR)lba.pch /DDOS4GW
+LLFLAGS = SYSTEM dos4g OP CASEEXACT,QUIET,STACK=7000,DOSSEG
+
+CFLAGS =  $+$(CFLAGS)$- /DDEBUG_TOOLS /d2
+LLFLAGS = $+$(LLFLAGS)$- DEBUG ALL
+
+.SILENT
+
+.EXTENSIONS:
+.EXTENSIONS: .exe .obj .asm .c .cpp
+
+VERSION	= version.obj
+
+OBJETS  = main.obj input.obj config.obj
+
+EXE     = config
+
+$(EXE).exe: $(OBJETS)
+	echo    Link $(EXE).EXE
+	$(LL) $(LLFLAGS) NAME $(EXE).exe FILE *.obj
+	prntitre M "$(EXE) OK"
+
+.c.obj :
+	PRNTITRE M "$*.C"
+	$(CC) $^& $(CFLAGS)
+
+.cpp.obj :
+	PRNTITRE M "$*.CPP"
+	$(CP) $^& $(CFLAGS)
+
+.asm.obj :
+	PRNTITRE M "$*.ASM"
+	$(ASM) $(AFLAGS) $^&.ASM
+

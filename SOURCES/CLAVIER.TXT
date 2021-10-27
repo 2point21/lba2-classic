@@ -1,0 +1,41 @@
+
+
+				TOUCHES LBA2
+
+
+	ESC	Menu Principal
+	F1 	Aide
+	F2	Sauvegarde
+	F3	Chargement
+	F4	Options
+	F5	Comportement Normal
+	F6	Comportement Sportif
+	F7	Comportement Agressif
+	F8	Comportement Discret
+	F9	Capture Ecran
+	TAB	Holomap
+	SHIFT	Inventaire
+	CTRL	Menu Comportement
+	ALT	Utilisation de l'arme courante
+	SPACE	Action du Comportement courant
+	+	Passe au niveau de cam‚ra sup‚rieur
+	-	Passe au niveau de cam‚ra inf‚rieur
+	ý	Tourne la cam‚ra autour de Twinsen
+	W	Action Normale
+	END	Action Normale
+	RETURN	Recentre Cam‚ra derriŠre Twinsen
+	1	Balle Magique
+	2	Fl‚chettes
+	3	Sarbacane/Sarbatron
+	4	Conque
+	5	Gant
+	6	PistoLaser
+	7	Sabre
+	X	Esquives
+	H	Holomap
+	I	Inventaire
+	O	Options
+	S	Sauvegarde
+	L	Chargement
+	J	Protopack/Jetpack
+	P	M‚ca-Pingouin

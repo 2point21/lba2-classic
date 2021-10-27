@@ -1,0 +1,17 @@
+extern void ComputeCoorMapping(void);
+extern void ComputeCoorGlobe(void);
+extern int z_sort(short *,short *);
+extern void ComputeGlobeProj(void);
+extern void DrawHoloMap(short ,short ,short );
+extern void DrawListPos(short ,short ,short ,short );
+extern long SearchNextArrow(long );
+extern long SearchPrevArrow(long );
+extern void SetHoloPos(unsigned char );
+extern void ClrHoloPos(unsigned char );
+extern void DrawTitle(short ,short ,short );
+extern void DrawCurseur(void);
+extern void InitHoloDatas(void);
+extern void HoloMap(void);
+extern void DrawHoloObj(unsigned char *,short ,short ,short );
+extern short *GiveTrajPtr(long );
+extern void HoloTraj(short );

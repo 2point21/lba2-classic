@@ -1,0 +1,10 @@
+extern void ChangeBalance(short ,unsigned char ,unsigned char ,unsigned char );
+extern void LoadNextFrameFla(void);
+extern void DrawNextFrameFla(void);
+extern short InitFla(char *);
+extern void ClearFla(void);
+extern void GestionPalette(void);
+extern void PlayAnimFla(char *);
+extern void CutPoint(unsigned char *);
+extern short SearchFla(unsigned char *,unsigned char *,long ,unsigned char *);
+extern void PlayDiskFla(unsigned char *);

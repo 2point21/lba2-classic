@@ -1,0 +1,526 @@
+!define BLANK ""
+f:\projet\lba2\sources\win\boxzbuf.obj : f:\projet\lba2\tools\perso\3dext\bo&
+xzbuf.asm .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\..\tools\perso\3dext\boxzbuf.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\W&
+ATCOM\h\nt -mf -5r -w4 -e25 -zq
+
+f:\projet\lba2\sources\win\linerain.obj : f:\projet\lba2\tools\perso\3dext\l&
+inerain.asm .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\..\tools\perso\3dext\linerain.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\&
+WATCOM\h\nt -mf -5r -w4 -e25 -zq
+
+f:\projet\lba2\sources\win\compress.obj : f:\projet\lba2\sources\compress.as&
+m .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\compress.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -&
+w4 -e25 -zq
+
+f:\projet\lba2\sources\win\copy.obj : f:\projet\lba2\sources\copy.asm .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\copy.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -w4 -&
+e25 -zq
+
+f:\projet\lba2\sources\win\fire.obj : f:\projet\lba2\sources\fire.asm .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\fire.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -w4 -&
+e25 -zq
+
+f:\projet\lba2\sources\win\flow_a.obj : f:\projet\lba2\sources\flow_a.asm .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\flow_a.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -w4&
+ -e25 -zq
+
+f:\projet\lba2\sources\win\func.obj : f:\projet\lba2\sources\func.asm .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\func.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -w4 -&
+e25 -zq
+
+f:\projet\lba2\sources\win\grille_a.obj : f:\projet\lba2\sources\grille_a.as&
+m .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\grille_a.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -&
+w4 -e25 -zq
+
+f:\projet\lba2\sources\win\plasma.obj : f:\projet\lba2\sources\plasma.asm .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wasm ..\plasma.asm -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -mf -5r -w4&
+ -e25 -zq
+
+f:\projet\lba2\sources\win\decors.obj : f:\projet\lba2\tools\perso\3dext\dec&
+ors.cpp .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\..\tools\perso\3dext\decors.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\&
+WATCOM\h\nt -fh -w4 -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -z&
+q -otexan -d1 -zld -5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\globext.obj : f:\projet\lba2\tools\perso\3dext\gl&
+obext.cpp .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\..\tools\perso\3dext\globext.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL&
+\WATCOM\h\nt -fh -w4 -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -&
+zq -otexan -d1 -zld -5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\loadisle.obj : f:\projet\lba2\tools\perso\3dext\l&
+oadisle.cpp .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\..\tools\perso\3dext\loadisle.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPI&
+L\WATCOM\h\nt -fh -w4 -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM &
+-zq -otexan -d1 -zld -5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\maptools.obj : f:\projet\lba2\tools\perso\3dext\m&
+aptools.cpp .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\..\tools\perso\3dext\maptools.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPI&
+L\WATCOM\h\nt -fh -w4 -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM &
+-zq -otexan -d1 -zld -5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\terrain.obj : f:\projet\lba2\tools\perso\3dext\te&
+rrain.cpp .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\..\tools\perso\3dext\terrain.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL&
+\WATCOM\h\nt -fh -w4 -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -&
+zq -otexan -d1 -zld -5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\ambiance.obj : f:\projet\lba2\sources\ambiance.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\ambiance.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\animtex.obj : f:\projet\lba2\sources\animtex.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\animtex.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\bezier.obj : f:\projet\lba2\sources\bezier.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\bezier.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\buggy.obj : f:\projet\lba2\sources\buggy.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\buggy.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\cheatcod.obj : f:\projet\lba2\sources\cheatcod.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\cheatcod.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\comporte.obj : f:\projet\lba2\sources\comporte.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\comporte.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\config.obj : f:\projet\lba2\sources\config.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\config.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\credits.obj : f:\projet\lba2\sources\credits.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\credits.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\dart.obj : f:\projet\lba2\sources\dart.cpp .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\dart.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e2&
+5 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r &
+-bt=nt -mf
+
+f:\projet\lba2\sources\win\diskfunc.obj : f:\projet\lba2\sources\diskfunc.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\diskfunc.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\extfunc.obj : f:\projet\lba2\sources\extfunc.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\extfunc.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\extra.obj : f:\projet\lba2\sources\extra.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\extra.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\fiche.obj : f:\projet\lba2\sources\fiche.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\fiche.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\flow.obj : f:\projet\lba2\sources\flow.cpp .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\flow.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e2&
+5 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r &
+-bt=nt -mf
+
+f:\projet\lba2\sources\win\gamemenu.obj : f:\projet\lba2\sources\gamemenu.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\gamemenu.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\gerelife.obj : f:\projet\lba2\sources\gerelife.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\gerelife.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\geretrak.obj : f:\projet\lba2\sources\geretrak.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\geretrak.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\global.obj : f:\projet\lba2\sources\global.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\global.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\grille.obj : f:\projet\lba2\sources\grille.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\grille.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\holobody.obj : f:\projet\lba2\sources\holobody.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\holobody.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\hologlob.obj : f:\projet\lba2\sources\hologlob.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\hologlob.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\holoplan.obj : f:\projet\lba2\sources\holoplan.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\holoplan.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\impact.obj : f:\projet\lba2\sources\impact.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\impact.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\incrust.obj : f:\projet\lba2\sources\incrust.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\incrust.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\input.obj : f:\projet\lba2\sources\input.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\input.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\intext.obj : f:\projet\lba2\sources\intext.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\intext.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\invent.obj : f:\projet\lba2\sources\invent.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\invent.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\joystick.obj : f:\projet\lba2\sources\joystick.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\joystick.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\lzss.obj : f:\projet\lba2\sources\lzss.cpp .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\lzss.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e2&
+5 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r &
+-bt=nt -mf
+
+f:\projet\lba2\sources\win\mem.obj : f:\projet\lba2\sources\mem.cpp .AUTODEP&
+END
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\mem.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e25&
+ -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r -&
+bt=nt -mf
+
+f:\projet\lba2\sources\win\message.obj : f:\projet\lba2\sources\message.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\message.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\music.obj : f:\projet\lba2\sources\music.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\music.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\object.obj : f:\projet\lba2\sources\object.cpp .A&
+UTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\object.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -&
+e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5&
+r -bt=nt -mf
+
+f:\projet\lba2\sources\win\patch.obj : f:\projet\lba2\sources\patch.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\patch.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\perso.obj : f:\projet\lba2\sources\perso.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\perso.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\playacf.obj : f:\projet\lba2\sources\playacf.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\playacf.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\pof.obj : f:\projet\lba2\sources\pof.cpp .AUTODEP&
+END
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\pof.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e25&
+ -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r -&
+bt=nt -mf
+
+f:\projet\lba2\sources\win\rain.obj : f:\projet\lba2\sources\rain.cpp .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\rain.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e2&
+5 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r &
+-bt=nt -mf
+
+f:\projet\lba2\sources\win\savegame.obj : f:\projet\lba2\sources\savegame.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\savegame.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\scan.obj : f:\projet\lba2\sources\scan.cpp .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\scan.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e2&
+5 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r &
+-bt=nt -mf
+
+f:\projet\lba2\sources\win\sort.obj : f:\projet\lba2\sources\sort.cpp .AUTOD&
+EPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\sort.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e2&
+5 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r &
+-bt=nt -mf
+
+f:\projet\lba2\sources\win\validpos.obj : f:\projet\lba2\sources\validpos.cp&
+p .AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\validpos.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4&
+ -e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld &
+-5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\version.obj : f:\projet\lba2\sources\version.cpp &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\version.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 &
+-e25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -&
+5r -bt=nt -mf
+
+f:\projet\lba2\sources\win\wagon.obj : f:\projet\lba2\sources\wagon.cpp .AUT&
+ODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\wagon.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e&
+25 -d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r&
+ -bt=nt -mf
+
+f:\projet\lba2\sources\win\zv.obj : f:\projet\lba2\sources\zv.cpp .AUTODEPEN&
+D
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wpp386 ..\zv.cpp -i=C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -fh -w4 -e25 &
+-d_WIN32 -dONE_GAME_DIRECTORY -dLBA_GAME -dCDROM -zq -otexan -d1 -zld -5r -b&
+t=nt -mf
+
+f:\projet\lba2\sources\win\lba2.res : f:\projet\lba2\sources\win\lba2.rc .AU&
+TODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ *wrc lba2.rc -bt=nt -i=$[:;C:\COMPIL\WATCOM\h;C:\COMPIL\WATCOM\h\nt -q -ad &
+-r -fo=lba2.res
+
+f:\projet\lba2\sources\win\lba2win.exe : f:\projet\lba2\sources\win\boxzbuf.&
+obj f:\projet\lba2\sources\win\linerain.obj f:\projet\lba2\sources\win\compr&
+ess.obj f:\projet\lba2\sources\win\copy.obj f:\projet\lba2\sources\win\fire.&
+obj f:\projet\lba2\sources\win\flow_a.obj f:\projet\lba2\sources\win\func.ob&
+j f:\projet\lba2\sources\win\grille_a.obj f:\projet\lba2\sources\win\plasma.&
+obj f:\projet\lba2\sources\win\decors.obj f:\projet\lba2\sources\win\globext&
+.obj f:\projet\lba2\sources\win\loadisle.obj f:\projet\lba2\sources\win\mapt&
+ools.obj f:\projet\lba2\sources\win\terrain.obj f:\projet\lba2\sources\win\a&
+mbiance.obj f:\projet\lba2\sources\win\animtex.obj f:\projet\lba2\sources\wi&
+n\bezier.obj f:\projet\lba2\sources\win\buggy.obj f:\projet\lba2\sources\win&
+\cheatcod.obj f:\projet\lba2\sources\win\comporte.obj f:\projet\lba2\sources&
+\win\config.obj f:\projet\lba2\sources\win\credits.obj f:\projet\lba2\source&
+s\win\dart.obj f:\projet\lba2\sources\win\diskfunc.obj f:\projet\lba2\source&
+s\win\extfunc.obj f:\projet\lba2\sources\win\extra.obj f:\projet\lba2\source&
+s\win\fiche.obj f:\projet\lba2\sources\win\flow.obj f:\projet\lba2\sources\w&
+in\gamemenu.obj f:\projet\lba2\sources\win\gerelife.obj f:\projet\lba2\sourc&
+es\win\geretrak.obj f:\projet\lba2\sources\win\global.obj f:\projet\lba2\sou&
+rces\win\grille.obj f:\projet\lba2\sources\win\holobody.obj f:\projet\lba2\s&
+ources\win\hologlob.obj f:\projet\lba2\sources\win\holoplan.obj f:\projet\lb&
+a2\sources\win\impact.obj f:\projet\lba2\sources\win\incrust.obj f:\projet\l&
+ba2\sources\win\input.obj f:\projet\lba2\sources\win\intext.obj f:\projet\lb&
+a2\sources\win\invent.obj f:\projet\lba2\sources\win\joystick.obj f:\projet\&
+lba2\sources\win\lzss.obj f:\projet\lba2\sources\win\mem.obj f:\projet\lba2\&
+sources\win\message.obj f:\projet\lba2\sources\win\music.obj f:\projet\lba2\&
+sources\win\object.obj f:\projet\lba2\sources\win\patch.obj f:\projet\lba2\s&
+ources\win\perso.obj f:\projet\lba2\sources\win\playacf.obj f:\projet\lba2\s&
+ources\win\pof.obj f:\projet\lba2\sources\win\rain.obj f:\projet\lba2\source&
+s\win\savegame.obj f:\projet\lba2\sources\win\scan.obj f:\projet\lba2\source&
+s\win\sort.obj f:\projet\lba2\sources\win\validpos.obj f:\projet\lba2\source&
+s\win\version.obj f:\projet\lba2\sources\win\wagon.obj f:\projet\lba2\source&
+s\win\zv.obj c:\dxsdk\sdk\lib\ddraw.lib f:\projet\lba2\sources\win\lba2.res &
+.AUTODEPEND
+ @f:
+ cd f:\projet\lba2\sources\win
+ @%write lba2win.lk1 NAME lba2win
+ @%append lba2win.lk1 FIL boxzbuf.obj,linerain.obj,compress.obj,copy.obj,fir&
+e.obj,flow_a.obj,func.obj,grille_a.obj,plasma.obj,decors.obj,globext.obj,loa&
+disle.obj,maptools.obj,terrain.obj,ambiance.obj,animtex.obj,bezier.obj,buggy&
+.obj,cheatcod.obj,comporte.obj,config.obj,credits.obj,dart.obj,diskfunc.obj,&
+extfunc.obj,extra.obj,fiche.obj,flow.obj,gamemenu.obj,gerelife.obj,geretrak.&
+obj,global.obj,grille.obj,holobody.obj,hologlob.obj,holoplan.obj,impact.obj,&
+incrust.obj,input.obj,intext.obj,invent.obj,joystick.obj,lzss.obj,mem.obj,me&
+ssage.obj,music.obj,object.obj,patch.obj,perso.obj,playacf.obj,pof.obj,rain.&
+obj,savegame.obj,scan.obj,sort.obj,validpos.obj,version.obj,wagon.obj,zv.obj
+ @%append lba2win.lk1 LIBR c:\dxsdk\sdk\lib\ddraw.lib
+!ifneq BLANK ""
+ *wlib -q -n -b lba2win.imp 
+ @%append lba2win.lk1 LIBR lba2win.imp
+!endif
+ *wlink d all SYS nt_win op stub=winstub.exe op m op maxe=25 op q op symf @l&
+ba2win.lk1
+!ifneq BLANK "lba2.res"
+ wrc -q -ad lba2.res lba2win.exe
+!endif
+

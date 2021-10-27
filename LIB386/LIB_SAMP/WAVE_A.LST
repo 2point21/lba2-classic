@@ -1,0 +1,6190 @@
+Microsoft (R) Macro Assembler Version 6.1a 		    09/22/94 16:09:36
+wave_a.asm						     Page 1 - 1
+
+
+				;*컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+				컴컴컴컴컴컴컴컴컴컴컴컴컴컴*
+				;                               SAMP_A.ASM 386
+				;                             (c) Adeline 1993
+				;*컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+				컴컴컴컴컴컴컴컴컴컴컴컴컴컴*
+
+				;*----------------------------------------------
+				----------------------------*
+
+				include	wave.inc
+			      C ;*----------------------------------------------
+			      C ----------------------------*
+			      C 
+			      C ;DEBUG			equ	1
+			      C 
+ = 1234			      C VOICE_HANDLE		equ	1234h
+			      C 
+			      C IFDEF   SB16
+			      C 
+ = 0001			      C 	SBLASTER        equ     1               
+			      C         ; it is also a SBLASTER !
+			      C 
+			      C ENDIF
+			      C 
+			      C IFDEF	SBPRO
+			      C 
+			      C 	SBLASTER        equ     1               
+			      C         ; it is also a SBLASTER !
+			      C 	STEREO		equ	1
+			      C 
+			      C ENDIF
+			      C 
+			      C IFDEF   SBLASTER1
+			      C 
+			      C 	SBLASTER        equ     1               
+			      C         ; it is also a SBLASTER !
+			      C 	SINGLE_DMA      equ     1               
+			      C         ; use DMA (no auto-reinit on the SB ver 
+			      C 1.00-1.99)
+			      C 
+			      C ELSEIFDEF SBLASTER
+			      C 
+ = 0001			      C 	AUTO_DMA        equ     1               
+			      C         ; use auto_reinit DMA (faster and cleane
+			      C r)
+			      C 
+			      C ENDIF
+			      C 
+			      C IFDEF	MWSS
+			      C 
+			      C 	SAMPLE16BIT	equ	1
+			      C 	STEREO		equ	1
+			      C 	AUTO_DMA        equ     1               
+			      C         ; use auto_reinit DMA (faster and cleane
+			      C r)
+			      C 
+			      C ENDIF
+			      C 
+			      C IFDEF   GOLD
+			      C 
+			      C 	SAMPLE16BIT	equ	1
+			      C 	STEREO		equ	1
+			      C 	SINGLE_DMA      equ     1               
+			      C         ; use DMA (no counter on the card)
+			      C 
+			      C ENDIF
+			      C 
+			      C IFDEF   GUS
+			      C 
+			      C 	AUTO_DMA        equ     1               
+			      C         ; use auto_reinit DMA (faster and cleane
+			      C r)
+			      C 	SAMPLE16BIT	equ	1
+			      C 	STEREO		equ	1
+			      C 	NOIRQ		equ	1
+			      C 
+			      C ENDIF
+			      C 
+			      C ;*----------------------------------------------
+			      C ----------------------------*
+			      C 
+			      C IFDEF	SAMPLE16BIT
+			      C 	IFDEF	STEREO
+ = 0001			      C 		SLONG	equ	1
+ = 0004			      C 		SSIZE	equ	4
+			      C 	ELSE
+			      C 		SUWORD	equ	1
+			      C 		SSIZE	equ	2
+			      C 	ENDIF
+			      C ELSE
+			      C 	IFDEF	STEREO
+			      C 		SUWORD	equ	1
+			      C 		SSIZE	equ	2
+			      C 	ELSE
+			      C 		SCHAR	equ	1
+			      C 		SSIZE	equ	1
+			      C 	ENDIF
+			      C ENDIF
+			      C 
+			      C ;*----------------------------------------------
+			      C ----------------------------*
+			      C 
+ = 0400			      C BUFFER_SIZE		equ	1024		
+			      C 	; number of samples
+			      C 						
+			      C 	; in half-buffer
+ = 0032			      C LIST_SIZE               equ     50
+ = 002C			      C STRUCT_SIZE             equ     44
+ = 0008			      C SNAP_SIZE		equ	8
+			      C 
+ = 0003			      C SHIFT_SAMPLE		equ	3		
+			      C 	; max number of
+			      C 						
+			      C 	; samples mixed
+			      C 
+			      C ;*----------------------------------------------
+			      C ----------------------------*
+			      C 
+
+				;*----------------------------------------------
+				----------------------------*
+
+				MIDPOINT	MACRO
+
+				IFDEF	SAMPLE16BIT
+					xor	eax, eax
+				ELSE
+					mov	eax, 80808080h
+				ENDIF
+
+						ENDM
+
+				;*----------------------------------------------
+				----------------------------*
+
+						.386
+						jumps
+
+						.model  FLAT, SYSCALL
+
+ 0000						.CODE
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+						PUBLIC	driver_start
+
+ 0000 000000A0 R		driver_start    dd 	OFFSET ListFuncs
+
+				IFDEF		SB16
+ 0004  53 6F 75 6E 64 20			db	'Sound Blaster 16 (DSP 4
+	   42 6C 61 73 74	.XX)'
+	   65 72 20 31 36
+	   20 28 44 53 50
+	   20 34 2E 58 58
+	   29
+
+				ELSEIFDEF	SBPRO
+						db	'Sound Blaster Pro (DSP 
+				3.XX)'
+
+				ELSEIFDEF	SBLASTER1
+						db	'Sound Blaster 2 (DSP 2.
+				01+)'
+
+				ELSEIFDEF	SBLASTER
+						db	'Sound Blaster (DSP 1.00
+				-2.00)'
+
+				ELSEIFDEF	MWSS
+						db	'Microsoft Windows Sound
+				 System (AD1848 SoundPort)'
+
+				ELSEIFDEF	GOLD
+						db	'Adlib Gold (Yamaha GOLD
+				)'
+
+				ELSEIFDEF	GUS
+						db	'Advanced Gravis UltraSo
+				und'
+				ENDIF
+
+ 001F  20 57 61 76 65 20			db	' Wave Driver,', 13, 10
+	   44 72 69 76 65
+	   72 2C 0D 0A
+
+				IFDEF	SAMPLE16BIT
+ 002E  31 36 20 62 69 74			db	'16 bit'
+				ELSE
+						db	'8 bit'
+				ENDIF
+				IFDEF	STEREO
+ 0034  20 53 74 65 72 65			db	' Stereo'
+	   6F
+				ELSE
+						db	' Mono'
+				ENDIF
+				IFDEF	SURROUND
+						db	' Surround'
+				ENDIF
+
+ 003B  20 70 6C 61 79 62			db 	' playback, Version 1.00
+	   61 63 6B 2C 20	.', 13, 10
+	   56 65 72 73 69
+	   6F 6E 20 31 2E
+	   30 30 2E 0D 0A
+				IFDEF	GUS
+						db	'Copyright (C) 1991,1992
+				 Miles Design, Inc.', 0Dh, 0Ah
+						db	'Copyright (C) 1993,1994
+				 Advanced Gravis Computer '
+						db 	'Technology Ltd. All rig
+				hts reserved.', 0Dh, 0Ah
+						db	'Copyright (C) 1992,1993
+				,1994 Forte Technologies.', 0Dh, 0Ah
+						db	'Copyright (C) 1994 Adel
+				ine Software International.', 0Dh, 0Ah
+						db	'All rights reserved.', 
+				0Dh, 0Ah
+						db	'UltraSound conversion b
+				y Jayeson Lee-Steere.', 0Dh, 0Ah
+						db	'Adeline Software conver
+				sion by Serge Plagnol.', 0Dh, 0Ah
+						db	'MIDI and Digital sound 
+				library by Forte.', 0Dh, 0Ah, 0Ah, 0
+				ELSE
+ 0055  43 6F 70 79 72 69			db	'Copyright (c) Adeline S
+	   67 68 74 20 28	oftware International 1994, All Rights Reserved.
+	   63 29 20 41 64	', 13, 10, 10, 0
+	   65 6C 69 6E 65
+	   20 53 6F 66 74
+	   77 61 72 65 20
+	   49 6E 74 65 72
+	   6E 61 74 69 6F
+	   6E 61 6C 20 31
+	   39 39 34 2C 20
+	   41 6C 6C 20 52
+	   69 67 68 74 73
+	   20 52 65 73 65
+	   72 76 65 64 2E
+	   0D 0A 0A 00
+				ENDIF
+
+ 00A0 00002FED R		ListFuncs	dd	offset	InitCard
+ 00A4  00003177 R				dd	offset	ClearCard
+
+ 00A8  000031F4 R				dd	offset	AskVars
+
+ 00AC  00002D21 R				dd	offset	MixSample
+ 00B0  00003213 R				dd	offset	GiveSampleInfo0
+
+ 00B4  00002A31 R				dd	offset	StopSample
+ 00B8  00002A91 R				dd	offset	StopOneSample
+
+ 00BC  00002C27 R				dd	offset	SampleInList
+ 00C0  00003268 R				dd	offset	GetSnapSample
+
+ 00C4  00002F07 R				dd	offset	PauseSample
+ 00C8  00002F5C R				dd	offset	ContinueSample
+
+ 00CC  00003307 R				dd	offset	SaveStateSample
+ 00D0  000033A1 R				dd	offset	RestoreStateSamp
+				le
+
+ 00D4  000025F3 R				dd	offset	GetDMAAddr
+
+ 00D8  0000320D R				dd	offset	GetBufferSize
+
+ 00DC  00002CBE R				dd	offset	ChangeVolume
+
+ 00E0  00002B2D R				dd	offset	ShiftSamples
+
+ 00E4  00002BB9 R				dd	offset	StopOneSampleLon
+				g
+
+				;*----------------------------------------------
+				----------------------------*
+
+ = 0000				ADDRESS                 equ     0
+ = 0004				FRACT                   equ     4
+ = 0008				LEFT                    equ     8
+ = 000C				C_REPEAT                equ     12
+ = 000E				INCR                    equ     14
+ = 0010				SON                     equ     16
+ = 0014				HANDLE                  equ     20
+ = 0018				START                   equ     24
+ = 001C				DLENGTH                 equ     28
+ = 0020				VOL_LEFT		equ	32
+ = 0022				VOL_RIGHT		equ	34
+ = 0024				INFO0			equ	36
+ = 0028				INTERPOL		equ	40
+ = 0029				LAST_SAMPLE		equ	41
+
+				;*----------------------------------------------
+				----------------------------*
+
+ = 0014				DSP_VO8S_CMD            equ     14h
+ = 001C				DSP_VO8_CMD             equ     1Ch
+ = 0040				DSP_TIME_CMD            equ     40h
+ = 0041				DSP_RATE_CMD            equ     41h
+ = 0048				DSP_BSIZE_CMD           equ     48h
+ = 0090				DSP_VO8H_CMD            equ     90h
+ = 00B0				DSP_VO16S_CMD           equ     0B0h
+ = 00B6				DSP_VO16_CMD            equ     0B6h
+ = 00C0				DSP_VO8S_4_CMD		equ	0C0h
+ = 00C6				DSP_VO8_4_CMD		equ	0C6h
+ = 00D1				DSP_ONSPK_CMD           equ     0D1h
+ = 00D3				DSP_OFFSPK_CMD          equ     0D3h
+
+ = 0010				DSP_16MONO_MODE         equ     10h
+ = 0030				DSP_16STEREO_MODE       equ     30h
+ = 0000				DSP_8MONO_MODE		equ	00h
+ = 0020				DSP_8STEREO_MODE	equ	20h
+
+ = 00AA				RESET_TEST_CODE         equ     0AAh
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+				ifndef	NOIRQ
+
+ = 0000				VOICE_OUT               equ     0       ; equ to
+				 access the 2 arrays below
+ = 0001				AUTO_OUT                equ     1
+ = 0002				MASK1                   equ     2
+ = 0003				MASK2                   equ     3
+
+ = 0004				ADDX_REG                equ     4
+ = 0006				COUNT_REG               equ     6
+ = 0008				MASK_REG                equ     8
+ = 000A				MODE_REG                equ     10
+ = 000C				FF_REG                  equ     12
+ = 000E				PAGE_REG                equ     14
+
+
+ 00E8 = 00E8			DMA0                    equ     $       ; Ports 
+				for DMA0
+
+ 00E8 48			DMA0_VOICE_OUT          db      48H
+ 00E9 58			DMA0_AUTO_OUT           db      58H
+ 00EA 00			DMA0_MASK1              db      00H
+ 00EB 04			DMA0_MASK2              db      04H
+
+ 00EC 0000			DMA0_ADDX_REG           dw      00H
+ 00EE 0001			DMA0_COUNT_REG          dw      01H
+ 00F0 000A			DMA0_MASK_REG           dw      0AH
+ 00F2 000B			DMA0_MODE_REG           dw      0BH
+ 00F4 000C			DMA0_FF_REG             dw      0CH
+ 00F6 0087			DMA0_PAGE_REG           dw      87H
+
+
+ 00F8 = 00F8			DMA1                    equ     $       ; Ports 
+				for DMA1
+
+ 00F8 49			DMA1_VOICE_OUT          db      49H
+ 00F9 59			DMA1_AUTO_OUT           db      59H
+ 00FA 01			DMA1_MASK1              db      01H
+ 00FB 05			DMA1_MASK2              db      05H
+
+ 00FC 0002			DMA1_ADDX_REG           dw      02H
+ 00FE 0003			DMA1_COUNT_REG          dw      03H
+ 0100 000A			DMA1_MASK_REG           dw      0AH
+ 0102 000B			DMA1_MODE_REG           dw      0BH
+ 0104 000C			DMA1_FF_REG             dw      0CH
+ 0106 0083			DMA1_PAGE_REG           dw      83H
+
+
+ 0108 = 0108			DMA3                    equ     $       ; Ports 
+				for DMA3
+
+ 0108 4B			DMA3_VOICE_OUT          db      4BH
+ 0109 5B			DMA3_AUTO_OUT           db      5BH
+ 010A 03			DMA3_MASK1              db      03H
+ 010B 07			DMA3_MASK2              db      07H
+
+ 010C 0006			DMA3_ADDX_REG           dw      06H
+ 010E 0007			DMA3_COUNT_REG          dw      07H
+ 0110 000A			DMA3_MASK_REG           dw      0AH
+ 0112 000B			DMA3_MODE_REG           dw      0BH
+ 0114 000C			DMA3_FF_REG             dw      0CH
+ 0116 0082			DMA3_PAGE_REG           dw      82H
+
+
+ 0118 = 0118			DMA5                    equ     $       ; Ports 
+				for DMA5
+
+ 0118 49			DMA5_VOICE_OUT          db      49H
+ 0119 59			DMA5_AUTO_OUT           db      59H
+ 011A 01			DMA5_MASK1              db      01H
+ 011B 05			DMA5_MASK2              db      05H
+
+ 011C 00C4			DMA5_ADDX_REG           dw      0C4H
+ 011E 00C6			DMA5_COUNT_REG          dw      0C6H
+ 0120 00D4			DMA5_MASK_REG           dw      0D4H
+ 0122 00D6			DMA5_MODE_REG           dw      0D6H
+ 0124 00D8			DMA5_FF_REG             dw      0D8H
+ 0126 008B			DMA5_PAGE_REG           dw      08BH
+
+ 0128 = 0128			DMA6                    equ     $       ; Ports 
+				for DMA6
+
+ 0128 4A			DMA6_VOICE_OUT          db      4AH
+ 0129 5A			DMA6_AUTO_OUT           db      5AH
+ 012A 02			DMA6_MASK1              db      02H
+ 012B 06			DMA6_MASK2              db      06H
+
+ 012C 00C8			DMA6_ADDX_REG           dw      0C8H
+ 012E 00CA			DMA6_COUNT_REG          dw      0CAH
+ 0130 00D4			DMA6_MASK_REG           dw      0D4H
+ 0132 00D6			DMA6_MODE_REG           dw      0D6H
+ 0134 00D8			DMA6_FF_REG             dw      0D8H
+ 0136 0089			DMA6_PAGE_REG           dw      089H
+
+ 0138 = 0138			DMA7                    equ     $       ; Ports 
+				for DMA7
+
+ 0138 4B			DMA7_VOICE_OUT          db      4BH
+ 0139 5B			DMA7_AUTO_OUT           db      5BH
+ 013A 03			DMA7_MASK1              db      03H
+ 013B 07			DMA7_MASK2              db      07H
+
+ 013C 00CC			DMA7_ADDX_REG           dw      0CCH
+ 013E 00CE			DMA7_COUNT_REG          dw      0CEH
+ 0140 00D4			DMA7_MASK_REG           dw      0D4H
+ 0142 00D6			DMA7_MODE_REG           dw      0D6H
+ 0144 00D8			DMA7_FF_REG             dw      0D8H
+ 0146 008A			DMA7_PAGE_REG           dw      08AH
+
+				ALIGN	4
+
+ 0148 000000E8 R		TAB_DMA			dd	offset DMA0
+ 014C  000000F8 R					dd	offset DMA1
+ 0150  00000000						dd	0
+ 0154  00000108 R					dd	offset DMA3
+ 0158  00000000						dd	0
+ 015C  00000118 R					dd	offset DMA5
+ 0160  00000128 R					dd	offset DMA6
+ 0164  00000138 R					dd	offset DMA7
+
+				endif
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 0168	   0898 [		CurrentList             db      STRUCT_SIZE*LIST
+	    00			_SIZE dup (?)
+	   ]
+ 0A00	   0898 [		SonList                 db      STRUCT_SIZE*LIST
+	    00			_SIZE dup (?)
+	   ]
+
+ 1298	   0898 [		BackCurrentList         db      STRUCT_SIZE*LIST
+	    00			_SIZE dup (?)
+	   ]
+ 1B30	   0898 [		BackSonList             db      STRUCT_SIZE*LIST
+	    00			_SIZE dup (?)
+	   ]
+
+ 23C8	   0190 [		SnapList		db	SNAP_SIZE*LIST_S
+	    00			IZE dup (?)
+	   ]
+
+ 2558 00			IRQ_mask                db      ?
+
+ 2559 00			FlagPause               db      0
+
+ 255A 57 61 76 65 42 61		WaveBase		db	'WaveBase',0
+	   73 65 00
+ 2563 57 61 76 65 49 52		WaveIRQ			db	'WaveIRQ',0
+	   51 00
+ 256B 57 61 76 65 44 4D		WaveDMA			db	'WaveDMA',0
+	   41 00
+ 2573 57 61 76 65 52 61		WaveRate		db	'WaveRate'
+	   74 65
+ 257B 00			Empty			db	0
+
+				ifdef	SBPRO
+
+					OkIRQ		db	0
+					Filter		db	?
+
+				endif
+
+				ifdef	GOLD
+
+					Mixer_13	db	?
+					Mixer_14	db	?
+					Gold_IRQ	db	3, 4, 5, 7, 10, 
+				11, 12, 15
+				endif
+
+				ifdef	SB16
+ 257C 02 05 07 0A			SB16_IRQ	db	2, 5, 7, 10
+				endif
+
+				EVEN
+
+				ifdef   MWSS
+
+				MWSSFreq		dw	11025, 3, 16000,
+				 2, 18900, 5, 22050, 7
+							dw	27429, 4, 32000,
+				 6, 33075, 0dh, 37800, 9
+							dw	44100, 0Bh
+
+				MWSSIrq			db	0, 0, 010000b, 0
+				, 0, 0, 0, 001000b, 0, 010000b
+							db	011000b, 100000b
+				, 0, 0, 0, 0
+
+				MWSSDma			db	01b, 10b, 0, 11b
+				, 0, 0, 0, 0
+
+				endif
+
+ 2580 0000			Critical                dw      ?
+ 2582 0000			DoUpdate                dw      ?
+
+ 2584 0000			Old_RIRQ_Seg		dw	?
+ 2586 0000			Old_PIRQ_Sel		dw	?
+ 2588 0000			Old_18_Sel		dw	?
+ 258A 0000			Old_RIRQ_Off		dw	?
+
+				ALIGN 4
+
+ 258C 00000000			Old_PIRQ_Off		dd	?
+ 2590 00000000			Old_18_Off		dd	?
+
+				ifdef	GOLD
+
+					ListNames	dd	offset	WaveBase
+							dd	offset	Empty
+
+				elseifdef SB16
+
+ 2594 0000255A R			ListNames	dd	offset	WaveBase
+ 2598  00002573 R					dd	offset	WaveRate
+ 259C  0000257B R					dd	offset	Empty
+
+				elseifdef GUS
+
+					ListNames	dd	offset	WaveRate
+							dd	offset	Empty
+
+				else
+
+					ListNames	dd	offset	WaveBase
+							dd	offset	WaveRate
+							dd	offset	WaveIRQ
+							dd	offset	WaveDMA
+							dd	offset	Empty
+
+				endif
+
+				public	Nolanguage	PlayRate
+
+ 25A0 = 25A0			ListVars		equ	$
+
+				ifdef	GOLD
+
+					BASE_ADDR       dd      388h            
+				; By default 388h
+					PlayRate        dd      22000           
+				; By default 22 Khz
+					IRQ_number      dd      ?               
+				; no default (read card)
+					DMA_number	dd      ?               
+				; no default (read card)
+
+
+				elseifdef SBLASTER
+
+ 25A0 00000220				BASE_ADDR       dd      220h            
+				; By default 220h
+ 25A4 000055F0				PlayRate        dd      22000           
+				; By default 22 Khz
+ 25A8 00000005				IRQ_number	dd      5               
+				; By default 5
+ 25AC 00000001				DMA_number	dd      1               
+				; By default 1
+
+				elseifdef MWSS
+
+					BASE_ADDR       dd      540h            
+				; By default 540h
+					PlayRate        dd      22000           
+				; By default 22 Khz
+					IRQ_number	dd      9               
+				; By default 9
+					DMA_number	dd      1               
+				; By default 1
+
+				elseifdef GUS
+
+					PlayRate        dd      22000           
+				; By default 22 Khz
+
+				else
+
+					BASE_ADDR       dd      0		
+				; no default
+					PlayRate        dd      22000           
+				; By default 22 Khz
+					IRQ_number	dd      0               
+				; no default
+					DMA_number	dd      0               
+				; no default
+
+				endif
+
+ 25B0 0000000D			INT_number              dd      0Dh		
+				; By default 0Dh
+
+				public	Nolanguage	BufferHalf
+
+ 25B4 00000000			BufferHalf              dd      ?
+
+ 25B8 FFFFFFFF			follow                  dd      -1
+
+ 25BC FFFFFFFF			backfollow              dd      -1
+
+				ifndef	NOIRQ
+
+ 25C0 000000F8 R		DMA			dd      offset DMA1     
+				; By default DMA1
+
+				endif
+
+ 25C4 00000000			weirdcount              dd      ?
+ 25C8 00000000			backweirdcount          dd      ?
+
+ 25CC 00000000			TheVolumeR		dd	?
+ 25D0 00000000			TheVolumeL		dd	?
+
+ 25D4 00000000			save_1                  dd      ?
+ 25D8 00000000			save_2                  dd      ?
+ 25DC 00000000			save_3                  dd      ?
+ 25E0 00000000			save_4                  dd      ?
+
+
+				public	Nolanguage	BUFFER_DMA
+				public	Nolanguage	CURRENT_BUFFER
+
+
+				ifdef   RAM_CARD
+
+					BUFFER_DMA              dd      ?       
+				; adress of the buffer
+
+					R_BUFFER_CARD           dd      ?       
+				; adress of the buffer on the card for Right cha
+				nnel
+					MID_R_BUFFER_CARD       dd      ?       
+				; adress of the mid buffer for Right channel
+
+					CURRENT_R_BUFFER_CARD   dd      ?       
+				; current half for Right channel
+
+					L_BUFFER_CARD           dd      ?       
+				; adress of the buffer on the card for Left chan
+				nel
+					MID_L_BUFFER_CARD       dd      ?       
+				; adress of the mid buffer for Left channel
+
+					CURRENT_L_BUFFER_CARD   dd      ?       
+				; current half for Left channel
+				else
+
+ 25E4 00000000				BUFFER_DMA              dd      ?       
+				; adress of the buffer
+ 25E8 00000000				MID_BUFFER_DMA          dd      ?       
+				; adress of the mid buffer
+
+ 25EC 00000000				CURRENT_BUFFER          dd      ?       
+				; current half
+				endif
+
+				ifdef   INTERRRUPT
+
+					DMA_COUNT               dd      ?
+					DMA_PTR                 dd      ?
+
+				endif
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 25F0				Redirector	PROC
+
+ 25F0  CD 18					int	18h
+ 25F2  CF					iretd
+
+ 25F3				Redirector	ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+				setalc		MACRO
+
+						db	0D6h
+
+						ENDM
+
+
+				lve		MACRO Reg, Exp
+
+						lea	Reg, [Exp]
+
+						ENDM
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+				GET_REAL_VECT	MACRO
+
+						mov	ax, 0200h
+						int	31h
+
+						ENDM
+
+
+				SET_REAL_VECT	MACRO
+
+						mov	ax, 0201h
+						int	31h
+
+						ENDM
+
+				GET_PROT_VECT	MACRO
+
+						mov	ax, 0204h
+						int	31h
+
+						ENDM
+
+
+				SET_PROT_VECT	MACRO
+
+						mov	ax, 0205h
+						int	31h
+
+						ENDM
+
+				CRIT_SECT       MACRO                           
+				; Enter Critical Section ;-)
+
+						mov     word ptr[Critical], 1   
+				; tell the IRQ not to update the buffer
+										
+				; we'll take care of it if nescessary O:-)
+						ENDM
+
+
+				END_CRIT_SECT   MACRO                           
+				; Exit Critical Section  O:-)
+						local   NoUpdate                
+				; Update buffer if necessary
+
+						; Dealing with the critical sect
+				ion flags................
+						;                               
+				        DO NOT TOUCH !!!!
+
+						mov     word ptr[Critical], 0   
+				; exit crit. sect.
+										
+				; this way DoUpdate can't change to 1 anymore
+						cmp     word ptr[DoUpdate], 0   
+				; IRQ happened ?
+						je      NoUpdate                
+				; if DopUpdate change to 0 now, we are in deep
+										
+				; shit anyway because we missed one round!
+										
+				; The program won't crash but we'll ear the old
+										
+				; content of half a buffer and also miss half a 
+				buffer
+										
+				; of new data... :-(
+						mov     word ptr[Critical], 1   
+				; yes, crit. again, so we don't update twice
+										
+				; because UpdateBuffer is not reentrant
+										
+				; and we don't want to take a chance on crashing
+				!
+						pushad                          
+				; if DoUpdate change to 1 HERE
+										
+				; it means again that we missed one round!
+										
+				; So we play the buffer we are updating! (funny 
+				noise :-( )
+										
+				; and then will ear half buffer of old data!
+						call    UpdateBuffer            
+				; do the update
+						popad
+						mov     word ptr[Critical], 0   
+				; exit crit. sect
+										
+				; this way DoUpdate can't change to 1 anymore
+						mov     word ptr[DoUpdate], 0   
+				; Update done, so DoUpdate = 0
+				NoUpDate:
+
+										
+				; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+				!!
+										
+				; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+				UFFER
+										
+				; TAKES MORE THAN 46000 microsec!
+										
+				; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+				crosec = 1.5 million cycle)
+						ENDM
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 25F3				GetDMAAddr      PROC    USES EBX
+
+ 25F3  53		   *	    push   ebx
+ 25F4  33 C0					xor     eax, eax
+
+				ifndef NOIRQ
+
+ 25F6  8B 1D 000025C0 R				mov     ebx, dword ptr[DMA]
+
+ 25FC  FA					cli
+
+ 25FD  66| 8B 53 0E				mov	dx, word ptr[ebx + PAGE_
+				REG]
+ 2601  EC					in	al, dx
+ 2602  C1 E0 10					shl	eax, 16
+
+ 2605  66| 8B 53 0C				mov     dx, word ptr[ebx + FF_RE
+				G]
+ 2609  EE					out     dx, al                  
+				        ; Flip-Flop
+
+ 260A  66| 8B 53 04				mov     dx, word ptr[ebx + ADDX_
+				REG]    ; to get offset
+
+ 260E  EC					in      al, dx
+ 260F  8A E0					mov     ah, al
+ 2611  EC					in      al, dx
+
+ 2612  FB					sti
+
+ 2613  86 C4					xchg    al, ah
+
+ 2615  66| 83 3D 000025AC R			cmp	word ptr[DMA_number], 3
+	   03
+ 261D  76 07					jbe	noadjust
+						lve	eax, eax*2
+			     1	
+ 261F  8D 04 45 00000000     1			lea	eax, [eax*2]
+			     1	
+
+ 2626				noadjust:
+				endif
+						ret
+ 2626  5B		   *	    pop    ebx
+ 2627  C3		   *	    ret    00000h
+
+ 2628				GetDMAAddr      ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+				ifndef NOIRQ
+
+ 2628				NewIRQ          PROC
+
+ 2628  60					pushad
+ 2629  1E					push    ds
+ 262A  06					push    es
+ 262B  FC					cld                             
+				        ; DAMN IT !! :-o
+
+ 262C = 262E			local_DS	equ	$+2
+ 262C  66| B8 1234				mov	ax, 1234h
+ 2630  66| 8E D8				mov     ds, ax			
+					; restore DS
+ 2633  66| 8E C0				mov     es, ax                  
+				        ; and ES !!!
+
+ 2636  B0 20					mov     al, 20h                 
+				        ; allows for new int
+ 2638  80 3D 000025A8 R				cmp	byte ptr[IRQ_number], 7
+	   07
+ 263F  76 02					jbe	short NoSecondCtrl
+ 2641  E6 A0					out	0A0h, al
+ 2643  E6 20			NoSecondCtrl:	out     20h, al
+
+				ifndef	DEBUG
+
+ 2645  E8 00000EBF				call    AckIrq
+ 264A  72 4A					jc	short FinIRQ		
+					; not a DMA IRQ
+				ifdef   SINGLE_DMA
+						call    BlockTransfert          
+				        ; Normal ACK location
+				endif
+
+				endif
+ 264C  A1 000025B4 R				mov     eax, dword ptr[BufferHal
+				f]
+ 2651  34 04					xor     al, 4                   
+				        ; switch half
+ 2653  A2 000025B4 R				mov     byte ptr[BufferHalf], al
+
+				ifdef   RAM_CARD
+						mov     eax, dword ptr[R_BUFFER_
+				CARD+eax]; get current card buffer address
+						mov     dword ptr[CURRENT_R_BUFF
+				ER_CARD], eax; update CURRENT_BUFFER_CARD
+				else
+ 2658  8B 80 000025E4 R				mov     eax, dword ptr[BUFFER_DM
+				A+eax]  ; get current buffer address
+ 265E  A3 000025EC R				mov     dword ptr[CURRENT_BUFFER
+				], eax  ; update CURRENT_BUFFER
+				endif
+
+ 2663  66| C7 05 00002582 R			mov     word ptr[DoUpdate], 1   
+	   0001			        ; Time to do the update
+
+ 266C  66| 83 3D 00002580 R			cmp     word ptr[Critical], 0   
+	   00			        ; crit. sect ?
+ 2674  75 20					jne     FinIRQ                  
+				        ; yes, don't update yet!
+
+ 2676  66| C7 05 00002580 R			mov     word ptr[Critical], 1   
+	   0001			        ; just to make jure it case the interrup
+				t
+ 267F  E8 00000016				call    UpdateBuffer            
+				        ; happen again before its finished
+ 2684  66| C7 05 00002580 R			mov     word ptr[Critical], 0
+	   0000
+
+ 268D  66| C7 05 00002582 R			mov     word ptr[DoUpdate], 0   
+	   0000			        ; Update done
+
+				ifdef	DEBUG
+
+						call    AckIrq
+						jc	short FinIRQ		
+					; not a DMA IRQ
+				ifdef   SINGLE_DMA
+						call    BlockTransfert          
+				        ; Normal ACK location
+				endif
+
+				endif
+
+ 2696				FinIRQ:
+ 2696  07					pop     es
+ 2697  1F					pop     ds
+ 2698  61					popad
+
+ 2699  CF					iretd
+
+ 269A				NewIRQ          ENDP
+
+				endif
+
+				;*----------------------------------------------
+				----------------------------*
+
+				ifdef	GUS
+						PUBLIC	Nolanguage	UpdateBu
+				ffer
+						PUBLIC	Nolanguage	DoUpdate
+						PUBLIC	Nolanguage	Critical
+				endif
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 269A				UpdateBuffer    PROC
+
+ 269A  B8 00000400				mov     eax, BUFFER_SIZE
+				ifdef   RAM_CARD
+						mov     edi, dword ptr[BUFFER_DM
+				A]      ; Buffer
+				else
+ 269F  8B 3D 000025EC R				mov     edi, dword ptr[CURRENT_B
+				UFFER]  ; Buffer
+				endif
+ 26A5  80 3D 00002559 R				cmp     byte ptr[FlagPause], 1
+	   01
+ 26AC  74 10					je	short dopause
+
+ 26AE  8D 1D 00000168 R				lea     ebx, CurrentList        
+				        ; Point to List of samples
+
+ 26B4  8B 33					mov     esi, dword ptr[ebx]     
+				        ; Current Source
+ 26B6  0B F6					or      esi, esi                
+				        ; if 0 then empty list
+ 26B8  0F 85 0000008D				jnz     process_1st
+ 26BE				dopause:
+ 26BE  B9 00000400				mov     ecx, (BUFFER_SIZE * SSIZ
+				E) / 4
+						MIDPOINT
+			     1	
+			     1	IFDEF	SAMPLE16BIT
+ 26C3  33 C0		     1		xor	eax, eax
+			     1	ELSE
+			     1		mov	eax, 80808080h
+			     1	ENDIF
+			     1	
+ 26C5  F3/ AB					rep     stosd
+
+ 26C7  EB 6C					jmp	endfade
+
+ 26C9				exit:
+ 26C9  A0 00002559 R				mov	al, byte ptr[FlagPause]
+ 26CE  FE C8					dec	al
+ 26D0  78 6F					js	reallyexit
+
+				ifdef   RAM_CARD
+						mov     edi, dword ptr[BUFFER_DM
+				A]      ; Buffer
+				else
+ 26D2  8B 3D 000025EC R				mov     edi, dword ptr[CURRENT_B
+				UFFER]  ; Buffer
+				endif
+
+ 26D8  BE 00000400				mov	esi, ( BUFFER_SIZE * SSI
+				ZE ) / 4
+ 26DD  66| 0F BD CE				bsr	cx, si
+
+ 26E1  66| 4E					dec	si			
+					; no need to fade first/last sample
+										
+					; since it will be multiplied by 1
+ 26E3  FE C8					dec	al
+ 26E5  75 2A					jnz	short fadeout
+
+ 26E7  BB 00000001				mov	ebx, 1			
+					; skip 0
+
+				ifdef	SAMPLE16BIT
+
+ 26EC  8B 17			loopfadein:	mov	edx, dword ptr[edi]
+ 26EE  0F BF C2					movsx	eax, dx
+ 26F1  0F AF C3					imul	eax, ebx
+ 26F4  D3 F8					sar	eax, cl
+ 26F6  C1 FA 10					sar	edx, 16
+ 26F9  0F AF D3					imul	edx, ebx
+ 26FC  D3 FA					sar	edx, cl
+ 26FE  C1 E2 10					shl	edx, 16
+ 2701  66| 8B D0				mov	dx, ax
+ 2704  89 17					mov	dword ptr[edi], edx
+ 2706  83 C7 04					add	edi, 4
+ 2709  66| 43					inc	bx
+ 270B  66| 4E					dec	si
+ 270D  75 DD					jnz	short loopfadein
+
+				else
+
+				loopfadein:     mov	edx, dword ptr[edi]
+						xor	edx, 80808080h          
+				        ; convert to signed
+					REPT	2
+						movsx	eax, dl
+						imul	eax, ebx
+						sar	eax, cl
+						mov	dl, al
+						movsx	eax, dh
+						imul	eax, ebx
+						sar	eax, cl
+						mov	dh, al
+						rol	edx, 16
+					ENDM
+						xor	edx, 80808080h		
+					; back to unsigned
+						mov	dword ptr[edi], edx
+						add	edi, 4
+						inc	bx
+						dec	si
+						jnz	short loopfadein
+
+				endif
+
+ 270F  EB 24					jmp	short endfade
+
+ 2711				fadeout:
+ 2711  83 C7 04					add	edi, 4			
+					; skip first
+
+				ifdef	SAMPLE16BIT
+
+ 2714  8B 17			loopfadeout:	mov	edx, dword ptr[edi]
+ 2716  0F BF C2					movsx	eax, dx
+ 2719  0F AF C6					imul	eax, esi
+ 271C  D3 F8					sar	eax, cl
+ 271E  C1 FA 10					sar	edx, 16
+ 2721  0F AF D6					imul	edx, esi
+ 2724  D3 FA					sar	edx, cl
+ 2726  C1 E2 10					shl	edx, 16
+ 2729  66| 8B D0				mov	dx, ax
+ 272C  89 17					mov	dword ptr[edi], edx
+ 272E  83 C7 04					add	edi, 4
+ 2731  66| 4E					dec	si
+ 2733  75 DF					jnz	short loopfadeout
+
+				else
+
+				loopfadeout:	mov	edx, dword ptr[edi]
+						xor	edx, 80808080h          
+				        ; convert to signed
+					REPT	2
+						movsx	eax, dl
+						imul	eax, esi
+						sar	eax, cl
+						mov	dl, al
+						movsx	eax, dh
+						imul	eax, esi
+						sar	eax, cl
+						mov	dh, al
+						rol	edx, 16
+					ENDM
+						xor	edx, 80808080h		
+					; back to unsigned
+						mov	dword ptr[edi], edx
+						add	edi, 4
+						dec	si
+						jnz	short loopfadeout
+				endif
+
+ 2735				endfade:
+ 2735  A0 00002559 R				mov	al, byte ptr[FlagPause]
+ 273A  24 01					and	al, 1
+ 273C  A2 00002559 R				mov	byte ptr[FlagPause], al
+ 2741				reallyexit:
+
+ 2741  C3					ret
+ 2742				FinishFill0:
+ 2742  66| 0B C0				or      ax, ax                  
+				        ; still some room in the buffer?
+ 2745  0F 84 000002CA				jz      Finish2
+ 274B				process_1st:
+ 274B  66| 8B C8				mov     cx, ax
+ 274E  C1 E0 10					shl     eax, 16
+ 2751  66| 8B C1				mov     ax, cx                  
+				        ; eax = BUFFER_SIZE:BUFFER_SIZE
+ 2754  66| 8B 53 04				mov     dx, word ptr[ebx+FRACT] 
+				        ; fractionnal Source
+ 2758  66| 8B 6B 0E				mov     bp, word ptr[ebx+INCR]  
+				        ; fractionnal inc
+ 275C  8B 4B 08					mov     ecx, dword ptr[ebx+LEFT]
+				        ; length left
+
+ 275F  81 F9 0000FFFF				cmp     ecx, 0FFFFh             
+				        ; length left to fill after sample
+ 2765  77 05					ja      Longer0                 
+				        ; 64K or +, then more than the buffer
+ 2767  66| 2B C1				sub     ax, cx
+ 276A  73 13					jae     short NotLonger0        
+				        ; some left?
+ 276C				Longer0:
+ 276C  C1 E8 10					shr	eax, 16
+ 276F  8B C8					mov     ecx, eax		
+					; length = buffer_size
+ 2771  29 4B 08					sub     dword ptr[ebx+LEFT], ecx
+				        ; reduce length left
+ 2774  66| C7 05 000025E0 R			mov	word ptr[save_4], 0	
+	   0000				; no room left
+ 277D  EB 08					jmp     short StartMix0
+ 277F				NotLonger0:
+ 277F  66| 40					inc     ax                      
+				        ; length + 1 (in case left = 0)
+ 2781  66| A3 000025E0 R			mov	word ptr[save_4], ax
+ 2787				StartMix0:
+ 2787  C1 E2 10					shl	edx, 16
+ 278A  0B CA					or	ecx, edx		
+					; hecx = FRACT
+ 278C  C1 E5 10					shl	ebp, 16			
+					; hebp = INCR
+
+				ifdef   SAMPLE16BIT
+
+ 278F  8B 53 20					mov	edx, dword ptr[ebx+VOL_L
+				EFT]	; read left & right volume
+
+					ifdef	STEREO
+
+ 2792  80 7B 28 00				cmp     byte ptr[ebx+INTERPOL], 
+				0
+ 2796  0F 84 00000090				je	nofilter
+
+ 279C  89 1D 000025DC R				mov	dword ptr[save_3], ebx
+
+ 27A2  0F BF C2					movsx	eax, dx
+ 27A5  A3 000025D0 R				mov	[TheVolumeL], eax
+ 27AA  C1 FA 10					sar	edx, 16
+ 27AD  89 15 000025CC R				mov	[TheVolumeR], edx
+
+ 27B3  C1 ED 10					shr	ebp, 16			
+					; BP = fract inc
+ 27B6  8B D1					mov	edx, ecx
+ 27B8  C1 EA 10					shr	edx, 16			
+					; DX = fract
+
+ 27BB  C1 C1 08					rol	ecx, 8
+ 27BE  8A 4B 29					mov	cl, [ebx+LAST_SAMPLE]
+ 27C1  C1 C9 08					ror	ecx, 8
+
+ 27C4  EB 09					jmp	short next0
+
+ 27C6  C1 C1 08			start0:         rol	ecx, 8
+ 27C9  8A 0E					mov	cl, [esi]
+ 27CB  46					inc	esi
+ 27CC  C1 C9 08					ror	ecx, 8
+ 27CF  8B C1			next0:		mov	eax, ecx
+ 27D1  8A 06					mov	al, [esi]		
+					; read data
+ 27D3  C1 C0 08					rol	eax, 8
+ 27D6  66| 35 8080				xor     ax, 8080h		
+					; 8 bit signed
+ 27DA  0F BE D8					movsx	ebx, al
+ 27DD  0F BE C4					movsx	eax, ah			
+					; sign extension to 32 bit
+
+ 27E0  66| F7 D2				not	dx
+ 27E3  42					inc	edx
+ 27E4  0F AF DA					imul	ebx, edx
+ 27E7  4A					dec	edx
+ 27E8  66| F7 D2				not	dx
+ 27EB  0F AF C2					imul	eax, edx
+ 27EE  03 D8					add	ebx, eax
+
+ 27F0  8B C3					mov	eax, ebx
+ 27F2  0F AF 1D 000025CC R			imul	ebx, [TheVolumeR]	
+					; Right
+ 27F9  0F AF 05 000025D0 R			imul	eax, [TheVolumeL]	
+					; Left
+ 2800  C1 F8 10					sar	eax, 16
+ 2803  66| 8B D8				mov	bx, ax
+
+ 2806  89 1F					mov     [edi], ebx		
+					; store buffer content
+ 2808  83 C7 04					add     edi, 4			
+					; next location
+ 280B  66| 03 D5				add     dx, bp			
+					; update fractional part of address
+ 280E  66| 49					dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+ 2810  77 BD					ja      short next0		
+					; if (not C) and (not Z) next
+ 2812  75 B2					jnz     short start0		
+					; if some left, read a new one
+
+ 2814  8B 1D 000025DC R				mov	ebx, dword ptr[save_3]
+
+ 281A  66| 9C					pushf
+
+ 281C  C1 C1 08					rol	ecx, 8
+ 281F  88 4B 29					mov     [ebx+LAST_SAMPLE], cl
+
+ 2822  C1 E2 10					shl	edx, 16
+ 2825  8B CA					mov	ecx, edx
+ 2827  46					inc	esi
+
+ 2828  66| 9D					popf
+
+ 282A  EB 2B					jmp	short end16
+ 282C				nofilter:
+ 282C  89 1D 000025DC R				mov	dword ptr[save_3], ebx
+
+ 2832  AC			start01:        lodsb                           
+				        ; read new data
+ 2833  34 80					xor     al, 80h			
+					; 8 bit signed
+ 2835  0F BE C0					movsx	eax, al			
+					; sign extension to 32 bit
+ 2838  8B D8					mov	ebx, eax		
+					; copy into ebx
+ 283A  66| 0F AF C2				imul	ax, dx			
+					; ax = left
+ 283E  0F AF DA					imul	ebx, edx
+ 2841  66| 8B D8				mov	bx, ax
+ 2844  89 1F			next01:         mov     dword ptr[edi], ebx     
+				        ; write data
+ 2846  83 C7 04					add     edi, 4                  
+				        ; next location
+ 2849  03 CD					add     ecx, ebp                
+				        ; update fractional part of address
+ 284B  66| 49					dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+ 284D  77 F5					ja      short next01            
+				        ; if (not C) and (not Z) next
+ 284F  75 E1					jnz     short start01           
+				        ; if some left, read a new one
+
+ 2851  8B 1D 000025DC R				mov	ebx, dword ptr[save_3]
+ 2857				end16:
+					else
+
+				start0:         lodsb                           
+				        ; read new data
+						xor     al, 80h			
+					; 8 bit signed
+						movsx	ax, al			
+					; sign extension to 16 bit
+						imul	ax, dx			
+					; ax = "volumed" sample
+				next0:          mov     word ptr[edi], ax       
+				        ; write data
+						add     edi, 2                  
+				        ; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short next0             
+				        ; if (not C) and (not Z) next
+						jnz     short start0            
+				        ; if some left, read a new one
+
+					endif
+				else
+
+					ifdef	STEREO
+
+						mov	dl, byte ptr[ebx+VOL_LEF
+				T]
+						or	dl, dl
+						jz	short middle0
+						dec	dl
+						jz	short left0
+
+						mov	al, 80h			
+					; "0"  -> left
+				r_start0:       mov     ah, byte ptr[esi]       
+				        ; read new data -> right
+						inc	esi
+				r_next0:        mov     word ptr[edi], ax       
+				        ; write data
+						add     edi, 2                  
+				        ; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short r_next0           
+				        ; if (not C) and (not Z) next
+						jnz     short r_start0          
+				        ; if some left, read a new one
+						jmp	short end0
+
+				left0:
+
+						mov	ah, 80h			
+					; "0"  -> right
+				l_start0:       lodsb                           
+				        ; read new data -> left
+				l_next0:        mov     word ptr[edi], ax       
+				        ; write data
+						add     edi, 2                  
+				        ; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short l_next0           
+				        ; if (not C) and (not Z) next
+						jnz     short l_start0          
+				        ; if some left, read a new one
+						jmp	short end0
+
+				middle0:
+
+				m_start0:       lodsb                           
+				        ; read new data -> left
+						mov	ah, al			
+					; data -> right
+				m_next0:        mov     word ptr[edi], ax       
+				        ; write data
+						add     edi, 2                  
+				        ; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short m_next0           
+				        ; if (not C) and (not Z) next
+						jnz     short m_start0          
+				        ; if some left, read a new one
+
+				end0:
+					else
+
+				start0:         lodsb                           
+				        ; read new data
+				next0:          mov     byte ptr[edi], al       
+				        ; write data
+						inc     edi                     
+				        ; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short next0             
+				        ; if (not C) and (not Z) next
+						jnz     short start0            
+				        ; if some left, read a new one
+
+					endif
+				endif
+
+ 2857  72 01					jc      noadjust0               
+				        ; was a new data going to be read?
+ 2859  4E					dec     esi                     
+				        ; no, last data will be read again
+ 285A				noadjust0:
+ 285A  66| A1 000025E0 R			mov	ax, word ptr[save_4]	
+					; left to copy
+ 2860  66| 0B C0				or	ax, ax
+ 2863  0F 84 000001A3				jz      Finish                  
+				        ; 0 normal end
+
+ 2869  66| 48					dec     ax                      
+				        ; readjust size
+
+ 286B  66| FF 4B 0C				dec     word ptr[ebx+C_REPEAT]  
+				          ; repeat again?
+ 286F  75 74					jnz     Reset0			
+					; yes, then reset
+
+ 2871  8B 53 10					mov     edx, dword ptr[ebx+SON] 
+				        ; no, got a son?
+ 2874  0B D2					or      edx, edx
+ 2876  78 15					js      short NoSon0            
+				        ; no, remove the sample
+
+ 2878  8D 35 00000A00 R				lea     esi, SonList            
+				        ; yes, then find it
+ 287E				KeepLooking0:
+ 287E  83 3E 00					cmp     dword ptr[esi], 0       
+				        ; the end ?
+ 2881  74 0A					je      short NoSon0            
+				        ; yes, then no son
+ 2883  3B 56 14					cmp     edx, dword ptr[esi+HANDL
+				E]      ; this one?
+ 2886  74 2B					je      short FoundSon0         
+				        ; yes, found!
+ 2888  83 C6 2C					add     esi, STRUCT_SIZE        
+				        ; no, keep looking
+ 288B  EB F1					jmp     short KeepLooking0
+ 288D				NoSon0:
+ 288D  33 C9					xor	ecx, ecx
+ 288F  66| 8B C8				mov     cx, ax                  
+				        ; clear rest of the buffer
+						MIDPOINT
+			     1	
+			     1	IFDEF	SAMPLE16BIT
+ 2892  33 C0		     1		xor	eax, eax
+			     1	ELSE
+			     1		mov	eax, 80808080h
+			     1	ENDIF
+			     1	
+				IFDEF	  SCHAR
+						mov     edx, ecx
+						and     ecx, 3                  
+				        ; up to 3 by byte
+						rep     stosb
+						mov     ecx, edx
+						shr     ecx, 2                  
+				        ; the rest by dword
+				ELSEIFDEF SUWORD
+						shr     ecx, 1
+						jnc     short NoAdjustByOne
+						stosw
+				NoAdjustByOne:
+				ENDIF
+ 2894  F3/ AB					rep     stosd
+
+ 2896  8B F3					mov     esi, ebx                
+				        ; point where it is
+ 2898  8B FB					mov     edi, ebx                
+				        ; idem
+ 289A  83 C6 2C					add     esi, STRUCT_SIZE        
+				        ; source one further
+
+ 289D  83 3E 00			LoopRemove0:    cmp     dword ptr[esi], 0       
+				        ; end ?
+ 28A0  74 09					je      short EndRemove0        
+				        ; yes, exit
+ 28A2  B9 0000000B				mov     ecx, STRUCT_SIZE / 4    
+				        ; trasnfert one struct
+ 28A7  F3/ A5					rep     movsd                   
+				        ; transfer
+ 28A9  EB F2					jmp     short LoopRemove0
+ 28AB				EndRemove0:
+ 28AB  C7 07 00000000				mov     dword ptr[edi], 0       
+				        ; write 0 to mark the end
+ 28B1  EB 46					jmp     NextSample
+ 28B3				FoundSon0:
+ 28B3  8B EE					mov     ebp, esi                
+				        ; save esi
+ 28B5  8B D7					mov     edx, edi                
+				        ; save edi
+
+ 28B7  8B FB					mov     edi, ebx                
+				        ; transfert at the location of the fathe
+				r
+ 28B9  B9 0000000B				mov     ecx, STRUCT_SIZE / 4    
+				        ; count in dword
+ 28BE  F3/ A5					rep     movsd                   
+				        ; transfert
+
+ 28C0  8B F5					mov     esi, ebp                
+				        ; remove son from SonList
+ 28C2  8B FD					mov     edi, ebp                
+				        ; so, point to it
+ 28C4  83 C6 2C					add     esi, STRUCT_SIZE        
+				        ; source one further
+ 28C7  83 3E 00			LoopSon0:       cmp     dword ptr[esi], 0
+ 28CA  74 09					je      short EndSon0
+ 28CC  B9 0000000B				mov     ecx, STRUCT_SIZE / 4
+ 28D1  F3/ A5					rep     movsd                   
+				        ; transfer while not 0
+ 28D3  EB F2					jmp     short LoopSon0
+ 28D5				EndSon0:
+ 28D5  C7 07 00000000				mov     dword ptr[edi], 0       
+				        ; write 0 to mark the end
+
+ 28DB  8B FA					mov     edi, edx                
+				        ; restore edi in the buffer
+ 28DD  8B 73 18					mov     esi, dword ptr[ebx+START
+				]       ; restore source, no need to write it
+ 28E0  E9 FFFFFE5D				jmp     FinishFill0
+ 28E5				Reset0:
+ 28E5  8B 73 18					mov     esi, dword ptr[ebx+START
+				]       ; restore source, no need to write it
+ 28E8  8B 6B 1C					mov     ebp, dword ptr[ebx+DLENG
+				TH]     ; restore length
+ 28EB  89 6B 08					mov     dword ptr[ebx+LEFT], ebp
+ 28EE  66| C7 43 04 0000			mov     word ptr[ebx+FRACT], 0
+ 28F4  E9 FFFFFE49				jmp     FinishFill0
+
+ 28F9				NextSample:
+ 28F9  8B 33					mov     esi, dword ptr[ebx]     
+				        ; Current Source
+ 28FB  0B F6					or      esi, esi                
+				        ; if 0 then end of the list
+ 28FD  0F 84 FFFFFDC6				jz      exit
+
+				ifdef   RAM_CARD
+						mov     edi, dword ptr[BUFFER_DM
+				A]      ; Buffer
+				else
+ 2903  8B 3D 000025EC R				mov     edi, dword ptr[CURRENT_B
+				UFFER]  ; Buffer
+				endif
+ 2909  66| B8 0400				mov     ax, BUFFER_SIZE
+ 290D				FinishFill:
+ 290D  66| 0B C0				or      ax, ax                  
+				        ; still some room in the buffer?
+ 2910  0F 84 000000FF				jz      Finish2
+
+ 2916  66| 8B C8				mov     cx, ax
+ 2919  C1 E0 10					shl     eax, 16
+ 291C  66| 8B C1				mov     ax, cx                  
+				        ; eax = BUFFER_SIZE:BUFFER_SIZE
+ 291F  66| 8B 53 04				mov     dx, word ptr[ebx+FRACT] 
+				        ; fractionnal Source
+ 2923  66| 8B 6B 0E				mov     bp, word ptr[ebx+INCR]  
+				        ; fractionnal inc
+ 2927  8B 4B 08					mov     ecx, dword ptr[ebx+LEFT]
+				        ; length left
+
+ 292A  81 F9 0000FFFF				cmp     ecx, 0FFFFh             
+				        ; length left to fill after sample
+ 2930  77 05					ja      Longer                  
+				        ; 64K or +, then more than the buffer
+ 2932  66| 2B C1				sub     ax, cx
+ 2935  73 13					jae     short NotLonger         
+				        ; some left?
+ 2937				Longer:
+ 2937  C1 E8 10					shr     eax, 16                 
+				        ; no, restore buffer_size in ax
+ 293A  8B C8					mov     ecx, eax                
+				        ; length = buffer_size
+ 293C  29 4B 08					sub     dword ptr[ebx+LEFT], ecx
+				        ; reduce length left
+ 293F  66| C7 05 000025E0 R			mov	word ptr[save_4], 0	
+	   0000				; no room left
+ 2948  EB 08					jmp     short startMix00
+ 294A				NotLonger:
+ 294A  66| 40					inc     ax                      
+				        ; length + 1 (in case left = 0)
+ 294C  66| A3 000025E0 R			mov	word ptr[save_4], ax
+ 2952				StartMix00:
+ 2952  C1 E2 10					shl	edx, 16
+ 2955  0B CA					or	ecx, edx		
+					; hecx = FRACT
+ 2957  C1 E5 10					shl	ebp, 16			
+					; hebp = INCR
+
+				ifdef   SAMPLE16BIT
+
+ 295A  8B 53 20					mov	edx, dword ptr[ebx+VOL_L
+				EFT]
+
+					ifdef	STEREO
+
+				comment	@
+
+						mov	dword ptr[save_3], ebx
+
+						movsx	eax, dx
+						mov	[TheVolumeL], eax
+						sar	edx, 16
+						mov	[TheVolumeR], edx
+
+						shr	ebp, 16			
+					; BP = fract inc
+						mov	edx, ecx
+						shr	edx, 16			
+					; DX = fract
+
+						dec	esi
+
+				start00:        inc	esi
+				next00:		mov	ax, [esi]		
+					; read data
+						xor     ax, 8080h		
+					; 8 bit signed
+						movsx	ebx, al
+						movsx	eax, ah			
+					; sign extension to 32 bit
+						not	dx
+						inc	edx
+						imul	ebx, edx
+						dec	edx
+						not	dx
+						imul	eax, edx
+						add	ebx, eax
+
+						mov	eax, ebx
+						imul	ebx, [TheVolumeR]	
+					; Right
+						imul	eax, [TheVolumeL]	
+					; Left
+						sar	eax, 16
+						mov	bx, ax
+
+						add     [edi], ebx		
+					; add with buffer content (one bit might
+				 jump from right to left, but oh well...)
+						add     edi, 4			
+					; next location
+						add     dx, bp			
+					; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short next00            
+				        ; if (not C) and (not Z) next
+						jnz     short start00           
+				        ; if some left, read a new one
+
+						pushf
+
+						shl	edx, 16
+						mov	ecx, edx
+						inc	esi
+
+						popf
+
+						mov	ebx, dword ptr[save_3]
+
+					@
+
+ 295D  89 1D 000025DC R				mov	dword ptr[save_3], ebx
+
+ 2963  AC			start00:        lodsb                           
+				        ; read new data
+ 2964  34 80					xor     al, 80h			
+					; 8 bit signed
+ 2966  0F BE C0					movsx	eax, al			
+					; sign extension to 32 bit
+ 2969  8B D8					mov	ebx, eax		
+					; copy into ebx
+ 296B  66| 0F AF C2				imul	ax, dx			
+					; ax = left
+ 296F  0F AF DA					imul	ebx, edx
+ 2972  66| 8B D8				mov	bx, ax
+ 2975  01 1F			next00:         add     dword ptr[edi], ebx     
+				        ; add with buffer content (one bit might
+				 jump from right to left, but oh well...)
+ 2977  83 C7 04					add     edi, 4			
+					; next location
+ 297A  03 CD					add     ecx, ebp                
+				        ; update fractional part of address
+ 297C  66| 49					dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+ 297E  77 F5					ja      short next00            
+				        ; if (not C) and (not Z) next
+ 2980  75 E1					jnz     short start00           
+				        ; if some left, read a new one
+
+ 2982  8B 1D 000025DC R				mov	ebx, dword ptr[save_3]
+
+					else
+
+				start00:        lodsb                           
+				        ; read new data
+						xor     al, 80h			
+					; 8 bit signed
+						movsx	ax, al			
+					; sign extension to 16 bit
+						imul	ax, dx			
+					; ax = "volumed" sample
+				next00:         add     word ptr[edi], ax       
+				        ; add with buffer content
+						add     edi, 2			
+					; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short next00            
+				        ; if (not C) and (not Z) next
+						jnz     short start00           
+				        ; if some left, read a new one
+
+					endif
+				else
+
+					ifdef	STEREO
+
+						mov	dl, byte ptr[ebx+VOL_LEF
+				T]
+						or	dl, dl
+						jz	short middle00
+						dec	dl
+						jz	short left00
+
+						inc	edi			
+					; go right
+				r_start00:      lodsb                           
+				        ; read new data
+						mov     ah, al                  
+				        ; save it in ah
+				r_next00:       add     al, byte ptr[edi]       
+				        ; add with buffer content
+						rcr     al, 1                   
+				        ; average
+						adc	al, 0
+						mov     byte ptr[edi], al       
+				        ; write result back
+						add     edi, 2                  
+				        ; next location
+						mov     al, ah                  
+				        ; restore data
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short r_next00          
+				        ; if (not C) and (not Z) next
+						jnz     short r_start00         
+				        ; if some left, read a new one
+						dec	edi			
+					; go back left
+						jmp	short end00
+
+				left00:
+
+				l_start00:      lodsb                           
+				        ; read new data
+						mov     ah, al                  
+				        ; save it in ah
+				l_next00:       add     al, byte ptr[edi]       
+				        ; add with buffer content
+						rcr     al, 1                   
+				        ; average
+						adc	al, 0
+						mov     byte ptr[edi], al       
+				        ; write result back
+						add     edi, 2                  
+				        ; next location
+						mov     al, ah                  
+				        ; restore data
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short l_next00          
+				        ; if (not C) and (not Z) next
+						jnz     short l_start00         
+				        ; if some left, read a new one
+						jmp	short end00
+
+				middle00:
+
+				m_start00:      lodsb                           
+				        ; read new data
+				m_next00:	mov	dx, word ptr[edi]	
+					; read buffer, left & right
+						add	dl, al			
+					; average with left
+						rcr	dl, 1
+						adc	dl, 0
+						add	dh, al			
+					; average with right
+						rcr	dh, 1
+						adc	dl, 0
+						mov	word ptr[edi], dx	
+					; write result back
+						add     edi, 2                  
+				        ; next location
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short m_next00          
+				        ; if (not C) and (not Z) next
+						jnz     short m_start00         
+				        ; if some left, read a new one
+
+				end00:
+
+					else
+
+				start00:        lodsb                           
+				        ; read new data
+						mov     ah, al                  
+				        ; save it in ah
+				next00:         add     al, byte ptr[edi]       
+				        ; add with buffer content
+						rcr     al, 1                   
+				        ; average
+						adc	al, 0
+						mov     byte ptr[edi], al       
+				        ; write result back
+						inc     edi                     
+				        ; next location
+						mov     al, ah                  
+				        ; restore data
+						add     ecx, ebp                
+				        ; update fractional part of address
+						dec     cx                      
+				        ; length-1, doesn't touch C but set Z ;-
+				)
+						ja      short next00            
+				        ; if (not C) and (not Z) next
+						jnz     short start00           
+				        ; if some left, read a new one
+
+					endif
+				endif
+ 2988  72 01					jc      noadjust                
+				        ; was a new data going to be read?
+ 298A  4E					dec     esi                     
+				        ; no, last data will be read again
+ 298B				noadjust:
+ 298B  66| A1 000025E0 R			mov	ax, word ptr[save_4]    
+				        ; left to copy
+ 2991  66| 0B C0				or	ax, ax
+ 2994  74 76					jz      short Finish            
+				        ; 0 normal end
+
+ 2996  66| 48					dec     ax                      
+				        ; readjust size
+
+ 2998  66| FF 4B 0C				dec     word ptr[ebx+C_REPEAT]  
+				          ; repeat again?
+ 299C  75 7F					jnz     short Reset             
+				        ; yes, then reset
+
+ 299E  8B 53 10					mov     edx, dword ptr[ebx+SON] 
+				        ; no, got a son?
+ 29A1  0B D2					or      edx, edx
+ 29A3  78 15					js      short NoSon             
+				        ; no, remove the sample
+
+ 29A5  8D 35 00000A00 R				lea     esi, SonList            
+				        ; yes, then find it
+ 29AB				KeepLooking:
+ 29AB  83 3E 00					cmp     dword ptr[esi], 0       
+				        ; the end ?
+ 29AE  74 0A					je      short NoSon             
+				        ; yes, then no son
+ 29B0  3B 56 14					cmp     edx, dword ptr[esi+HANDL
+				E]      ; this one?
+ 29B3  74 25					je      short FoundSon          
+				        ; yes, found!
+ 29B5  83 C6 2C					add     esi, STRUCT_SIZE        
+				        ; no, keep looking
+ 29B8  EB F1					jmp     short KeepLooking
+ 29BA				NoSon:                                          
+				        ; remove it
+ 29BA  8B F3					mov     esi, ebx                
+				        ; point where it is
+ 29BC  8B FB					mov     edi, ebx                
+				        ; idem
+ 29BE  83 C6 2C					add     esi, STRUCT_SIZE        
+				        ; source one further
+
+ 29C1  83 3E 00			LoopRemove:     cmp     dword ptr[esi], 0       
+				        ; end ?
+ 29C4  74 09					je      short EndRemove         
+				        ; yes, exit
+ 29C6  B9 0000000B				mov     ecx, STRUCT_SIZE / 4    
+				        ; trasnfert one struct
+ 29CB  F3/ A5					rep     movsd                   
+				        ; transfer
+ 29CD  EB F2					jmp     short LoopRemove
+ 29CF				EndRemove:
+ 29CF  C7 07 00000000				mov     dword ptr[edi], 0       
+				        ; write 0 to mark the end
+ 29D5  E9 FFFFFF1F				jmp     NextSample
+ 29DA				FoundSon:
+ 29DA  8B EE					mov     ebp, esi                
+				        ; save esi
+ 29DC  8B D7					mov     edx, edi                
+				        ; save edi
+
+ 29DE  8B FB					mov     edi, ebx                
+				        ; transfert at the location of the fathe
+				r
+ 29E0  B9 0000000B				mov     ecx, STRUCT_SIZE / 4    
+				        ; count in dword
+ 29E5  F3/ A5					rep     movsd                   
+				        ; transfert
+
+ 29E7  8B F5					mov     esi, ebp                
+				        ; remove son from SonList
+ 29E9  8B FD					mov     edi, ebp                
+				        ; so, point to it
+ 29EB  83 C6 2C					add     esi, STRUCT_SIZE        
+				        ; source one further
+ 29EE  83 3E 00			LoopSon:        cmp     dword ptr[esi], 0
+ 29F1  74 09					je      short EndSon
+ 29F3  B9 0000000B				mov     ecx, STRUCT_SIZE / 4
+ 29F8  F3/ A5					rep     movsd                   
+				        ; transfer while not 0
+ 29FA  EB F2					jmp     short LoopSon
+ 29FC				EndSon:
+ 29FC  C7 07 00000000				mov     dword ptr[edi], 0       
+				        ; write 0 to mark the end
+
+ 2A02  8B FA					mov     edi, edx                
+				        ; restore edi in the buffer
+ 2A04  8B 73 18					mov     esi, dword ptr[ebx+START
+				]       ; restore source, no need to write it
+ 2A07  E9 FFFFFF01				jmp     FinishFill
+ 2A0C				Finish:
+ 2A0C  89 33					mov     dword ptr[ebx], esi     
+				        ; save current address
+ 2A0E  C1 E9 10					shr	ecx, 16
+ 2A11  66| 89 4B 04				mov     word ptr[ebx+FRACT], cx 
+				        ; save fractional part
+ 2A15  83 C3 2C			Finish2:        add     ebx, STRUCT_SIZE        
+				        ; point to next sample
+ 2A18  E9 FFFFFEDC				jmp     NextSample
+ 2A1D				Reset:
+ 2A1D  8B 73 18					mov     esi, dword ptr[ebx+START
+				]       ; restore source, no need to write it
+ 2A20  8B 6B 1C					mov     ebp, dword ptr[ebx+DLENG
+				TH]     ; restore length
+ 2A23  89 6B 08					mov     dword ptr[ebx+LEFT], ebp
+ 2A26  66| C7 43 04 0000			mov     word ptr[ebx+FRACT], 0
+ 2A2C  E9 FFFFFEDC				jmp     FinishFill
+
+ 2A31				UpdateBuffer    ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2A31				StopSample      PROC
+
+					CRIT_SECT
+			     1	
+ 2A31  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2A3A  33 C0					xor     eax, eax
+
+ 2A3C  A3 00000168 R				mov     dword ptr[CurrentList], 
+				eax
+ 2A41  A3 00000A00 R				mov     dword ptr[SonList], eax
+ 2A46  A2 00002559 R				mov     byte ptr[FlagPause], al
+ 2A4B  48					dec     eax
+ 2A4C  A3 000025B8 R				mov     dword ptr[follow], eax  
+				        ; -1
+
+ 2A51  C7 05 000025C4 R				mov     dword ptr[weirdcount], 1
+	   00010000		0000h
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2A5B  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2A64  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2A6C  74 22		     1			je      ??0000                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2A6E  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2A77  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2A78  E8 FFFFFC1D	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2A7D  61		     1			popad
+ 2A7E  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2A87  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2A90			     1	??0000:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+ 2A90  C3					ret
+
+ 2A91				StopSample      ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2A91				StopOneSample   PROC USES EBX ESI EDI,\
+						thehandle:DWORD
+
+
+ 2A91  55		   *	    push   ebp
+ 2A92  8B EC		   *	    mov    ebp, esp
+ 2A94  53		   *	    push   ebx
+ 2A95  56		   *	    push   esi
+ 2A96  57		   *	    push   edi
+ 2A97  6A FF					push    -1                      
+				        ; end of recursion
+ 2A99  8B 45 08					mov     eax, thehandle
+ 2A9C  8D 15 00000168 R				lea     edx, CurrentList
+ 2AA2  8B DA					mov     ebx, edx
+
+					CRIT_SECT
+			     1	
+ 2AA4  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2AAD  83 3B 00			keeplooking:    cmp     dword ptr[ebx], 0
+ 2AB0  74 0B					je      short exit
+ 2AB2  66| 3B 43 14				cmp     ax, word ptr[ebx+HANDLE]
+ 2AB6  74 50					je      short found
+ 2AB8  83 C3 2C					add     ebx, STRUCT_SIZE
+ 2ABB  EB F0					jmp     short keeplooking
+ 2ABD				exit:
+ 2ABD  8D 1D 00000A00 R				lea     ebx, SonList
+ 2AC3  3B D3					cmp     edx, ebx
+ 2AC5  8B D3					mov	edx, ebx
+ 2AC7  75 E4					jne     short keeplooking
+
+ 2AC9  58					pop     eax                     
+				        ; get "son"
+ 2ACA  0B C0					or      eax, eax
+ 2ACC  79 DF					jns     short keeplooking       
+				        ; less than #2 billions samples !
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2ACE  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2AD7  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2ADF  74 22		     1			je      ??0001                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2AE1  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2AEA  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2AEB  E8 FFFFFBAA	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2AF0  61		     1			popad
+ 2AF1  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2AFA  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2B03			     1	??0001:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 2B03  5F		   *	    pop    edi
+ 2B04  5E		   *	    pop    esi
+ 2B05  5B		   *	    pop    ebx
+ 2B06  C9		   *	    leave  
+ 2B07  C3		   *	    ret    00000h
+ 2B08				found:
+ 2B08  8B 4B 10					mov     ecx, dword ptr[ebx+SON]
+ 2B0B  0B C9					or      ecx, ecx
+ 2B0D  78 01					js      short noson
+
+ 2B0F  51					push    ecx                     
+				        ; "son" to be removed
+ 2B10				noson:
+ 2B10  8B F3					mov     esi, ebx
+ 2B12  8B FB					mov     edi, ebx
+ 2B14  83 C6 2C					add     esi, STRUCT_SIZE
+ 2B17  83 3E 00			LoopRemove:     cmp     dword ptr[esi], 0
+ 2B1A  74 09					je      short EndRemove
+ 2B1C  B9 0000000B				mov     ecx, STRUCT_SIZE / 4
+ 2B21  F3/ A5					rep     movsd
+ 2B23  EB F2					jmp     short LoopRemove
+ 2B25				EndRemove:
+ 2B25  C7 07 00000000				mov     dword ptr[edi], 0
+ 2B2B  EB 80					jmp     short keeplooking
+
+ 2B2D				StopOneSample   ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 2B2D				ShiftSamples	PROC	USES ESI EDI EBX,\
+						DestAddr:DWORD, SrcAddr:DWORD, S
+				izeByte:DWORD
+
+ 2B2D  55		   *	    push   ebp
+ 2B2E  8B EC		   *	    mov    ebp, esp
+ 2B30  56		   *	    push   esi
+ 2B31  57		   *	    push   edi
+ 2B32  53		   *	    push   ebx
+ 2B33  8D 15 00000168 R				lea     edx, CurrentList
+
+ 2B39  8B 75 0C					mov	esi, SrcAddr		
+				; Source
+ 2B3C  8B C6					mov	eax, esi		
+				; save Source for comparison
+ 2B3E  8B 7D 08					mov	edi, DestAddr		
+				; Destination
+ 2B41  8B 4D 10					mov	ecx, SizeByte		
+				; number of bytes to move
+
+ 2B44  8A D9					mov	bl, cl			
+				; compute counters
+ 2B46  C1 E9 02					shr	ecx, 2
+ 2B49  80 E3 03					and	bl, 3
+
+					CRIT_SECT
+			     1	
+ 2B4C  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2B55  F3/ A5					rep	movsd			
+				; move the data
+ 2B57  8A CB					mov	cl, bl
+ 2B59  F3/ A4					rep	movsb
+
+ 2B5B  2B FE					sub	edi, esi		
+				; shift (delta addr)
+
+ 2B5D  8B DA					mov     ebx, edx
+
+ 2B5F  83 3B 00			keeplooking:    cmp     dword ptr[ebx], 0
+ 2B62  74 0F					je      short exit
+ 2B64  3B 43 18					cmp     eax, [ebx+START]
+ 2B67  77 05					ja	short notfound
+ 2B69  01 7B 18					add	[ebx+START], edi
+ 2B6C  01 3B					add	[ebx], edi
+ 2B6E				notfound:
+ 2B6E  83 C3 2C					add     ebx, STRUCT_SIZE
+ 2B71  EB EC					jmp     short keeplooking
+ 2B73				exit:
+ 2B73  8D 1D 00000A00 R				lea     ebx, SonList
+ 2B79  3B D3					cmp     edx, ebx
+ 2B7B  8B D3					mov	edx, ebx
+ 2B7D  75 E0					jne     short keeplooking
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2B7F  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2B88  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2B90  74 22		     1			je      ??0002                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2B92  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2B9B  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2B9C  E8 FFFFFAF9	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2BA1  61		     1			popad
+ 2BA2  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2BAB  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2BB4			     1	??0002:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 2BB4  5B		   *	    pop    ebx
+ 2BB5  5F		   *	    pop    edi
+ 2BB6  5E		   *	    pop    esi
+ 2BB7  C9		   *	    leave  
+ 2BB8  C3		   *	    ret    00000h
+
+ 2BB9				ShiftSamples	ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 2BB9				StopOneSampleLong PROC	USES ESI EDI,\
+						LongHandle:DWORD
+
+ 2BB9  55		   *	    push   ebp
+ 2BBA  8B EC		   *	    mov    ebp, esp
+ 2BBC  56		   *	    push   esi
+ 2BBD  57		   *	    push   edi
+ 2BBE  8B 45 08					mov	eax, LongHandle
+
+					CRIT_SECT
+			     1	
+ 2BC1  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2BCA  E8 000000CB				call	SearchLongHandle
+ 2BCF  0B D2					or	edx, edx
+ 2BD1  74 1B					jz	short notfound
+
+ 2BD3  8B F2					mov	esi, edx
+ 2BD5  8B FA					mov	edi, edx
+ 2BD7  83 C6 2C					add     esi, STRUCT_SIZE
+ 2BDA  83 3E 00			LoopRemove:     cmp     dword ptr[esi], 0
+ 2BDD  74 09					je      short EndRemove
+ 2BDF  B9 0000000B				mov     ecx, STRUCT_SIZE / 4
+ 2BE4  F3/ A5					rep     movsd
+ 2BE6  EB F2					jmp     short LoopRemove
+ 2BE8				EndRemove:
+ 2BE8  C7 07 00000000				mov	dword ptr[edi], 0
+ 2BEE				notfound:
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2BEE  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2BF7  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2BFF  74 22		     1			je      ??0003                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2C01  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2C0A  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2C0B  E8 FFFFFA8A	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2C10  61		     1			popad
+ 2C11  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2C1A  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2C23			     1	??0003:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 2C23  5F		   *	    pop    edi
+ 2C24  5E		   *	    pop    esi
+ 2C25  C9		   *	    leave  
+ 2C26  C3		   *	    ret    00000h
+
+ 2C27				StopOneSampleLong ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2C27				SampleInList    PROC USES EBX,\
+						thehandle:DWORD
+
+					CRIT_SECT
+			     1	
+ 2C27  55		   *	    push   ebp
+ 2C28  8B EC		   *	    mov    ebp, esp
+ 2C2A  53		   *	    push   ebx
+ 2C2B  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2C34  8B 55 08					mov     edx, thehandle
+ 2C37  B8 00000001				mov     eax, 1                  
+				        ; True
+
+ 2C3C  8D 0D 00000168 R				lea     ecx, CurrentList
+ 2C42  8B D9					mov     ebx, ecx
+
+ 2C44  83 3B 00			keeplooking:    cmp     dword ptr[ebx], 0
+ 2C47  74 0B					je      short exit
+ 2C49  66| 3B 53 14				cmp     dx, word ptr[ebx+HANDLE]
+ 2C4D  74 13					je      short found
+ 2C4F  83 C3 2C					add     ebx, STRUCT_SIZE
+ 2C52  EB F0					jmp     short keeplooking
+ 2C54				exit:
+ 2C54  8D 1D 00000A00 R				lea     ebx, SonList
+ 2C5A  3B CB					cmp     ecx, ebx
+ 2C5C  8B CB					mov     ecx, ebx
+ 2C5E  75 E4					jne     keeplooking
+
+ 2C60  33 C0					xor     eax, eax                
+				        ; False
+ 2C62				found:
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2C62  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2C6B  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2C73  74 22		     1			je      ??0004                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2C75  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2C7E  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2C7F  E8 FFFFFA16	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2C84  61		     1			popad
+ 2C85  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2C8E  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2C97			     1	??0004:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 2C97  5B		   *	    pop    ebx
+ 2C98  C9		   *	    leave  
+ 2C99  C3		   *	    ret    00000h
+
+ 2C9A				SampleInList    ENDP
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2C9A				SearchLongHandle PROC
+
+ 2C9A  8D 15 00000168 R				lea     edx, CurrentList
+ 2CA0  8D 0D 00000A00 R				lea	ecx, SonList
+
+ 2CA6  83 3A 00			keeplooking:    cmp     dword ptr[edx], 0
+ 2CA9  74 0A					je      short exit
+ 2CAB  3B 42 14					cmp     eax, dword ptr[edx+HANDL
+				E]
+ 2CAE  74 0D					je      short found
+ 2CB0  83 C2 2C					add     edx, STRUCT_SIZE
+ 2CB3  EB F1					jmp     short keeplooking
+ 2CB5				exit:
+ 2CB5  3B D1					cmp     edx, ecx
+ 2CB7  8B D1					mov	edx, ecx
+ 2CB9  75 EB					jne     keeplooking
+
+ 2CBB  33 D2					xor	edx, edx
+ 2CBD				found:
+ 2CBD  C3					ret
+
+ 2CBE				SearchLongHandle ENDP
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2CBE				ChangeVolume	PROC	\
+						LongHandle:DWORD, volleft:DWORD,
+				 volright:DWORD
+
+				ifdef	STEREO
+					ifdef	SAMPLE16BIT
+
+ 2CBE  55		   *	    push   ebp
+ 2CBF  8B EC		   *	    mov    ebp, esp
+ 2CC1  8B 45 08					mov	eax, LongHandle
+
+					CRIT_SECT
+			     1	
+ 2CC4  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2CCD  E8 FFFFFFC8				call	SearchLongHandle
+ 2CD2  0B D2					or	edx, edx
+ 2CD4  74 14					jz	short notfound
+
+ 2CD6  8B 45 0C					mov	eax, volleft
+ 2CD9  C1 E8 02					shr	eax, SHIFT_SAMPLE - 1	
+					; Preshift according to number of channe
+				ls
+ 2CDC  66| 89 42 20				mov     word ptr[edx+VOL_LEFT], 
+				ax
+ 2CE0  8B 45 10					mov	eax, volright
+ 2CE3  C1 E8 02					shr	eax, SHIFT_SAMPLE - 1	
+					; Preshift according to number of channe
+				ls
+				ifdef	SURROUND
+						neg	eax
+				endif
+ 2CE6  66| 89 42 22				mov     word ptr[edx+VOL_RIGHT],
+				 ax
+
+ 2CEA				notfound:
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2CEA  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2CF3  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2CFB  74 22		     1			je      ??0005                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2CFD  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2D06  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2D07  E8 FFFFF98E	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2D0C  61		     1			popad
+ 2D0D  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2D16  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2D1F			     1	??0005:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+					else
+
+						mov	eax, LongHandle
+
+					CRIT_SECT
+
+						call	SearchLongHandle
+						or	edx, edx
+						jz	short notfound
+
+						push	edi
+						mov	edi, edx
+
+						mov	cx, word ptr[volleft]
+						or	cx, cx
+						jnz	short okleft
+						mov	cx, 2			
+					; if volleft = 0 then right
+						jmp	short storepos
+				okleft:		mov     ax, word ptr[volright]
+						shl	ax, 7			
+					; * 128
+						xor	dx, dx
+						div	cx
+						mov	cx, 2			
+					; right
+						cmp	ax, 222			
+					; 1.732 (= tan 60) * 128
+						jae	short storepos
+						dec	cx			
+					; left
+						cmp	ax, 74			
+					; .577  (= tan 30) * 128
+						jb	short storepos
+						dec	cx			
+					; middle
+				storepos:	mov	word ptr[edi+VOL_LEFT], 
+				cx	; Store position (0:middle, 1:left, 2:ri
+				ght)
+
+						pop	edi
+				notfound:
+
+					END_CRIT_SECT
+
+					endif
+				else
+					ifdef	SAMPLE16BIT
+
+						mov	eax, LongHandle
+
+					CRIT_SECT
+
+						call	SearchLongHandle
+						or	edx, edx
+						jz	short notfound
+
+						push	edi
+						push	ebx
+						mov	edi, edx
+
+						mov	eax, volleft
+						imul	eax, eax
+						mov	ecx, volright
+						imul	ecx, ecx
+						add	eax, ecx
+						call	sqr2
+						shr	eax, SHIFT_SAMPLE - 1	
+					; Preshift according to number of channe
+				ls
+						mov	word ptr[edi+VOL_LEFT], 
+				ax	; VOL_LEFT = sqr(volleft^2 + volright^2)
+
+						pop	ebx
+						pop	esi
+
+				notfound:
+
+					END_CRIT_SECT
+
+					endif
+				endif
+
+						ret
+ 2D1F  C9		   *	    leave  
+ 2D20  C3		   *	    ret    00000h
+
+ 2D21				ChangeVolume	ENDP
+
+				ifdef	SAMPLE16BIT
+				ifndef	STEREO
+
+				;*----------------------------------------------
+				----------------------------*
+
+				;          EAX = Sqr(EAX)
+
+				Sqr2            PROC
+
+						cmp	eax, 3			
+				; if eax <= 3 then
+						jbe	short asqr_0_1		
+				; square root is 0 or 1
+
+						xor     edx, edx		
+				; clear edx
+						mov	ebx, eax		
+				; copy eax into ebx so that
+										
+				; edx:ebx are used "like" a 64 bit
+										
+				; register
+
+						bsr	eax, ebx		
+				; position of last 1 of ebx in eax
+
+						mov	cl, 33			
+				; compute how many left shift
+						sub	cl, al			
+				; are needed in order to have the
+						and	cl, 11111110b		
+				; most significant 2 bit pair at the
+										
+				; leftmost position of edx
+
+						shld	edx, ebx, cl		
+				; shift edx:ebx by the number
+						shl	ebx, cl			
+				; computed above
+
+						mov	ecx, eax                
+				; compute in ecx how many pairs of
+						shr	ecx, 1			
+				; 2 bit are left to be processed
+
+						mov     eax, 1			
+				; eax = 1
+						dec     edx			
+				; edx = edx - 1
+
+				asqr_loop:      shld    edx, ebx, 2		
+				; edx:ebx << 2
+						shl     ebx, 2			
+				;
+						lve     eax, eax*2		
+				; eax * 2
+						cmp     edx, eax		
+				; compare edx and eax
+						jb      short asqr_neg		
+				; if edx<eax then go asqr_neg
+
+						inc	eax			
+				; else eax = eax + 1
+						sub     edx, eax		
+				; edx = edx - eax
+						jnc     short asqr_1		
+				; if edx was greater than eax
+										
+				; then no pb and go asqr_1
+						add     edx, eax		
+				; else undo, edx = edx + eax
+				asqr_neg:	shr	eax, 1			
+				; shift eax right by one
+						dec	ecx			
+				; one less pair to process
+						jnz     short asqr_loop		
+				; if there is some left then go asqr_loop
+						ret				
+				; return to caller
+
+				asqr_1:         inc	eax			
+				; eax = eax + 1
+						shr	eax, 1			
+				; eax >> 1
+						dec	ecx			
+				; one less pair to process
+						jnz     short asqr_loop		
+				; if there is some left then go asqr_loop
+						ret				
+				; return to caller
+
+				asqr_0_1:	or	eax, eax		
+				; if eax = 0
+						jz	short asqr_00		
+				; then return to caller
+						mov	eax, 1			
+				; else eax = 1
+				asqr_00:	ret				
+				; return to caller
+
+				Sqr2            ENDP
+
+				endif
+				endif
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2D21				MixSample       PROC USES ESI EDI EBX,\
+						thehandle:DWORD, pitchbend:DWORD
+				, therepeat:DWORD,\
+						plug:DWORD, volleft:DWORD, volri
+				ght:DWORD,\
+						buffer:DWORD; buffer with .VOC
+
+ 2D21  55		   *	    push   ebp
+ 2D22  8B EC		   *	    mov    ebp, esp
+ 2D24  56		   *	    push   esi
+ 2D25  57		   *	    push   edi
+ 2D26  53		   *	    push   ebx
+ 2D27  8B 75 20					mov     esi, buffer
+
+ 2D2A  33 C0					xor	eax, eax
+ 2D2C  8A 06					mov	al, [esi]
+ 2D2E  FE C0					inc	al
+ 2D30  3C 0A					cmp	al, 10
+ 2D32  72 02					jb	okfilter
+
+ 2D34  33 C0					xor	eax, eax
+
+ 2D36  50			okfilter:	push	eax
+
+ 2D37  0F B7 46 14				movzx   eax, word ptr[esi+14h]
+ 2D3B  03 F0					add     esi, eax                
+				        ; skip header
+
+ 2D3D  80 3E 01					cmp     byte ptr[esi], 1        
+				        ; only 1 bloc type allowed
+ 2D40  0F 85 000001B9				jne     typeunknown
+
+ 2D46  80 7E 05 00				cmp     byte ptr[esi + 5], 0    
+				        ; pack method
+ 2D4A  0F 85 000001AF				jne     typeunknown
+
+					; This crap should be removed by using a
+				 file format containing the
+					; real sampling frequency instead of tha
+				t stupid sr number in .VOC !
+					; :-(
+
+ 2D50  66| BA 000F				mov     dx, 0Fh
+ 2D54  66| B8 4240				mov     ax, 4240h               
+				        ; dx:ax = 1000000
+
+ 2D58  33 DB					xor     ebx, ebx
+ 2D5A  8A 5E 04					mov     bl, byte ptr[esi + 4]   
+				        ; bl = sr
+ 2D5D  F6 DB					neg     bl                      
+				        ; bl = 256 - sr
+
+ 2D5F  66| F7 F3				div     bx
+
+ 2D62  66| D1 E2				shl     dx, 1
+ 2D65  66| 83 D0 00				adc     ax, 0                   
+				        ; round to nearest
+
+ 2D69  66| 8B D8				mov     bx, ax
+
+					; ebx = real sampling rate
+					; up to here ! and then avoid this ^ div
+				 !
+
+
+ 2D6C  8B 46 01					mov     eax, dword ptr[esi + 1] 
+				        ; size sample
+ 2D6F  25 00FFFFFF				and     eax, 0FFFFFFh           
+				        ; 24 significant bits
+ 2D74  83 E8 02					sub     eax, 2                  
+				        ; -2 header
+
+
+ 2D77  83 C6 06					add     esi, 6                  
+				        ; esi->data
+ 2D7A  89 35 000025D4 R				mov     dword ptr[save_1], esi  
+				        ; save it
+
+ 2D80  8B 55 0C					mov     edx, pitchbend
+ 2D83  C1 E2 04					shl     edx, 4
+
+ 2D86  0F AF DA					imul    ebx, edx
+ 2D89  C1 EB 10					shr     ebx, 16
+ 2D8C  66| 83 D3 00				adc     bx, 0                   
+				        ; ebx = scaled sampling rate
+
+ 2D90  33 D2					xor     edx, edx
+ 2D92  93					xchg    eax, ebx                
+				        ; edx = 0, eax = sr, ebx = size
+ 2D93  92					xchg    edx, eax                
+				        ; edx = sr, eax = 0, ebx = size
+ 2D94  66| F7 35 000025A4 R			div     word ptr[PlayRate]      
+				        ; dx:ax / PlayRate; ax = INCR
+
+ 2D9B  3D 0000FFFF				cmp	eax, 0FFFFh
+ 2DA0  76 05					jbe	okincr
+ 2DA2  B8 0000FFFF				mov	eax, 0FFFFh
+ 2DA7  A3 000025D8 R		okincr:		mov     dword ptr[save_2], eax  
+				        ; save_2 = INCR
+
+ 2DAC  8B CB					mov     ecx, ebx                
+				        ; ecx = size
+ 2DAE  8B F3					mov     esi, ebx
+ 2DB0  C1 EE 10					shr     esi, 16                 
+				        ; esi = hi(size)
+
+ 2DB3  8B D6					mov     edx, esi
+ 2DB5  93					xchg    eax, ebx                
+				        ; eax = size, ebx = INCR
+
+ 2DB6  48					dec     eax                     
+				        ; A TRY !!!! (will make loop around next
+				 longer...)
+
+ 2DB7  C1 E0 10					shl     eax, 16
+ 2DBA  F7 F3					div     ebx                     
+				        ; div 64 bits !!!
+ 2DBC  2B C6					sub     eax, esi                
+				        ; sub max roundoff error
+ 2DBE  8B F0					mov     esi, eax                
+				        ; esi = eax = new size
+
+ 2DC0  F7 E3					mul     ebx                     
+				        ; remultiply
+ 2DC2  66| 8B D8				mov     bx, ax                  
+				        ; FRACT in bx
+ 2DC5  0F AC D0 10				shrd    eax, edx, 16            
+				        ; size in eax
+ 2DC9  66| 8B 15 000025D8 R			mov     dx, word ptr[save_2]    
+				        ; INCR in dx
+
+ 2DD0  2B C8					sub     ecx, eax                
+				        ; how much am I off?
+ 2DD2  0F 86 00000127				jbe     typeunknown             
+				        ; security, should not happen!
+
+ 2DD8  46			next:           inc     esi                     
+				        ; length + 1
+ 2DD9  66| 03 DA				add     bx, dx                  
+				        ; update fractional part of address
+ 2DDC  73 FA					jnc     short next              
+				        ; if (not C) next
+ 2DDE  66| 49					dec     cx
+ 2DE0  75 F6					jnz     short next              
+				        ; not right yet, loop
+
+ 2DE2  A1 000025B8 R				mov     eax, dword ptr[follow]
+ 2DE7  8D 1D 00000168 R				lea     ebx, CurrentList
+ 2DED  8B FB					mov     edi, ebx
+
+ 2DEF  66| 8B 4D 08				mov     cx, word ptr[thehandle]
+
+				IFNDEF SAMPLE_16BIT
+
+ 2DF3  66| 81 F9 1234				cmp	cx, VOICE_HANDLE
+ 2DF8  75 0B					jne	ok_handle
+
+ 2DFA  50					push	eax
+ 2DFB  51					push	ecx
+ 2DFC  52					push	edx
+ 2DFD  E8 FFFFFC2F				call	StopSample
+ 2E02  5A					pop	edx
+ 2E03  59					pop	ecx
+ 2E04  58					pop	eax
+ 2E05				ok_handle:
+
+				ENDIF
+ 2E05  0B 0D 000025C4 R				or      ecx, dword ptr[weirdcoun
+				t]      ; why not ?
+ 2E0B  66| FF 05 000025C6 R			inc     word ptr[weirdcount+2]
+
+					CRIT_SECT
+			     1	
+ 2E12  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2E1B  83 7D 14 00				cmp     plug, 0
+ 2E1F  74 31					je      NoPlug
+
+ 2E21  8D 3D 00000A00 R				lea     edi, SonList
+
+ 2E27  83 3B 00			keeplooking0:   cmp     dword ptr[ebx], 0
+ 2E2A  74 0A					je      short SearchSonList
+ 2E2C  3B 43 14					cmp     eax, dword ptr[ebx+HANDL
+				E]      ; look for the "father" sample
+ 2E2F  74 1E					je      short found
+ 2E31  83 C3 2C					add     ebx, STRUCT_SIZE
+ 2E34  EB F1					jmp     short keeplooking0
+ 2E36				SearchSonList:
+ 2E36  8D 1D 00000A00 R				lea     ebx, SonList
+ 2E3C  83 3B 00			keeplooking1:   cmp     dword ptr[ebx], 0
+ 2E3F  74 0A					je      short Exit
+ 2E41  3B 43 14					cmp     eax, dword ptr[ebx+HANDL
+				E]      ; look for the "father" sample
+ 2E44  74 09					je      short found
+ 2E46  83 C3 2C					add     ebx, STRUCT_SIZE
+ 2E49  EB F1					jmp     short keeplooking1
+ 2E4B				exit:
+ 2E4B  33 C0					xor	eax, eax
+ 2E4D  EB 76					jmp	endcritical
+ 2E4F				found:
+ 2E4F  89 4B 10					mov     dword ptr[ebx+SON], ecx 
+				        ; connect it to ist "son"
+ 2E52				NoPlug:
+ 2E52  33 C0					xor     eax, eax
+ 2E54  83 EF 2C					sub	edi, STRUCT_SIZE
+
+ 2E57  83 C7 2C			SearchEnd:	add	edi, STRUCT_SIZE
+ 2E5A  3B 07					cmp	eax, dword ptr[edi]
+ 2E5C  75 F9					jne	short SearchEnd
+
+ 2E5E  89 0D 000025B8 R				mov     dword ptr[follow], ecx  
+				        ; update follow
+ 2E64  89 4F 14					mov     dword ptr[edi+HANDLE], e
+				cx      ; sample handle
+ 2E67  66| 8B 4D 10				mov     cx, word ptr[therepeat]
+ 2E6B  66| 89 4F 0C				mov     word ptr[edi+C_REPEAT], 
+				cx        ; Repeat
+ 2E6F  89 77 08					mov     dword ptr[edi+LEFT], esi
+				        ; length
+ 2E72  89 77 1C					mov     dword ptr[edi+DLENGTH], 
+				esi     ; length
+ 2E75  A1 000025D4 R				mov     eax, dword ptr[save_1]
+ 2E7A  89 07					mov     dword ptr[edi], eax     
+				        ; Start
+ 2E7C  89 47 18					mov     dword ptr[edi+START], ea
+				x       ; Start
+ 2E7F  A1 000025D8 R				mov     eax, dword ptr[save_2]
+ 2E84  66| 89 47 0E				mov     word ptr[edi+INCR], ax  
+				        ; increment
+ 2E88  C7 47 04 00010000			mov     dword ptr[edi+FRACT], 10
+				000h    ; fractional (with 1 above so != 0)
+ 2E8F  C7 47 10 FFFFFFFF			mov     dword ptr[edi+SON], -1  
+				        ; son
+ 2E96  C7 47 24 FFFFFFFF			mov     dword ptr[edi+INFO0], -1
+					; info0
+ 2E9D  58					pop	eax
+ 2E9E  88 47 28					mov	[edi+INTERPOL], al	
+					; filter on/off
+ 2EA1  C6 47 29 80				mov	byte ptr[edi+LAST_SAMPLE
+				], 80h	; 80h ( 0 )
+				ifdef	STEREO
+					ifdef	SAMPLE16BIT
+ 2EA5  8B 45 18					mov	eax, volleft
+ 2EA8  C1 E8 02					shr	eax, SHIFT_SAMPLE - 1	
+					; Preshift according to number of channe
+				ls
+ 2EAB  66| 89 47 20				mov     word ptr[edi+VOL_LEFT], 
+				ax
+ 2EAF  8B 45 1C					mov	eax, volright
+ 2EB2  C1 E8 02					shr	eax, SHIFT_SAMPLE - 1	
+					; Preshift according to number of channe
+				ls
+
+							ifdef	SURROUND
+								neg	eax
+							endif
+
+ 2EB5  66| 89 47 22				mov     word ptr[edi+VOL_RIGHT],
+				 ax
+					else
+						mov	si, 2			
+					; right
+						mov	ecx, volleft
+						or	ecx, ecx
+						jz	short storepos
+				okleft:		mov     eax, volright
+						shl	eax, 7			
+					; * 128
+						xor	edx, edx
+						div	ecx
+						cmp	eax, 74			
+					; 1.732 (= tan 60) * 128
+						jb	short storepos
+						dec	si			
+					; left
+						cmp	eax, 222		
+					; .577  (= tan 30) * 128
+						jae	short storepos
+						dec	si			
+					; middle
+				storepos:	mov	word ptr[edi+VOL_LEFT], 
+				si	; Store position (0:middle, 1:left, 2:ri
+				ght)
+						mov	word ptr[edi+VOL_RIGHT],
+				 1	; to fill with non 0
+	endif
+				else
+					ifdef	SAMPLE16BIT
+						mov	eax, volleft
+						imul	eax, eax
+						mov	ecx, volright
+						imul	ecx, ecx
+						add	eax, ecx
+						call	sqr2
+						shr	eax, SHIFT_SAMPLE - 1	
+					; Preshift according to number of channe
+				ls
+						mov	word ptr[edi+VOL_LEFT], 
+				ax	; VOL_LEFT = sqr(volleft^2 + volright^2)
+						mov	word ptr[edi+VOL_RIGHT],
+				 1	; to fill with non 0
+					else
+						mov	dword ptr[edi+VOL_LEFT],
+				 1	; to fill with non 0
+					endif
+				endif
+ 2EB9  C7 47 2C 00000000			mov     dword ptr[edi+STRUCT_SIZ
+				E], 0   ; mark end of List
+
+ 2EC0  A1 000025B8 R				mov	eax, dword ptr[follow]
+ 2EC5				endcritical:
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2EC5  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2ECE  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2ED6  74 22		     1			je      ??0006                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2ED8  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2EE1  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2EE2  E8 FFFFF7B3	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2EE7  61		     1			popad
+ 2EE8  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2EF1  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2EFA			     1	??0006:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 2EFA  5B		   *	    pop    ebx
+ 2EFB  5F		   *	    pop    edi
+ 2EFC  5E		   *	    pop    esi
+ 2EFD  C9		   *	    leave  
+ 2EFE  C3		   *	    ret    00000h
+ 2EFF				typeunknown:
+ 2EFF  58					pop	eax
+ 2F00  33 C0					xor	eax, eax
+						ret
+ 2F02  5B		   *	    pop    ebx
+ 2F03  5F		   *	    pop    edi
+ 2F04  5E		   *	    pop    esi
+ 2F05  C9		   *	    leave  
+ 2F06  C3		   *	    ret    00000h
+
+ 2F07				MixSample       ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+				ifdef   SINGLE_DMA
+
+				BlockTransfert  PROC
+
+						push    ebx
+
+						mov	ecx, BUFFER_SIZE * SSIZE
+						cmp     word ptr[DMA_number], 3
+						jbe     noLengthAdj
+						shr     ecx, 1
+				NoLengthAdj:
+						dec     ecx                     
+				        ; buffer size - 1
+
+						mov     ebx, dword ptr[DMA]     
+				        ; Point to DMAx
+
+						mov     dx, word ptr[ebx + MASK_
+				REG]
+						mov     al, byte ptr[ebx + MASK2
+				]       ; mask channel
+						out     dx, al
+
+						mov     dx, word ptr[ebx + FF_RE
+				G]
+						out     dx, al                  
+				        ; flip-flop
+
+
+						mov     dx, word ptr[ebx + COUNT
+				_REG]
+						mov     al, cl                  
+				        ; buffer size - 1
+						out     dx, al
+						mov     al, ch
+						out     dx, al
+
+						mov     dx, word ptr[ebx + ADDX_
+				REG]
+						mov     eax, dword ptr[BufferHal
+				f]
+						mov     eax, dword ptr[BUFFER_DM
+				A+eax]  ; start offset
+						cmp     word ptr[DMA_number], 3
+						jbe     noAddrAdj
+						shr     eax, 1
+				NoAddrAdj:
+						out     dx, al
+						shr     eax, 8
+						out     dx, al
+
+						mov     dx, word ptr[ebx + PAGE_
+				REG]
+						shr     eax, 8                  
+				        ; page of DMA transfert
+						out     dx, al
+
+						mov     dx, word ptr[ebx + MODE_
+				REG]
+						mov     al, byte ptr[ebx + VOICE
+				_OUT]   ; output sample
+						out     dx, al
+
+						mov     dx, word ptr[ebx + MASK_
+				REG]
+						mov     al, byte ptr[ebx + MASK1
+				]       ; channel OK
+						out     dx, al
+
+						pop     ebx
+
+						jmp	StartDMACard
+
+				BlockTransfert  ENDP
+
+				endif
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2F07				PauseSample     PROC
+
+ 2F07  33 C0					xor	eax, eax
+
+					CRIT_SECT
+			     1	
+ 2F09  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2F12  A0 00002559 R				mov	al, byte ptr[FlagPause]
+ 2F17  FE C8					dec	al
+ 2F19  24 02					and	al, 10b
+ 2F1B  0C 01					or	al, 01b			
+					; 0->3, 1->1, 2->1, 3->3
+ 2F1D  A2 00002559 R				mov     byte ptr[FlagPause], al
+ 2F22  D1 E8					shr	eax, 1
+ 2F24  34 01					xor	al, 1
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2F26  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2F2F  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2F37  74 22		     1			je      ??0007                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2F39  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2F42  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2F43  E8 FFFFF752	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2F48  61		     1			popad
+ 2F49  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2F52  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2F5B			     1	??0007:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+ 2F5B  C3					ret
+
+ 2F5C				PauseSample     ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 2F5C				ContinueSample  PROC
+
+ 2F5C  33 C0					xor	eax, eax
+
+					CRIT_SECT
+			     1	
+ 2F5E  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 2F67  A0 00002559 R				mov	al, byte ptr[FlagPause]
+ 2F6C  FE C0					inc	al
+ 2F6E  24 02					and	al, 10b			
+					; 0->0, 1->2, 2->2, 3->0
+ 2F70  A2 00002559 R				mov     byte ptr[FlagPause], al
+ 2F75  D1 E8					shr	eax, 1
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 2F77  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2F80  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 2F88  74 22		     1			je      ??0008                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 2F8A  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 2F93  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 2F94  E8 FFFFF701	     1			call    UpdateBuffer            
+			     1	; do the update
+ 2F99  61		     1			popad
+ 2F9A  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 2FA3  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 2FAC			     1	??0008:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+ 2FAC  C3					ret
+
+ 2FAD				ContinueSample  ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+				ifndef	NOIRQ
+
+ 2FAD				InstallISR	PROC
+
+ 2FAD  52					push	edx
+
+ 2FAE  8A 1D 000025B0 R				mov	bl, byte ptr[INT_number]
+					; plug ISR on user INT
+ 2FB4  66| 8C C9				mov	cx, cs
+						SET_PROT_VECT
+			     1	
+ 2FB7  66| B8 0205	     1			mov	ax, 0205h
+ 2FBB  CD 31		     1			int	31h
+			     1	
+
+ 2FBD  5A					pop	edx
+
+ 2FBE  83 3D 000025A8 R				cmp	dword ptr[IRQ_number], 7
+	   07				; if IRQ > 7
+ 2FC5  76 25					jbe	nobi
+
+ 2FC7  B3 18					mov	bl, 18h			
+					; plug as well on int 18h
+ 2FC9  66| 8C C9				mov	cx, cs
+						SET_PROT_VECT
+			     1	
+ 2FCC  66| B8 0205	     1			mov	ax, 0205h
+ 2FD0  CD 31		     1			int	31h
+			     1	
+
+ 2FD2  8A 1D 000025B0 R				mov	bl, byte ptr[INT_number]
+					; plug into real usr INT
+ 2FD8  B9 000025F0 R				mov	ecx, offset Redirector
+ 2FDD  66| 8B D1				mov	dx, cx			
+					; compute real-mode
+ 2FE0  66| 33 C9				xor	cx, cx			
+					; seg:ofs
+ 2FE3  C1 E9 04					shr	ecx, 4
+						SET_REAL_VECT
+			     1	
+ 2FE6  66| B8 0201	     1			mov	ax, 0201h
+ 2FEA  CD 31		     1			int	31h
+			     1	
+ 2FEC				nobi:
+ 2FEC  C3					ret
+
+ 2FED				InstallISR	ENDP
+
+				endif
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 2FED				InitCard        PROC    USES EBX EDI ESI EBP,\
+						Buffer:DWORD
+
+				ifndef	NOIRQ
+ 2FED  55		   *	    push   ebp
+ 2FEE  8B EC		   *	    mov    ebp, esp
+ 2FF0  53		   *	    push   ebx
+ 2FF1  57		   *	    push   edi
+ 2FF2  56		   *	    push   esi
+ 2FF3  55		   *	    push   ebp
+ 2FF4  66| 8C 1D 0000262E R			mov	word ptr[local_DS], ds
+				endif
+ 2FFB  8B 45 08					mov	eax, Buffer
+ 2FFE  A3 000025E4 R				mov	dword ptr[BUFFER_DMA], e
+				ax
+
+				ifndef	SBPRO
+ 3003  E8 0000042E				call    ResetCard
+				endif
+
+				ifndef	NOIRQ
+
+ 3008  33 C0					xor	eax, eax
+ 300A  66| A1 000025AC R			mov	ax, word ptr[DMA_number]
+ 3010  66| 83 F8 07				cmp	ax, 7
+ 3014  77 0B					ja	short ErrorDMA
+ 3016  8B 04 85 00000148 R			mov	eax, dword ptr[TAB_DMA+e
+				ax*4]
+ 301D  0B C0					or	eax, eax
+ 301F  75 08					jnz	short DMAFound
+ 3021				ErrorDMA:
+ 3021  33 C0					xor	eax, eax
+						ret
+ 3023  5D		   *	    pop    ebp
+ 3024  5E		   *	    pop    esi
+ 3025  5F		   *	    pop    edi
+ 3026  5B		   *	    pop    ebx
+ 3027  C9		   *	    leave  
+ 3028  C3		   *	    ret    00000h
+ 3029				DMAFound:
+ 3029  A3 000025C0 R				mov	dword ptr[DMA], eax
+
+ 302E  A1 000025A8 R				mov	eax, dword ptr[IRQ_numbe
+				r]
+ 3033  3C 07					cmp	al, 7
+ 3035  77 04					ja	short Second
+ 3037  04 08					add	al, 8
+ 3039  EB 02					jmp	short gotvect
+ 303B				Second:
+ 303B  04 68					add	al, 70h - 8
+ 303D				gotvect:
+ 303D  A3 000025B0 R				mov	dword ptr[INT_number], e
+				ax	; save user int
+
+ 3042  8A D8					mov	bl, al
+						GET_PROT_VECT
+			     1	
+ 3044  66| B8 0204	     1			mov	ax, 0204h
+ 3048  CD 31		     1			int	31h
+			     1	
+ 304A  66| 89 0D 00002586 R			mov	word ptr[Old_PIRQ_Sel], 
+				cx
+ 3051  89 15 0000258C R				mov	dword ptr[Old_PIRQ_Off],
+				 edx
+
+ 3057  83 3D 000025A8 R				cmp	dword ptr[IRQ_number], 7
+	   07
+ 305E  76 2F					jbe	nobi
+
+ 3060  8A 1D 000025B0 R				mov	bl, byte ptr[INT_number]
+					; if IRQ>7 save real vect
+						GET_REAL_VECT
+			     1	
+ 3066  66| B8 0200	     1			mov	ax, 0200h
+ 306A  CD 31		     1			int	31h
+			     1	
+ 306C  66| 89 0D 00002584 R			mov	word ptr[Old_RIRQ_Seg], 
+				cx
+ 3073  66| 89 15 0000258A R			mov	word ptr[Old_RIRQ_Off], 
+				dx
+
+ 307A  B3 18					mov	bl, 18h			
+					; if IRQ>7 save int 18h
+						GET_PROT_VECT
+			     1	
+ 307C  66| B8 0204	     1			mov	ax, 0204h
+ 3080  CD 31		     1			int	31h
+			     1	
+ 3082  66| 89 0D 00002588 R			mov	word ptr[Old_18_Sel], cx
+ 3089  89 15 00002590 R				mov	dword ptr[Old_18_Off], e
+				dx
+ 308F				nobi:
+
+ 308F  66| BA 0021				mov     dx, 21h                 
+				        ; IRQ mask reg
+ 3093  66| 8B 0D 000025A8 R			mov     cx, word ptr[IRQ_number]
+ 309A  66| 83 F9 07				cmp	cx, 7
+ 309E  76 04					jbe	short Ok21
+ 30A0  66| BA 00A1				mov	dx, 0A1h		
+					; reg A1h, 2nd ctrl
+ 30A4  EC			Ok21:		in      al, dx
+ 30A5  A2 00002558 R				mov     byte ptr[IRQ_mask], al  
+				        ; save mask
+ 30AA  80 E1 07					and	cl, 7
+ 30AD  B3 01					mov     bl, 1
+ 30AF  D2 E3					shl     bl, cl
+ 30B1  F6 D3					not     bl
+ 30B3  22 C3					and     al, bl                  
+				        ; unmask IRQ
+ 30B5  EE					out     dx, al                  
+				        ; write new mask
+
+				ifdef	SBPRO
+						call    ResetCard
+				endif
+
+ 30B6  BA 00002628 R				mov	edx, offset NewIRQ
+ 30BB  E8 FFFFFEED				call	InstallISR
+				endif
+ 30C0  E8 FFFFF96C				call    StopSample              
+				        ; to reset everything
+
+ 30C5  33 C0					xor	eax, eax
+ 30C7  A3 00001298 R				mov	dword ptr[BackCurrentLis
+				t], eax
+ 30CC  A3 00001B30 R				mov	dword ptr[BackSonList], 
+				eax
+
+ 30D1  8B 3D 000025E4 R				mov     edi, dword ptr[BUFFER_DM
+				A]
+
+ 30D7  8B C7					mov     eax, edi
+ 30D9  05 00001000				add	eax, BUFFER_SIZE * SSIZE
+ 30DE  A3 000025E8 R				mov     dword ptr[MID_BUFFER_DMA
+				], eax  ; init pointer
+ 30E3  A3 000025EC R				mov     dword ptr[CURRENT_BUFFER
+				], eax  ; init pointer
+
+ 30E8  C7 05 000025B4 R				mov     dword ptr[BufferHalf], 4
+	   00000004		        ; point on second half
+
+ 30F2  B9 00000800				mov	ecx, (BUFFER_SIZE * 2 * 
+				SSIZE) / 4; clear all buffer
+						MIDPOINT
+			     1	
+			     1	IFDEF	SAMPLE16BIT
+ 30F7  33 C0		     1		xor	eax, eax
+			     1	ELSE
+			     1		mov	eax, 80808080h
+			     1	ENDIF
+			     1	
+ 30F9  F3/ AB					rep     stosd
+
+				ifndef	NOIRQ
+
+				ifdef   AUTO_DMA
+
+ 30FB  B9 00002000				mov	ecx, BUFFER_SIZE * 2 * S
+				SIZE
+ 3100  66| 83 3D 000025AC R			cmp     word ptr[DMA_number], 3
+	   03
+ 3108  76 02					jbe     noLengthAdj
+ 310A  D1 E9					shr     ecx, 1
+ 310C				NoLengthAdj:
+ 310C  49					dec     ecx
+
+ 310D  8B 1D 000025C0 R				mov     ebx, dword ptr[DMA]     
+				      ; Point to DMAx
+
+ 3113  66| 8B 53 08				mov     dx, word ptr[ebx + MASK_
+				REG]
+ 3117  8A 43 03					mov     al, byte ptr[ebx + MASK2
+				]       ; mask channel
+ 311A  EE					out     dx, al
+
+ 311B  66| 8B 53 0C				mov     dx, word ptr[ebx + FF_RE
+				G]
+ 311F  EE					out     dx, al                  
+				        ; flip-flop
+
+ 3120  66| 8B 53 06				mov     dx, word ptr[ebx + COUNT
+				_REG]
+ 3124  8A C1					mov     al, cl                  
+				        ; buffer size - 1
+ 3126  EE					out     dx, al
+ 3127  8A C5					mov     al, ch
+ 3129  EE					out     dx, al
+
+ 312A  66| 8B 53 04				mov     dx, word ptr[ebx + ADDX_
+				REG]
+ 312E  A1 000025E4 R				mov     eax, dword ptr[BUFFER_DM
+				A]      ; start offset
+ 3133  66| 83 3D 000025AC R			cmp     word ptr[DMA_number], 3
+	   03
+ 313B  76 0D					jbe     noAddrAdj
+				;		shr     eax, 1
+ 313D  D1 E8					shr	eax, 1
+ 313F  66| 8B F8				mov	di, ax
+ 3142  66| 33 C0				xor	ax, ax
+ 3145  D1 E0					shl	eax, 1
+ 3147  66| 8B C7				mov	ax, di
+ 314A				NoAddrAdj:
+ 314A  EE					out     dx, al
+ 314B  C1 E8 08					shr     eax, 8
+ 314E  EE					out     dx, al
+
+ 314F  66| 8B 53 0E				mov     dx, word ptr[ebx + PAGE_
+				REG]
+ 3153  C1 E8 08					shr     eax, 8                  
+				        ; page of DMA transfert
+ 3156  EE					out     dx, al
+
+ 3157  66| 8B 53 0A				mov     dx, word ptr[ebx + MODE_
+				REG]
+ 315B  8A 43 01					mov     al, byte ptr[ebx + AUTO_
+				OUT]    ; output sample
+ 315E  EE					out     dx, al
+
+ 315F  66| 8B 53 08				mov     dx, word ptr[ebx + MASK_
+				REG]
+ 3163  8A 43 02					mov     al, byte ptr[ebx + MASK1
+				]       ; channel OK
+ 3166  EE					out     dx, al
+				endif
+
+				endif
+
+				ifdef   AUTO_DMA
+ 3167  E8 000003B8				call    StartDMACard
+				elseifdef SINGLE_DMA
+						call    BlockTransfert          
+				        ; Start DMA transfert
+				endif
+ 316C  B8 00000001				mov	eax, 1
+						ret
+ 3171  5D		   *	    pop    ebp
+ 3172  5E		   *	    pop    esi
+ 3173  5F		   *	    pop    edi
+ 3174  5B		   *	    pop    ebx
+ 3175  C9		   *	    leave  
+ 3176  C3		   *	    ret    00000h
+
+ 3177				InitCard        ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 3177				ClearCard       PROC	USES EBX ESI EDI EBP
+
+ 3177  53		   *	    push   ebx
+ 3178  56		   *	    push   esi
+ 3179  57		   *	    push   edi
+ 317A  55		   *	    push   ebp
+ 317B  E8 FFFFF8B1				call    StopSample              
+				        ; just in case something was playing...
+ 3180  E8 00000359				call    CloseCard
+
+				ifndef	NOIRQ
+ 3185  66| BA 0021				mov     dx, 21h                 
+				        ; read IRQ mask
+ 3189  66| 83 3D 000025A8 R			cmp     word ptr[IRQ_number], 7
+	   07
+ 3191  76 05					jbe	short Ok21
+ 3193  66| 81 C2 0080				add	dx, 80h			
+					; reg 0A1h
+ 3198  A0 00002558 R		Ok21:		mov     al, byte ptr[IRQ_mask]  
+				        ; get old mask
+ 319D  EE					out     dx, al                  
+				        ; write old IRQ mask
+
+ 319E  8A 1D 000025B0 R				mov	bl, byte ptr[INT_number]
+ 31A4  66| 8B 0D 00002586 R			mov	cx, word ptr[Old_PIRQ_se
+				l]
+ 31AB  8B 15 0000258C R				mov	edx, dword ptr[Old_PIRQ_
+				off]
+						SET_PROT_VECT
+			     1	
+ 31B1  66| B8 0205	     1			mov	ax, 0205h
+ 31B5  CD 31		     1			int	31h
+			     1	
+
+ 31B7  83 3D 000025A8 R				cmp	dword ptr[IRQ_number], 7
+	   07
+ 31BE  76 2F					jbe	nobi
+
+ 31C0  8A 1D 000025B0 R				mov	bl, byte ptr[INT_number]
+ 31C6  66| 8B 0D 00002584 R			mov	cx, word ptr[Old_RIRQ_se
+				g]
+ 31CD  66| 8B 15 0000258A R			mov	dx, word ptr[Old_RIRQ_of
+				f]
+						SET_REAL_VECT
+			     1	
+ 31D4  66| B8 0201	     1			mov	ax, 0201h
+ 31D8  CD 31		     1			int	31h
+			     1	
+
+ 31DA  B3 18					mov	bl, 18h
+ 31DC  66| 8B 0D 00002588 R			mov	cx, word ptr[Old_18_sel]
+ 31E3  8B 15 00002590 R				mov	edx, dword ptr[Old_18_of
+				f]
+						SET_PROT_VECT
+			     1	
+ 31E9  66| B8 0205	     1			mov	ax, 0205h
+ 31ED  CD 31		     1			int	31h
+			     1	
+ 31EF				nobi:
+
+				endif
+
+						ret
+ 31EF  5D		   *	    pop    ebp
+ 31F0  5F		   *	    pop    edi
+ 31F1  5E		   *	    pop    esi
+ 31F2  5B		   *	    pop    ebx
+ 31F3  C3		   *	    ret    00000h
+
+ 31F4				ClearCard       ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 31F4				AskVars		PROC	,\
+						pListNames:DWORD, pListVars:DWOR
+				D
+
+ 31F4  55		   *	    push   ebp
+ 31F5  8B EC		   *	    mov    ebp, esp
+ 31F7  B8 00002594 R				mov	eax, offset ListNames
+ 31FC  8B 4D 08					mov	ecx, pListNames
+ 31FF  89 01					mov	dword ptr[ecx], eax
+ 3201  B8 000025A0 R				mov	eax, offset ListVars
+ 3206  8B 4D 0C					mov	ecx, pListVars
+ 3209  89 01					mov	dword ptr[ecx], eax
+						ret
+ 320B  C9		   *	    leave  
+ 320C  C3		   *	    ret    00000h
+
+ 320D				AskVars		ENDP
+
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 320D				GetBufferSize	PROC
+
+ 320D  B8 00002000				mov	eax, BUFFER_SIZE * 2 * S
+				SIZE
+
+ 3212  C3					ret
+
+ 3213				GetBufferSize	ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 3213				GiveSampleInfo0	PROC	\
+						LongHandle:DWORD, Info:DWORD
+
+ 3213  55		   *	    push   ebp
+ 3214  8B EC		   *	    mov    ebp, esp
+ 3216  8B 45 08					mov	eax, LongHandle
+
+					CRIT_SECT
+			     1	
+ 3219  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 3222  E8 FFFFFA73				call	SearchLongHandle
+ 3227  0B D2					or	edx, edx
+ 3229  74 06					jz	short notfound
+
+ 322B  8B 45 0C					mov	eax, Info
+ 322E  89 42 24					mov	dword ptr[edx+INFO0], ea
+				x
+ 3231				notfound:
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 3231  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 323A  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 3242  74 22		     1			je      ??0009                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 3244  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 324D  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 324E  E8 FFFFF447	     1			call    UpdateBuffer            
+			     1	; do the update
+ 3253  61		     1			popad
+ 3254  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 325D  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 3266			     1	??0009:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 3266  C9		   *	    leave  
+ 3267  C3		   *	    ret    00000h
+
+ 3268				GiveSampleInfo0	ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 3268				GetSnapSample	PROC	USES EBX,\
+						pList:DWORD
+
+ 3268  55		   *	    push   ebp
+ 3269  8B EC		   *	    mov    ebp, esp
+ 326B  53		   *	    push   ebx
+ 326C  8D 05 000023C8 R				lea	eax, SnapList
+ 3272  8B 55 08					mov	edx, pList
+ 3275  89 02					mov	dword ptr[edx], eax
+
+ 3277  8D 15 00000168 R				lea	edx, CurrentList
+ 327D  8D 0D 00000A00 R				lea	ecx, SonList
+
+					CRIT_SECT
+			     1	
+ 3283  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 328C  83 3A 00			keeplooking:    cmp     dword ptr[edx], 0
+ 328F  74 1B					je      short exit
+
+ 3291  8B 5A 14					mov	ebx, dword ptr[edx+HANDL
+				E]
+ 3294  89 18					mov	dword ptr[eax], ebx
+ 3296  8B 5A 24					mov	ebx, dword ptr[edx+INFO0
+				]
+ 3299  89 58 04					mov	dword ptr[eax+4], ebx
+ 329C  8B 1A					mov	ebx, dword ptr[edx]
+ 329E  2B 5A 18					sub	ebx, dword ptr[edx+START
+				]
+ 32A1  89 58 08					mov	dword ptr[eax+8], ebx
+
+ 32A4  83 C0 0C					add	eax, 12
+ 32A7  83 C2 2C					add     edx, STRUCT_SIZE
+ 32AA  EB E0					jmp     short keeplooking
+ 32AC				exit:
+ 32AC  3B CA					cmp     ecx, edx
+ 32AE  8B D1					mov	edx, ecx
+ 32B0  75 DA					jne     keeplooking
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 32B2  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 32BB  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 32C3  74 22		     1			je      ??000A                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 32C5  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 32CE  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 32CF  E8 FFFFF3C6	     1			call    UpdateBuffer            
+			     1	; do the update
+ 32D4  61		     1			popad
+ 32D5  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 32DE  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 32E7			     1	??000A:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+ 32E7  2D 000023C8 R				sub	eax, offset SnapList
+ 32EC  C1 E8 03					shr	eax, 3
+
+						ret
+ 32EF  5B		   *	    pop    ebx
+ 32F0  C9		   *	    leave  
+ 32F1  C3		   *	    ret    00000h
+
+ 32F2				GetSnapSample	ENDP
+
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 32F2				CopyList	PROC
+
+ 32F2  83 3E 00			keepcopying:	cmp	dword ptr[esi], 0
+ 32F5  74 09					je	short endcopy
+ 32F7  B9 0000000B				mov	ecx, STRUCT_SIZE / 4
+ 32FC  F3/ A5					rep	movsd
+ 32FE  EB F2					jmp	short keepcopying
+ 3300  C7 07 00000000		endcopy:	mov	dword ptr[edi], 0
+ 3306  C3					ret
+
+ 3307				CopyList	ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 3307				SAveStateSample	PROC	USES ESI EDI
+
+ 3307  56		   *	    push   esi
+ 3308  57		   *	    push   edi
+ 3309  E8 FFFFFBF9				call	PauseSample
+
+ 330E  80 3D 00002559 R		waitpause:	cmp	byte ptr[FlagPause], 1
+	   01
+ 3315  75 F7					jne	short waitpause
+
+					CRIT_SECT
+			     1	
+ 3317  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 3320  8D 35 00000168 R				lea	esi, CurrentList	
+					; backup CurrentList
+ 3326  8D 3D 00001298 R				lea	edi, BackCurrentList
+ 332C  E8 FFFFFFC1				call	CopyList
+ 3331  8D 35 00000A00 R				lea	esi, SonList		
+					; backup SonList
+ 3337  8D 3D 00001B30 R				lea	edi, BackSonList
+ 333D  E8 FFFFFFB0				call	CopyList
+ 3342  A1 000025B8 R				mov	eax, dword ptr[follow]	
+					; Backup follow
+ 3347  A3 000025BC R				mov	dword ptr[backfollow], e
+				ax
+ 334C  A1 000025C4 R				mov	eax, dword ptr[weirdcoun
+				t]	; Backup weirdcount
+ 3351  A3 000025C8 R				mov	dword ptr[backweirdcount
+				], eax
+
+ 3356  33 C0					xor     eax, eax		
+					; empty both lists
+ 3358  A3 00000168 R				mov     dword ptr[CurrentList], 
+				eax
+ 335D  A3 00000A00 R				mov     dword ptr[SonList], eax
+
+ 3362  C6 05 00002559 R				mov	byte ptr[FlagPause], 0
+	   00
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 3369  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 3372  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 337A  74 22		     1			je      ??000B                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 337C  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 3385  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 3386  E8 FFFFF30F	     1			call    UpdateBuffer            
+			     1	; do the update
+ 338B  61		     1			popad
+ 338C  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 3395  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 339E			     1	??000B:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+						ret
+ 339E  5F		   *	    pop    edi
+ 339F  5E		   *	    pop    esi
+ 33A0  C3		   *	    ret    00000h
+
+ 33A1				SAveStateSample	ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 33A1				RestoreStateSample PROC	USES ESI EDI
+
+ 33A1  56		   *	    push   esi
+ 33A2  57		   *	    push   edi
+ 33A3  E8 FFFFFB5F				call	PauseSample
+
+ 33A8  80 3D 00002559 R		waitpause:	cmp	byte ptr[FlagPause], 1
+	   01
+ 33AF  75 F7					jne	short waitpause
+
+					CRIT_SECT
+			     1	
+ 33B1  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; tell the IRQ not to update the buffer
+			     1							
+			     1	; we'll take care of it if nescessary O:-)
+
+ 33BA  8D 35 00001298 R				lea	esi, BackCurrentList	
+					; restore CurrentList
+ 33C0  8D 3D 00000168 R				lea	edi, CurrentList
+ 33C6  E8 FFFFFF27				call	CopyList
+ 33CB  8D 3D 00001B30 R				lea	edi, BackSonList	
+					; restore SonList
+ 33D1  8D 3D 00000A00 R				lea	edi, SonList
+ 33D7  E8 FFFFFF16				call	CopyList
+ 33DC  A1 000025BC R				mov	eax, dword ptr[backfollo
+				w]	; restore follow
+ 33E1  A3 000025B8 R				mov	dword ptr[follow], eax
+ 33E6  A1 000025C8 R				mov	eax, dword ptr[backweird
+				count]	; restore weirdcount
+ 33EB  A1 000025C4 R				mov	eax, dword ptr[weirdcoun
+				t]
+
+					END_CRIT_SECT
+			     1			local   NoUpdate                
+			     1	; Update buffer if necessary
+			     1	
+			     1			; Dealing with the critical sect
+			     1	ion flags................
+			     1			;                               
+			     1	        DO NOT TOUCH !!!!
+			     1	
+ 33F0  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect.
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 33F9  66| 83 3D 00002582 R  1			cmp     word ptr[DoUpdate], 0   
+	   00		     1	; IRQ happened ?
+ 3401  74 22		     1			je      ??000C                ; 
+			     1	if DopUpdate change to 0 now, we are in deep
+			     1							
+			     1	; shit anyway because we missed one round!
+			     1							
+			     1	; The program won't crash but we'll ear the old
+			     1							
+			     1	; content of half a buffer and also miss half a 
+			     1	buffer
+			     1							
+			     1	; of new data... :-(
+ 3403  66| C7 05 00002580 R  1			mov     word ptr[Critical], 1   
+	   0001		     1	; yes, crit. again, so we don't update twice
+			     1							
+			     1	; because UpdateBuffer is not reentrant
+			     1							
+			     1	; and we don't want to take a chance on crashing
+			     1	!
+ 340C  60		     1			pushad                          
+			     1	; if DoUpdate change to 1 HERE
+			     1							
+			     1	; it means again that we missed one round!
+			     1							
+			     1	; So we play the buffer we are updating! (funny 
+			     1	noise :-( )
+			     1							
+			     1	; and then will ear half buffer of old data!
+ 340D  E8 FFFFF288	     1			call    UpdateBuffer            
+			     1	; do the update
+ 3412  61		     1			popad
+ 3413  66| C7 05 00002580 R  1			mov     word ptr[Critical], 0   
+	   0000		     1	; exit crit. sect
+			     1							
+			     1	; this way DoUpdate can't change to 1 anymore
+ 341C  66| C7 05 00002582 R  1			mov     word ptr[DoUpdate], 0   
+	   0000		     1	; Update done, so DoUpdate = 0
+ 3425			     1	??000C:
+			     1	
+			     1							
+			     1	; ALL THOSE NASTY THING SHOULD NOT HAPPEN :-) !!
+			     1	!!
+			     1							
+			     1	; BECAUSE IT WOULD MEAN THAT THE UPDATE OF THE B
+			     1	UFFER
+			     1							
+			     1	; TAKES MORE THAN 46000 microsec!
+			     1							
+			     1	; (at 33 Mhz one cycle = .03 microsec so 4600 mi
+			     1	crosec = 1.5 million cycle)
+
+ 3425  E8 FFFFFB32				call	ContinueSample
+
+ 342A  80 3D 00002559 R		waitcontinue:	cmp	byte ptr[FlagPause], 0
+	   00
+ 3431  75 F7					jne	short waitcontinue
+
+						ret
+ 3433  5F		   *	    pop    edi
+ 3434  5E		   *	    pop    esi
+ 3435  C3		   *	    ret    00000h
+
+ 3436				RestoreStateSample ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+				;-----------------------------------------------
+				-----------------------------
+
+				ifdef   MWSS
+
+				ResetCard       PROC	USES EBX
+
+
+						mov	ax, word ptr[PlayRate]
+						cmp	ax, 44100
+						jae	short Freq44
+						lea	edx, MWSSFreq
+				SearchFreq:	cmp	ax, word ptr[edx]
+						jb	short FoundFreq
+						add	edx, 4
+						jmp	short SearchFreq
+				Freq44:
+						mov	ax, 44100
+						mov	cl, 0Bh
+						jmp	short WBack
+				FoundFreq:
+						mov	ax, word ptr[edx]	
+					; closest faster speed
+						mov	cl, byte ptr[edx+2]	
+					; clock select
+				WBack:
+						mov	word ptr[PlayRate], ax
+						or	cl, 01010000b		
+					; 16 bit linear, Stereo
+
+						mov	edx, [IRQ_number]	
+					; IRQ
+						mov	al, [MWSSIrq+edx]
+
+						mov	edx, [DMA_number]	
+					; DMA
+						or	al, [MWSSDma+edx]
+
+						mov	dx, word ptr[BASE_ADDR]
+
+						add	dl, 3			
+					; offset 3
+						out	dx, al			
+					; program IRQ & DMA
+
+						inc	dl			
+					; offset 4
+						mov	al, 6			
+					; left vol
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 80h			
+					; mute
+						out	dx, al
+						dec	dl			
+					; offset 4
+						mov	al, 7			
+					; right vol
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 80h			
+					; mute
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+						mov	al, 13			
+					; digital mix
+						out	dx, al
+						inc	dl			
+					; offset 5
+						xor	al, al			
+					; mute
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+						mov	al, 2			
+					; left aux1
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 80h			
+					; mute
+						out	dx, al
+						dec	dl			
+					; offset 4
+						mov	al, 3			
+					; right aux1
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 80h			
+					; mute
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+						mov	al, 4			
+					; left aux2
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 80h			
+					; mute
+						out	dx, al
+						dec	dl			
+					; offset 4
+						mov	al, 5			
+					; right aux2
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 80h			
+					; mute
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+						mov	al, 49h			
+					; enter MCE, Interface Ctrl
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 08h			
+					; auto-calibrate
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+						mov	al, 48h			
+					; MCE, Interface Ctrl
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, cl			
+					; 16 bit linear, stereo, speed
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+				wait_init:	in	al, dx
+						and	al, 80h
+						jnz	wait_init
+
+
+						xor	al, al
+						out	dx, al			
+					; clear MCE
+
+						xor	bx, bx			
+					; at least 6 millisec.
+				wait0:		in	al, dx
+						dec	bx
+						jnz	short wait0
+
+
+				wait_cal:	mov	al, 0Bh			
+					; Test & Init Reg
+						out	dx, al
+						inc	dl			
+					; offset 5
+						in	al, dx
+						dec	dl			
+					; offset 4
+						and	al, 20h
+						jnz	wait_cal
+
+						mov	al, 6			
+					; left vol
+						out	dx, al
+						inc	dl			
+					; offset 5
+						xor	al, al			
+					; max vol
+						out	dx, al
+						dec	dl			
+					; offset 4
+						mov	al, 7			
+					; right vol
+						out	dx, al
+						inc	dl			
+					; offset 5
+						xor	al, al			
+					; max vol
+						out	dx, al
+
+						ret
+
+				ResetCard       ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+				CloseCard       PROC
+
+						mov     dx, word ptr[BASE_ADDR] 
+				        ; DSP
+
+						add	dl, 4			
+					; offset 4
+						mov	al, 0Ah			
+					; Pin Ctrl reg
+						out	dx, al
+						inc	dx			
+					; offset 5
+						xor	al, al			
+					; turn off interrupts
+						out	dx, al
+
+						inc	dx			
+					; offset 6
+						out	dx, al			
+					; Ack outstanding interrupts
+
+						sub	dl, 2			
+					; offset 4
+						mov	al, 9			
+					; Interface Config reg
+						out	dx, al
+						inc	dx			
+					; offset 5
+						xor	al, al			
+					; turn off codec DMA
+						out	dx, al
+
+						sub	dl, 2
+						out	dx, al			
+					; deselect IRQ and DMA
+
+						ret
+
+				CloseCard       ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+				AckIrq          PROC
+
+						mov     dx, word ptr[BASE_ADDR] 
+				        ; DSP
+						add	dl, 6
+						in	al, dx
+						shr	al, 1			
+					; get int flag in C
+						cmc				
+					; complement C in order to return error 
+				if 0
+						out	dx, al			
+					; Ack anyway
+						ret
+
+				AckIrq          ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+				StartDMACard    PROC
+
+						mov     cx, BUFFER_SIZE - 1
+
+						mov     dx, word ptr[BASE_ADDR] 
+				        ; DSP
+
+						add	dl, 6
+						out	dx, al			
+					; clear any pending IRQ
+
+						sub	dl, 2			
+					; offset 4
+						mov	al, 15			
+					; DMA Count Lower
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, cl
+						out	dx, al
+						dec	dl			
+					; offset 4
+						mov	al, 14			
+					; DMA Count Upper
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, ch
+						out	dx, al
+
+						dec	dl			
+					; offset 4
+						mov	al, 9			
+					; Interface config
+						out	dx, al
+						inc	dl			
+					; offset 5
+						mov	al, 00000101b		
+					; DMA Playback
+						out	dx, al
+						dec	dl			
+					; offset 4
+						mov	al, 0Ah			
+					; Pin Ctrl Reg
+						out	dx, al
+						inc	dx			
+					; offset 5
+						mov	al, 00000010b		
+					; Turn on Interrupts
+						out	dx, al
+
+						ret
+
+				StartDMACard    ENDP
+
+				endif
+
+				;-----------------------------------------------
+				-----------------------------
+				;-----------------------------------------------
+				-----------------------------
+
+				ifdef   SBLASTER
+
+				WRITE_DSP       MACRO   VAL                     
+				; write to DSP whithout timeout
+						local   wait_dsp
+
+				wait_dsp:       in      al, dx
+						or      al, al
+						js      wait_dsp
+
+						mov     al, VAL
+						out     dx, al
+
+						ENDM
+
+				WRITE_MIXER     MACRO   REG, VAL		
+				; write to MIXER chip
+
+						mov	al, REG
+						out	dx, al
+						inc	dx
+						mov	al, VAL
+						out	dx, al
+						dec	dx
+
+						ENDM
+
+				READ_MIXER      MACRO   REG			
+				; read from MIXER chip
+
+						mov	al, REG
+						out	dx, al
+						inc	dx
+						in	al, dx
+						dec	dx
+
+						ENDM
+
+				ifdef	SBPRO
+
+				InitIRQ		PROC
+
+						pushad
+						push    ds
+
+						mov     ax, cs:word ptr[local_DS
+				]	; restore DS
+						mov     ds, ax
+
+						mov     al, 20h                 
+				        ; allows for new int
+						cmp	byte ptr[IRQ_number], 7
+						jbe	short NoSecondCtrl
+						out	0A0h, al
+				NoSecondCtrl:	out     20h, al
+
+						call    AckIrq
+						jc	short FinIRQ		
+					; not a DMA IRQ
+
+						mov	byte ptr[OkIRQ], 1
+				FinIRQ:
+						pop     ds
+						popad
+
+						iretd
+
+				InitIRQ		ENDP
+
+				endif
+
+
+ 3436				ResetCard       PROC
+
+ 3436  81 3D 000025A4 R				cmp	dword ptr[PlayRate], 120
+	   00002EE0		00
+ 3440  73 0A					jae	OkRateLow
+ 3442  C7 05 000025A4 R				mov	dword ptr[PlayRate], 120
+	   00002EE0		00
+ 344C				OkRateLow:
+
+ 344C  81 3D 000025A4 R				cmp	dword ptr[PlayRate], 220
+	   000055F0		00
+ 3456  76 0A					jbe	OkRateHigh
+ 3458  C7 05 000025A4 R				mov	dword ptr[PlayRate], 220
+	   000055F0		00
+ 3462				OkRateHigh:
+
+				ifndef  SB16
+					ifdef	SBPRO
+						mov     dx, 07A1h
+						mov     ax, 2000h               
+				        ; dx:ax = 128000000
+					else
+						mov     dx, 0F42h
+						mov     ax, 4000h               
+				        ; dx:ax = 256000000
+					endif
+						div     word ptr[PlayRate]      
+				        ; divide by PlayRate
+						neg	ax
+						shr	ax, 8
+						mov	cx, ax			
+					; cl = "Magic"
+
+						push	ecx
+
+					ifdef	SBPRO
+						mov     dx, 07h
+						mov     ax, 0A120h              
+				        ; dx:ax = 500000
+					else
+						mov     dx, 0Fh
+						mov     ax, 4240h               
+				        ; dx:ax = 1000000
+					endif
+						neg	cl
+						div     cx                      
+				        ; divide by "-Magic"
+						mov     word ptr[PlayRate], ax  
+				        ; write back PlayRate
+				endif
+
+ 3462  66| 8B 15 000025A0 R			mov     dx, word ptr[BASE_ADDR]
+ 3469  80 C2 06					add     dl, 6                   
+				        ; reset port (offset 6)
+ 346C  B0 01					mov     al, 1                   
+				        ; write 1
+ 346E  EE					out     dx, al
+
+ 346F  B4 18					mov	ah, 8 * 3		
+					; 4 * "in al, dx" = 1 microsec on std IS
+				A bus (8 Mhz)
+ 3471  EC			wait_io:	in      al, dx                  
+				        ; so  8 to be sure if 16 MHz !
+ 3472  FE CC					dec	ah			
+					; kill the cat !
+ 3474  75 FB					jnz	short wait_io
+
+ 3476  32 C0					xor     al, al
+ 3478  EE					out     dx, al                  
+				        ; write 0
+										
+					; now reset should be done..
+ 3479  80 C2 04					add     dl, 4                   
+				        ; offset 0Ah
+
+ 347C  80 C2 04			Next:           add     dl, 4                   
+				        ; offset 0Eh
+
+ 347F  EC			Wait_s:         in      al, dx
+ 3480  0A C0					or      al, al
+ 3482  79 FB					jns     Wait_s
+
+ 3484  80 EA 04					sub     dl, 4                   
+				        ; offset 0Ah
+ 3487  EC					in      al, dx                  
+				        ; read if reset terminated
+
+ 3488  3C AA					cmp     al, RESET_TEST_CODE     
+				        ; should be...
+ 348A  75 F0					jne     Next
+
+				ifdef	SB16
+ 348C  80 EA 06					sub	dl, 6			
+					; offset 04h
+ 348F  B0 80					mov	al, 80h
+ 3491  EE					out	dx, al
+ 3492  66| 42					inc	dx			
+					; offset 05h
+ 3494  33 C0					xor	eax, eax
+ 3496  EC					in	al, dx
+ 3497  24 0F					and	al, 0Fh			
+					; mask reserved bit
+ 3499  66| 0F BC C0				bsf	ax, ax
+ 349D  8A 80 0000257C R				mov	al, byte ptr[SB16_IRQ+ea
+				x]
+ 34A3  A3 000025A8 R				mov	dword ptr[IRQ_number], e
+				ax
+ 34A8  66| 4A					dec	dx			
+					; offset 04h
+ 34AA  B0 81					mov	al, 81h
+ 34AC  EE					out	dx, al
+ 34AD  66| 42					inc	dx			
+					; offset 05h
+ 34AF  EC					in	al, dx
+ 34B0  24 EB					and	al, 11101011b		
+					; mask reserved bit
+					ifdef	SAMPLE16BIT
+ 34B2  66| 0F BD C0				bsr	ax, ax
+					else
+						bsf	ax, ax
+					endif
+ 34B6  A3 000025AC R				mov	dword ptr[DMA_number], e
+				ax
+
+ 34BB  80 C2 07					add	dl, 7			
+					; offset 0Ch
+						WRITE_DSP DSP_RATE_CMD          
+				        ; rate
+			     1			local   wait_dsp
+			     1	
+ 34BE  EC		     1	??000D:       in      al, dx
+ 34BF  0A C0		     1			or      al, al
+ 34C1  78 FB		     1			js      ??000D
+			     1	
+ 34C3  B0 41		     1			mov     al, DSP_RATE_CMD
+ 34C5  EE		     1			out     dx, al
+			     1	
+ 34C6  66| 8B 0D 000025A4 R			mov     cx, word ptr[PlayRate]
+						WRITE_DSP ch                    
+				        ;
+			     1			local   wait_dsp
+			     1	
+ 34CD  EC		     1	??000E:       in      al, dx
+ 34CE  0A C0		     1			or      al, al
+ 34D0  78 FB		     1			js      ??000E
+			     1	
+ 34D2  8A C5		     1			mov     al, ch
+ 34D4  EE		     1			out     dx, al
+			     1	
+						WRITE_DSP cl                    
+				        ;
+			     1			local   wait_dsp
+			     1	
+ 34D5  EC		     1	??000F:       in      al, dx
+ 34D6  0A C0		     1			or      al, al
+ 34D8  78 FB		     1			js      ??000F
+			     1	
+ 34DA  8A C1		     1			mov     al, cl
+ 34DC  EE		     1			out     dx, al
+			     1	
+				else
+						add     dl, 02h                 
+				        ; offset 0Ch
+						WRITE_DSP DSP_ONSPK_CMD         
+				        ; Turn speaker on
+
+					ifdef	SBPRO
+
+						mov	edx, offset InitIRQ	
+					; Temporary IRQ handler
+						call	InstallISR
+
+						mov	dx, word ptr[BASE_ADDR]
+
+						add     dl, 4			
+					; offset 4
+						mov	al, 0Eh			
+					; stereo switch & filter
+						out	dx, al
+						inc	dx			
+					; offset 5
+						in	al, dx
+						or	al, 2			
+					; enable stereo
+						out	dx, al
+
+						mov     ecx, dword ptr[DMA]     
+				        ; Point to DMAx
+
+						mov     dx, word ptr[ecx + MASK_
+				REG]
+						mov     al, byte ptr[ecx + MASK2
+				]       ; mask channel
+						out     dx, al
+
+						mov     dx, word ptr[ecx + FF_RE
+				G]
+						out     dx, al                  
+				        ; flip-flop
+
+
+						mov     dx, word ptr[ecx + COUNT
+				_REG]
+						xor	al, al
+						out     dx, al
+						out     dx, al
+
+						mov     eax, dword ptr[BUFFER_DM
+				A]	; start offset
+						mov	byte ptr[eax], 80h	
+					; write a "0" into the buffer
+
+						mov     dx, word ptr[ecx + ADDX_
+				REG]
+						out     dx, al
+						shr     eax, 8
+						out     dx, al
+
+						mov     dx, word ptr[ecx + PAGE_
+				REG]
+						shr     eax, 8                  
+				        ; page of DMA transfert
+						out     dx, al
+
+						mov     dx, word ptr[ecx + MODE_
+				REG]
+						mov     al, byte ptr[ecx + VOICE
+				_OUT]   ; output sample
+						out     dx, al
+
+						mov     dx, word ptr[ecx + MASK_
+				REG]
+						mov     al, byte ptr[ecx + MASK1
+				]       ; channel OK
+						out     dx, al
+
+						mov     dx, word ptr[BASE_ADDR]
+						add	dl, 0Ch                 
+				        ; offset 0Ch
+
+						mov	byte ptr[OkIRQ], 0
+
+						WRITE_DSP DSP_VO8S_CMD
+						WRITE_DSP 0
+						WRITE_DSP 0
+
+				WaitIRQ:	cmp	byte ptr[OkIRQ], 1
+						jne	short WaitIRQ
+
+						sub     dl, 8			
+					; offset 4
+						mov	al, 0Eh			
+					; stereo switch & filter
+						out	dx, al
+						inc	dx			
+					; offset 5
+						in	al, dx
+						mov	byte ptr[Filter], al
+						or	al, 20h			
+					; disable filter
+						out	dx, al
+						add	dl, 7			
+					; offset 0Ch
+					endif
+
+						pop	ecx
+
+						WRITE_DSP DSP_TIME_CMD          
+				        ; "rate"
+						WRITE_DSP cl                    
+				        ; magic number !
+
+				endif
+ 34DD  C3					ret
+
+ 34DE				ResetCard       ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+ 34DE				CloseCard       PROC
+
+ 34DE  66| 8B 15 000025A0 R			mov     dx, word ptr[BASE_ADDR] 
+				        ; point to DSP
+
+				ifdef   SB16
+ 34E5  80 C2 0C					add     dl, 0CH
+				ifdef	SAMPLE16BIT
+						WRITE_DSP DSP_VO16S_CMD         
+				        ; single-cycle 16 bit DMA
+			     1			local   wait_dsp
+			     1	
+ 34E8  EC		     1	??0010:       in      al, dx
+ 34E9  0A C0		     1			or      al, al
+ 34EB  78 FB		     1			js      ??0010
+			     1	
+ 34ED  B0 B0		     1			mov     al, DSP_VO16S_CMD
+ 34EF  EE		     1			out     dx, al
+			     1	
+					ifdef	STEREO
+						WRITE_DSP DSP_16STEREO_MODE	
+					; 16 bit stereo
+			     1			local   wait_dsp
+			     1	
+ 34F0  EC		     1	??0011:       in      al, dx
+ 34F1  0A C0		     1			or      al, al
+ 34F3  78 FB		     1			js      ??0011
+			     1	
+ 34F5  B0 30		     1			mov     al, DSP_16STEREO_MODE
+ 34F7  EE		     1			out     dx, al
+			     1	
+					else
+						WRITE_DSP DSP_16MONO_MODE	
+					; 16 bit mono
+					endif
+				else
+						WRITE_DSP DSP_VO8S_4_CMD        
+				        ; single-cycle 8 bit DMA
+					ifdef	STEREO
+						WRITE_DSP DSP_8STEREO_MODE	
+					; 8 bit stereo
+					else
+						WRITE_DSP DSP_8MONO_MODE	
+					; 8 bit mono
+					endif
+				endif
+						WRITE_DSP 0                     
+				        ; length of 1 to finish
+			     1			local   wait_dsp
+			     1	
+ 34F8  EC		     1	??0012:       in      al, dx
+ 34F9  0A C0		     1			or      al, al
+ 34FB  78 FB		     1			js      ??0012
+			     1	
+ 34FD  B0 00		     1			mov     al, 0
+ 34FF  EE		     1			out     dx, al
+			     1	
+						WRITE_DSP 0
+			     1			local   wait_dsp
+			     1	
+ 3500  EC		     1	??0013:       in      al, dx
+ 3501  0A C0		     1			or      al, al
+ 3503  78 FB		     1			js      ??0013
+			     1	
+ 3505  B0 00		     1			mov     al, 0
+ 3507  EE		     1			out     dx, al
+			     1	
+				else
+					ifdef	SBPRO
+						add     dl, 6                   
+				        ; reset port (offset 6)
+						mov     al, 1                   
+				        ; write 1
+						out     dx, al
+
+						mov	ah, 8 * 3		
+					; 4 * "in al, dx" = 1 microsec on std IS
+				A bus (8 Mhz)
+				wait_io:	in      al, dx                  
+				        ; so  8 to be sure if 16 MHz !
+						dec	ah			
+					; kill the cat !
+						jnz	wait_io
+
+						xor     al, al
+						out     dx, al                  
+				        ; write 0
+										
+					; now reset should be done..
+						add     dl, 4                   
+				        ; offset 0Ah
+
+				Next:           add     dl, 4                   
+				        ; offset 0Eh
+
+				Wait_s:         in      al, dx
+						or      al, al
+						jns     Wait_s
+
+						sub     dl, 4                   
+				        ; offset 0Ah
+						in      al, dx                  
+				        ; read if reset terminated
+
+						cmp     al, RESET_TEST_CODE     
+				        ; should be...
+						jne     Next
+
+						sub	dl, 6			
+					; offset 4
+						mov	al, 0Eh
+						out	dx, al
+						inc	dx			
+					; offset 5
+						mov	al, byte ptr[Filter]	
+					; restore filter
+						out	dx, al
+
+						dec	dx
+						mov	al, 0Eh
+						out	dx, al
+						inc	dx			
+					; offset 5
+						in	al, dx
+						and	al, 11111101b		
+					; turn off stereo
+						out	dx, al
+
+						add	dl, 7			
+					; offset 0Ch
+						WRITE_DSP DSP_OFFSPK_CMD        
+				        ; Turn speaker off
+
+					else
+
+						add     dl, 0CH
+						WRITE_DSP DSP_OFFSPK_CMD        
+				        ; Turn speaker off
+						WRITE_DSP DSP_VO8S_CMD          
+				        ; single-cycle 8 bit DMA
+						WRITE_DSP 0                     
+				        ; length of 1 to finish
+						WRITE_DSP 0
+
+					endif
+				endif
+
+ 3508  C3					ret
+
+ 3509				CloseCard       ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 3509				AckIrq          PROC
+
+ 3509  66| 8B 15 000025A0 R			mov     dx, word ptr[BASE_ADDR] 
+				        ; DSP IRQ ACK
+				ifdef	SB16
+ 3510  80 C2 04					add	dl, 4			
+					; offset 4
+ 3513  B0 82					mov	al, 82h
+ 3515  EE					out	dx, al
+ 3516  66| 42					inc	dx			
+					; offset 5
+ 3518  EC					in	al, dx
+					ifdef	SAMPLE16BIT
+ 3519  24 02					and	al, 2
+ 351B  74 05					jz	NoDMAIRQ
+ 351D  80 C2 0A					add	dl, 10			
+					; offset Fh
+					else
+						and	al, 1
+						jz	NoDMAIRQ
+						add	dl, 9			
+					; offset Eh
+					endif
+ 3520  EC					in	al, dx
+ 3521  C3					ret
+ 3522				NoDMAIRQ:
+ 3522  F9					stc
+ 3523  C3					ret
+				else
+						add     dl, 0Eh                 
+				        ; 8 bit Samples ACK
+						in      al, dx
+						ret
+				endif
+
+ 3524				AckIrq          ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+ 3524				StartDMACard    PROC
+
+ 3524  66| 8B 15 000025A0 R			mov     dx, word ptr[BASE_ADDR] 
+				        ; DSP
+ 352B  80 C2 0C					add     dl, 0Ch
+
+				ifdef	STEREO
+ 352E  66| B9 07FF				mov     cx, BUFFER_SIZE * 2 - 1	
+					; half-buffer size - 1 for DMA
+				else
+						mov     cx, BUFFER_SIZE - 1	
+					; half-buffer size - 1 for DMA
+				endif
+
+				ifdef   SB16
+
+
+				ifdef	SAMPLE16BIT
+						WRITE_DSP DSP_VO16_CMD		
+					; auto-init 16 bit DMA
+			     1			local   wait_dsp
+			     1	
+ 3532  EC		     1	??0014:       in      al, dx
+ 3533  0A C0		     1			or      al, al
+ 3535  78 FB		     1			js      ??0014
+			     1	
+ 3537  B0 B6		     1			mov     al, DSP_VO16_CMD
+ 3539  EE		     1			out     dx, al
+			     1	
+					ifdef	STEREO
+						WRITE_DSP DSP_16STEREO_MODE	
+					; 16 bit stereo
+			     1			local   wait_dsp
+			     1	
+ 353A  EC		     1	??0015:       in      al, dx
+ 353B  0A C0		     1			or      al, al
+ 353D  78 FB		     1			js      ??0015
+			     1	
+ 353F  B0 30		     1			mov     al, DSP_16STEREO_MODE
+ 3541  EE		     1			out     dx, al
+			     1	
+					else
+						WRITE_DSP DSP_16MONO_MODE	
+					; 16 bit mono
+					endif
+				else
+						WRITE_DSP DSP_VO8_4_CMD		
+					; auto-init 8 bit DMA
+					ifdef	STEREO
+						WRITE_DSP DSP_8STEREO_MODE	
+					; 8 bit stereo
+					else
+						WRITE_DSP DSP_8MONO_MODE	
+					; 8 bit mono
+					endif
+				endif
+						WRITE_DSP cl
+			     1			local   wait_dsp
+			     1	
+ 3542  EC		     1	??0016:       in      al, dx
+ 3543  0A C0		     1			or      al, al
+ 3545  78 FB		     1			js      ??0016
+			     1	
+ 3547  8A C1		     1			mov     al, cl
+ 3549  EE		     1			out     dx, al
+			     1	
+						WRITE_DSP ch
+			     1			local   wait_dsp
+			     1	
+ 354A  EC		     1	??0017:       in      al, dx
+ 354B  0A C0		     1			or      al, al
+ 354D  78 FB		     1			js      ??0017
+			     1	
+ 354F  8A C5		     1			mov     al, ch
+ 3551  EE		     1			out     dx, al
+			     1	
+
+				elseifdef SBLASTER1
+
+						WRITE_DSP DSP_VO8S_CMD		
+					; single-cycle 8 bit DMA
+						WRITE_DSP cl
+						WRITE_DSP ch
+
+				else
+
+						WRITE_DSP DSP_BSIZE_CMD         
+				        ; Set block size
+						WRITE_DSP cl
+						WRITE_DSP ch
+
+					ifdef	SBPRO
+						WRITE_DSP DSP_VO8H_CMD		
+					; auto-init 8 bit high-speed DMA
+					else
+						WRITE_DSP DSP_VO8_CMD		
+					; auto-init 8 bit DMA
+					endif
+				endif
+ 3552  C3					ret
+
+ 3553				StartDMACard    ENDP
+
+				endif
+
+				;-----------------------------------------------
+				-----------------------------
+				;-----------------------------------------------
+				-----------------------------
+
+				ifdef   GOLD
+
+				SELECT_MIXER    MACRO
+						local	wait
+
+						mov	al, 0FFh
+						out	dx, al
+						out	dx, al
+				wait:           in      al, dx
+						and	al, 11000000b
+						jnz     wait
+
+						ENDM
+
+				LEAVE_MIXER     MACRO
+						local	wait
+
+				wait:           in      al, dx
+						and	al, 11000000b
+						jnz     wait
+						mov	al, 0FEh
+						out	dx, al
+						out	dx, al
+
+						ENDM
+
+				WRITE_MIXER     MACRO   PORT, VAL
+						local   wait1, wait2
+
+						mov	al, PORT
+						out	dx, al
+				wait1:          in      al, dx
+						and	al, 11000000b
+						jnz     wait1
+						inc	dx
+						mov     al, VAL
+						out     dx, al
+						dec	dx
+				wait2:          in      al, dx
+						and	al, 11000000b
+						jnz     wait2
+
+						ENDM
+
+				READ_MIXER      MACRO   PORT
+						local   wait1, wait2
+
+						mov	al, PORT
+						out	dx, al
+				wait1:          in      al, dx
+						and	al, 11000000b
+						jnz     wait1
+						inc	dx
+						in	al, dx
+						dec	dx
+						mov	ah, al
+				wait2:          in      al, dx
+						and	al, 11000000b
+						jnz     wait2
+						mov	al, ah
+
+						ENDM
+
+				WRITE_MMA0	MACRO   PORT, VAL
+
+						mov	al, PORT
+						out	dx, al
+						inc	dx
+						mov     al, VAL
+						out     dx, al
+						dec	dx
+						in	al, dx
+						in	al, dx
+
+						ENDM
+
+				READ_MMA0	MACRO   PORT
+
+						mov	al, PORT
+						out	dx, al
+						inc	dx
+						in	al, dx
+						dec	dx
+						mov	ah, al
+						in	al, dx
+						in	al, dx
+						mov	al, ah
+
+						ENDM
+
+				WRITE_MMA1	MACRO   PORT, VAL
+
+						mov	al, PORT
+						out	dx, al
+						add	dx, 3
+						mov     al, VAL
+						out     dx, al
+						sub	dx, 3
+						in	al, dx
+						in	al, dx
+
+						ENDM
+
+				READ_MMA1	MACRO   PORT
+
+						mov	al, PORT
+						out	dx, al
+						add	dx, 3
+						in	al, dx
+						sub	dx, 3
+						mov	ah, al
+						in	al, dx
+						in	al, dx
+						mov	al, ah
+
+						ENDM
+
+
+				;*----------------------------------------------
+				----------------------------*
+
+				ResetCard       PROC
+
+						mov	dx, word ptr[BASE_ADDR]
+						add	dx, 2			
+					; MIXER
+
+						SELECT_MIXER
+
+						WRITE_MIXER 8h, 11001110b	
+					; STEREO mode
+						WRITE_MIXER 11h, 00001000b	
+					; filter on output, no mic input, no PC-
+				speaker input
+
+						READ_MIXER  13h
+
+						mov	byte ptr[Mixer_13], al
+
+						mov	cl, al
+
+						and	eax, 3
+						lea	ebx, Gold_IRQ
+						mov	al, byte ptr[ebx+eax]
+						mov	dword ptr[IRQ_number], e
+				ax
+
+						mov	al, cl
+						shr	al, 4
+						and	al, 3
+						mov	dword ptr[DMA_number], e
+				ax
+
+						or	cl, 10001000b		
+					; enable DMA0, enable IRQ
+						WRITE_MIXER 13h, cl
+
+						READ_MIXER  14h
+
+						mov	byte ptr[Mixer_14], al
+
+						mov	cl, al
+						and	cl, 01111111b
+						WRITE_MIXER 14h, cl
+
+						LEAVE_MIXER
+
+						add	dx, 2			
+					; MMA
+
+						WRITE_MMA0  9, 80h		
+					; reset channel 0
+						WRITE_MMA1  9, 80h		
+					; reset	channel 1
+
+						mov	cx, 4
+				fillFIFO0:	WRITE_MMA0  0Bh, 0
+						dec	cx
+						jnz	FillFIFO0
+
+						mov	cx, 4
+				fillFIFO1:	WRITE_MMA1  0Bh, 0
+						dec	cx
+						jnz	FillFIFO1
+
+						WRITE_MMA0  9, 00101110b	
+					; 22.05 Khz, PCM, L, Play
+						WRITE_MMA1  9, 01001110b	
+					; 22.05 Khz, PCM, R, Play
+
+						mov     word ptr[PlayRate], 2205
+				0	; 22.05 Khz
+
+						WRITE_MMA0  0Ch, 11000101b	
+					; Interleave, 16 bit, 96 byte FIFO, DMA
+						WRITE_MMA1  0Ch, 01000011b	
+					; 16 bit, no FIFO (use other channel), D
+				MA
+
+
+						WRITE_MMA0  0Ah, 0FFh		
+					; Maximum volume (volume will be control
+				led by mixer)
+						WRITE_MMA1  0Ah, 0FFh
+
+						mov	cx, 100
+				fillFIFO:	WRITE_MMA0  0Bh, 0
+						dec	cx
+						jnz	FillFIFO
+
+						ret
+
+				ResetCard       ENDP
+
+				;*----------------------------------------------
+				----------------------------*
+
+				CloseCard       PROC
+
+						mov     dx, word ptr[BASE_ADDR]
+						add	dx, 4			
+					; MMA
+
+						WRITE_MMA1  0Ch, 01000010b	
+					; 16 bit, no FIFO, no DMA
+						WRITE_MMA0  0Ch, 01000010b	
+					; 16 bit, no FIFO, no DMA
+
+						WRITE_MMA0  9, 80h		
+					; reset channel 0
+						WRITE_MMA1  9, 80h		
+					; reset	channel 1
+
+						sub	dx, 2			
+					; MIXER
+
+						SELECT_MIXER
+
+						WRITE_MIXER 13h, Mixer_13
+						WRITE_MIXER 14h, Mixer_14
+
+						LEAVE_MIXER
+
+						ret
+
+				CloseCard       ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+				AckIrq          PROC
+
+						mov     dx, word ptr[BASE_ADDR]
+						add	dx, 4			
+					; MMA
+
+						in	al, dx
+						and	al, 1
+						jz	short noDMA
+
+						mov     ebx, dword ptr[DMA]	
+					; Point to DMAx
+
+						mov     dx, word ptr[ebx + FF_RE
+				G]
+						out     dx, al			
+					; flip-flop
+
+						mov     dx, word ptr[ebx + COUNT
+				_REG]
+						in	al, dx
+						mov	ah, al
+						in	al, dx
+						xchg	al, ah
+
+						or	ax, ax
+						jz	short OkDMA
+						inc	ax
+						jnz	short noDMA
+				OkDMA:
+						clc
+						ret
+				NoDMA:
+						stc
+						ret
+
+				AckIrq          ENDP
+
+				;-----------------------------------------------
+				-----------------------------
+
+				StartDMACard    PROC
+
+						mov     dx, word ptr[BASE_ADDR]
+						add     dx, 4			
+					; MMA
+
+						WRITE_MMA0  9, 00101111b	
+					; 22.05 Khz, PCM, L, Play, GO
+
+						ret
+
+				StartDMACard    ENDP
+
+				endif
+
+				;-----------------------------------------------
+				-----------------------------
+				;-----------------------------------------------
+				-----------------------------
+
+				ifdef	GUS
+
+				extrn	Nolanguage	resetcard:PROC
+
+				;*----------------------------------------------
+				----------------------------*
+
+				extrn	Nolanguage	CloseCard:PROC
+
+				;*----------------------------------------------
+				----------------------------*
+
+				extrn	Nolanguage	StartDMACard:PROC
+
+				endif
+
+				;-----------------------------------------------
+				-----------------------------
+				;-----------------------------------------------
+				-----------------------------
+
+						END
+Microsoft (R) Macro Assembler Version 6.1a 		    09/22/94 16:09:36
+wave_a.asm						     Symbols 2 - 1
+
+
+
+
+Macros:
+
+                N a m e                 Type
+
+CRIT_SECT  . . . . . . . . . . .	Proc
+END_CRIT_SECT  . . . . . . . . .	Proc
+GET_PROT_VECT  . . . . . . . . .	Proc
+GET_REAL_VECT  . . . . . . . . .	Proc
+MIDPOINT . . . . . . . . . . . .	Proc
+READ_MIXER . . . . . . . . . . .	Proc
+SET_PROT_VECT  . . . . . . . . .	Proc
+SET_REAL_VECT  . . . . . . . . .	Proc
+WRITE_DSP  . . . . . . . . . . .	Proc
+WRITE_MIXER  . . . . . . . . . .	Proc
+lve  . . . . . . . . . . . . . .	Proc
+setalc . . . . . . . . . . . . .	Proc
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000	  DWord	  Public  'DATA'
+					
+_TEXT  . . . . . . . . . . . . .	32 Bit	 3553	  DWord	  Public  'CODE'
+					
+
+
+Procedures,  parameters and locals:
+
+                N a m e                 Type     Value    Attr
+
+AckIrq . . . . . . . . . . . . .	P Near	 3509	  _TEXT	Length= 001B Pub
+					lic SYSCALL
+  NoDMAIRQ . . . . . . . . . . .	L Near	 3522	  _TEXT	
+AskVars  . . . . . . . . . . . .	P Near	 31F4	  _TEXT	Length= 0019 Pub
+					lic SYSCALL
+  pListNames . . . . . . . . . .	DWord	 bp + 0008
+  pListVars  . . . . . . . . . .	DWord	 bp + 000C
+ChangeVolume . . . . . . . . . .	P Near	 2CBE	  _TEXT	Length= 0063 Pub
+					lic SYSCALL
+  LongHandle . . . . . . . . . .	DWord	 bp + 0008
+  volleft  . . . . . . . . . . .	DWord	 bp + 000C
+  volright . . . . . . . . . . .	DWord	 bp + 0010
+  notfound . . . . . . . . . . .	L Near	 2CEA	  _TEXT	
+  ??0005 . . . . . . . . . . . .	L Near	 2D1F	  _TEXT	
+ClearCard  . . . . . . . . . . .	P Near	 3177	  _TEXT	Length= 007D Pub
+					lic SYSCALL
+  Ok21 . . . . . . . . . . . . .	L Near	 3198	  _TEXT	
+  nobi . . . . . . . . . . . . .	L Near	 31EF	  _TEXT	
+CloseCard  . . . . . . . . . . .	P Near	 34DE	  _TEXT	Length= 002B Pub
+					lic SYSCALL
+  ??0010 . . . . . . . . . . . .	L Near	 34E8	  _TEXT	
+  ??0011 . . . . . . . . . . . .	L Near	 34F0	  _TEXT	
+  ??0012 . . . . . . . . . . . .	L Near	 34F8	  _TEXT	
+  ??0013 . . . . . . . . . . . .	L Near	 3500	  _TEXT	
+ContinueSample . . . . . . . . .	P Near	 2F5C	  _TEXT	Length= 0051 Pub
+					lic SYSCALL
+  ??0008 . . . . . . . . . . . .	L Near	 2FAC	  _TEXT	
+CopyList . . . . . . . . . . . .	P Near	 32F2	  _TEXT	Length= 0015 Pub
+					lic SYSCALL
+  keepcopying  . . . . . . . . .	L Near	 32F2	  _TEXT	
+  endcopy  . . . . . . . . . . .	L Near	 3300	  _TEXT	
+GetBufferSize  . . . . . . . . .	P Near	 320D	  _TEXT	Length= 0006 Pub
+					lic SYSCALL
+GetDMAAddr . . . . . . . . . . .	P Near	 25F3	  _TEXT	Length= 0035 Pub
+					lic SYSCALL
+  noadjust . . . . . . . . . . .	L Near	 2626	  _TEXT	
+GetSnapSample  . . . . . . . . .	P Near	 3268	  _TEXT	Length= 008A Pub
+					lic SYSCALL
+  pList  . . . . . . . . . . . .	DWord	 bp + 0008
+  keeplooking  . . . . . . . . .	L Near	 328C	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 32AC	  _TEXT	
+  ??000A . . . . . . . . . . . .	L Near	 32E7	  _TEXT	
+GiveSampleInfo0  . . . . . . . .	P Near	 3213	  _TEXT	Length= 0055 Pub
+					lic SYSCALL
+  LongHandle . . . . . . . . . .	DWord	 bp + 0008
+  Info . . . . . . . . . . . . .	DWord	 bp + 000C
+  notfound . . . . . . . . . . .	L Near	 3231	  _TEXT	
+  ??0009 . . . . . . . . . . . .	L Near	 3266	  _TEXT	
+InitCard . . . . . . . . . . . .	P Near	 2FED	  _TEXT	Length= 018A Pub
+					lic SYSCALL
+  Buffer . . . . . . . . . . . .	DWord	 bp + 0008
+  ErrorDMA . . . . . . . . . . .	L Near	 3021	  _TEXT	
+  DMAFound . . . . . . . . . . .	L Near	 3029	  _TEXT	
+  Second . . . . . . . . . . . .	L Near	 303B	  _TEXT	
+  gotvect  . . . . . . . . . . .	L Near	 303D	  _TEXT	
+  nobi . . . . . . . . . . . . .	L Near	 308F	  _TEXT	
+  Ok21 . . . . . . . . . . . . .	L Near	 30A4	  _TEXT	
+  NoLengthAdj  . . . . . . . . .	L Near	 310C	  _TEXT	
+  NoAddrAdj  . . . . . . . . . .	L Near	 314A	  _TEXT	
+InstallISR . . . . . . . . . . .	P Near	 2FAD	  _TEXT	Length= 0040 Pub
+					lic SYSCALL
+  nobi . . . . . . . . . . . . .	L Near	 2FEC	  _TEXT	
+MixSample  . . . . . . . . . . .	P Near	 2D21	  _TEXT	Length= 01E6 Pub
+					lic SYSCALL
+  thehandle  . . . . . . . . . .	DWord	 bp + 0008
+  pitchbend  . . . . . . . . . .	DWord	 bp + 000C
+  therepeat  . . . . . . . . . .	DWord	 bp + 0010
+  plug . . . . . . . . . . . . .	DWord	 bp + 0014
+  volleft  . . . . . . . . . . .	DWord	 bp + 0018
+  volright . . . . . . . . . . .	DWord	 bp + 001C
+  buffer . . . . . . . . . . . .	DWord	 bp + 0020
+  okfilter . . . . . . . . . . .	L Near	 2D36	  _TEXT	
+  okincr . . . . . . . . . . . .	L Near	 2DA7	  _TEXT	
+  next . . . . . . . . . . . . .	L Near	 2DD8	  _TEXT	
+  ok_handle  . . . . . . . . . .	L Near	 2E05	  _TEXT	
+  keeplooking0 . . . . . . . . .	L Near	 2E27	  _TEXT	
+  SearchSonList  . . . . . . . .	L Near	 2E36	  _TEXT	
+  keeplooking1 . . . . . . . . .	L Near	 2E3C	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 2E4B	  _TEXT	
+  found  . . . . . . . . . . . .	L Near	 2E4F	  _TEXT	
+  NoPlug . . . . . . . . . . . .	L Near	 2E52	  _TEXT	
+  SearchEnd  . . . . . . . . . .	L Near	 2E57	  _TEXT	
+  endcritical  . . . . . . . . .	L Near	 2EC5	  _TEXT	
+  ??0006 . . . . . . . . . . . .	L Near	 2EFA	  _TEXT	
+  typeunknown  . . . . . . . . .	L Near	 2EFF	  _TEXT	
+NewIRQ . . . . . . . . . . . . .	P Near	 2628	  _TEXT	Length= 0072 Pub
+					lic SYSCALL
+  NoSecondCtrl . . . . . . . . .	L Near	 2643	  _TEXT	
+  FinIRQ . . . . . . . . . . . .	L Near	 2696	  _TEXT	
+PauseSample  . . . . . . . . . .	P Near	 2F07	  _TEXT	Length= 0055 Pub
+					lic SYSCALL
+  ??0007 . . . . . . . . . . . .	L Near	 2F5B	  _TEXT	
+Redirector . . . . . . . . . . .	P Near	 25F0	  _TEXT	Length= 0003 Pub
+					lic SYSCALL
+ResetCard  . . . . . . . . . . .	P Near	 3436	  _TEXT	Length= 00A8 Pub
+					lic SYSCALL
+  OkRateLow  . . . . . . . . . .	L Near	 344C	  _TEXT	
+  OkRateHigh . . . . . . . . . .	L Near	 3462	  _TEXT	
+  wait_io  . . . . . . . . . . .	L Near	 3471	  _TEXT	
+  Next . . . . . . . . . . . . .	L Near	 347C	  _TEXT	
+  Wait_s . . . . . . . . . . . .	L Near	 347F	  _TEXT	
+  ??000D . . . . . . . . . . . .	L Near	 34BE	  _TEXT	
+  ??000E . . . . . . . . . . . .	L Near	 34CD	  _TEXT	
+  ??000F . . . . . . . . . . . .	L Near	 34D5	  _TEXT	
+RestoreStateSample . . . . . . .	P Near	 33A1	  _TEXT	Length= 0095 Pub
+					lic SYSCALL
+  waitpause  . . . . . . . . . .	L Near	 33A8	  _TEXT	
+  ??000C . . . . . . . . . . . .	L Near	 3425	  _TEXT	
+  waitcontinue . . . . . . . . .	L Near	 342A	  _TEXT	
+SAveStateSample  . . . . . . . .	P Near	 3307	  _TEXT	Length= 009A Pub
+					lic SYSCALL
+  waitpause  . . . . . . . . . .	L Near	 330E	  _TEXT	
+  ??000B . . . . . . . . . . . .	L Near	 339E	  _TEXT	
+SampleInList . . . . . . . . . .	P Near	 2C27	  _TEXT	Length= 0073 Pub
+					lic SYSCALL
+  thehandle  . . . . . . . . . .	DWord	 bp + 0008
+  keeplooking  . . . . . . . . .	L Near	 2C44	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 2C54	  _TEXT	
+  found  . . . . . . . . . . . .	L Near	 2C62	  _TEXT	
+  ??0004 . . . . . . . . . . . .	L Near	 2C97	  _TEXT	
+SearchLongHandle . . . . . . . .	P Near	 2C9A	  _TEXT	Length= 0024 Pub
+					lic SYSCALL
+  keeplooking  . . . . . . . . .	L Near	 2CA6	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 2CB5	  _TEXT	
+  found  . . . . . . . . . . . .	L Near	 2CBD	  _TEXT	
+ShiftSamples . . . . . . . . . .	P Near	 2B2D	  _TEXT	Length= 008C Pub
+					lic SYSCALL
+  DestAddr . . . . . . . . . . .	DWord	 bp + 0008
+  SrcAddr  . . . . . . . . . . .	DWord	 bp + 000C
+  SizeByte . . . . . . . . . . .	DWord	 bp + 0010
+  keeplooking  . . . . . . . . .	L Near	 2B5F	  _TEXT	
+  notfound . . . . . . . . . . .	L Near	 2B6E	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 2B73	  _TEXT	
+  ??0002 . . . . . . . . . . . .	L Near	 2BB4	  _TEXT	
+StartDMACard . . . . . . . . . .	P Near	 3524	  _TEXT	Length= 002F Pub
+					lic SYSCALL
+  ??0014 . . . . . . . . . . . .	L Near	 3532	  _TEXT	
+  ??0015 . . . . . . . . . . . .	L Near	 353A	  _TEXT	
+  ??0016 . . . . . . . . . . . .	L Near	 3542	  _TEXT	
+  ??0017 . . . . . . . . . . . .	L Near	 354A	  _TEXT	
+StopOneSampleLong  . . . . . . .	P Near	 2BB9	  _TEXT	Length= 006E Pub
+					lic SYSCALL
+  LongHandle . . . . . . . . . .	DWord	 bp + 0008
+  LoopRemove . . . . . . . . . .	L Near	 2BDA	  _TEXT	
+  EndRemove  . . . . . . . . . .	L Near	 2BE8	  _TEXT	
+  notfound . . . . . . . . . . .	L Near	 2BEE	  _TEXT	
+  ??0003 . . . . . . . . . . . .	L Near	 2C23	  _TEXT	
+StopOneSample  . . . . . . . . .	P Near	 2A91	  _TEXT	Length= 009C Pub
+					lic SYSCALL
+  thehandle  . . . . . . . . . .	DWord	 bp + 0008
+  keeplooking  . . . . . . . . .	L Near	 2AAD	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 2ABD	  _TEXT	
+  ??0001 . . . . . . . . . . . .	L Near	 2B03	  _TEXT	
+  found  . . . . . . . . . . . .	L Near	 2B08	  _TEXT	
+  noson  . . . . . . . . . . . .	L Near	 2B10	  _TEXT	
+  LoopRemove . . . . . . . . . .	L Near	 2B17	  _TEXT	
+  EndRemove  . . . . . . . . . .	L Near	 2B25	  _TEXT	
+StopSample . . . . . . . . . . .	P Near	 2A31	  _TEXT	Length= 0060 Pub
+					lic SYSCALL
+  ??0000 . . . . . . . . . . . .	L Near	 2A90	  _TEXT	
+UpdateBuffer . . . . . . . . . .	P Near	 269A	  _TEXT	Length= 0397 Pub
+					lic SYSCALL
+  dopause  . . . . . . . . . . .	L Near	 26BE	  _TEXT	
+  exit . . . . . . . . . . . . .	L Near	 26C9	  _TEXT	
+  loopfadein . . . . . . . . . .	L Near	 26EC	  _TEXT	
+  fadeout  . . . . . . . . . . .	L Near	 2711	  _TEXT	
+  loopfadeout  . . . . . . . . .	L Near	 2714	  _TEXT	
+  endfade  . . . . . . . . . . .	L Near	 2735	  _TEXT	
+  reallyexit . . . . . . . . . .	L Near	 2741	  _TEXT	
+  FinishFill0  . . . . . . . . .	L Near	 2742	  _TEXT	
+  process_1st  . . . . . . . . .	L Near	 274B	  _TEXT	
+  Longer0  . . . . . . . . . . .	L Near	 276C	  _TEXT	
+  NotLonger0 . . . . . . . . . .	L Near	 277F	  _TEXT	
+  StartMix0  . . . . . . . . . .	L Near	 2787	  _TEXT	
+  start0 . . . . . . . . . . . .	L Near	 27C6	  _TEXT	
+  next0  . . . . . . . . . . . .	L Near	 27CF	  _TEXT	
+  nofilter . . . . . . . . . . .	L Near	 282C	  _TEXT	
+  start01  . . . . . . . . . . .	L Near	 2832	  _TEXT	
+  next01 . . . . . . . . . . . .	L Near	 2844	  _TEXT	
+  end16  . . . . . . . . . . . .	L Near	 2857	  _TEXT	
+  noadjust0  . . . . . . . . . .	L Near	 285A	  _TEXT	
+  KeepLooking0 . . . . . . . . .	L Near	 287E	  _TEXT	
+  NoSon0 . . . . . . . . . . . .	L Near	 288D	  _TEXT	
+  LoopRemove0  . . . . . . . . .	L Near	 289D	  _TEXT	
+  EndRemove0 . . . . . . . . . .	L Near	 28AB	  _TEXT	
+  FoundSon0  . . . . . . . . . .	L Near	 28B3	  _TEXT	
+  LoopSon0 . . . . . . . . . . .	L Near	 28C7	  _TEXT	
+  EndSon0  . . . . . . . . . . .	L Near	 28D5	  _TEXT	
+  Reset0 . . . . . . . . . . . .	L Near	 28E5	  _TEXT	
+  NextSample . . . . . . . . . .	L Near	 28F9	  _TEXT	
+  FinishFill . . . . . . . . . .	L Near	 290D	  _TEXT	
+  Longer . . . . . . . . . . . .	L Near	 2937	  _TEXT	
+  NotLonger  . . . . . . . . . .	L Near	 294A	  _TEXT	
+  StartMix00 . . . . . . . . . .	L Near	 2952	  _TEXT	
+  start00  . . . . . . . . . . .	L Near	 2963	  _TEXT	
+  next00 . . . . . . . . . . . .	L Near	 2975	  _TEXT	
+  noadjust . . . . . . . . . . .	L Near	 298B	  _TEXT	
+  KeepLooking  . . . . . . . . .	L Near	 29AB	  _TEXT	
+  NoSon  . . . . . . . . . . . .	L Near	 29BA	  _TEXT	
+  LoopRemove . . . . . . . . . .	L Near	 29C1	  _TEXT	
+  EndRemove  . . . . . . . . . .	L Near	 29CF	  _TEXT	
+  FoundSon . . . . . . . . . . .	L Near	 29DA	  _TEXT	
+  LoopSon  . . . . . . . . . . .	L Near	 29EE	  _TEXT	
+  EndSon . . . . . . . . . . . .	L Near	 29FC	  _TEXT	
+  Finish . . . . . . . . . . . .	L Near	 2A0C	  _TEXT	
+  Finish2  . . . . . . . . . . .	L Near	 2A15	  _TEXT	
+  Reset  . . . . . . . . . . . .	L Near	 2A1D	  _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 0000h	 
+@DataSize  . . . . . . . . . . .	Number	 0000h	 
+@Interface . . . . . . . . . . .	Number	 0002h	 
+@Model . . . . . . . . . . . . .	Number	 0007h	 
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+ADDRESS  . . . . . . . . . . . .	Number	 0000h	 
+ADDX_REG . . . . . . . . . . . .	Number	 0004h	 
+AUTO_DMA . . . . . . . . . . . .	Number	 0001h	 
+AUTO_OUT . . . . . . . . . . . .	Number	 0001h	 
+BASE_ADDR  . . . . . . . . . . .	DWord	 25A0	  _TEXT	
+BUFFER_DMA . . . . . . . . . . .	DWord	 25E4	  _TEXT	Public SYSCALL
+BUFFER_SIZE  . . . . . . . . . .	Number	 0400h	 
+BackCurrentList  . . . . . . . .	Byte	 1298	  _TEXT	
+BackSonList  . . . . . . . . . .	Byte	 1B30	  _TEXT	
+BufferHalf . . . . . . . . . . .	DWord	 25B4	  _TEXT	Public SYSCALL
+COUNT_REG  . . . . . . . . . . .	Number	 0006h	 
+CURRENT_BUFFER . . . . . . . . .	DWord	 25EC	  _TEXT	Public SYSCALL
+C_REPEAT . . . . . . . . . . . .	Number	 000Ch	 
+Critical . . . . . . . . . . . .	Word	 2580	  _TEXT	
+CurrentList  . . . . . . . . . .	Byte	 0168	  _TEXT	
+DLENGTH  . . . . . . . . . . . .	Number	 001Ch	 
+DMA0_ADDX_REG  . . . . . . . . .	Word	 00EC	  _TEXT	
+DMA0_AUTO_OUT  . . . . . . . . .	Byte	 00E9	  _TEXT	
+DMA0_COUNT_REG . . . . . . . . .	Word	 00EE	  _TEXT	
+DMA0_FF_REG  . . . . . . . . . .	Word	 00F4	  _TEXT	
+DMA0_MASK1 . . . . . . . . . . .	Byte	 00EA	  _TEXT	
+DMA0_MASK2 . . . . . . . . . . .	Byte	 00EB	  _TEXT	
+DMA0_MASK_REG  . . . . . . . . .	Word	 00F0	  _TEXT	
+DMA0_MODE_REG  . . . . . . . . .	Word	 00F2	  _TEXT	
+DMA0_PAGE_REG  . . . . . . . . .	Word	 00F6	  _TEXT	
+DMA0_VOICE_OUT . . . . . . . . .	Byte	 00E8	  _TEXT	
+DMA0 . . . . . . . . . . . . . .	Number	 00E8h	 
+DMA1_ADDX_REG  . . . . . . . . .	Word	 00FC	  _TEXT	
+DMA1_AUTO_OUT  . . . . . . . . .	Byte	 00F9	  _TEXT	
+DMA1_COUNT_REG . . . . . . . . .	Word	 00FE	  _TEXT	
+DMA1_FF_REG  . . . . . . . . . .	Word	 0104	  _TEXT	
+DMA1_MASK1 . . . . . . . . . . .	Byte	 00FA	  _TEXT	
+DMA1_MASK2 . . . . . . . . . . .	Byte	 00FB	  _TEXT	
+DMA1_MASK_REG  . . . . . . . . .	Word	 0100	  _TEXT	
+DMA1_MODE_REG  . . . . . . . . .	Word	 0102	  _TEXT	
+DMA1_PAGE_REG  . . . . . . . . .	Word	 0106	  _TEXT	
+DMA1_VOICE_OUT . . . . . . . . .	Byte	 00F8	  _TEXT	
+DMA1 . . . . . . . . . . . . . .	Number	 00F8h	 
+DMA3_ADDX_REG  . . . . . . . . .	Word	 010C	  _TEXT	
+DMA3_AUTO_OUT  . . . . . . . . .	Byte	 0109	  _TEXT	
+DMA3_COUNT_REG . . . . . . . . .	Word	 010E	  _TEXT	
+DMA3_FF_REG  . . . . . . . . . .	Word	 0114	  _TEXT	
+DMA3_MASK1 . . . . . . . . . . .	Byte	 010A	  _TEXT	
+DMA3_MASK2 . . . . . . . . . . .	Byte	 010B	  _TEXT	
+DMA3_MASK_REG  . . . . . . . . .	Word	 0110	  _TEXT	
+DMA3_MODE_REG  . . . . . . . . .	Word	 0112	  _TEXT	
+DMA3_PAGE_REG  . . . . . . . . .	Word	 0116	  _TEXT	
+DMA3_VOICE_OUT . . . . . . . . .	Byte	 0108	  _TEXT	
+DMA3 . . . . . . . . . . . . . .	Number	 0108h	 
+DMA5_ADDX_REG  . . . . . . . . .	Word	 011C	  _TEXT	
+DMA5_AUTO_OUT  . . . . . . . . .	Byte	 0119	  _TEXT	
+DMA5_COUNT_REG . . . . . . . . .	Word	 011E	  _TEXT	
+DMA5_FF_REG  . . . . . . . . . .	Word	 0124	  _TEXT	
+DMA5_MASK1 . . . . . . . . . . .	Byte	 011A	  _TEXT	
+DMA5_MASK2 . . . . . . . . . . .	Byte	 011B	  _TEXT	
+DMA5_MASK_REG  . . . . . . . . .	Word	 0120	  _TEXT	
+DMA5_MODE_REG  . . . . . . . . .	Word	 0122	  _TEXT	
+DMA5_PAGE_REG  . . . . . . . . .	Word	 0126	  _TEXT	
+DMA5_VOICE_OUT . . . . . . . . .	Byte	 0118	  _TEXT	
+DMA5 . . . . . . . . . . . . . .	Number	 0118h	 
+DMA6_ADDX_REG  . . . . . . . . .	Word	 012C	  _TEXT	
+DMA6_AUTO_OUT  . . . . . . . . .	Byte	 0129	  _TEXT	
+DMA6_COUNT_REG . . . . . . . . .	Word	 012E	  _TEXT	
+DMA6_FF_REG  . . . . . . . . . .	Word	 0134	  _TEXT	
+DMA6_MASK1 . . . . . . . . . . .	Byte	 012A	  _TEXT	
+DMA6_MASK2 . . . . . . . . . . .	Byte	 012B	  _TEXT	
+DMA6_MASK_REG  . . . . . . . . .	Word	 0130	  _TEXT	
+DMA6_MODE_REG  . . . . . . . . .	Word	 0132	  _TEXT	
+DMA6_PAGE_REG  . . . . . . . . .	Word	 0136	  _TEXT	
+DMA6_VOICE_OUT . . . . . . . . .	Byte	 0128	  _TEXT	
+DMA6 . . . . . . . . . . . . . .	Number	 0128h	 
+DMA7_ADDX_REG  . . . . . . . . .	Word	 013C	  _TEXT	
+DMA7_AUTO_OUT  . . . . . . . . .	Byte	 0139	  _TEXT	
+DMA7_COUNT_REG . . . . . . . . .	Word	 013E	  _TEXT	
+DMA7_FF_REG  . . . . . . . . . .	Word	 0144	  _TEXT	
+DMA7_MASK1 . . . . . . . . . . .	Byte	 013A	  _TEXT	
+DMA7_MASK2 . . . . . . . . . . .	Byte	 013B	  _TEXT	
+DMA7_MASK_REG  . . . . . . . . .	Word	 0140	  _TEXT	
+DMA7_MODE_REG  . . . . . . . . .	Word	 0142	  _TEXT	
+DMA7_PAGE_REG  . . . . . . . . .	Word	 0146	  _TEXT	
+DMA7_VOICE_OUT . . . . . . . . .	Byte	 0138	  _TEXT	
+DMA7 . . . . . . . . . . . . . .	Number	 0138h	 
+DMA_number . . . . . . . . . . .	DWord	 25AC	  _TEXT	
+DMA  . . . . . . . . . . . . . .	DWord	 25C0	  _TEXT	
+DSP_16MONO_MODE  . . . . . . . .	Number	 0010h	 
+DSP_16STEREO_MODE  . . . . . . .	Number	 0030h	 
+DSP_8MONO_MODE . . . . . . . . .	Number	 0000h	 
+DSP_8STEREO_MODE . . . . . . . .	Number	 0020h	 
+DSP_BSIZE_CMD  . . . . . . . . .	Number	 0048h	 
+DSP_OFFSPK_CMD . . . . . . . . .	Number	 00D3h	 
+DSP_ONSPK_CMD  . . . . . . . . .	Number	 00D1h	 
+DSP_RATE_CMD . . . . . . . . . .	Number	 0041h	 
+DSP_TIME_CMD . . . . . . . . . .	Number	 0040h	 
+DSP_VO16S_CMD  . . . . . . . . .	Number	 00B0h	 
+DSP_VO16_CMD . . . . . . . . . .	Number	 00B6h	 
+DSP_VO8H_CMD . . . . . . . . . .	Number	 0090h	 
+DSP_VO8S_4_CMD . . . . . . . . .	Number	 00C0h	 
+DSP_VO8S_CMD . . . . . . . . . .	Number	 0014h	 
+DSP_VO8_4_CMD  . . . . . . . . .	Number	 00C6h	 
+DSP_VO8_CMD  . . . . . . . . . .	Number	 001Ch	 
+DoUpdate . . . . . . . . . . . .	Word	 2582	  _TEXT	
+Empty  . . . . . . . . . . . . .	Byte	 257B	  _TEXT	
+FF_REG . . . . . . . . . . . . .	Number	 000Ch	 
+FRACT  . . . . . . . . . . . . .	Number	 0004h	 
+FlagPause  . . . . . . . . . . .	Byte	 2559	  _TEXT	
+HANDLE . . . . . . . . . . . . .	Number	 0014h	 
+INCR . . . . . . . . . . . . . .	Number	 000Eh	 
+INFO0  . . . . . . . . . . . . .	Number	 0024h	 
+INTERPOL . . . . . . . . . . . .	Number	 0028h	 
+INT_number . . . . . . . . . . .	DWord	 25B0	  _TEXT	
+IRQ_mask . . . . . . . . . . . .	Byte	 2558	  _TEXT	
+IRQ_number . . . . . . . . . . .	DWord	 25A8	  _TEXT	
+LAST_SAMPLE  . . . . . . . . . .	Number	 0029h	 
+LEFT . . . . . . . . . . . . . .	Number	 0008h	 
+LIST_SIZE  . . . . . . . . . . .	Number	 0032h	 
+ListFuncs  . . . . . . . . . . .	DWord	 00A0	  _TEXT	
+ListNames  . . . . . . . . . . .	DWord	 2594	  _TEXT	
+ListVars . . . . . . . . . . . .	Number	 25A0h	 
+MASK1  . . . . . . . . . . . . .	Number	 0002h	 
+MASK2  . . . . . . . . . . . . .	Number	 0003h	 
+MASK_REG . . . . . . . . . . . .	Number	 0008h	 
+MID_BUFFER_DMA . . . . . . . . .	DWord	 25E8	  _TEXT	
+MODE_REG . . . . . . . . . . . .	Number	 000Ah	 
+NoLanguage . . . . . . . . . . .	Text   	 SYSCALL
+Old_18_Off . . . . . . . . . . .	DWord	 2590	  _TEXT	
+Old_18_Sel . . . . . . . . . . .	Word	 2588	  _TEXT	
+Old_PIRQ_Off . . . . . . . . . .	DWord	 258C	  _TEXT	
+Old_PIRQ_Sel . . . . . . . . . .	Word	 2586	  _TEXT	
+Old_RIRQ_Off . . . . . . . . . .	Word	 258A	  _TEXT	
+Old_RIRQ_Seg . . . . . . . . . .	Word	 2584	  _TEXT	
+PAGE_REG . . . . . . . . . . . .	Number	 000Eh	 
+PlayRate . . . . . . . . . . . .	DWord	 25A4	  _TEXT	Public SYSCALL
+RESET_TEST_CODE  . . . . . . . .	Number	 00AAh	 
+SAMPLE16BIT  . . . . . . . . . .	Text   	 
+SB16_IRQ . . . . . . . . . . . .	Byte	 257C	  _TEXT	
+SB16 . . . . . . . . . . . . . .	Text   	 
+SBLASTER . . . . . . . . . . . .	Number	 0001h	 
+SHIFT_SAMPLE . . . . . . . . . .	Number	 0003h	 
+SLONG  . . . . . . . . . . . . .	Number	 0001h	 
+SNAP_SIZE  . . . . . . . . . . .	Number	 0008h	 
+SON  . . . . . . . . . . . . . .	Number	 0010h	 
+SSIZE  . . . . . . . . . . . . .	Number	 0004h	 
+START  . . . . . . . . . . . . .	Number	 0018h	 
+STEREO . . . . . . . . . . . . .	Text   	 
+STRUCT_SIZE  . . . . . . . . . .	Number	 002Ch	 
+SnapList . . . . . . . . . . . .	Byte	 23C8	  _TEXT	
+SonList  . . . . . . . . . . . .	Byte	 0A00	  _TEXT	
+TAB_DMA  . . . . . . . . . . . .	DWord	 0148	  _TEXT	
+TheVolumeL . . . . . . . . . . .	DWord	 25D0	  _TEXT	
+TheVolumeR . . . . . . . . . . .	DWord	 25CC	  _TEXT	
+VOICE_HANDLE . . . . . . . . . .	Number	 1234h	 
+VOICE_OUT  . . . . . . . . . . .	Number	 0000h	 
+VOL_LEFT . . . . . . . . . . . .	Number	 0020h	 
+VOL_RIGHT  . . . . . . . . . . .	Number	 0022h	 
+WaveBase . . . . . . . . . . . .	Byte	 255A	  _TEXT	
+WaveDMA  . . . . . . . . . . . .	Byte	 256B	  _TEXT	
+WaveIRQ  . . . . . . . . . . . .	Byte	 2563	  _TEXT	
+WaveRate . . . . . . . . . . . .	Byte	 2573	  _TEXT	
+backfollow . . . . . . . . . . .	DWord	 25BC	  _TEXT	
+backweirdcount . . . . . . . . .	DWord	 25C8	  _TEXT	
+driver_start . . . . . . . . . .	DWord	 0000	  _TEXT	Public SYSCALL
+follow . . . . . . . . . . . . .	DWord	 25B8	  _TEXT	
+jumps  . . . . . . . . . . . . .	Text   	 ;
+local_DS . . . . . . . . . . . .	Number	 262Eh	 
+save_1 . . . . . . . . . . . . .	DWord	 25D4	  _TEXT	
+save_2 . . . . . . . . . . . . .	DWord	 25D8	  _TEXT	
+save_3 . . . . . . . . . . . . .	DWord	 25DC	  _TEXT	
+save_4 . . . . . . . . . . . . .	DWord	 25E0	  _TEXT	
+weirdcount . . . . . . . . . . .	DWord	 25C4	  _TEXT	
+
+	   0 Warnings
+	   0 Errors

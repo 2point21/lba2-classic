@@ -1,0 +1,64 @@
+# name the compiler
+!ifdef %NT
+CPP= $(%WATCOM)\binnt\wpp386
+CC = $(%WATCOM)\binnt\wcc386
+WL = $(%WATCOM)\binnt\wlib
+!else
+CPP= $(%WATCOM)\binw\wpp386
+CC = $(%WATCOM)\binw\wcc386
+WL = $(%WATCOM)\binw\wlib
+!endif
+
+!ifdef %MASM
+ASM= $(%MASM)\bin\ml
+!else
+ASM= f:\compil\masm611\bin\ml
+!endif
+
+OBJETS1 =	ANIM.OBJ	BODY.OBJ	CLEAR.OBJ	FRAME.OBJ	&
+		INTANIM.OBJ	INTERDEP.OBJ	INTFRAME.OBJ	LIBINIT.OBJ	&
+		STOFRAME.OBJ	TEXTURE.OBJ
+
+!ifeq BT NT
+CFLAGS	= /D_WIN32 /hc /fh=NT
+AFLAGS	= /D_WIN32
+LIB     = NT_ANI
+OBJETS2 =
+!else
+CFLAGS	= /D_DOS4GW /fh=DOS
+AFLAGS	= /D_DOS4GW
+LIB     = DOS_ANI
+OBJETS2 =
+!endif
+
+!ifeq CALL REG
+CFLAGS	= $+$(CFLAGS)$-R.PCH /4r
+LIB     = $+$(LIB)$-R
+AFLAGS  = $+$(AFLAGS)$- /DREG_CALL
+!else
+CFLAGS	= $+$(CFLAGS)$-S.PCH /4s
+LIB     = $+$(LIB)$-S
+AFLAGS  = $+$(AFLAGS)$- /DSTACK_CALL
+!endif
+
+CFLAGS	= $+$(CFLAGS)$- /D_BUILDING_LIB /d1 /oaxt /zq /s /w3 /mf /DLIB_LOCAL /bt=$(BT) /zp8
+LFLAGS	= /c /q /b
+AFLAGS	= $+$(AFLAGS)$- /nologo /Cx /Zm /c /W0 /Sa /Zd
+
+.SILENT
+
+$(LIB).LIB: $(OBJETS1) $(OBJETS2)
+	*$(WL) $(LFLAGS) $(LIB) $?
+	PRNTITRE G "$(LIB)"
+
+.cpp.obj:
+	PRNTITRE M "$*.CPP"
+	$(CPP) $* $(CFLAGS)
+
+.c.obj:
+	PRNTITRE M "$*.C"
+	$(CC) $* $(CFLAGS)
+
+.asm.obj:
+	PRNTITRE M "$*.ASM"
+	$(ASM) $(AFLAGS) $*.ASM

@@ -1,0 +1,460 @@
+configfile
+paint all plain menu bright white on black
+paint all standout menu bright blue on black
+paint all disabled menu white on black
+paint all active menu black on white
+paint all active standout menu black on white
+paint all frame menu white on black
+paint all disabled title white on black
+paint all active frame black on white
+paint all disabled frame white on black
+paint all icon bright white on black
+paint all active disabled menu blue on black
+paint all plain white on black
+paint all active blue on black
+paint all selected black on white
+paint all standout bright white on black
+paint all button bright white on black
+paint all active standout bright blue on black
+paint status bright white on black
+paint dialog plain white on black
+paint dialog frame black on white
+paint dialog shadow black on black
+paint dialog plain button black on white
+paint dialog standout button blue on black
+paint dialog active button bright blue on black
+paint dialog active standout button bright blue on black
+display all /close
+display status
+display file /close 0,0,10000,9984
+display stack /close 8000,4992,2000,4992
+display watch /open 4000,5408,4000,4576
+display modules /open 8000,5408,2000,4576
+display register /open 0,5408,4000,4576
+display assembly /open 0,0,10000,5408
+display source /open 0,0,10000,5408
+display locals /open 0,5408,4000,4576
+font all {-13 0 0 0 700 0 0 0 0 1 2 1 34 "MS Sans Serif"}
+font memory {-12 0 0 0 400 0 0 0 0 1 2 1 49 "Fixedsys"}
+set autosave off
+set assembly lower outside source hexadecimal 
+set variable partial nocode noinherit nocompiler members private protected 
+set variable partial nocode noinherit nocompiler members private protected 
+set functions all 
+set globals all 
+set modules typed 
+set register hexadecimal normal 
+set fpu decimal 
+set bell on
+set dclick 300
+set implicit on
+set radix 10
+set recursion on
+set search /caseignore/norx {^$\.[(|?+*~@}
+set source {.}
+set symbol /ignore {*}
+set symbol /add /ignore {*_}
+set symbol /add /ignore {_*}
+set tab 8
+set macro source v {
+    accel {
+        Module
+    }
+    
+}
+set macro assembly v {
+    accel {
+        Module
+    }
+    
+}
+set macro all v {
+    dis source;accel {
+        Module
+    }
+    
+}
+set macro all ? {
+    display watch; accel {
+        new
+    }
+    
+}
+set macro all e {
+    accelerate main data {
+        Memory at
+    }
+    
+}
+set macro all i {
+    accelerate main run {
+        Trace into
+    }
+    
+}
+set macro all x {
+    accelerate main run {
+        next sequential
+    }
+    
+}
+set macro all { } {
+    accelerate main run {
+        step over
+    }
+    
+}
+set macro all g {
+    accelerate main run {
+        Execute to
+    }
+    
+}
+set macro all b {
+    accelerate main break {
+        New
+    }
+    
+}
+set macro all t {
+    accelerate main break {
+        Toggle
+    }
+    
+}
+set macro all : {
+    accelerate main file {
+        Command
+    }
+    
+}
+set macro all / {
+    accel main search {
+        Find
+    }
+    
+}
+set macro all n {
+    accelerate main search {
+        Next
+    }
+    
+}
+set macro all N {
+    accelerate main search {
+        Previous
+    }
+    
+}
+set macro all u {
+    accelerate main undo {
+        undo
+    }
+    
+}
+set macro all U {
+    accelerate main undo {
+        redo
+    }
+    
+}
+set macro all j {
+    Window CursorDown
+}
+set macro all k {
+    Window CursorUp
+}
+set macro all h {
+    Window CursorLeft
+}
+set macro all l {
+    Window CursorRight
+}
+set macro all . {
+    Window Popup
+}
+set macro all = {
+    accel main search {
+        Match
+    }
+    
+}
+set macro all CTRL-z {
+    accel main window {
+        Zoom
+    }
+    
+}
+set macro all CTRL-UP {
+    accel main undo {
+        Unwind Stack
+    }
+    
+}
+set macro all CTRL-DOWN {
+    accel main undo {
+        Rewind Stack
+    }
+    
+}
+set macro all CTRL-LEFT {
+    accel main undo {
+        Undo
+    }
+    
+}
+set macro all CTRL-RIGHT {
+    accel main undo {
+        Redo
+    }
+    
+}
+set macro all CTRL-BACKSPACE {
+    accel main undo {
+        Home
+    }
+    
+}
+set macro all ALT-F10 {
+    Window PopUp
+}
+set macro all CTRL-F6 {
+    Window Next
+}
+set macro all CTRL-TAB {
+    Window Next
+}
+set macro all F1 {
+    help
+}
+set macro all F2 {
+    accel main data {
+        register
+    }
+    
+}
+set macro all F3 {
+    if ( dbg$src ) {
+        display register; display assembly
+    }
+    else {
+        display locals; display source
+    }
+    
+}
+set macro all F4 {
+    accel main window {
+        Application
+    }
+    
+}
+set macro all F5 {
+    accel main run {
+        Go
+    }
+    
+}
+set macro all F6 {
+    accel main window {
+        Next
+    }
+    
+}
+set macro all F8 {
+    accel main run {
+        Trace Into
+    }
+    
+}
+set macro all F9 {
+    accel main break {
+        toggle
+    }
+    
+}
+set macro all F10 {
+    accel main run {
+        Step Over
+    }
+    
+}
+set macro all ALT-1 {
+    accel main data {
+        locals
+    }
+    
+}
+set macro all ALT-2 {
+    accel main data {
+        watch
+    }
+    
+}
+set macro all ALT-3 {
+    accel main code {
+        source
+    }
+    
+}
+set macro all ALT-4 {
+    accel main file {
+        view
+    }
+    
+}
+set macro all ALT-5 {
+    accel main data {
+        memory at
+    }
+    
+}
+set macro all ALT-6 {
+    accel main data {
+        memory at
+    }
+    
+}
+set macro all ALT-7 {
+    accel main data {
+        register
+    }
+    
+}
+set macro all ALT-8 {
+    accel main data {
+        80x87 fpu
+    }
+    
+}
+set macro all ALT-9 {
+    accel main file {
+        command
+    }
+    
+}
+set macro all CTRL-F4 {
+    Window Close
+}
+set macro all CTRL-F5 {
+    Window Restore
+}
+set macro all CTRL-F7 {
+    print {
+        Window Move HotKey not implemented
+    }
+    
+}
+set macro all CTRL-F8 {
+    print {
+        Window Size HotKey not implemented
+    }
+    
+}
+set macro all CTRL-F9 {
+    Window Minimize
+}
+set macro all CTRL-F10 {
+    Window Maximize
+}
+set macro all ALT-F5 {
+    print {
+        Window Cascade HotKey not implemented
+    }
+    
+}
+set macro source CTRL-\ {
+    accel main search {
+        Next
+    }
+    
+}
+set macro all ALT-/ {
+    accel main search {
+        Next
+    }
+    
+}
+set macro watch CTRL-y {
+    accel {
+        Delete
+    }
+    
+}
+set macro all SHIFT-F5 {
+    print {
+        Window Tile HotKey not implemented
+    }
+    
+}
+set macro all SHIFT-F6 {
+    Window Previous
+}
+set macro all SHIFT-F9 {
+    display watch; accel {
+        new
+    }
+    
+}
+set supportroutine {__U4M}{__U4FS}{__U4FD}{__U4D}{__TNK}{__TNC}{__STK}
+set supportroutine {__SCN4}{__SCN2}{__SCN1}{__RSU4}{__RSI4}{__RDU4}{__RDI4}
+set supportroutine {__RDFS}{__PTS}{__PTC}{__PRO}{__PIS}{__PIA}{__I4M}{__I4FS}
+set supportroutine {__I4FD}{__I4D}{__GRO}{__GETDS}{__FlatToFar16}{__Far16ToFlat}
+set supportroutine {__Far16Pascal2}{__Far16Func2}{__Far16Cdecl2}{__FSU4}
+set supportroutine {__FSS}{__FSN}{__FSM}{__FSI4}{__FSFD}{__FSD}{__FSC}
+set supportroutine {__FSA}{__FDU4}{__FDS}{__FDN}{__FDM}{__FDI4}{__FDFS}
+set supportroutine {__FDD}{__FDC}{__FDA}{__EPI}{__EDS}{__EDM}{__EDD}{__EDC}
+set supportroutine {__EDA}{__CHP}{__CHK}{RT@*}{IF@*}{__wcpp_*}
+flip on
+hook progstart {
+    if _dbg@dbg$loaded && !?_dbg@nogo {
+        if ?@@fmain {
+            if !?@@fwinmain {
+                go/until/noflip @@fmain
+            }
+            else {
+                go/until @@fmain
+            }
+        }
+        elseif ?@@main {
+            if !?@@winmain {
+                go/until/noflip @@main
+            }
+            else {
+                go/until @@main
+            }
+        }
+        elseif ?@@fwinmain {
+            go/until/noflip @@fwinmain
+        }
+        elseif ?@@winmain {
+            go/until/noflip @@winmain
+        }
+    }
+    ;
+}
+hook progend {
+    
+}
+hook dllstart {
+    
+}
+hook dllend {
+    
+}
+hook execstart {
+    
+}
+hook execend {
+    
+}
+hook sourceinfo {
+    display locals; display source
+}
+hook assemblyinfo {
+    display register; display assembly
+}
+hook modulechange {
+    
+}
+hook quit {
+}

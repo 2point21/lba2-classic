@@ -1,0 +1,107 @@
+# name the compilers
+
+!ifdef %RAMSYS
+
+WATCOM	= e:\compil\watcom
+ASM	= e:\compil\masm611\bin\ml
+PCHDIR	= e:\
+
+!else
+
+WATCOM	= $(%WATCOM)
+!ifdef %MASM
+ASM	= $(%MASM)\bin\ml
+!else
+ASM	= f:\compil\masm611\bin\ml
+!endif
+PCHDIR	= f:
+
+!endif
+
+!ifdef %NT
+CP = $(WATCOM)\binnt\wpp386
+CC = $(WATCOM)\binnt\wcc386
+WL = $(WATCOM)\binnt\wlib
+LL = $(WATCOM)\binnt\wlink
+!else
+CP = $(WATCOM)\binw\wpp386
+CC = $(WATCOM)\binw\wcc386
+WL = $(WATCOM)\binw\wlib
+LL = $(WATCOM)\binw\wlink
+!endif
+
+AFLAGS  = /Cx /Zm /Zi /c /W0 /Sa /nologo
+CFLAGS  = /hw /oneatxz /zp2 /5r /zq /s /w3 /bt=DOS /fh=$(PCHDIR)lba.pch /DDOS4GW
+LLFLAGS = SYSTEM dos4g OP CASEEXACT,QUIET,STACK=7000,DOSSEG,SYMF,MAP
+
+!ifdef %LBA2HD
+CFLAGS = $+$(CFLAGS)$- /DONE_GAME_DIRECTORY /d1 /DCDROM
+#/DDEBUG_TOOLS
+#/DTEST_TOOLS
+
+LLFLAGS = $+$(LLFLAGS)$- DEBUG ALL OP STUB=MINISTUB.EXE
+!else
+!ifdef %LBA2DEMO
+CFLAGS = $+$(CFLAGS)$- /d1 /DDEMO /DONE_GAME_DIRECTORY
+#/d2
+#/DDEBUG_TOOLS
+LLFLAGS = $+$(LLFLAGS)$- DEBUG ALL OP STUB=MINISTUB.EXE
+!else
+CFLAGS =  $+$(CFLAGS)$- /DDEBUG_TOOLS /d2 /DCDROM
+LLFLAGS = $+$(LLFLAGS)$- DEBUG ALL OP STUB=STUB.EXE
+!endif
+!endif
+
+.SILENT
+
+.EXTENSIONS:
+.EXTENSIONS: .exe .obj .asm .c .cpp
+
+VERSION	= version.obj
+
+OBJETS  = perso.obj bezier.obj diskfunc.obj fiche.obj extra.obj incrust.obj  &
+	  global.obj input.obj grille.obj grille_a.obj func.obj cheatcod.obj &
+	  animtex.obj impact.obj buggy.obj wagon.obj ambiance.obj gamemenu.obj &
+	  fire.obj plasma.obj pof.obj patch.obj geretrak.obj gerelife.obj &
+	  flow.obj flow_a.obj dart.obj hercule.obj hercul_a.obj validpos.obj &
+	  dec_xcf.obj playacf.obj copy.obj object.obj savegame.obj mem.obj &
+	  intext.obj extfunc.obj rain.obj compress.obj lzss.obj Message.obj &
+	  invent.obj comporte.obj hologlob.obj holoplan.obj holobody.obj &
+	  sort.obj config.obj credits.obj zv.obj scan.obj keyb.obj music.obj &
+	  critical.obj
+
+LIBS	= ..\tools\perso\3dext\3dextg.lib
+
+EXE     = LBA0
+
+$(EXE).exe: $(VERSION) $(LIBS)
+	echo    Link $(EXE).EXE
+	*$(LL) $(LLFLAGS) NAME $(EXE).exe LIB $(LIBS) FILE *.obj
+	prntitre M "$(EXE) OK"
+
+.c.obj :
+	PRNTITRE M "$*.C"
+	$(CC) $^& $(CFLAGS)
+
+.cpp.obj :
+	PRNTITRE M "$*.CPP"
+	$(CP) $^& $(CFLAGS)
+
+.asm.obj :
+	PRNTITRE M "$*.ASM"
+	$(ASM) $(AFLAGS) $^&.ASM
+
+$(VERSION): version.cpp $(OBJETS)
+	PRNTITRE M "version.cpp"
+	$(CP) version $(CFLAGS)
+
+message.obj: message.cpp
+	PRNTITRE M "message.cpp"
+	del $(PCHDIR)lba.pch
+	$(CP) message $(CFLAGS)
+
+gamemenu.obj: gamemenu.cpp
+	PRNTITRE M "gamemenu.cpp"
+	del $(PCHDIR)lba.pch
+	$(CP) gamemenu $(CFLAGS)
+

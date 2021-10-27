@@ -1,0 +1,58 @@
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		.386p
+
+		.model SMALL, SYSCALL
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		.DATA
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		extrn	SYSCALL	Chooser_RtnI:DWORD
+		extrn	SYSCALL	Chooser_RtnF:DWORD
+		extrn	SYSCALL	Chooser_RtnM:DWORD
+		extrn	SYSCALL	Chooser_Result:DWORD
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		public	SYSCALL LongRotateProjectPointIso
+
+LongRotateProjectPointIso	dd	offset	LongRotateProjectPointIsoInit
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		.CODE
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		extrn	SYSCALL	LongRotateProjectPointIsoI:PROC
+		extrn	SYSCALL	LongRotateProjectPointIsoF:PROC
+		extrn	SYSCALL	LongRotateProjectPointIsoM:PROC
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+
+		extrn	SYSCALL	Chooser:PROC
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+;void	LongRotateProjectPointIso(S32 *Mat, S32 x, S32 y, S32 z)	;
+
+;#pragma aux 	LongRotateProjectPointIso	\
+;	parm caller	[esi] [eax] [ebx] [ecx]	\
+;	modify exact	[eax ebx ecx edx edi]
+
+LongRotateProjectPointIsoInit proc
+
+		mov	[Chooser_RtnI], offset LongRotateProjectPointIsoI	; Integer
+		mov	[Chooser_RtnF], offset LongRotateProjectPointIsoF	; FPU
+		mov	[Chooser_RtnM], offset LongRotateProjectPointIsoM	; MMX
+		mov	[Chooser_Result], offset LongRotateProjectPointIso	; Pointer
+		jmp	Chooser
+
+LongRotateProjectPointIsoInit endp
+
+;*様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様様*
+;		The
+		END
+

@@ -5,7 +5,7 @@
 
 	public	NoLanguage	Expand
 
-;*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*
+;*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*
 
 Expand	PROC USES ESI EDI EBX EBP,\
 	src:DWORD, dest:DWORD, count:DWORD   ; COUNT devrait etre un DWORD !!!
@@ -22,7 +22,7 @@ boucle:
 	lodsb
 	mov	bx, ax			; octet d'info dans bl
 next:
-	shr	bx, 1			; ca va plus vite de d‚caler bx ou
+	shr	bx, 1			; ca va plus vite de dÃ©caler bx ou
 					; bl ? (Vrai question, chef)
 	jnc	copie			; chaque bit indique la nature de
 					; ce qui suit
@@ -46,8 +46,8 @@ copie:					; ici on a 16 bits formant un offset
 	shr	eax, 4			;
 					; on recupere l'offset
 	not	eax			; en fait c'est un decalage en
-					; arriŠre - 1 (not ax = -ax - 1)
-	add	eax, edi		; par rapport … di (ax = di - ax - 1)
+					; arriÃ¨re - 1 (not ax = -ax - 1)
+	add	eax, edi		; par rapport Ã  di (ax = di - ax - 1)
 	xchg	eax, esi		; on sauve si tout en lui donnant
 					; l'ofset calcule
 	rep	movsb			; on fait la recopie

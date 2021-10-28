@@ -222,7 +222,7 @@ l1:     	push	esi
 		mov	bl, byte ptr[ebp]	; nb blocs
 		inc	ebp
 
-		mov	bh, byte ptr[NbPix]	; nb point … copier
+		mov	bh, byte ptr[NbPix]	; nb point Ã  copier
 
 		mov	ecx, [OffsetBegin]	; start x
 		mov	ah, cl			; nb pix count
@@ -251,7 +251,7 @@ l0:		mov	al, byte ptr[ebp]	; nb pix to jump
 
 rptj:		neg	ah			; ah nb pix to jump
 		mov	cl, ah
-		sub	bh, ah			; reste … ecrire
+		sub	bh, ah			; reste Ã  ecrire
 		jle	aplus
 		add	edi, ecx
 		add	esi, ecx
@@ -259,7 +259,7 @@ rptj:		neg	ah			; ah nb pix to jump
 
 rgtc:		neg	ah			; al nb pix to copy
 		mov	cl, ah
-		sub	bh, ah			; reste … ecrire
+		sub	bh, ah			; reste Ã  ecrire
 		jc	cpt			; copy pas tout
 		rep	movsb			; copy
 		jz	aplus			; tombe pile
@@ -274,7 +274,7 @@ okjump:		mov	cl, byte ptr[ebp]	; al nb pix to jump
 		inc	ebp
 		dec	bl
 		jz	aplus
-		sub	bh, cl			; reste … ecrire
+		sub	bh, cl			; reste Ã  ecrire
 		jle	aplus			; fini
 		add	edi, ecx
 		add	esi, ecx
@@ -282,7 +282,7 @@ okjump:		mov	cl, byte ptr[ebp]	; al nb pix to jump
 okdraw:		mov	cl, byte ptr[ebp]	; nb pix to copy
 		inc	ebp
 		dec	bl
-		sub	bh, cl			; reste … ecrire
+		sub	bh, cl			; reste Ã  ecrire
 		jc	cpt			; copy pas tout
 		rep	movsb			; copy
 		jz	aplus			; tombe pile

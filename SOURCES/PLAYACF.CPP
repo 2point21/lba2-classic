@@ -9,7 +9,7 @@ char		*EndListAcf ;
 #define	SIZE_BUFFER_SMACK	1000000L
 U8  	*BufferSmack ;
 #else
-U8  	*BufferSmack ;// initialisÇ dans MEM.CPP
+U8  	*BufferSmack ;// initialis√© dans MEM.CPP
 #endif
 
 //---------------------------------------------------------------------------
@@ -245,7 +245,7 @@ S32	PlayAcf( char *name )
 					smackflags |= SMACKTRACK4 ;
 					break ;
 
-				case 1:	// Franáais
+				case 1:	// Fran√ßais
 					smackflags |= SMACKTRACK2 ;
 					break ;
 
@@ -308,7 +308,7 @@ S32	PlayAcf( char *name )
 #else
 //	Fd = OpenRead(name_acf)	;// Ouvrir ressource + Seek
 
-	// ouvre la ressource et positionne le handle Ö l'offet ou se trouve
+	// ouvre la ressource et positionne le handle √† l'offet ou se trouve
 	// la sequence
 	if( !HQF_Init( PathAcf, n ) )
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)||!defined(CDROM)
@@ -368,7 +368,7 @@ S32	PlayAcf( char *name )
 
 	SetBlackPal();
 
-	BoxReset()  ;// pour etre sñr de ne pas utiliser Screen !
+	BoxReset()  ;// pour etre s√ªr de ne pas utiliser Screen !
 	Cls() ;
 	BoxUpdate() ;
 

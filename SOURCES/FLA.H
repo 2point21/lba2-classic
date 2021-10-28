@@ -26,7 +26,7 @@
 #define	FLI_BRUN	15
 #define	FLI_COPY	16
 
-// Structures utilis‚es pour les fichiers format FLI
+// Structures utilisÃ©es pour les fichiers format FLI
 typedef struct
 	{
 	LONG	size		;
@@ -73,7 +73,7 @@ typedef struct
 #define	FLA_BRUN		8
 #define	FLA_COPY		9
 
-// Structures utilis‚es pour les fichiers format FLA
+// Structures utilisÃ©es pour les fichiers format FLA
 typedef struct                  // entete de fichier FLA
 	{
 		char	Version[5]	;

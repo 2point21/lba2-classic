@@ -412,7 +412,7 @@ CopyBlockPhys		endp
 ;----------------------------------------------------------------------------
 ;			Flip()
 ;
-;	Attention: de Log (m‚moire) vers Phys (vid‚o ram) … modifier
+;	Attention: de Log (mÃ©moire) vers Phys (vidÃ©o ram) Ã  modifier
 ;
 Flip			proc
 
@@ -487,7 +487,7 @@ SuperIncrust		MACRO
 Again:
 			xchg	esi, edi
 			rep	scasb		; Arret quand != 0
-			jne	OkCopy		; Ok Data Rencontr‚e(s)
+			jne	OkCopy		; Ok Data RencontrÃ©e(s)
 ;-----------------------
 			add	esi, ebx
 			xchg	esi, edi

@@ -1,11 +1,11 @@
 #include	"c_extern.h"
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-     Û    ÛÛÜ Û Ûßßßß ÛßßßÛ Û   Û ÛÛßßß ßßÛßß       ÛßßßÜ  Û    ÛÛßßß ÛßßßÛ
-     ÛÛ   ÛÛßÛÛ ÛÛ    ÛÛßÛß ÛÛ  Û ßßßßÛ   ÛÛ        ÛÛ  Û  ÛÛ   ßßßßÛ ÛÛßßß
-     ßß   ßß  ß ßßßßß ßß  ß ßßßßß ßßßßß   ßß  ßßßßß ßßßß   ßß   ßßßßß ßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+     â–ˆ    â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆ   â–ˆ â–ˆâ–ˆâ–€â–€â–€ â–€â–€â–ˆâ–€â–€       â–ˆâ–€â–€â–€â–„  â–ˆ    â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ
+     â–ˆâ–ˆ   â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆ  â–ˆ â–€â–€â–€â–€â–ˆ   â–ˆâ–ˆ        â–ˆâ–ˆ  â–ˆ  â–ˆâ–ˆ   â–€â–€â–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–€
+     â–€â–€   â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€   â–€â–€  â–€â–€â–€â–€â–€ â–€â–€â–€â–€   â–€â–€   â–€â–€â–€â–€â–€ â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 S32	InitIncrustDisp(	S16 type,
 				S16 num,
@@ -17,7 +17,7 @@ S32	InitIncrustDisp(	S16 type,
 	T_INCRUST_DISP	*ptrdisp ;
 	S32	n ;
 
-	// Li‚s aux objets de l'inventaire changeant d'‚tat
+	// LiÃ©s aux objets de l'inventaire changeant d'Ã©tat
 	if( (type&0xFF)==INCRUST_INVENTORY )
 	{
 		num = TabInv[num].TabObj3D[ TabInv[num].IdObj3D ] ;
@@ -39,7 +39,7 @@ S32	InitIncrustDisp(	S16 type,
 
 			if( (type&0xff)==INCRUST_CMPT )
 			{
-				// ATTENTION: Grosse Magouille: les compteurs sont tjs affich‚s
+				// ATTENTION: Grosse Magouille: les compteurs sont tjs affichÃ©s
 				// en y=20, ceci permet d'utiliser le Y pour memoriser la
 				// valeur courante du compteur (cf FlagAnimWhoSpeak)
 				ptrdisp->Y = num ;
@@ -62,11 +62,11 @@ S32	InitIncrustDisp(	S16 type,
 	return -1 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	PosObjIncrust( T_INCRUST_DISP *ptrdisp, S32 num )
 {
-	// au cas ou on ait plusieurs objets 3D tournant en mˆme temps !
+	// au cas ou on ait plusieurs objets 3D tournant en mÃªme temps !
 	S32	x = 10 ;
 	S32	n ;
 	S32	type ;
@@ -97,7 +97,7 @@ void	PosObjIncrust( T_INCRUST_DISP *ptrdisp, S32 num )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	ChangeIncrustPos( S32 xp0, S32 yp0, S32 xp1, S32 yp1 )
 {
@@ -120,7 +120,7 @@ void	ChangeIncrustPos( S32 xp0, S32 yp0, S32 xp1, S32 yp1 )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	ClearIncrusts( S32 type )
 {
@@ -133,12 +133,12 @@ void	ClearIncrusts( S32 type )
 	{
 		if( ptrdisp->Type==type )
 		{
-			ptrdisp->Num = -1 ;// libŠre slot
+			ptrdisp->Num = -1 ;// libÃ¨re slot
 		}
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 S32	LastNumBulle = -1 ;
 S32	SpriteBulle = SPRITE_BULLE_RIGHT ;
@@ -176,4 +176,4 @@ void	DrawBulle( S32 numobj )
 	UnsetClip() ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/

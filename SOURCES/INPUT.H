@@ -7,14 +7,14 @@
 
 #define	I_UP			(1<<0)	// 'UP'		Avancer
 #define	I_DOWN			(1<<1)	// 'DOWN'	Reculer
-#define	I_LEFT			(1<<2)	// 'LEFT'	Tourner … Gauche
-#define	I_RIGHT			(1<<3)	// 'RIGHT'	Tourner … droite
+#define	I_LEFT			(1<<2)	// 'LEFT'	Tourner Ã  Gauche
+#define	I_RIGHT			(1<<3)	// 'RIGHT'	Tourner Ã  droite
 #define	I_THROW			(1<<4)  // 'ALT'	Utilisation arme
 #define	I_COMPORTEMENT		(1<<5)	// 'CTRL'	Comportement Menu
 #define	I_INVENTORY		(1<<6)	// 'SHIFT', 'I' Inventaire
 #define	I_ACTION_M		(1<<7)	// 'SPACE' 	Action du Comportement
 #define	I_ACTION_ALWAYS		(1<<8)	// 'W'   	Dialogue/Fouille
-#define	I_RETURN		(1<<9)	// 'RETURN'	Recentrage cam‚ra
+#define	I_RETURN		(1<<9)	// 'RETURN'	Recentrage camÃ©ra
 #define	I_MENUS			(1<<10)	// 'ESC'	Menus
 #define	I_HOLOMAP		(1<<11)	// 'H' 		Holomap
 #define	I_PAUSE			(1<<12)	// 'P' 		Pause
@@ -30,9 +30,9 @@
 #define	I_LOAD			(1<<20) // 'F3' et 'L' 	Charger
 #define	I_OPTIONS		(1<<21)	// 'F4' et 'O' 	Options Menu
 
-#define	I_CAMERA		(1<<22)	// 'ý'		Tourner la camera
-#define	I_CAMERA_LEVEL_PLUS	(1<<23)	// '+'		Niveau Cam‚ra suivant
-#define	I_CAMERA_LEVEL_MOINS	(1<<24)	// '-'		Niveau Cam‚ra Precedent
+#define	I_CAMERA		(1<<22)	// 'Â²'		Tourner la camera
+#define	I_CAMERA_LEVEL_PLUS	(1<<23)	// '+'		Niveau CamÃ©ra suivant
+#define	I_CAMERA_LEVEL_MOINS	(1<<24)	// '-'		Niveau CamÃ©ra Precedent
 
 #define	I_WEAPON_1		(1<<25)	// '1'		Arme 1 (Balle Magique)
 #define	I_WEAPON_2		(1<<26)	// '2'		Arme 2 (Balle Magique)
@@ -80,19 +80,19 @@ typedef struct {
 extern	T_DEF_KEY      	DefKeys[MAX_INPUT+1] ;
 extern	T_DEF_KEY      	MemoDefKeys[MAX_INPUT+1] ;
 
-// tableau de configuration des touches utilis‚ au cours du jeu
+// tableau de configuration des touches utilisÃ© au cours du jeu
 extern	U32		TabInputBit[MAX_INPUT*2+1]  ;
 
 
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			ÛÛÛÛÛÛ¿ ÛÛ¿ ÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿
-			ÀÄÛÛÚÄÙ ÛÛÛ¿ÛÛ³ ÀÄÛÛÚÄÙ ÀÄÛÛÚÄÙ
-			  ÛÛ³   ÛÛÛÛÛÛ³   ÛÛ³     ÛÛ³
-			  ÛÛ³   ÛÛÚÛÛÛ³   ÛÛ³     ÛÛ³
-			ÛÛÛÛÛÛ¿ ÛÛ³ÀÛÛ³ ÛÛÛÛÛÛ¿   ÛÛ³
-			ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ ÀÄÄÄÄÄÙ   ÀÄÙ
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+			â””â”€â–ˆâ–ˆâ”Œâ”€â”˜ â–ˆâ–ˆâ–ˆâ”â–ˆâ–ˆâ”‚ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜
+			  â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚     â–ˆâ–ˆâ”‚
+			  â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”Œâ–ˆâ–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚     â–ˆâ–ˆâ”‚
+			â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ”‚â””â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”   â–ˆâ–ˆâ”‚
+			â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜ â””â”€â”€â”€â”€â”€â”˜   â””â”€â”˜
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 //-------------------------------------------------------------------------
 extern	void	InitInput( void ) ;

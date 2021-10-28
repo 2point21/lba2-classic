@@ -598,7 +598,7 @@ gotest:	mov	word ptr [bankadr],offset _nobank
 	mov	ax,4f00h
 	int	10h
 	cmp	ax,4fh
-;—
+;Ã¹
 	jnz	novesa
 
 	mov	[bksize],64		; (for now)
@@ -1066,18 +1066,18 @@ noct:	mov	dx,3dah			;Test for Tseng 4000 & 3000
 	shr	ah,1
 	xor	al,ah
 	test	al,00001000b
-;—
+;Ã¹
 	jz	nots
 
 	mov	dx,3d4h			;check for Tseng 4000 series
 	mov	ax,0f33h
 	call	_isport2
-;—
+;Ã¹
 	jnz	not4
 
 	mov	ax,0ff33h		;top 4 bits should not be there
 	call	_isport2
-;—
+;Ã¹
 	jz	nots
 
 

@@ -14,7 +14,7 @@ extern	S32	FlecheForcee ;
 extern  U16   	*BufOrder       ;
 extern  U8   	*BufText        ;
 
-extern	S32	DemoSlide 	;	// Mode dÃ©mo non jouable
+extern	S32	DemoSlide 	;	// Mode d‚mo non jouable
 extern	S32	RestartMusic	;
 
 extern	U8	FlagRain 	;
@@ -53,8 +53,8 @@ extern	U8	*PtrTransPal  	;
 extern	U8	*PtrXplPalette 	;
 extern	XPL_HEADER	*PtrXplHeader ;
 
-extern	S32	IdxPalette 	;	// numÃ©ro de palette dans le HQR
-extern	S32	LastIdxPalette 	;	// numÃ©ro de la palette prÃ©cÃ©dente dans le HQR
+extern	S32	IdxPalette 	;	// num‚ro de palette dans le HQR
+extern	S32	LastIdxPalette 	;	// num‚ro de la palette pr‚c‚dente dans le HQR
 
 extern  S32    	MyKey ;
 
@@ -136,7 +136,7 @@ extern	U32	MapPGroundMem ;
 extern	U32	ListTexDefMem ;
 extern	U32	MapSommetYMem ;
 extern	U32	MapIntensityMem ;
-extern	U32	SCCMem ;	// CalculÃ© dynamiquement
+extern	U32	SCCMem ;	// Calcul‚ dynamiquement
 
 /*-------- RESSOURCES ---------------------------------------------*/
 
@@ -204,7 +204,7 @@ extern	S32    SpriteY ;
 
 extern  S32    FlagWater ;
 
-// perso sauvegarde entrÃ©e cube
+// perso sauvegarde entr‚e cube
 extern  U8     SaveComportement ;
 
 /*--------- Extra objs ----------------------------*/
@@ -285,11 +285,11 @@ extern	U8	MagicHitForce[] ;
 extern	U8	MagicBallHitForce[] ;
 extern	U8	MagicBallSprite[] ;
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-	Liste des Globales sauvÃ©es dans les fichiers de sauvegarde .LBA
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-extern	S32		NewCube ;	// change cube demandÃ©
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+	Liste des Globales sauv‚es dans les fichiers de sauvegarde .LBA
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+extern	S32		NewCube ;	// change cube demand‚
 extern  U8   		ListVarCube[] ;
 extern  S16    		ListVarGame[] ;
 extern  U8    		Comportement ;
@@ -303,7 +303,7 @@ extern  U8    		NbLittleKeys ;
 extern  S16    		NbCloverBox ;
 extern  S32    		SceneStartX, SceneStartY, SceneStartZ ;
 extern  U8    		Weapon ;
-			// TimerRef en extern sauvÃ© ici
+			// TimerRef en extern sauv‚ ici
 //extern  S32    		LastFire ;
 extern  U8    		Bulle ;
 extern  U8    		ActionNormal ;
@@ -332,7 +332,7 @@ extern  T_EXTRA 	ListExtra[] ;
 extern  S32    		NbZones ;
 extern  T_ZONE  	*ListZone ;
 extern  T_INCRUST_DISP  ListIncrustDisp[] ;
-			// ListPartFlow en extern sauvÃ© ici
+			// ListPartFlow en extern sauv‚ ici
 
 extern	MOVE	SampleAlwaysMove ;	// pour repaner les samples always de tps en tps
 
@@ -348,7 +348,7 @@ extern	S32	ExtraConque ;	// Numero extra visant Twinsen (avec Conque)
 extern	U8	PingouinActif ;	// Pingouin en cours d'utilisation
 
 extern	T_TABALLCUBE	TabAllCube[]	;
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 extern	U8	NumObjDial	;
 extern	S32	DialNbLine 	;	// pour la version demo le 02/08/96

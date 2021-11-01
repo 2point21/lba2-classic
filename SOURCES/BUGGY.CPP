@@ -1,8 +1,8 @@
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-			 â–ˆâ–€â–€â–ˆ  â–ˆ   â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆ  â–„â–€
-			 â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€
-                         â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+			 ÛßßÛ  Û   Û Ûßßßß Ûßßßß Û  Üß
+			 ÛÛßßÛ ÛÛ  Û ÛÛ ßÛ ÛÛ ßÛ ÛÛß
+                         ßßßßß ßßßßß ßßßßß ßßßßß ßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
 #include 	"c_extern.h"
 
@@ -12,7 +12,7 @@
 #define	MAX_SPEED		3800
 #define	TEMPO_GEAR		1200	// tempo changement de vitesse
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
 S_BUGGY	ListBuggy[MAX_BUGGYS] ;
 
@@ -21,9 +21,9 @@ S32	TimerGear ;
 
 U8	NumBuggy = 0	;
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
-//â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
+//þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ
 // Initialise Pos et Cube Buggy Scenarique pris par Twinsen
 void	InitBuggy( U8 numobj, U32 flaginit )
 {
@@ -31,7 +31,7 @@ void	InitBuggy( U8 numobj, U32 flaginit )
 	T_OBJET	*ptrobj = &ListObjet[numobj] ;
 
 	// Pour que les objets suivent leurs tracks sans etre interrompus
-	// par le buggy (tant pis, il sera poussÃ©)
+	// par le buggy (tant pis, il sera pouss‚)
 	ptrobj->Flags |= (PUSHABLE|CHECK_CODE_JEU) ;
 
 	if( (flaginit==2)// on force le repositionnement du buggy
@@ -39,7 +39,7 @@ void	InitBuggy( U8 numobj, U32 flaginit )
 	    AND !NumBuggy) )	// premiere initialisation
 			// car le buggy vide ne peut pas etre Twinsen
 	{
-		ptb->Cube = NumCube 	;	// Port-Ludo (DÃ©sert)
+		ptb->Cube = NumCube 	;	// Port-Ludo (D‚sert)
 
 		ptb->X = ptrobj->Obj.X	;
 		ptb->Y = ptrobj->Obj.Y	;
@@ -98,9 +98,9 @@ void	InitBuggy( U8 numobj, U32 flaginit )
 	else	InitBody( NO_BODY, numobj ) ;
 }
 
-//â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
+//þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ
 
-// A Appeler en dÃ©but de partie
+// A Appeler en d‚but de partie
 
 void	ResetBuggy( void )
 {
@@ -110,7 +110,7 @@ void	ResetBuggy( void )
 	ptb->Cube = 0 ;
 }
 
-//â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
+//þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ
 
 void	TakeBuggy( void )
 {
@@ -123,7 +123,7 @@ void	TakeBuggy( void )
 
 	ObjectClear( &ptrobj->Obj ) ;
 
-	// Blindage au cas oÃ¹ le Buggy aurait bougÃ© (en Ã©tant poussÃ© par ex)
+	// Blindage au cas o— le Buggy aurait boug‚ (en ‚tant pouss‚ par ex)
 	ptb->X = ListObjet[NUM_BUGGY].Obj.X ;
 	ptb->Y = ListObjet[NUM_BUGGY].Obj.Y ;
 	ptb->Z = ListObjet[NUM_BUGGY].Obj.Z ;
@@ -177,7 +177,7 @@ void	TakeBuggy( void )
 #endif
 }
 
-//â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
+//þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ
 
 void	LeaveBuggy( U8 newcomportement )
 {
@@ -212,7 +212,7 @@ void	LeaveBuggy( U8 newcomportement )
 
 	SetComportement( newcomportement ) ;
 
-//----- Restaure buggy scÃ©narique
+//----- Restaure buggy sc‚narique
 
 	ptrobj = &ListObjet[NUM_BUGGY] ;
 
@@ -231,7 +231,7 @@ void	LeaveBuggy( U8 newcomportement )
 	PosObjetAroundAnother( NUM_BUGGY, NUM_PERSO ) ;
 }
 
-//â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
+//þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ
 
 void	MoveBuggy( T_OBJET *ptrobj )
 {
@@ -263,7 +263,7 @@ void	MoveBuggy( T_OBJET *ptrobj )
 
 		InitAnim( GEN_ANIM_LANCE, ANIM_REPEAT, NUM_PERSO ) ;
 
-		/* control direction pendant visÃ©e */
+		/* control direction pendant vis‚e */
 		if( !(ptrobj->WorkFlags&ANIM_MASTER_ROT) )
 		{
 			ptb3d->Beta += GetDeltaMove( &ptrobj->BoundAngle.Move ) ;
@@ -486,7 +486,7 @@ void	MoveBuggy( T_OBJET *ptrobj )
 	}
 }
 
-//â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
+//þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ
 
 void	DoAnimBuggy( T_OBJET *ptrobj )
 {
@@ -530,7 +530,7 @@ void	DoAnimBuggy( T_OBJET *ptrobj )
 	ptb3d->CurrentFrame[6].Beta = (S16)ptb->BetaWheel ;
 
 
-	// gestion 4 roues sÃ©parÃ©es.
+	// gestion 4 roues s‚par‚es.
 
 	// +++++++++++ front right wheel
 
@@ -711,4 +711,4 @@ void	DoAnimBuggy( T_OBJET *ptrobj )
 	ptb3d->CurrentFrame[14].Beta = (S16)ptb->BetaWheel ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß

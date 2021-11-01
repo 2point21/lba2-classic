@@ -1,17 +1,17 @@
 #include	"c_extern.h"
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-	  â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–€       â–€â–€â–ˆâ–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆ  â–„â–€
-	  â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆâ–€â–€          â–ˆâ–ˆ  â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–„
-	  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€   â–€â–€  â–€â–€  â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+	  Ûßßßß Ûßßßß ÛßßßÛ Ûßßßß       ßßÛßß ÛßßßÛ ÛßßßÛ Ûßßßß Û  Üß
+	  ÛÛ ßÛ ÛÛßß  ÛÛßÛß ÛÛßß          ÛÛ  ÛÛßÛß ÛÛßßÛ ÛÛ    ÛÛßÜ
+	  ßßßßß ßßßßß ßß  ß ßßßßß ßßßßß   ßß  ßß  ß ßß  ß ßßßßß ßß  ß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 S32	BigSampleRepeat = 1 ;
 
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
-// Permet de forcer une track Ã  un label et non Ã  un offset (en gros, comme
+// Permet de forcer une track … un label et non … un offset (en gros, comme
 // dans l'outil !)
 
 S16	SearchOffsetTrack( T_OBJET *ptrobj, U8 label )
@@ -115,13 +115,13 @@ S16	SearchOffsetTrack( T_OBJET *ptrobj, U8 label )
 
 /*-------------------------------------------------------------------------*/
 		case TM_END:
-			return( -1 ) ;	// label pas trouvÃ©
+			return( -1 ) ;	// label pas trouv‚
 		}
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-// appellÃ©e aprÃ¨s un SET_TRACK ou SET_TRACK_OBJ pour positionner tout de
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+// appell‚e aprŠs un SET_TRACK ou SET_TRACK_OBJ pour positionner tout de
 // suite le champ LabelTrack
 
 void	Track_SetLabel( T_OBJET *ptrobj )
@@ -140,7 +140,7 @@ void	Track_SetLabel( T_OBJET *ptrobj )
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
 void	DoTrack( U8 numobj )
 {
@@ -653,7 +653,7 @@ void	DoTrack( U8 numobj )
 			break ;
 
 /*-------------------------------------------------------------------------*/
-/* spÃ©cifique porte: SPRITE_3D + SPRITE_CLIP */
+/* sp‚cifique porte: SPRITE_3D + SPRITE_CLIP */
 
 		case TM_OPEN_LEFT:
 		case TM_OPEN_RIGHT:
@@ -687,7 +687,7 @@ void	DoTrack( U8 numobj )
 			break ;
 
 /*-------------------------------------------------------------------------*/
-/* spÃ©cifique porte: SPRITE_3D + SPRITE_CLIP */
+/* sp‚cifique porte: SPRITE_3D + SPRITE_CLIP */
 		case TM_CLOSE:
 			if( (ptrobj->Flags & (SPRITE_3D+SPRITE_CLIP)) == SPRITE_3D+SPRITE_CLIP )
 			{
@@ -701,7 +701,7 @@ void	DoTrack( U8 numobj )
 			break ;
 
 /*-------------------------------------------------------------------------*/
-/* spÃ©cifique porte: SPRITE_3D + SPRITE_CLIP */
+/* sp‚cifique porte: SPRITE_3D + SPRITE_CLIP */
 		case TM_WAIT_DOOR:
 			if( (ptrobj->Flags & (SPRITE_3D+SPRITE_CLIP)) == SPRITE_3D+SPRITE_CLIP )
 			{
@@ -742,15 +742,15 @@ void	DoTrack( U8 numobj )
 			ptrobj->Obj.Y = Y0 ;
 			ptrobj->Obj.Z = Z0 ;
 
-			// Pour vÃ©rifier si l'objet Ã  suivre se trouve dans une
-			// zone camÃ©ra
+			// Pour v‚rifier si l'objet … suivre se trouve dans une
+			// zone cam‚ra
 			CheckZoneSce( ptrobj, numobj ) ;
 
-			// Pour dire Ã  un objet qu'il n'est plus portÃ©
+			// Pour dire … un objet qu'il n'est plus port‚
 			// par moi
 			CheckCarrier( numobj ) ;
 
-			// si je suis portÃ© par un objet
+			// si je suis port‚ par un objet
 			nu = ptrobj->CarryBy ;
 
 			if( nu!=-1 AND !(nu&CARRY_BY_DECORS) )

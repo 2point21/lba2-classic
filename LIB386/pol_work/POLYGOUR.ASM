@@ -1282,7 +1282,7 @@ Fill_VLGouraud7::	add	edi,SIZE_VIDEOLINE
 			mov	[Fill_CurOffLine],edi
 			mov	[Fill_CurGouraudMin],esi
 
-			jmp	Triangle_ReadNextEdgeOk d
+			jmp	Triangle_ReadNextEdge
 Filler_GouraudZBuf	ENDP
 
 

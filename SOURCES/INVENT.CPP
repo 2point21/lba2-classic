@@ -4,13 +4,13 @@
 
 extern	S32	FlagAnimWhoSpeak	;	// MESSAGE.CPP
 
-/*══════════════════════════════════════════════════════════════════════════*
-	      █    ██▄ █ █   █ █▀▀▀▀ ██▄ █ ▀▀█▀▀ █▀▀▀█ █▀▀▀█ █  ▄▀
-	      ██   ██▀██ ██ ▄▀ ██▀▀  ██▀██   ██  ██  █ ██▀█▀ ██▀
-	      ▀▀   ▀▀  ▀ ▀▀▀   ▀▀▀▀▀ ▀▀  ▀   ▀▀  ▀▀▀▀▀ ▀▀  ▀ ▀▀
- *══════════════════════════════════════════════════════════════════════════*/
-/*──────────────────────────────────────────────────────────────────────────*/
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*
+	      �    ��� � �   � ����� ��� � ����� ����� ����� �  ��
+	      ��   ����� �� �� ����  �����   ��  ��  � ����� ���
+	      ��   ��  � ���   ����� ��  �   ��  ����� ��  � ��
+ *��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
 // MyMagicLevel correspond to Twinsen current level of magie
 // MaxMagicLevel correspond to Twinsen current capabilities
 // MAX_MAGIC_LEVEL correspond to Maximum Magie in the game
@@ -36,7 +36,7 @@ S32	InvCoul = COUL_SELECT_MENU 	;
 
 U8	PingouinActif = FALSE ;
 
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 T_INV_OBJ	TabInv[MAX_INVENTORY] ;
 
 T_INV_OBJ	InitTabInv[MAX_INVENTORY] =
@@ -405,7 +405,7 @@ T_INV_OBJ	InitTabInv[MAX_INVENTORY] =
 
 U8	TabIndir[MAX_BOX_INVENTORY]	;
 
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	InitInventory()
 {
 //		Ouais, c'est vide, mais a mon avis pas pour longtemps...
@@ -431,7 +431,7 @@ void	InitInventory()
 
 //		Je m'ecoute jamais, pourtant, je devrais ;)
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	InitTabIndir()//	NEW
 {
 	T_INV_OBJ *pt	;
@@ -508,7 +508,7 @@ void	InitTabIndir()//	NEW
 		}
 	}
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 #ifdef	DEBUG_TOOLS
 S32	TricheInventory( S32 ret )
 {
@@ -552,7 +552,7 @@ S32	TricheInventory( S32 ret )
 	return(ret)	;
 }
 #endif
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 
 void	DrawObjInventory( S32 x, S32 y, S16 *ptrobj, S32 beta, S32 lfactor, S32 zoom )
 {
@@ -562,7 +562,7 @@ void	DrawObjInventory( S32 x, S32 y, S16 *ptrobj, S32 beta, S32 lfactor, S32 zoo
 
 	BodyDisplay(	0,0,0, 0,beta,0, ptrobj ) ;
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 /*
 void	AffMagicBar( S32 x0, S32 y0, S32 x1, S32 y1, S32 magie )
 {
@@ -588,7 +588,7 @@ void	AffMagicBar( S32 x0, S32 y0, S32 x1, S32 y1, S32 magie )
 	Line( x, y1-starty-starty-5, x, y1-starty+5, LBAWHITE )	;//Tempo
 }
 */
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	AffValueBar( S32 x0, S32 y0, S32 x1, S32 y1, S32 value )
 {
 	S32	startx, starty	;
@@ -606,9 +606,9 @@ void	AffValueBar( S32 x0, S32 y0, S32 x1, S32 y1, S32 value )
 
 	Rect( x0+startx, y1-starty-starty, x1-startx, y1-starty, LBAWHITE )		;
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 S32	S_X0, S_Y0, S_X1, S_Y1	;
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	SaveBackground( S32 x0, S32 y0, S32 x1, S32 y1 )
 {
 	S_X0 = x0	;
@@ -616,14 +616,14 @@ void	SaveBackground( S32 x0, S32 y0, S32 x1, S32 y1 )
 	S_X1 = x1	;
 	S_Y1 = y1	;
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	RestoreBackground()
 {
 	CopyBlock( S_X0, S_Y0, S_X1, S_Y1, Screen, S_X0, S_Y0, Log )	   ;
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 S32	XObj0, YObj0, XObj1, YObj1, LFactor, MemoLFactor	;
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 
 
 U32	DrawOneInventory( S32 numbox )
@@ -767,7 +767,7 @@ U32	DrawOneInventory( S32 numbox )
 	if( ListVarGame[numinv] )
 #endif
 	{
-		// Definit si la box est shadée      *
+		// Definit si la box est shad�e      *
 		if( (FlagZoomed < 4 ) AND (numinv!=FLAG_DONT_USE)	// protection
 		AND (TabInv[numinv].FlagInv & FLAG_INV_UNUSABLE) )
 		{
@@ -874,7 +874,7 @@ U32	DrawOneInventory( S32 numbox )
 	return( ListVarGame[numinv] )	;
 #endif
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	DrawInventoryScreen()
 {
 	S32	n	;
@@ -898,7 +898,7 @@ void	DrawInventoryScreen()
 	}
 
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	OpenInventory()
 {
 	S32	x0, y0, x1, y1 	;
@@ -954,7 +954,7 @@ void	OpenInventory()
 
 	CopyScreen( Log, Screen )	;// After Draw
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 
 void	EmptyBlockInventory()
 {
@@ -986,7 +986,7 @@ void	EmptyBlockInventory()
 
 	CopyBlock( x0, y0, x1, y1, BufSpeak, x0, y0, Log )	;
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	RestoreInventoryScreen()
 {
 	CopyScreen( BufSpeak, Log )	;
@@ -996,7 +996,7 @@ void	RestoreInventoryScreen()
 
 	BoxStaticAdd( INV_START_X, INV_START_Y, INV_END_X, INV_END_Y )	;
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	AffObjName( S32 num )
 {
 	S32	x, dx, t, i	;
@@ -1023,7 +1023,7 @@ void	AffObjName( S32 num )
 	BoxUpdate() ;
 }
 
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	CheckProtoPack( void )
 {
 	T_MENU_COMP *ptrmcomp = &ListMenuComp[ListComportement[C_PROTOPACK].Menu] ;
@@ -1038,7 +1038,7 @@ void	CheckProtoPack( void )
 		ptrmcomp->NbComps = 1 ;	// On n'a pas le SuperJetPack
 	}
 }
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 U32	NextBox = 0	;
 
 void	MenuInventory( U32 tempo )
@@ -1053,7 +1053,7 @@ void	MenuInventory( U32 tempo )
 	S32	flagproto = FALSE ;
 	U8	memobulle	;
 
-	// au cas ou l'on soit appelé pendant un eclair
+	// au cas ou l'on soit appel� pendant un eclair
 	Palette( PtrPal ) ;
 
 	if( Comportement==C_PROTOPACK
@@ -1324,7 +1324,7 @@ void	MenuInventory( U32 tempo )
 
 /*				if( InventoryAction==FLAG_MECA_PINGOUIN )
 				{
-					// peut etre remplacé par un test sur son body ?
+					// peut etre remplac� par un test sur son body ?
 					PingouinActif = TRUE ;
 				}
 */
@@ -1369,13 +1369,13 @@ void	MenuInventory( U32 tempo )
 	InitWaitNoKey() ;
 }
 
-/*══════════════════════════════════════════════════════════════════════════*
-    █▀▀▀▀ █▀▀▀█ █   █ ██▄ █ █▀▀▀▄       █▀▀▀█ █▀▀█      █ █▀▀▀▀ █▀▀▀▀ ▀▀█▀▀
-    ██▀▀  ██  █ ██  █ ██▀██ ██  █       ██  █ ██▀▀█ ▄▄  █ ██▀▀  ██      ██
-    ▀▀    ▀▀▀▀▀ ▀▀▀▀▀ ▀▀  ▀ ▀▀▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀▀▀▀▀ ▀▀▀▀▀ ▀▀▀▀▀ ▀▀▀▀▀   ▀▀
- *══════════════════════════════════════════════════════════════════════════*/
-/*──────────────────────────────────────────────────────────────────────────*/
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*
+    ����� ����� �   � ��� � �����       ����� ����      � ����� ����� �����
+    ����  ��  � ��  � ����� ��  �       ��  � ����� ��  � ����  ��      ��
+    ��    ����� ����� ��  � ����  ����� ����� ����� ����� ����� �����   ��
+ *��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
 #define	FOUND_X0	256
 #define	FOUND_Y0	48
 #define	FOUND_X1	384
@@ -1385,7 +1385,7 @@ void	MenuInventory( U32 tempo )
 
 extern	S32	Dial_Y0	;
 
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*/
 void	DoFoundObj( S32 numvar )
 {
 #ifndef	COMPILATOR
@@ -1473,7 +1473,7 @@ void	DoFoundObj( S32 numvar )
 #ifdef	CDROM
 	if( IsVoiceFileOnHD( 2 ) )// FR_GAM.VOX on HD ?
 	{
-		// voix sur hd touche à rien
+		// voix sur hd touche � rien
 
 		InitDial( 2 ) ;	// game divers txt
 		speakfromcd = FALSE ;
@@ -1665,7 +1665,7 @@ void	DoFoundObj( S32 numvar )
 
 
 		PtrInit3DView() 	;
-		CameraCenter( 200 ) 	;// 200: parametre inutilisé
+		CameraCenter( 200 ) 	;// 200: parametre inutilis�
 
 //------------- Our Hero!
 
@@ -1801,15 +1801,15 @@ void	DoFoundObj( S32 numvar )
 	BoxReset() ;
 }
 
-/*══════════════════════════════════════════════════════════════════════════*
-	    ██████┐ ██████┐ █████┐  ██████┐ ██████┐ ██████┐ ██████┐
-	    ██┌─██│ ██┌─██│ ██┌─██┐ ██┌─██│ └─██┌─┘ ██┌───┘ ██┌───┘
-	    ██████│ ██████│ ██│ ██│ ██│ ██│   ██│   ██████┐ █████┐
-	    ██┌─██│ ██┌██┌┘ ██│ ██│ ██│ ██│   ██│   └───██│ ██┌──┘
-	    ██│ ██│ ██│└██┐ █████┌┘ ██████│ ██████┐ ██████│ ██████┐
-	    └─┘ └─┘ └─┘ └─┘ └────┘  └─────┘ └─────┘ └─────┘ └─────┘
- *══════════════════════════════════════════════════════════════════════════*/
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*
+	    �����ۿ �����ۿ ����ۿ  �����ۿ �����ۿ �����ۿ �����ۿ
+	    �����۳ �����۳ �����ۿ �����۳ ������� ������� �������
+	    �����۳ �����۳ �۳ �۳ �۳ �۳   �۳   �����ۿ ����ۿ
+	    �����۳ ������� �۳ �۳ �۳ �۳   �۳   �����۳ ������
+	    �۳ �۳ �۳��ۿ ������� �����۳ �����ۿ �����۳ �����ۿ
+	    ��� ��� ��� ��� ������  ������� ������� ������� �������
+ *��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
 
 #ifndef	COMPILATOR
 
@@ -2217,20 +2217,20 @@ void	GereArdoise()
 }
 
 
-/*══════════════════════════════════════════════════════════════════════════*
-		██████┐ ██████┐ █████┐  ██████┐ ██████┐ ██████┐
-		██┌───┘ ██┌─██│ ██┌─██┐ ██┌─██│ ██┌───┘ ██┌───┘
-		██│     ██████│ ██│ ██│ ██████│ █████┐  ██████┐
-		██│     ██┌─██│ ██│ ██│ ██┌██┌┘ ██┌──┘  └───██│
-		██████┐ ██│ ██│ █████┌┘ ██│└██┐ ██████┐ ██████│
-		└─────┘ └─┘ └─┘ └────┘  └─┘ └─┘ └─────┘ └─────┘
- *══════════════════════════════════════════════════════════════════════════*/
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*
+		�����ۿ �����ۿ ����ۿ  �����ۿ �����ۿ �����ۿ
+		������� �����۳ �����ۿ �����۳ ������� �������
+		�۳     �����۳ �۳ �۳ �����۳ ����ۿ  �����ۿ
+		�۳     �����۳ �۳ �۳ ������� ������  �����۳
+		�����ۿ �۳ �۳ ������� �۳��ۿ �����ۿ �����۳
+		������� ��� ��� ������  ��� ��� ������� �������
+ *��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
 
 // On se place sur la RECOVER_AREA de ScreenAux car on a besoin de 48 octets (4*12)
 #define	PtrBackupAngles	(ScreenAux+640*480)
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 
 void	BackupAngles( S32 x0, S32 y0, S32 x1, S32 y1 )
 {
@@ -2300,7 +2300,7 @@ void	BackupAngles( S32 x0, S32 y0, S32 x1, S32 y1 )
 	*(U32*)(dest+8) = *(U32*)(src+640*4-3);
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 
 void	RestoreAngles( S32 x0, S32 y0, S32 x1, S32 y1 )
 {
@@ -2370,7 +2370,7 @@ void	RestoreAngles( S32 x0, S32 y0, S32 x1, S32 y1 )
 	*(U32*)(dest+640*4-3) = *(U32*)(src+8);
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 // Trace les angles arrondis des cadres de menus et de messages
 
 #define	COUL_DOWN_BLUE	((10*16)+9)	// 10 --> Banque bleue
@@ -2388,7 +2388,7 @@ void	DrawAngles( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 		BackupAngles( x0, y0, x1, y1 ) ;
 	}
 
-	// Angle Supérieur Gauche
+	// Angle Sup�rieur Gauche
 	if( type&DRAW_SG )
 	{
 		Plot( x0+5, y0, CadreCoulUp ) ;
@@ -2400,7 +2400,7 @@ void	DrawAngles( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 		Plot( x0, y0+5, CadreCoulUp ) ;
 	}
 
-	// Angle Inférieur Gauche
+	// Angle Inf�rieur Gauche
 	if( type&DRAW_IG )
 	{
 		Plot( x0, y1-5, CadreCoulUp ) ;
@@ -2412,7 +2412,7 @@ void	DrawAngles( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 		Plot( x0+5, y1, CadreCoulDown ) ;
 	}
 
-	// Angle Inférieur Droit
+	// Angle Inf�rieur Droit
 	if( type&DRAW_ID )
 	{
 		Plot( x1, y1-5, CadreCoulDown ) ;
@@ -2424,7 +2424,7 @@ void	DrawAngles( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 		Plot( x1-5, y1, CadreCoulDown ) ;
 	}
 
-	// Angle Supérieur Droit
+	// Angle Sup�rieur Droit
 	if( type&DRAW_SD )
 	{
 		Plot( x1-5, y0, CadreCoulUp ) ;
@@ -2441,30 +2441,30 @@ void	DrawAngles( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 		RestoreAngles( x0, y0, x1, y1 ) ;
 	}
 
-	// Trace les flèches si nécessaire avec la couleur param
+	// Trace les fl�ches si n�cessaire avec la couleur param
 
-	// Fléche supérieure gauche
+	// Fl�che sup�rieure gauche
 	if( type&ARROW_SG )
 	{
 		AffGraph( 0, x0+2, y0+2, HQR_Get(HQRPtrSprite,4) ) ;
 		BoxStaticAdd( x0+2, y0+2, x0+27, y0+27 ) ;
 	}
 
-	// Fléche inférieure gauche
+	// Fl�che inf�rieure gauche
 	if( type&ARROW_IG )
 	{
 		AffGraph( 0, x0+2, y1-27, HQR_Get(HQRPtrSprite,5) ) ;
 		BoxStaticAdd( x0+2, y1-27, x0+27, y1-2 ) ;
 	}
 
-	// Fléche inférieure droite
+	// Fl�che inf�rieure droite
 	if( type&ARROW_ID )
 	{
 		AffGraph( 0, x1-27, y1-27, HQR_Get(HQRPtrSprite,6) ) ;
 		BoxStaticAdd( x1-27, y1-27, x1-2, y1-2 ) ;
 	}
 
-	// Fléche supérieure droite
+	// Fl�che sup�rieure droite
 	if( type&ARROW_SD )
 	{
 		AffGraph( 0, x1-27, y0+2, HQR_Get(HQRPtrSprite,7) ) ;
@@ -2474,7 +2474,7 @@ void	DrawAngles( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 	if( type&A_FLIP )	BoxUpdate() ;
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 void	DrawCadre( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 {
 	if( type&CADRE_RED )
@@ -2504,7 +2504,7 @@ void	DrawCadre( S32 x0, S32 y0, S32 x1, S32 y1, U32 type )
 	CadreCoulDown	= COUL_DOWN_BLUE	;
 	CadreCoulUp	= COUL_UP_BLUE		;
 }
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 void	DrawCadreBox( S32 x0, S32 y0, S32 x1, S32 y1, S32 color )
 {
 	Line( x0+5, y0+1, x1-5, y0+1, color )	;
@@ -2518,7 +2518,7 @@ void	DrawCadreBox( S32 x0, S32 y0, S32 x1, S32 y1, S32 color )
 	Line( x0+5, y1-1, x1-5, y1-1, color )	;
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 void	DrawCadreShade( S32 x0, S32 y0, S32 x1, S32 y1, S32 color )
 {
 	ShadeBoxBlk( x0+5, y0+1, x1-5, y0+1, color )	;
@@ -2532,17 +2532,17 @@ void	DrawCadreShade( S32 x0, S32 y0, S32 x1, S32 y1, S32 color )
 	ShadeBoxBlk( x0+5, y1-1, x1-5, y1-1, color )	;
 }
 
-/*══════════════════════════════════════════════════════════════════════════*
-	    ██████┐ ██████┐ ██████┐ ██████┐ ██████┐ ██┐ ██┐ ██████┐
-	    ██┌───┘ ██┌───┘ ██┌─██│ ██┌───┘ ██┌───┘ ███┐██│ ██┌───┘
-	    ██████┐ ██│     ██████│ █████┐  █████┐  ██████│ ██████┐
-	    └───██│ ██│     ██┌██┌┘ ██┌──┘  ██┌──┘  ██┌███│ └───██│
-	    ██████│ ██████┐ ██│└██┐ ██████┐ ██████┐ ██│└██│ ██████│
-	    └─────┘ └─────┘ └─┘ └─┘ └─────┘ └─────┘ └─┘ └─┘ └─────┘
- *══════════════════════════════════════════════════════════════════════════*/
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*
+	    �����ۿ �����ۿ �����ۿ �����ۿ �����ۿ �ۿ �ۿ �����ۿ
+	    ������� ������� �����۳ ������� ������� ��ۿ�۳ �������
+	    �����ۿ �۳     �����۳ ����ۿ  ����ۿ  �����۳ �����ۿ
+	    �����۳ �۳     ������� ������  ������  �����۳ �����۳
+	    �����۳ �����ۿ �۳��ۿ �����ۿ �����ۿ �۳��۳ �����۳
+	    ������� ������� ��� ��� ������� ������� ��� ��� �������
+ *��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 void	BackupScreen( S32 flagscreen )
 {
 	CopyScreen( Screen, ScreenAux ) ;	// decors only
@@ -2556,7 +2556,7 @@ void	BackupScreen( S32 flagscreen )
 	}
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 void	RestoreScreen( void )
 {
 	S32	saveflagfade	;
@@ -2579,19 +2579,19 @@ void	RestoreScreen( void )
 	FlagFade = saveflagfade		;
 }
 
-/*══════════════════════════════════════════════════════════════════════════*
-	    ██████┐ ██████┐ ██████┐ ██████┐ ██████┐ ██████┐ ██████┐
-	    ██┌─██│ ██┌─██│ ██┌─██│ └─██┌─┘ ██┌───┘ ██┌───┘ └─██┌─┘
-	    ██████│ ██████│ ██│ ██│   ██│   █████┐  ██│       ██│
-	    ██┌───┘ ██┌██┌┘ ██│ ██│   ██│   ██┌──┘  ██│       ██│
-	    ██│     ██│└██┐ ██████│   ██│   ██████┐ ██████┐   ██│
-	    └─┘     └─┘ └─┘ └─────┘   └─┘   └─────┘ └─────┘   └─┘
- *══════════════════════════════════════════════════════════════════════════*/
-/*──────────────────────────────────────────────────────────────────────────*/
+/*��������������������������������������������������������������������������*
+	    �����ۿ �����ۿ �����ۿ �����ۿ �����ۿ �����ۿ �����ۿ
+	    �����۳ �����۳ �����۳ ������� ������� ������� �������
+	    �����۳ �����۳ �۳ �۳   �۳   ����ۿ  �۳       �۳
+	    ������� ������� �۳ �۳   �۳   ������  �۳       �۳
+	    �۳     �۳��ۿ �����۳   �۳   �����ۿ �����ۿ   �۳
+	    ���     ��� ��� �������   ���   ������� �������   ���
+ *��������������������������������������������������������������������������*/
+/*��������������������������������������������������������������������������*/
 
 S32		ProtectActif	= FALSE ;
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 
 void	ToggleSortProtection( void )
 {
@@ -2612,7 +2612,7 @@ void	ToggleSortProtection( void )
 	}
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 
 void	PlayProtectSamples( T_EXTRA *ptrextra )
 {
@@ -2681,7 +2681,7 @@ void	PlayProtectSamples( T_EXTRA *ptrextra )
 #endif
 }
 
-//──────────────────────────────────────────────────────────────────────────
+//��������������������������������������������������������������������������
 void 	StopProtectSamples( void )
 {
 #ifdef	LBA_EDITOR

@@ -4,7 +4,7 @@ extern	S32	FlagAnimWhoSpeak	;	// MESSAGE.CPP
 
 //#########################################################################
 // Memorisation de l'anim et de la frame en cours au moment d'un changement
-// de cube pour reprendre exactement a la mÃªme anim/frame dans le cube de
+// de cube pour reprendre exactement a la mˆme anim/frame dans le cube de
 // destination pour un changement de cube plus smooth
 
 U16	MemoAnim  ;	/* anim en cours */
@@ -93,12 +93,12 @@ extern	S32	XMap, YMap, ZMap ;
 extern	S16	M_XMin, M_XMax, M_YMin, M_YMax, M_ZMin, M_ZMax ;
 extern	U8	*SearchPtrAnimAction ;
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 #ifdef	DEBUG_TOOLS
 
 #define	HashLine( x0, y0, x1, y1, coul, ep )	Line( x0, y0, x1, y1, coul )
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 S32	DrawCube( 	S32 xw0, S32 yw0, S32 zw0,
 			S32 xw1, S32 yw1, S32 zw1,
 			S32 type	)
@@ -324,8 +324,8 @@ S32	DrawCube( 	S32 xw0, S32 yw0, S32 zw0,
 	return 0 ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
 void	DrawZonesDec()
 {
@@ -375,7 +375,7 @@ void	DrawZonesDec()
 	UnsetClip() ;
 }
 #endif
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 void	InitSysText( void )
 {
 	S32	n ;
@@ -389,32 +389,32 @@ void	InitSysText( void )
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-		   â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–ˆ      â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–€â–€â–ˆâ–€â–€ â–ˆâ–ˆâ–€â–€â–€
-		   â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–„â–„  â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ      â–ˆâ–ˆ  â–€â–€â–€â–€â–ˆ
-		   â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€   â–€â–€  â–€â–€â–€â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+		   ÛßßßÛ ÛßßÛ      Û Ûßßßß Ûßßßß ßßÛßß ÛÛßßß
+		   ÛÛ  Û ÛÛßßÛ ÜÜ  Û ÛÛßß  ÛÛ      ÛÛ  ßßßßÛ
+		   ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß   ßß  ßßßßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 // Passer tout ca en DEFINE !!!!!!!!!! Impossible, ce sont des pointeurs
 // de fonctions (sauf peut-etre GivePtrObjFix et GivePtrSample
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 void	*GivePtrAnim(S32 index)
 {
 	return(HQR_Get( HQR_Anims, index ))	;
 }
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 void	*GivePtrBody(S32 index)
 {
 	return(HQR_Get( HQR_Bodys, index ) ) ;
 }
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
 void	InitObject( U8 numobj )
 {
@@ -456,8 +456,8 @@ void	InitObject( U8 numobj )
 	ptrobj->SampleAlways = 0 ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	StartInitObj( U8 numobj )
 {
@@ -547,8 +547,8 @@ void	StartInitObj( U8 numobj )
 }
 
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	StartInitAllObjs()
 {
@@ -570,11 +570,11 @@ void	StartInitAllObjs()
 
 	RestartMecaPingouin( ) ;
 
-	AnimateTexture = FALSE ;        // DÃ©sactivÃ© Ã  chaque changement de cube
+	AnimateTexture = FALSE ;        // D‚sactiv‚ … chaque changement de cube
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	RestartMecaPingouin()
 {
 	T_OBJET *ptrobj = &ListObjet[NUM_PINGOUIN] ;
@@ -599,8 +599,8 @@ void	RestartMecaPingouin()
 	ptrobj->Flags|=CHECK_CODE_JEU ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
 void	LoadFicPerso()
 {
@@ -609,7 +609,7 @@ void	LoadFicPerso()
 	T_OBJET *ptrobj = &ListObjet[NUM_PERSO] ;
 
 	// on parcours en decroissant pour que Twinsen se retrouve
-	// initialisÃ© en mode Normal
+	// initialis‚ en mode Normal
 
 	for( n=MAX_COMPORTEMENTS-1; n>=0; n--, ptrcomp-- )
 	{
@@ -622,8 +622,8 @@ void	LoadFicPerso()
 	ptrobj->PtrAnimAction = SearchPtrAnimAction ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	InitPerso()
 {
@@ -652,8 +652,8 @@ void	InitPerso()
 	Weapon = FLAG_BALLE_MAGIQUE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	UseOneClover( void )
 {
 	S32	x, y, z, beta ;
@@ -710,9 +710,9 @@ void	UseOneClover( void )
 
 	nu = ptrobj->CarryBy ;
 
-	// on recentre Twinsen sur le pseudo sur lequel il se trouvait Ã  la
-	// derniÃ¨re pos valide s'il n'Ã©tait pas portÃ© par un objet scÃ©narique
-	// ou un objet du decors pour qu'il ne reprenne pas en Ã©quilibre
+	// on recentre Twinsen sur le pseudo sur lequel il se trouvait … la
+	// derniŠre pos valide s'il n'‚tait pas port‚ par un objet sc‚narique
+	// ou un objet du decors pour qu'il ne reprenne pas en ‚quilibre
 	if( nu==-1 )
 	{
 		// se positionne au coin 0,0 de la brick
@@ -771,7 +771,7 @@ void	UseOneClover( void )
 				z += (SIZE_BRICK_XZ/2) ;
 			}
 
-			// reajuste altitude au cas ou l'on soit sur un penchÃ©
+			// reajuste altitude au cas ou l'on soit sur un pench‚
 			y = CalculAltitudeObjet( x, z, -1 ) ;
 		}
 		else
@@ -779,7 +779,7 @@ void	UseOneClover( void )
 			x += (SIZE_BRICK_XZ/2) ;
 			z += (SIZE_BRICK_XZ/2) ;
 
-			// reajuste altitude au cas ou l'on soit sur un penchÃ©
+			// reajuste altitude au cas ou l'on soit sur un pench‚
 			GetShadow( x, ptrobj->Obj.Y, z ) ;
 			y = ShadowY ;
 
@@ -803,7 +803,7 @@ void	UseOneClover( void )
 		{
 			if( CubeMode==CUBE_EXTERIEUR )
 			{
-				// je suis portÃ© par un objet du decors
+				// je suis port‚ par un objet du decors
 				T_DECORS *decors ;
 
 				nu &= ~(CARRY_BY_DECORS) ;
@@ -833,7 +833,7 @@ void	UseOneClover( void )
 		}
 		else
 		{
-			// je suis portÃ© par un objet scÃ©narique
+			// je suis port‚ par un objet sc‚narique
 			T_OBJET *ptrobjt = &ListObjet[nu] ;
 
 			// recentre Twinsen au milieu de l'objet
@@ -857,8 +857,8 @@ void	UseOneClover( void )
 	GetDeltaMove( &SampleAlwaysMove ) ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	SetComportement( U8 comportement )
 {
 	U8	memogenbody ;
@@ -886,7 +886,7 @@ void	SetComportement( U8 comportement )
 			break ;
 	}
 
-	// Blindage Buggy lorsqu'appelÃ©e de MenuComportement
+	// Blindage Buggy lorsqu'appel‚e de MenuComportement
 	if( ptrobj->Move==MOVE_BUGGY
 	OR  ptrobj->Move==MOVE_BUGGY_MANUAL )
 	{
@@ -896,7 +896,7 @@ void	SetComportement( U8 comportement )
 		ListMenuComp[0].Previous = 3 ;	// branche sur comp Conque
 	}
 
-	// ATTENTION: Changement d'arme traitÃ© au cas par cas
+	// ATTENTION: Changement d'arme trait‚ au cas par cas
 	switch( comportement )
 	{
 		case C_NORMAL:
@@ -958,8 +958,8 @@ void	SetComportement( U8 comportement )
 	ptrobj->GenBody = NO_BODY ;
 	ptrobj->Obj.Body.Num = -1 ;
 
-	// ATTENTION: rÃ©pare un bug lorsqu'on change de cube en NO_BODY
-	// mais cela peut avoir des effets secondaires, donc mÃ©fie GarÃ§on !
+	// ATTENTION: r‚pare un bug lorsqu'on change de cube en NO_BODY
+	// mais cela peut avoir des effets secondaires, donc m‚fie Gar‡on !
 	ptrobj->Obj.NextBody.Num = -1 ;
 
 	InitBody( memogenbody, NUM_PERSO ) ;
@@ -987,7 +987,7 @@ void	SetComportement( U8 comportement )
 	}
 	else
 	{
-		// oui, alors on reprend Ã  la frame memorisÃ©e juste
+		// oui, alors on reprend … la frame memoris‚e juste
 		// avant le changement de cube
 		ptrobj->FlagAnim = 0 ;
 		InitAnim( MemoAnim, MemoFlagAnim, NUM_PERSO ) ;
@@ -996,9 +996,9 @@ void	SetComportement( U8 comportement )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-// reinitialise tout perso sans toucher Ã  sa position
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+// reinitialise tout perso sans toucher … sa position
 
 void	RestartPerso()
 {
@@ -1056,19 +1056,19 @@ void	RestartPerso()
 	TimerProto = 0 ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 /*	Call Every Change Cube	    */
 #define	ClearVarsCube()	memset( ListVarCube, 0, MAX_VARS_CUBE )
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-	  â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–€       â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–€
-	  â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆâ–€â–€        â–€â–€â–€â–€â–ˆ â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆâ–€â–€
-	  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+	  Ûßßßß Ûßßßß ÛßßßÛ Ûßßßß       ÛÛßßß Ûßßßß Ûßßßß ÛÛÜ Û Ûßßßß
+	  ÛÛ ßÛ ÛÛßß  ÛÛßÛß ÛÛßß        ßßßßÛ ÛÛ    ÛÛßß  ÛÛßÛÛ ÛÛßß
+	  ßßßßß ßßßßß ßß  ß ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß ßß  ß ßßßßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	ClearFoudre( void )
 {
 	S32		n ;
@@ -1076,7 +1076,7 @@ void	ClearFoudre( void )
 
 	for( n=0; n<MAX_INCRUST_DISP; n++, ptrdisp++ )
 	{
-		// au cas oÃ¹ on serait en palette eclair
+		// au cas o— on serait en palette eclair
 		if( ptrdisp->Num!=-1
 		AND (ptrdisp->Type&0xFF)==INCRUST_ECLAIR )
 		{
@@ -1086,7 +1086,7 @@ void	ClearFoudre( void )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	ClearScene( void )
 {
 	S32		n ;
@@ -1109,9 +1109,9 @@ void	ClearScene( void )
 	FlagRain = FALSE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
-// Clean HQR si 2/3 de la place occupÃ©e
+// Clean HQR si 2/3 de la place occup‚e
 #define	CleanHQR(hqr)	if(hqr&&(hqr->FreeSize<(hqr->MaxSize/3)))	HQR_Reset_Ressource(hqr)
 
 void	ClearHQRs( void )
@@ -1134,8 +1134,8 @@ void	ClearHQRs( void )
 	CleanHQR( HQRPtrSpriteRaw ) ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 void	InitLoadedGame( )
 {
 	S32	x, y, z ;
@@ -1200,7 +1200,7 @@ void	InitLoadedGame( )
 				}
 				ptrobj->PtrAnimAction = SearchPtrAnimAction ;
 
-				// on se blinde les fesses pour etre sÃ»r de recalculer la frame
+				// on se blinde les fesses pour etre s–r de recalculer la frame
 				ptr3d->Status |= FLAG_BODY ;
 
 				if( ptr3d->LastOfsIsPtr )
@@ -1243,7 +1243,7 @@ void	InitLoadedGame( )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	LoadFile3dObjects()
 {
 	U8	n ;
@@ -1270,8 +1270,8 @@ void	LoadFile3dObjects()
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 // need: NewCube
 
 // FlagChgCube == 1 : zone de chg cube recupere pos relative
@@ -1291,14 +1291,14 @@ void	ChangeCube()
 	oldcube = NumCube ;
 	NumCube = NewCube ;
 
-	// reinitialisation du gÃ©nÃ©rateur de nombres alÃ©atoires
+	// reinitialisation du g‚n‚rateur de nombres al‚atoires
 	srand( TimerRefHR ) ;
 
 	if( FlagChgCube )	SaveTimer() ;
 //	if( !FlagLoadGame )	SaveTimer() ;
 
-	// Indique que l'on doit reprendre l'anim Ã  la frame oÃ¹ elle en est
-	// aprÃ¨s avoir changÃ© de cube
+	// Indique que l'on doit reprendre l'anim … la frame o— elle en est
+	// aprŠs avoir chang‚ de cube
 
 // Pourquoi ce test ????????????
 //	if( FlagReajustPosTwinsen )
@@ -1307,7 +1307,7 @@ void	ChangeCube()
 
 	if( FlagReinit )
 	{
-		// MÃ©morise anim et frame Ã  restaurer aprÃ¨s le changement
+		// M‚morise anim et frame … restaurer aprŠs le changement
 		// de cube
 		MemoAnim      = ptrobj->GenAnim ;
 		MemoFlagAnim  = ptrobj->FlagAnim ;
@@ -1472,7 +1472,7 @@ void	ChangeCube()
 
 	if( CubeJingle == 255 )
 	{
-		NextMusic = -1 ;// Coupe Empilage du cube prÃ©cÃ©dent
+		NextMusic = -1 ;// Coupe Empilage du cube pr‚c‚dent
 	}
 
 	RazListPartFlow( ) ;
@@ -1488,7 +1488,7 @@ void	ChangeCube()
 #if defined(DEBUG_TOOLS) || defined(TEST_TOOLS)
 		if( (NumVersion&MASK_NUM_VERSION)!=NUM_VERSION )
 		{
-			Message( "Warning: Sauvegarde trop ancienne. Je vais tenter de la charger, mais mÃ©fie !!", TRUE ) ;
+			Message( "Warning: Sauvegarde trop ancienne. Je vais tenter de la charger, mais m‚fie !!", TRUE ) ;
 
 			flagload = LoadGameOldVersion() ;
 //			flagload = FALSE ;	// en essai
@@ -1509,7 +1509,7 @@ void	ChangeCube()
 	{
 		RestoreTimer() ;
 
-		// Si le Sort de protection Ã©tait actif, on le rÃ©active
+		// Si le Sort de protection ‚tait actif, on le r‚active
 		if( ProtectActif )
 		{
 			ProtectActif = 0 ;// vu que la fonction s'appelle Toggle....
@@ -1531,27 +1531,27 @@ void	ChangeCube()
 
 	ManageSystem() ;// for streaming
 
-	// Ok, changement de cube terminÃ©
+	// Ok, changement de cube termin‚
 	FlagReinit = 0 ;
 
 	LastValidePos = ValidePos = FALSE ;
 	ptrobj->CarryBy = -1 ;
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-	  â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆ     â–ˆ      â–ˆ    â–ˆâ–ˆâ–€â–€â–€  â–ˆ    â–ˆâ–€â–€â–€â–ˆ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–ˆâ–€â–€â–€
-	  â–ˆâ–ˆ    â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ    â–ˆâ–ˆ     â–ˆâ–ˆ   â–€â–€â–€â–€â–ˆ  â–ˆâ–ˆ   â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–ˆ â–€â–€â–€â–€â–ˆ
-	  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€  â–€â–€   â–€â–€â–€â–€â–€  â–€â–€   â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+	  Ûßßßß ÛßßßÛ Û     Û      Û    ÛÛßßß  Û    ÛßßßÛ ÛÛÜ Û ÛÛßßß
+	  ÛÛ    ÛÛ  Û ÛÛ    ÛÛ     ÛÛ   ßßßßÛ  ÛÛ   ÛÛ  Û ÛÛßÛÛ ßßßßÛ
+	  ßßßßß ßßßßß ßßßßß ßßßßß  ßß   ßßßßß  ßß   ßßßßß ßß  ß ßßßßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	InitHitExtraPof( S32 x, S32 y, S32 z, S32 hitforce )
 {
 	S32	nb = 0 ;
 
 	while( hitforce>=1
-	AND nb<MAX_HIT_POFS )	// on limite Ã  5 Ã©toiles
+	AND nb<MAX_HIT_POFS )	// on limite … 5 ‚toiles
 	{
 		InitExtraPof( x, y, z, 0,
 			MyRnd((256*MUL_ANGLE))+(128*MUL_ANGLE),
@@ -1564,8 +1564,8 @@ void	InitHitExtraPof( S32 x, S32 y, S32 z, S32 hitforce )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	HitObj( U8 numhitter, U8 num, S32 hitforce, S32 beta )
 {
 	S32	memo ;
@@ -1577,7 +1577,7 @@ void	HitObj( U8 numhitter, U8 num, S32 hitforce, S32 beta )
 	if( ptrobjt->LifePoint <= 0 )	return ;
 	if( ptrobjt->WorkFlags&FRAME_SHIELD )	return ;
 
-	// Blindage MÃ©caPingouin lorsque Twinsen est en automatique
+	// Blindage M‚caPingouin lorsque Twinsen est en automatique
 	if( num==NUM_PERSO
 	AND numhitter==NUM_PERSO
 	AND ptrobjt->Move==NO_MOVE )
@@ -1659,8 +1659,8 @@ void	HitObj( U8 numhitter, U8 num, S32 hitforce, S32 beta )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	FoudroieObj( U8 numhitter, U8 num, S32 armure )
 {
 	S32	memo ;
@@ -1704,8 +1704,8 @@ void	FoudroieObj( U8 numhitter, U8 num, S32 armure )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 S32	CheckZvOnZv( U8 numobj, U8 numobjt )
 {
@@ -1746,8 +1746,8 @@ S32	CheckZvOnZv( U8 numobj, U8 numobjt )
 	return FALSE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 S32	CheckObjCol( U8 numobj )
 {
@@ -1777,9 +1777,9 @@ S32	CheckObjCol( U8 numobj )
 
 	for( n=0; n<NbObjets; n++,ptrobjt++ )
 	{
-		// Je sais c'est pas optimisÃ© mais c'est necessaire si l'une ou
-		// l'autre des coordonnees a ete modifiÃ©e dans la boucle pour
-		// un objet prÃ©cedent !
+		// Je sais c'est pas optimis‚ mais c'est necessaire si l'une ou
+		// l'autre des coordonnees a ete modifi‚e dans la boucle pour
+		// un objet pr‚cedent !
 test_obj_zv:
 		flagy = FALSE ;
 
@@ -1824,10 +1824,10 @@ test_obj_zv:
 					Nyw = yt1 - ptrobj->YMin + 1 	;
 
 					if( ptrobj->CarryBy!=n
-					AND ptrobj->Move!=MOVE_WAGON )	// Ne peut pas Ãªtre portÃ© !!!!
+					AND ptrobj->Move!=MOVE_WAGON )	// Ne peut pas ˆtre port‚ !!!!
 									// ne devrait jamais arriver ici
 					{
-						// Attention, on mÃ©morise le beta de l'objet qui nous porte
+						// Attention, on m‚morise le beta de l'objet qui nous porte
 						ptrobj->OldBeta = (GetAngle2D( ptrobjt->Obj.X, ptrobjt->Obj.Z, Nxw, Nzw )-ptrobjt->Obj.Beta)&4095 ;
 
 						ptrobj->PtrZoneRail = (T_ZONE*)Distance2D( ptrobjt->Obj.X, ptrobjt->Obj.Z, Nxw, Nzw ) ;
@@ -1988,7 +1988,7 @@ test_next_coin:
 						break ;
 				}
 
-				if( flagy )// je suis rentrÃ© par dessus
+				if( flagy )// je suis rentr‚ par dessus
 				{
 					if( PtrWorldColBrick( Nxw, Nyw, Nzw )!=0 )
 					{
@@ -2004,7 +2004,7 @@ test_next_coin:
 							goto test_next_coin ;
 						}
 					}
-					else	goto test_obj_zv ;// pos acceptÃ©e, on reteste cet objet
+					else	goto test_obj_zv ;// pos accept‚e, on reteste cet objet
 				}
 			}
 		}
@@ -2119,7 +2119,7 @@ test_next_coin:
 	return ptrobj->ObjCol ;
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 U8	IsObjCol( U8 numobj )
 {
@@ -2168,8 +2168,8 @@ U8	IsObjCol( U8 numobj )
 	return FALSE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	CheckCarrier( U8 numobj )
 {
@@ -2189,8 +2189,8 @@ void	CheckCarrier( U8 numobj )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 S32	CheckValidObjPos( U8 numobj, U8 owner )
 {
@@ -2286,7 +2286,7 @@ S32	CheckValidObjPos( U8 numobj, U8 owner )
 			AND y1 > yt0
 			AND z0 < zt1
 			AND z1 > zt0 )
-			{	// collision pos refusÃ©e
+			{	// collision pos refus‚e
 				return FALSE ;
 			}
 		}
@@ -2348,7 +2348,7 @@ S32	CheckValidObjPos( U8 numobj, U8 owner )
 	return TRUE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
 #define	START_AROUND_BETA	1024
 #define	END_AROUND_BETA		3072
@@ -2402,14 +2402,14 @@ void	PosObjetAroundAnother( U8 numsrc, U8 numtopos )
 	objtopos->Obj.Beta = GetAngle2D(xb,zb,objtopos->Obj.X,objtopos->Obj.Z)&4095 ;
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-			 â–ˆâ–€â–€â–ˆ  â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–„ â–ˆ  â–„â–€
-			 â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€
-			 â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€  â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+			 ÛßßÛ  ÛßßßÛ ÛßßßÜ Û  Üß
+			 ÛÛßßÛ ÛÛ  Û ÛÛ  Û ÛÛß
+			 ßßßßß ßßßßß ßßßß  ßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 U8	ChoiceHeroBody( U8 genbody )
 {
 /* peut-etre dangereux d'enlever ca
@@ -2465,7 +2465,7 @@ U8	ChoiceHeroBody( U8 genbody )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	InitBody(	U8 gennewbody,
 			U8 numobj )
 {
@@ -2484,7 +2484,7 @@ void	InitBody(	U8 gennewbody,
 
 		if( newbody==-1 )
 		{
-			// protect au cas oÃ¹ ...
+			// protect au cas o— ...
 			newbody = SearchBody( GEN_BODY_NORMAL, numobj ) ;
 		}
 	}
@@ -2505,7 +2505,7 @@ void	InitBody(	U8 gennewbody,
 			ptrobj->GenBody = gennewbody ;
 		}
 
-		// Pour pouvoir changer de zv avec un mÃªme body
+		// Pour pouvoir changer de zv avec un mˆme body
 		if( M_XMin == -32000 )
 		{
 			InitBodyZV( ptrobj ) ;
@@ -2525,7 +2525,7 @@ void	InitBody(	U8 gennewbody,
 
 		ptrobj->GenBody = NO_BODY ;
 
-		// Pour forcer le champ NextBody Ã  -1
+		// Pour forcer le champ NextBody … -1
 		ObjectInitBody( &ptrobj->Obj, (void*)-1 )	;
 		ptrobj->Obj.Body.Num = -1 ;
 
@@ -2538,8 +2538,8 @@ void	InitBody(	U8 gennewbody,
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	InitSprite(	S32 newsprite,
 			T_OBJET *ptrobj )
@@ -2571,14 +2571,14 @@ void	InitSprite(	S32 newsprite,
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-			 â–ˆâ–€â–€â–€â–ˆ â–ˆâ–ˆâ–„ â–ˆ  â–ˆ    â–ˆâ–„ â–„â–ˆ â–ˆâ–ˆâ–€â–€â–€
-			 â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–ˆâ–ˆ  â–ˆâ–ˆ   â–ˆâ–ˆâ–€ â–ˆ â–€â–€â–€â–€â–ˆ
-			 â–€â–€  â–€ â–€â–€  â–€  â–€â–€   â–€â–€  â–€ â–€â–€â–€â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+			 ÛßßßÛ ÛÛÜ Û  Û    ÛÜ ÜÛ ÛÛßßß
+			 ÛÛßßÛ ÛÛßÛÛ  ÛÛ   ÛÛß Û ßßßßÛ
+			 ßß  ß ßß  ß  ßß   ßß  ß ßßßßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	SetAnim( U8 numobj, U16 anim )
 {
 	T_OBJ_3D	*obj = &ListObjet[numobj].Obj ;
@@ -2605,7 +2605,7 @@ void	SetAnim( U8 numobj, U16 anim )
 	obj->Beta = beta ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 S32	InitAnim(	U16 gennewanim,
 			U8 flag,
 			U8 numobj )
@@ -2622,7 +2622,7 @@ S32	InitAnim(	U16 gennewanim,
 		gennewanim = GEN_ANIM_RIEN ;
 	}
 
-	// Anim a ne jamais interrompre, mÃªme par une ANIM_ALL_THEN
+	// Anim a ne jamais interrompre, mˆme par une ANIM_ALL_THEN
 	// Sert ici uniquement pour la mort de Twinsen (PERSO.C)
 	if( ptrobj->FlagAnim==ANIM_FINAL )	return FALSE ;
 
@@ -2690,8 +2690,8 @@ S32	InitAnim(	U16 gennewanim,
 	return TRUE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 /* gestion anim */
 
 void	ReajustPos( U8 col )
@@ -2785,8 +2785,8 @@ void	ReajustPos( U8 col )
 
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	ReceptionObj()
 {
 	if( AnimNumObj == NUM_PERSO )
@@ -2843,8 +2843,8 @@ void	ReceptionObj()
 	APtObj->WorkFlags &= ~FALLING ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void    DoCornerReajust( S32 nx, S32 ny, S32 nz )
 {
 	S32	recalx = FALSE ;
@@ -2869,7 +2869,7 @@ void    DoCornerReajust( S32 nx, S32 ny, S32 nz )
 		{
 			Col1 = TRUE ;
 
-			// choix de la mÃ©thode de recalage pour faire glisser l'Objet
+			// choix de la m‚thode de recalage pour faire glisser l'Objet
 
 			if( WorldColBrick( Nxw, Nyw, OldZ+nz ) == 1 )
 			{
@@ -2903,8 +2903,8 @@ void    DoCornerReajust( S32 nx, S32 ny, S32 nz )
 			}
 
 			// fait glisser l'Objet en le recalant en X ou/et en Z suivant
-			// le cas. On le recale dÃ©sormais par rapport Ã  Nxw,Nzw et non
-			// plus par rapport Ã  OldX,OldZ pour le cas d'un Body ayant une
+			// le cas. On le recale d‚sormais par rapport … Nxw,Nzw et non
+			// plus par rapport … OldX,OldZ pour le cas d'un Body ayant une
 			// demi ZV plus grande qu'un pseudo
 
 			if( recalx )
@@ -2944,10 +2944,10 @@ void    DoCornerReajust( S32 nx, S32 ny, S32 nz )
 	Nzw = SaveNzw ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-// Pour Twinsen, on reajuste par rapport Ã  OldX,OldY,OldZ car on est sÃ»r que
-// sa demi-ZV ne dÃ©passe jamais la taille d'un pseudo
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+// Pour Twinsen, on reajuste par rapport … OldX,OldY,OldZ car on est s–r que
+// sa demi-ZV ne d‚passe jamais la taille d'un pseudo
 S32    DoCornerReajustTwinsen( S32 nx, S32 ny, S32 nz )
 {
 	S32	validepos = TRUE ;
@@ -3053,7 +3053,7 @@ void    DoCornerReajustTwinsen( S32 nx, S32 ny, S32 nz )
 		{
 			Col1 = TRUE ;
 
-			// choix de la mÃ©thode de recalage pour faire glisser l'Objet
+			// choix de la m‚thode de recalage pour faire glisser l'Objet
 
 			if( WorldColBrickFull( Nxw, Nyw, OldZ+nz, APtObj->YMax  ) == 1 )
 			{
@@ -3087,8 +3087,8 @@ void    DoCornerReajustTwinsen( S32 nx, S32 ny, S32 nz )
 			}
 
 			// fait glisser l'Objet en le recalant en X ou/et en Z suivant
-			// le cas. On le recale dÃ©sormais par rapport Ã  Nxw,Nzw et non
-			// plus par rapport Ã  OldX,OldZ pour le cas d'un Body ayant une
+			// le cas. On le recale d‚sormais par rapport … Nxw,Nzw et non
+			// plus par rapport … OldX,OldZ pour le cas d'un Body ayant une
 			// demi ZV plus grande qu'un pseudo
 
 			if( recalx )
@@ -3128,8 +3128,8 @@ void    DoCornerReajustTwinsen( S32 nx, S32 ny, S32 nz )
 	Nzw = SaveNzw ;
 }
 */
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 S32	CheckCarryBy( U8 numobj )
 {
 	S32	validepos = TRUE ;
@@ -3155,10 +3155,10 @@ S32	CheckCarryBy( U8 numobj )
 			if( Nxw!=APtObj->Obj.X
 			OR  Nzw!=APtObj->Obj.Z )
 			{
-				if( APtObj->Move!=MOVE_WAGON )	// Ne peut pas Ãªtre portÃ© !!!!
+				if( APtObj->Move!=MOVE_WAGON )	// Ne peut pas ˆtre port‚ !!!!
 								// car on se sert du champ PtrZoneRail
 				{
-					// Attention, on mÃ©morise le beta de l'objet qui nous porte
+					// Attention, on m‚morise le beta de l'objet qui nous porte
 					APtObj->OldBeta = (GetAngle2D( ptrobjc->Obj.X, ptrobjc->Obj.Z, Nxw, Nzw )-ptrobjc->Obj.Beta)&4095 ;
 
 					APtObj->PtrZoneRail = (T_ZONE*)Distance2D( ptrobjc->Obj.X, ptrobjc->Obj.Z, Nxw, Nzw ) ;
@@ -3253,8 +3253,8 @@ S32	CheckCarryBy( U8 numobj )
 	return validepos ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 S32	GereCodesJeu( U8 numobj )
 {
@@ -3293,7 +3293,7 @@ S32	GereCodesJeu( U8 numobj )
 				}
 				else
 				{
-					// on met Ã  jour seulement le sample
+					// on met … jour seulement le sample
 					APtObj->CodeJeu &= 0xF0	;	// ecrase ancien sample
 					APtObj->CodeJeu |= (U8)(CodeJeu&0x0F) ;
 				}
@@ -3393,7 +3393,7 @@ S32	GereCodesJeu( U8 numobj )
 				break ;
 
 			case CJ_ELECTRIC:	// mort (rails en montee par ex.)
-				// correction bug rail penchÃ©e touchÃ©e mÃªme sur charriot
+				// correction bug rail pench‚e touch‚e mˆme sur charriot
 				if( APtObj->CarryBy != -1 ) break ;
 
 				if( numobj == NUM_PERSO )
@@ -3431,7 +3431,7 @@ S32	GereCodesJeu( U8 numobj )
 
 				Nxw -= StepShifting ;
 
-				// ATTENTION: Le Beta des sprites est forcÃ© !!!
+				// ATTENTION: Le Beta des sprites est forc‚ !!!
 				if( APtObj->Flags&SPRITE_3D )	APtObj->Obj.Beta = 3072 ;
 				break ;
 
@@ -3445,7 +3445,7 @@ S32	GereCodesJeu( U8 numobj )
 
 				Nxw += StepShifting ;
 
-				// ATTENTION: Le Beta des sprites est forcÃ© !!!
+				// ATTENTION: Le Beta des sprites est forc‚ !!!
 				if( APtObj->Flags&SPRITE_3D )	APtObj->Obj.Beta = 1024 ;
 				break ;
 
@@ -3459,7 +3459,7 @@ S32	GereCodesJeu( U8 numobj )
 
 				Nzw -= StepShifting ;
 
-				// ATTENTION: Le Beta des sprites est forcÃ© !!!
+				// ATTENTION: Le Beta des sprites est forc‚ !!!
 				if( APtObj->Flags&SPRITE_3D )	APtObj->Obj.Beta = 2048 ;
 				break ;
 
@@ -3473,12 +3473,12 @@ S32	GereCodesJeu( U8 numobj )
 
 				Nzw += StepShifting ;
 
-				// ATTENTION: Le Beta des sprites est forcÃ© !!!
+				// ATTENTION: Le Beta des sprites est forc‚ !!!
 				if( APtObj->Flags&SPRITE_3D )	APtObj->Obj.Beta = 0 ;
 				break ;
 
 			case CJ_POS_INVALID:	// Position non valide pour la mort
-				// si on est dans un penchÃ© sur un objet CARRIER
+				// si on est dans un pench‚ sur un objet CARRIER
 				if( numobj == NUM_PERSO
 				AND APtObj->CarryBy==-1 )
 				{
@@ -3492,8 +3492,8 @@ S32	GereCodesJeu( U8 numobj )
 	return validepos ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	GereObjAnim( U8 numobj )
 {
@@ -3539,7 +3539,7 @@ void	GereObjAnim( U8 numobj )
 			APtObj->WorkFlags |= NEW_FRAME ;
 
 /*-----------------------------------------------------------------*/
-/* gestion des actions dÃ©clenchÃ©es par des anims/frames */
+/* gestion des actions d‚clench‚es par des anims/frames */
 
 			if( APtObj->PtrAnimAction != 0 )
 			{
@@ -3602,7 +3602,7 @@ void	GereObjAnim( U8 numobj )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 static void	DoAnimSprite3D()
 {
 	S32	flag, n	;
@@ -3678,7 +3678,7 @@ static void	DoAnimSprite3D()
 						break ;
 					}
 
-					// attention si porte decalÃ©e
+					// attention si porte decal‚e
 					if( flag )
 					{
 						// position d'origine
@@ -3712,7 +3712,7 @@ static void	DoAnimSprite3D()
 	// ptrobj->Coord.A3DS.Deb : Frame Start (dans le .HQR)
 	// ptrobj->Coord.A3DS.Fin : Frame End   (dans le .HQR)
 	// ptrobj->SizeSHit : NbFps
-	// ptrobj->PtrFile3D: (U32)TimerRefHR de dÃ©but d'anim
+	// ptrobj->PtrFile3D: (U32)TimerRefHR de d‚but d'anim
 
 	if( (APtObj->Flags & ANIM_3DS)
 	AND (APtObj->SizeSHit>0) )
@@ -3757,8 +3757,8 @@ static void	DoAnimSprite3D()
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	DoAnim( U8 numobj  )
 {
@@ -3777,27 +3777,27 @@ void	DoAnim( U8 numobj  )
 	if( numobj==NUM_PERSO )
 	{
 		LastValidePos = ValidePos ;
-		ValidePos     = TRUE	;	// considÃ¨re par dÃ©faut qu'on
+		ValidePos     = TRUE	;	// considŠre par d‚faut qu'on
 	}
 	else	validepos = FALSE ;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 /* gestion DEP OBJET SPRITE */
 
 	if( APtObj->Flags & SPRITE_3D )	DoAnimSprite3D()	;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 /* gestion anim/DEP OBJET 3D */
 
-	else	/* pas SPRITE_3D donc obj articulÃ©s (Avez Vous Donc Une Ame? ;)*/
+	else	/* pas SPRITE_3D donc obj articul‚s (Avez Vous Donc Une Ame? ;)*/
 		GereObjAnim( numobj ) ;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 // Gestion des WAGONS
 
 	if( APtObj->Move==MOVE_WAGON )	DoAnimWagon()	;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 // pour tous obj/sprite 3d
 
 	// je suis porte par un CARRIER / par quelqu'un ?
@@ -3806,7 +3806,7 @@ void	DoAnim( U8 numobj  )
 		validepos = FALSE ;
 	}
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 // je tombe
 
 	if( APtObj->WorkFlags & FALLING )
@@ -3819,7 +3819,7 @@ void	DoAnim( U8 numobj  )
 		validepos = FALSE ;
 	}
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 /* test CodeJeu Water, Electric And Roller  */
 
 
@@ -3827,7 +3827,7 @@ void	DoAnim( U8 numobj  )
 
 	if( !GereCodesJeu( numobj ) )	validepos = FALSE ;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 /* test/reajuste pos */
 // ?	APtObj->ObjCol = -1 ;
 
@@ -3837,7 +3837,7 @@ void	DoAnim( U8 numobj  )
 
 		YMap = 0 ;
 
-		/* reajuste le nyw (nouvelle pos) par rapport Ã  la col en cours	*/
+		/* reajuste le nyw (nouvelle pos) par rapport … la col en cours	*/
 
 		if( (col = WorldColBrick( OldX, OldY, OldZ )) != 0 )
 		{
@@ -3881,7 +3881,7 @@ void	DoAnim( U8 numobj  )
 			}
 		}
 
-// â– â– â– â– â– â– â– â– â–  4 coins test la col de la nouvelle pos + size zv
+// þþþþþþþþþ 4 coins test la col de la nouvelle pos + size zv
 
 		memox = SaveNxw = Nxw 	;
 		memoy = SaveNyw = Nyw 	;
@@ -3920,8 +3920,8 @@ void	DoAnim( U8 numobj  )
 		OR  memoz!=Nzw )
 		{
 			// houullla !!!!!!!!!
-			// on s'est fait recaler par le decors, vÃ©rifie qu'on
-			// n'a pas Ã©tÃ© Ã©jecter dans un objet sce
+			// on s'est fait recaler par le decors, v‚rifie qu'on
+			// n'a pas ‚t‚ ‚jecter dans un objet sce
 
 			if( IsObjCol( numobj ) )
 			{
@@ -3935,7 +3935,7 @@ void	DoAnim( U8 numobj  )
 
 		col = WorldColBrick( Nxw, Nyw, Nzw ) ;
 
-// â– â– â– â– â– â– â– â– â– 	test la col de la nouvelle pos reelle
+// þþþþþþþþþ	test la col de la nouvelle pos reelle
 
 
 		APtObj->Col = col ;
@@ -3952,7 +3952,7 @@ void	DoAnim( U8 numobj  )
 				else
 				{
 			// fait glisser
-//â– â– â– â– â– â– â– â– 		// regarde de dep X puis Z par rapport Ã  old pos
+//þþþþþþþþ		// regarde de dep X puis Z par rapport … old pos
 
 					// WorldColBrickFull() pour Twinsen ?
 					if( WorldColBrick( Nxw, Nyw, OldZ ) != 0 )
@@ -3994,7 +3994,7 @@ void	DoAnim( U8 numobj  )
 					ReceptionObj() ;
 				}
 
-// correction bug chariot dans descente twinsen touche col penchÃ©e
+// correction bug chariot dans descente twinsen touche col pench‚e
 				if( APtObj->CarryBy == -1 )
 				{
 					if( APtObj->Move!=MOVE_WAGON OR !APtObj->Info )
@@ -4185,7 +4185,7 @@ findoanim:
 			AND !FirstSave		// on vient de changer de cube
 			AND !FlagChgCube )	// on ne sauve pas le contexte
 						// si l'autosave n'a pas encore
-						// Ã©tÃ© faite
+						// ‚t‚ faite
 			{
 				SaveValidePos() ;
 			}
@@ -4195,14 +4195,14 @@ findoanim:
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-			    â–ˆâ–„ â–„â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆ   â–ˆ â–ˆâ–€â–€â–€â–€
-			    â–ˆâ–ˆâ–€ â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ â–„â–€ â–ˆâ–ˆâ–€â–€
-			    â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€   â–€â–€â–€â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+			    ÛÜ ÜÛ ÛßßßÛ Û   Û Ûßßßß
+			    ÛÛß Û ÛÛ  Û ÛÛ Üß ÛÛßß
+			    ßß  ß ßßßßß ßßß   ßßßßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	ManualRealAngle( T_OBJET *ptrobj )
 {
 	if( 	 Input & I_LEFT  )	ChangeSpeedMove( &ptrobj->BoundAngle.Move, 1024 ) ;
@@ -4216,8 +4216,8 @@ void	ManualRealAngle( T_OBJET *ptrobj )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	ClearRealAngle( T_OBJET *ptrobj )
 {
@@ -4227,8 +4227,8 @@ void	ClearRealAngle( T_OBJET *ptrobj )
 				ptrobj->Obj.Beta ) ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 void	ThrowMecaPingouin( void )
 {
 	T_OBJET	*ptrobj = &ListObjet[NUM_PINGOUIN] ;
@@ -4257,7 +4257,7 @@ void	ThrowMecaPingouin( void )
 		}
 */
 		ptrobj->WorkFlags &= ~OBJ_DEAD ;
-                ptrobj->CarryBy = 0 ;// pour le forcer Ã  tomber si nÃ©cessaire
+                ptrobj->CarryBy = 0 ;// pour le forcer … tomber si n‚cessaire
 
 		ptrobj->GenBody = NO_BODY ;
 		InitBody( GEN_BODY_NORMAL, NUM_PINGOUIN ) ;
@@ -4291,7 +4291,7 @@ void	ThrowMecaPingouin( void )
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 void	ExplodeMecaPingouin( void )
 {
 	S32	x, y, z ;
@@ -4342,8 +4342,8 @@ void	ExplodeMecaPingouin( void )
 	}
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 /* T_OBJET.	Info		Info1		Info2		Info3
 
 FOLLOW								num obj
@@ -4356,12 +4356,12 @@ TRACK
 TRACK_ATTACK
 
 */
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
-// Valeur rÃ©cupÃ©rÃ©e dans Animit pour l'anim marche du SuperJetPack
+// Valeur r‚cup‚r‚e dans Animit pour l'anim marche du SuperJetPack
 #define	HEIGHT_JETPACK	543
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	DoDir( U8 numobj  )
 {
 	T_OBJET	*ptrobj ;
@@ -4539,7 +4539,7 @@ void	DoDir( U8 numobj  )
 						if( ydec-ShadowYHero<=HEIGHT_JETPACK
 						AND !ptrobj->Col )
 						{
-							// tester point de derriÃ¨re
+							// tester point de derriŠre
 							if( (ptrobj->Obj.Y-ShadowYHero) > (HEIGHT_JETPACK+SIZE_BRICK_Y/2) )
 							{
 								InitAnim( GEN_ANIM_ARRIMAGE, ANIM_REPEAT, numobj ) ;
@@ -4578,7 +4578,7 @@ void	DoDir( U8 numobj  )
 				Input |= I_UP ;
 			}
 
-			// On peut pas dÃ©marrer en jetpack
+			// On peut pas d‚marrer en jetpack
 			// si on est dans l'eau
 			if( /*ptrobj->GenAnim!=GEN_ANIM_MARCHE
 			AND*/ (ptrobj->CodeJeu>>4)==CJ_FOOT_WATER
@@ -4629,7 +4629,7 @@ void	DoDir( U8 numobj  )
 								}
 								LastJoyFlag = TRUE ;
 								flagattack  = TRUE ;
-								/* control direction pendant visÃ©e */
+								/* control direction pendant vis‚e */
 								if( !(ptrobj->WorkFlags & ANIM_MASTER_ROT) )
 								{
 									ptrobj->Obj.Beta += GetDeltaMove( &ptrobj->BoundAngle.Move ) ;
@@ -4650,7 +4650,7 @@ void	DoDir( U8 numobj  )
 
 						LastJoyFlag = TRUE ;
 						flagattack  = TRUE ;
-						// control direction pendant visÃ©e
+						// control direction pendant vis‚e
 						if( !(ptrobj->WorkFlags & ANIM_MASTER_ROT) )
 						{
 							ptrobj->Obj.Beta += GetDeltaMove( &ptrobj->BoundAngle.Move ) ;
@@ -4664,7 +4664,7 @@ void	DoDir( U8 numobj  )
 							InitAnim( GEN_ANIM_DART, ANIM_THEN, numobj ) ;
 							LastJoyFlag = TRUE ;
 							flagattack  = TRUE ;
-							/* control direction pendant visÃ©e */
+							/* control direction pendant vis‚e */
 							if( !(ptrobj->WorkFlags & ANIM_MASTER_ROT) )
 							{
 								ptrobj->Obj.Beta += GetDeltaMove( &ptrobj->BoundAngle.Move ) ;
@@ -4753,7 +4753,7 @@ void	DoDir( U8 numobj  )
 			{
 				if( MagicBallFlags&MAGIC_BALL_LANCEE )
 				{
-					// On a lachÃ© la touche <ALT>, se tenir pret a
+					// On a lach‚ la touche <ALT>, se tenir pret a
 					// ramener la balle si le joueur reappuie sur la
 					// touche <ALT>.
 					MagicBallFlags = MAGIC_BALL_LACHEE ;
@@ -4878,7 +4878,7 @@ void	DoDir( U8 numobj  )
 				}
 				else	InitAnim( GEN_ANIM_MARCHE, ANIM_REPEAT, numobj ) ;
 
-				// on Ã©tait en train de descendre
+				// on ‚tait en train de descendre
 				if( PtrZoneClimb )
 				{
 					FlagClimbing = CLIMBING_UP ;
@@ -4892,7 +4892,7 @@ void	DoDir( U8 numobj  )
 		if( test_down AND (Input&I_DOWN) )
 		{
 			if( FlagClimbing!=CLIMBING_DOWN
-			AND ptrobj->GenAnim!=GEN_ANIM_ECHDESC )	// Descente d'Ã©chelle ?
+			AND ptrobj->GenAnim!=GEN_ANIM_ECHDESC )	// Descente d'‚chelle ?
 			{
 				if( Input&I_ESQUIVE )
 				{
@@ -5071,7 +5071,7 @@ void	DoDir( U8 numobj  )
 		break ;
 
 /*-------------------------------------------------------------------------*/
-	// dediÃ© aux wagons
+	// dedi‚ aux wagons
 	case MOVE_WAGON:
 		DoDirWagon( ptrobj ) ;
 		break ;
@@ -5123,16 +5123,16 @@ void	DoDir( U8 numobj  )
 		}
 		break ;
 	}
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 }
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-		   â–ˆâ–€â–€â–€â–„  â–ˆ    â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆ     â–ˆâ–€â–€â–€â–ˆ â–ˆ  â–„â–€
-		   â–ˆâ–ˆ  â–ˆ  â–ˆâ–ˆ   â–€â–€â–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€
-		   â–€â–€â–€â–€   â–€â–€   â–€â–€â–€â–€â–€ â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+		   ÛßßßÜ  Û    ÛÛßßß ÛßßßÛ Û     ÛßßßÛ Û  Üß
+		   ÛÛ  Û  ÛÛ   ßßßßÛ ÛÛßßß ÛÛ    ÛÛßßÛ ÛÛß
+		   ßßßß   ßß   ßßßßß ßß    ßßßßß ßß  ß ßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 #ifdef	DEBUG_TOOLS
 void	DrawZV( T_OBJET *ptrobj )
 {
@@ -5153,9 +5153,9 @@ void	DrawZV( T_OBJET *ptrobj )
 #endif
 
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-// appelÃ©e si le joueur appuie sur <ESC> pendant une scene automatique
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+// appel‚e si le joueur appuie sur <ESC> pendant une scene automatique
 // si CinemaMode>1 (Cube de destination)
 void	ResetCinemaMode( void )
 {
@@ -5172,7 +5172,7 @@ void	ResetCinemaMode( void )
 	}
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	FixeCinemaMode( S32 flagflip )
 {
 	if( CinemaMode )
@@ -5207,7 +5207,7 @@ void	FixeCinemaMode( S32 flagflip )
 				RestoreClipWindow() ;
 			}
 		}
-		else if( !flagflip )	// changement de camÃ©ra
+		else if( !flagflip )	// changement de cam‚ra
 		{
 			MemoClipWindow() ;
 			UnsetClipWindow() ;
@@ -5254,7 +5254,7 @@ void	FixeCinemaMode( S32 flagflip )
 		}
 		else if( ClipWindowYMin!=LastYCinema )
 		{
-			// derniere bande Ã  effacer
+			// derniere bande … effacer
 			if( flagflip )
 			{
 				MemoClipWindow() ;
@@ -5271,7 +5271,7 @@ void	FixeCinemaMode( S32 flagflip )
 	}
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	RestoreCinemaMode( void )
 {
 	if( !CinemaMode
@@ -5283,12 +5283,12 @@ void	RestoreCinemaMode( void )
 	}
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 static  S32	FlagFlip = 0	;
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	AfficheShadow( T_SORT *pt, S32 beta )
 {
 	if( PtrProjectShadow( pt, beta ) )
@@ -5304,7 +5304,7 @@ void	AfficheShadow( T_SORT *pt, S32 beta )
 			yw = pt->Yw ;
 
 			// Magouille pour eviter de se faire recouvrir
-			// dans les penchÃ©s en Interieur
+			// dans les pench‚s en Interieur
 /*			if( CubeMode==CUBE_INTERIEUR )
 			{
 				if( WorldColBrick( pt->Xw, yw, pt->Zw ) > 1 )
@@ -5323,8 +5323,8 @@ void	AfficheShadow( T_SORT *pt, S32 beta )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 S32	AffOneObject(T_SORT *pt)
 {
 	T_OBJET	*ptrobj 	;
@@ -5397,7 +5397,7 @@ S32	AffOneObject(T_SORT *pt)
 
 		aff = ObjectDisplay( &ptrobj->Obj )	;
 
-		if( aff )	/* objet pas tout clippÃ© */
+		if( aff )	/* objet pas tout clipp‚ */
 		{
 			SetClip( ScreenXMin, ScreenYMin, ScreenXMax, ScreenYMax ) ;
 			if( ClipXMin <= ClipXMax
@@ -5406,7 +5406,7 @@ S32	AffOneObject(T_SORT *pt)
 				S32	yw = ptrobj->Obj.Y ;
 
 				// Magouille pour eviter de se faire recouvrir
-				// dans les penchÃ©s en Interieur
+				// dans les pench‚s en Interieur
 /*				if( CubeMode==CUBE_INTERIEUR )
 				{
 //					AND (ptrobj->Col&127) > 1 )
@@ -5438,7 +5438,7 @@ S32	AffOneObject(T_SORT *pt)
 					if( DrawRecover( ptrobj->Obj.X, yw, ptrobj->Obj.Z, ptrobj->YMax,
 							 __max( (ptrobj->XMax-ptrobj->XMin)/2, (ptrobj->ZMax-ptrobj->ZMin)/2 )) )
 					{
-						// Objet complÃ¨tement masquÃ©
+						// Objet complŠtement masqu‚
 						if( numobj==NumObjFollow
 						AND TestNumObjFollow	// protec boucle infinie
 						AND !CameraZone )
@@ -5469,11 +5469,11 @@ S32	AffOneObject(T_SORT *pt)
 			}
 		}
 
-		// attend d'avoir Ã©tÃ© affichÃ© pour connaitre les coordonnÃ©es
+		// attend d'avoir ‚t‚ affich‚ pour connaitre les coordonn‚es
 		// d'un de ses points
 		if( ptrobj->WorkFlags&WAIT_COORD )
 		{
-			// nÃ©cessaire 1 seule frame
+			// n‚cessaire 1 seule frame
 			ptrobj->WorkFlags &= ~(WAIT_COORD) ;
 
 			num = ptrobj->Coord.A3DS.Num ;// num extra
@@ -5482,7 +5482,7 @@ S32	AffOneObject(T_SORT *pt)
 			{
 				ptrextra = &ListExtra[num] ;
 
-				num = ptrextra->PosX ;// ptrextra->PosX contient le numÃ©ro de point
+				num = ptrextra->PosX ;// ptrextra->PosX contient le num‚ro de point
 
 				// recupere coord dans anim
 				LongWorldInverseRotatePoint( Obj_ListRotatedPoints[num].X,
@@ -5738,7 +5738,7 @@ S32	AffOneObject(T_SORT *pt)
 		PtrProjectPoint( ptrextra->PosX, ptrextra->PosY, ptrextra->PosZ ) ;
 
 		num = ptrextra->Sprite ;
-		if( num & 32768 )	/// effet spÃ©cial
+		if( num & 32768 )	/// effet sp‚cial
 		{
 			AffSpecial( numobj ) ;
 		}
@@ -5773,7 +5773,7 @@ S32	AffOneObject(T_SORT *pt)
 			S32	yw = ptrextra->PosY ;
 
 			// Magouille pour eviter de se faire recouvrir
-			// dans les penchÃ©s en Interieur
+			// dans les pench‚s en Interieur
 			if( CubeMode==CUBE_INTERIEUR )
 			{
 				if( WorldColBrick( ptrextra->PosX, yw, ptrextra->PosZ ) >  1 )
@@ -5807,7 +5807,7 @@ S32	AffOneObject(T_SORT *pt)
 				S32	zw = ptrf->OrgZ ;
 
 				// Magouille pour eviter de se faire recouvrir
-				// dans les penchÃ©s en Interieur
+				// dans les pench‚s en Interieur
 				if( CubeMode==CUBE_INTERIEUR )
 				{
 					xw += ptrf->XMax ;
@@ -5843,7 +5843,7 @@ S32	AffOneObject(T_SORT *pt)
 				S32	yw = ptrd->PosY ;
 
 				// Magouille pour eviter de se faire recouvrir
-				// dans les penchÃ©s en Interieur
+				// dans les pench‚s en Interieur
 				if( CubeMode==CUBE_INTERIEUR )
 				{
 					if( WorldColBrick( ptrd->PosX, yw, ptrd->PosZ ) > 1 )
@@ -5868,7 +5868,7 @@ S32	AffOneObject(T_SORT *pt)
 	return FALSE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 
 void	AffNbFps( void )
 {
@@ -5885,8 +5885,8 @@ void	AffNbFps( void )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 void	AffScene( S32 flagflip )
 {
@@ -5925,7 +5925,7 @@ startaffscene:
 		case AFF_OBJETS_FLIP:
 //			BoxClean() ;
 		case AFF_OBJETS_NO_FLIP:
-			BoxClean() ;// ATTENTION: rajoutÃ© le 30/05/97
+			BoxClean() ;// ATTENTION: rajout‚ le 30/05/97
 			if( !FlagAnimWhoSpeak )
 			{
 				RestoreCinemaMode() ;	// Scrolle les bandes noires
@@ -5935,7 +5935,7 @@ startaffscene:
 
 		case AFF_ALL_FLIP:
 			// Pour ecraser MemoClipWindowYMin qui est
-			// testÃ© plus loin
+			// test‚ plus loin
 			if( !FlagAnimWhoSpeak )	MemoClipWindow() ;
 
 			if( !CinemaMode AND ClipWindowYMin>0 )
@@ -5970,7 +5970,7 @@ startaffscene:
 /*------------------------------------------------------------------------*/
 
 	// Peut-etre faut-il le mettre avant l'affichage de la scene s'il y
-	// a des textures animÃ©es dans le decors (Ouppppps! J'espÃ¨re que non !)
+	// a des textures anim‚es dans le decors (Ouppppps! J'espŠre que non !)
 	if( AnimateTexture OR ProtectActif )	DoTextureAnimation() ;
 
 /*------------------------------------------------------------------------*/
@@ -6000,7 +6000,7 @@ startaffscene:
 		OR   (flagflip == AFF_OBJETS_NO_FLIP)) )
 		{
 			// rustine: renseigne qd meme moteur presence sprite
-			// pour obj_back si dans l'Ã©cran
+			// pour obj_back si dans l'‚cran
 			PtrProjectPoint( ptrobj->Obj.X, ptrobj->Obj.Y, ptrobj->Obj.Z ) ;
 			if( (Xp>VIEW_X0) AND (Xp<VIEW_X1) AND (Yp>VIEW_Y0) AND (Yp<VIEW_Y1) )
 			{
@@ -6322,12 +6322,12 @@ startaffscene:
 
 	if( BaseSort() )
 	{
-		// NumObjFollow masquÃ© on
+		// NumObjFollow masqu‚ on
 		// doit redessiner la camera
 		if( flagflip==AFF_ALL_FLIP
 		OR  flagflip==AFF_ALL_NO_FLIP )
 		{
-			// Car il y a un LockTimer() just aprÃ¨s
+			// Car il y a un LockTimer() just aprŠs
 			UnlockTimer() ;
 		}
 
@@ -6493,7 +6493,7 @@ startaffscene:
 		}
 		else
 		{	// Speak Only
-			DrawBulle( num ) ;// num positionnÃ© plus haut dans
+			DrawBulle( num ) ;// num positionn‚ plus haut dans
 					  // gestion deplacement incrust
 		}
 		break ;
@@ -6571,7 +6571,7 @@ startaffscene:
 
 		ScreenXMin = ptrdisp->X ;
 
-		// ATTENTION: Grosse Magouille: les compteurs sont tjs affichÃ©s
+		// ATTENTION: Grosse Magouille: les compteurs sont tjs affich‚s
 		// en y=20, ceci permet d'utiliser le Y pour memoriser la
 		// valeur courante du compteur (cf FlagAnimWhoSpeak)
 		ScreenYMin = 20 - dy/2 ;
@@ -6790,15 +6790,15 @@ startaffscene:
 		}
 	}
 }
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-		â–€â–€â–€â–ˆâ–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–€       â–ˆâ–€â–€â–€â–„ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€
-		 â–„â–ˆ   â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆâ–€â–€        â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ
-		â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+		ßßßÛß ÛßßßÛ ÛÛÜ Û Ûßßßß       ÛßßßÜ Ûßßßß Ûßßßß
+		 ÜÛ   ÛÛ  Û ÛÛßÛÛ ÛÛßß        ÛÛ  Û ÛÛßß  ÛÛ
+		ßßßßß ßßßßß ßß  ß ßßßßß ßßßßß ßßßß  ßßßßß ßßßßß
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	SetZoneCamera( T_ZONE *ptrz )
 {
 	S32	info0, info1, info2 ;
@@ -6807,7 +6807,7 @@ void	SetZoneCamera( T_ZONE *ptrz )
 	info1 = ptrz->Info1 ;
 	info2 = ptrz->Info2 ;
 
-	// signale pos forcÃ©e
+	// signale pos forc‚e
 	CameraZone = TRUE ;
 	FlagCameraForcee = TRUE ;
 
@@ -6852,7 +6852,7 @@ void	SetZoneCamera( T_ZONE *ptrz )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	GereZoneMessage( T_OBJET *ptrobj, T_ZONE *ptrz )
 {
 	if( ActionNormal==1 )
@@ -6929,7 +6929,7 @@ void	GereZoneMessage( T_OBJET *ptrobj, T_ZONE *ptrz )
 #endif
 			NumObjDial = NUM_PERSO ;
 
-			// au cas ou l'on soit appelÃ© pendant un eclair
+			// au cas ou l'on soit appel‚ pendant un eclair
 			Palette( PtrPal ) ;
 
 			Dial( ptrz->Num, TRUE ) ;
@@ -6937,7 +6937,7 @@ void	GereZoneMessage( T_OBJET *ptrobj, T_ZONE *ptrz )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 S32	GereZoneChangeCube( T_OBJET *ptrobj, T_ZONE *ptrz )
 {
 	if( ((ptrobj->Move!=MOVE_BUGGY_MANUAL AND ptrobj->Move!=MOVE_BUGGY)
@@ -6956,7 +6956,7 @@ S32	GereZoneChangeCube( T_OBJET *ptrobj, T_ZONE *ptrz )
 			y = ptrobj->Obj.Y ;
 			z = ptrobj->Obj.Z ;
 
-			// Pour les zones ChangeCube en extÃ©rieur
+			// Pour les zones ChangeCube en ext‚rieur
 			// on attend de rentrer en collision avec
 			// la porte
 
@@ -7035,7 +7035,7 @@ S32	GereZoneChangeCube( T_OBJET *ptrobj, T_ZONE *ptrz )
 	return FALSE ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	CheckZoneSce( T_OBJET *ptrobj, U8 numobj )
 {
 	S32	n ;
@@ -7065,7 +7065,7 @@ void	CheckZoneSce( T_OBJET *ptrobj, U8 numobj )
 	for( n=0; n<NbZones; n++, ptrz++ )
 	{
 		// bug resolu en testant les x1 et z1 avec '<' et non
-		// '<=' car on se retrouvait dans 2 zones en mÃªme temps !!!
+		// '<=' car on se retrouvait dans 2 zones en mˆme temps !!!
 		if( x >= ptrz->X0
 		AND x <  ptrz->X1
 		AND y >= ptrz->Y0
@@ -7182,7 +7182,7 @@ void	CheckZoneSce( T_OBJET *ptrobj, U8 numobj )
 
 							if( y >= ptrz->Y1-DELTAY_ANIM_ECHELLE )
 							{
-								ptrobj->Info3 = ptrz->Y1 ;// limite Ã  ne pas depasser
+								ptrobj->Info3 = ptrz->Y1 ;// limite … ne pas depasser
 								InitAnim( GEN_ANIM_ECHELLE, ANIM_ALL_THEN, NUM_PERSO ) ;
 							}
 							else
@@ -7226,7 +7226,7 @@ void	CheckZoneSce( T_OBJET *ptrobj, U8 numobj )
 							col = PtrWorldColBrick( x, y-128, z ) ;
 						else
 						{
-							// Trouver une autre mÃ©thode car c'est un pneu
+							// Trouver une autre m‚thode car c'est un pneu
 							// crade !
 
 							if( PtrWorldColBrick( X0, y, Z0 ) )
@@ -7342,7 +7342,7 @@ void	CheckZoneSce( T_OBJET *ptrobj, U8 numobj )
 	}
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	CheckBuggyZoneGiver( T_OBJET *ptrobj )
 {
 	S32	n ;
@@ -7365,7 +7365,7 @@ void	CheckBuggyZoneGiver( T_OBJET *ptrobj )
 		AND ptrz->Type!=5 )	continue ;
 
 		// bug resolu en testant les x1 et z1 avec '<' et non
-		// '<=' car on se retrouvait dans 2 zones en mÃªme temps !!!
+		// '<=' car on se retrouvait dans 2 zones en mˆme temps !!!
 		if( x >= ptrz->X0
 		AND x <  ptrz->X1
 		AND y >= ptrz->Y0

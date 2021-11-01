@@ -15,7 +15,7 @@
 #define	MAX_IMPACT_ENTITIES	20
 #define	MAX_IMPACT		100
 
-// Types d'entitÃ©
+// Types d'entit‚
 
 #define	IMP_NOP		-1
 #define	IMP_END		0
@@ -34,7 +34,7 @@
 
 
 #ifdef	LBA_EDITOR
-// Pour prÃ©compiler les impacts
+// Pour pr‚compiler les impacts
 
 typedef struct {
 	char name[10] ;

@@ -1,5 +1,0 @@
-extern void AddOptBox(short ,short ,short ,short );
-extern void AddPhysBox(short ,short ,short ,short );
-extern void FlipOptList(void);
-extern void FlipBoxes(void);
-extern void ClsBoxes(void);

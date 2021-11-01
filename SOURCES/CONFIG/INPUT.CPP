@@ -52,18 +52,18 @@ T_DEF_KEY      	DefKeysDefault[MAX_INPUT+1] =
 
 T_DEF_KEY      	DefKeys[MAX_INPUT+1] ;
 
-// tableau de configuration des touches utilisÃ© au cours du jeux
+// tableau de configuration des touches utilis‚ au cours du jeux
 U32		TabInputBit[MAX_INPUT+1]  ;
 
 
-/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
-			â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
-			â””â”€â–ˆâ–ˆâ”Œâ”€â”˜ â–ˆâ–ˆâ–ˆâ”â–ˆâ–ˆâ”‚ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜
-			  â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚     â–ˆâ–ˆâ”‚
-			  â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”Œâ–ˆâ–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚     â–ˆâ–ˆâ”‚
-			â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ”‚â””â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”   â–ˆâ–ˆâ”‚
-			â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜ â””â”€â”€â”€â”€â”€â”˜   â””â”€â”˜
- *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+			ÛÛÛÛÛÛ¿ ÛÛ¿ ÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿
+			ÀÄÛÛÚÄÙ ÛÛÛ¿ÛÛ³ ÀÄÛÛÚÄÙ ÀÄÛÛÚÄÙ
+			  ÛÛ³   ÛÛÛÛÛÛ³   ÛÛ³     ÛÛ³
+			  ÛÛ³   ÛÛÚÛÛÛ³   ÛÛ³     ÛÛ³
+			ÛÛÛÛÛÛ¿ ÛÛ³ÀÛÛ³ ÛÛÛÛÛÛ¿   ÛÛ³
+			ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ ÀÄÄÄÄÄÙ   ÀÄÙ
+ *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
 
 //-------------------------------------------------------------------------
 void	InitInput( void )
@@ -135,7 +135,7 @@ void	ReadInputConfig( void )
 	if( winmode )
 #endif	// _WIN32
 	{
-		// reinit des input par dÃ©faut
+		// reinit des input par d‚faut
 		for( n=0; n<MAX_INPUT; n++ )
 		{
 			DefKeys[n].Key1 = DefKeysDefault[n].Key1 ;
@@ -151,12 +151,12 @@ void	ReadInputConfig( void )
 		{
 			sprintf( id, "Input%d_1", n ) ;
 			DefKeys[n].Key1 = DefFileBufferReadValueDefault( id, DefKeysDefault[n].Key1 ) ;
-			// Blindage si les Inputs sont configurÃ©s Ã  0
+			// Blindage si les Inputs sont configur‚s … 0
 			if( !DefKeys[n].Key1 )	DefKeys[n].Key1 = DefKeysDefault[n].Key1 ;
 
 			sprintf( id, "Input%d_2", n ) ;
 			DefKeys[n].Key2 = DefFileBufferReadValueDefault( id, DefKeysDefault[n].Key2 ) ;
-			// Blindage si les Inputs sont configurÃ©s Ã  0
+			// Blindage si les Inputs sont configur‚s … 0
 			if( !DefKeys[n].Key2 )	DefKeys[n].Key2 = DefKeysDefault[n].Key2 ;
 		}
 	}
@@ -198,7 +198,7 @@ void    MyGetInput()
 
 	MyKey = Key ;
 
-	// Attente d'Ã©vÃ©nement de touche dans la boucle
+	// Attente d'‚v‚nement de touche dans la boucle
 
 	if( WaitNoKey )
 	{
@@ -224,7 +224,7 @@ void    MyGetInput()
 }
 
 //***************************************************************************
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	WaitNoInput( void )
 {
 	MyGetInput() ;
@@ -236,7 +236,7 @@ void	WaitNoInput( void )
 	)	MyGetInput() ;
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 void	WaitInput( void )
 {
 	MyGetInput() ;

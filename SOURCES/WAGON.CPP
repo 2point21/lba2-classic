@@ -1,6 +1,6 @@
 #include	"c_extern.h"
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	DoAnimWagon( void )
 {
 	S32	n, angle, va   ;
@@ -9,7 +9,7 @@ void	DoAnimWagon( void )
 	// Magouille pour ne pas ecraser les groupes dans AffOneObjet()
 	ObjectSetInterFrame( obj )	;
 
-	// SizeSHit contient le numÃ©ro de la brick sous le wagon
+	// SizeSHit contient le num‚ro de la brick sous le wagon
 	// teste position de l'essieu avant
 	AdjustEssieuWagonAvant( APtObj->SizeSHit ) ;
 	// teste position de l'essieu arriere
@@ -72,21 +72,21 @@ void	DoAnimWagon( void )
 	}// Srot != 0
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	DoDirWagon( T_OBJET *ptrobj )
 {
 	S32	brick	;
 
 	// ATTENTION : Grosse Magouille :
 	// Le champ Sprite des objets de type Wagon (forcement des
-	// objets 3D) est utilisÃ© dans les aiguillages pour savoir
+	// objets 3D) est utilis‚ dans les aiguillages pour savoir
 	// dans quel sens on le prend. Cela repare un bug lorqu'on
 	// tournait dans un aiguillage et qu'on modifiait en meme
 	// temps le sens de l'aiguillage !
 
 	// Autres champs utilises :
 
-	// Info: Type de dÃ©placement: 0 --> droit
+	// Info: Type de d‚placement: 0 --> droit
 	//			      1 --> Virage Gauche
 	//			      2 --> Virage Droite
 
@@ -715,7 +715,7 @@ void	DoDirWagon( T_OBJET *ptrobj )
 	ptrobj->SizeSHit = (S16)brick ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 S32	GetNumBrickWagon( S32 brick )
 {
 #ifdef	LBA_EDITOR
@@ -751,13 +751,13 @@ S32	GetNumBrickWagon( S32 brick )
 	else	return( brick ) ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	AdjustEssieuWagonAvant( S32 brickw )
 {
 	S32	brick ;
 	S32	diff = FALSE ;
 	S32	xess, yess, zess ;	// x,y et z de l'essieu avant
-	S32	ey ;		// ecart y relatif Ã  un pseudo
+	S32	ey ;		// ecart y relatif … un pseudo
 	S32	y ;		// ordonnee de la pente
 
 	Rotate( 0,400,APtObj->Obj.Beta ) ;
@@ -877,13 +877,13 @@ void	AdjustEssieuWagonAvant( S32 brickw )
 	APtObj->Coord.SHit.SHitX = APtObj->Obj.CurrentFrame[0].Beta ;
 }
 
-//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
 void	AdjustEssieuWagonArriere( S32 brickw )
 {
 	S32	brick ;
 	S32	diff = FALSE ;
 	S32	xess, yess, zess ;	// x,y et z de l'essieu avant
-	S32	ey	;		// ecart y relatif Ã  un pseudo
+	S32	ey	;		// ecart y relatif … un pseudo
 	S32	y	;		// ordonnee de la pente
 
 	Rotate( 0,-400,APtObj->Obj.Beta ) ;

@@ -14,7 +14,7 @@ extern	S32	FlagAnimWhoSpeak;
 extern	S32	Language 	; // English
 
 #ifdef	CDROM
-extern	S32	LanguageCD 	; // Fran√ßais, a changer of course!
+extern	S32	LanguageCD 	; // Franáais, a changer of course!
 #endif
 
 extern	S32	FlagRestoreCD	;

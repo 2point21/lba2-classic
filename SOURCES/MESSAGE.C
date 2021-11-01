@@ -2,12 +2,12 @@
 #ifdef	TITRE
 /*-------------------------------------------------------------------------*/
 
-	    Û¿   Û¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿
-//	    ÛÛ¿ ÛÛ³ ÛÛÚÄÄÄÙ ÛÛÚÄÄÄÙ ÛÛÚÄÄÄÙ ÛÛÚÄÛÛ³ ÛÛÚÄÄÄÙ ÛÛÚÄÄÄÙ
-	    ÛÛÛÛÛÛ³ ÛÛÛÛÛ¿  ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ³ ÛÛ³ÛÛÛ¿ ÛÛÛÛÛ¿
-//	    ÛÛÚÄÛÛ³ ÛÛÚÄÄÙ  ÀÄÄÄÛÛ³ ÀÄÄÄÛÛ³ ÛÛÚÄÛÛ³ ÛÛ³ÀÛÛ³ ÛÛÚÄÄÙ
-	    ÛÛ³ ÛÛ³ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ³ ÛÛÛÛÛÛ³ ÛÛ³ ÛÛ³ ÛÛÛÛÛÛ³ ÛÛÛÛÛÛ¿
-	    ÀÄÙ ÀÄÙ ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ
+	    â–ˆâ”   â–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+//	    â–ˆâ–ˆâ” â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜
+	    â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚â–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+//	    â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”˜  â””â”€â”€â”€â–ˆâ–ˆâ”‚ â””â”€â”€â”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚â””â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”˜
+	    â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+	    â””â”€â”˜ â””â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜
 /*-------------------------------------------------------------------------*/
 #endif
 
@@ -135,9 +135,9 @@ LONG	LastFileInit=-1	;
 char	*TabLanguage[] = {
 			//	Ne pas toucher l'ordre cause HQR
 	"English",
-	"Fran‡ais",
+	"FranÃ§ais",
 	"Deutsch",
-	"Espa¤ol",
+	"EspaÃ±ol",
 	"Italiano" 	}	;
 
 
@@ -206,7 +206,7 @@ typedef	struct
 T_FILEONHD	TabFileOnHD[MAX_FILE_VOICE] ;
 
 ULONG	TotalSizeFileHD = 0		;
-LONG	LanguageCD = 0			;// Fran‡ais, a changer of course!
+LONG	LanguageCD = 0			;// FranÃ§ais, a changer of course!
 LONG	NbFileOnHD = 0			;// No File for the moment
 LONG	MaxVoice=0			;
 #endif
@@ -314,14 +314,14 @@ LONG    FindText( LONG text )
 }
 #ifdef	TITRE
 /*-------------------------------------------------------------------------*/
-	  Ûßßßß ÛßßßÜ ÛßßßÛ ÛßßßÛ ÛÜ ÜÛ       ÛßßßÛ ÛßßßÛ ÛßßßÛ ßßÛßß
-//	  ÛÛ    ÛÛ  Û ÛÛßÛß ÛÛ  Û ÛÛß Û       ÛÛßßß ÛÛßßÛ ÛÛßÛß   ÛÛ
-	  ßßßßß ßßßß  ßß  ß ßßßßß ßß  ß       ßß    ßß  ß ßß  ß   ßß
+	  â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–„ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ       â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–€â–€â–ˆâ–€â–€
+//	  â–ˆâ–ˆ    â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€ â–ˆ       â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€   â–ˆâ–ˆ
+	  â–€â–€â–€â–€â–€ â–€â–€â–€â–€  â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€       â–€â–€    â–€â–€  â–€ â–€â–€  â–€   â–€â–€
 /*-------------------------------------------------------------------------*/
 #endif
 #ifdef	CDROM
 /*-------------------------------------------------------------------------*/
-//	Pour prendre en compte les eventuels fichiers d‚j… sur HD
+//	Pour prendre en compte les eventuels fichiers dÃ©jÃ  sur HD
 void	InitVoiceFile()
 {
 	char	pathname[_MAX_PATH];
@@ -426,9 +426,9 @@ void	DeleteOlderFileHD()
 	LONG	i		;
 	ULONG	min, num	;
 
-	min = 0xFFFFFFFFL	;//	le plus r‚cent, non?
+	min = 0xFFFFFFFFL	;//	le plus rÃ©cent, non?
 
-	num = 0			;//	Suis oblig‚ dans trouv‚ un!
+	num = 0			;//	Suis obligÃ© dans trouvÃ© un!
 
 	pt = TabFileOnHD	;
 
@@ -554,7 +554,7 @@ LONG	TryCopyFileCD_HD( char *filecd, char *filehd )
 		freesize = GetHDFreeSize()-(1024L*1024L);
 	}
 
-//----------------------------- Ok, maintenant on a forc‚ment la place...
+//----------------------------- Ok, maintenant on a forcÃ©ment la place...
 
 	return( CopyFileCD_HD( filecd, filehd ))	;//  :-)
 }
@@ -592,7 +592,7 @@ void	InitFileNar( char *file, LONG from )
 
 	MaxVoice = (offset/4)-1			;// Normalement en phase
 						 // avec MaxText mais bon,
-						 // en chantier... {:) --D 	(un ouvrier, je sais, il est nul celui la, d‚sol‚...)
+						 // en chantier... {:) --D 	(un ouvrier, je sais, il est nul celui la, dÃ©solÃ©...)
 	Seek( FdNar, 0L, SEEK_START )		;
 
 	wr = Read( FdNar, BufMemoSeek, offset ) ;
@@ -703,7 +703,7 @@ LONG	TestSpk( LONG fd )
 	if ( !FlagSpeak )	return(0)	;//     Le joueur ne veut pas
 	if ( !fd )		return(0)	;//     Le programme ne peut pas
 
-	if ( WaveInList( SPEAK_SAMPLE ))	return(1)	;// ‡a joue...
+	if ( WaveInList( SPEAK_SAMPLE ))	return(1)	;// Ã§a joue...
 
 	if ( FlagNextVoc )			// Ya une suite...
 	{
@@ -816,7 +816,7 @@ LONG    Speak( LONG text )
 	num = FindText( text )	;
 
 	if (( num == -1 )
-	OR  ( num >= MaxVoice )) return(0L)	;//	Ne doit pas arriv‚,
+	OR  ( num >= MaxVoice )) return(0L)	;//	Ne doit pas arrivÃ©,
 						 // 	sauf en cours de dvp...
 	offset = BufMemoSeek[num]       ;
 
@@ -838,9 +838,9 @@ void    StopSpeak()
 #endif
 #ifdef	TITRE
 /*-------------------------------------------------------------------------*/
-	     Ûßßßß ÛßßßÜ ÛßßßÛ ÛßßßÛ ÛÜ ÜÛ       Ûßßßß ÛÛÜ Û ÛßßßÜ
-//           ÛÛ    ÛÛ  Û ÛÛßÛß ÛÛ  Û ÛÛß Û       ÛÛßß  ÛÛßÛÛ ÛÛ  Û
-	     ßßßßß ßßßß  ßß  ß ßßßßß ßß  ß       ßßßßß ßß  ß ßßßß
+	     â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–„ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ       â–ˆâ–€â–€â–€â–€ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–„
+//           â–ˆâ–ˆ    â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€ â–ˆ       â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆ  â–ˆ
+	     â–€â–€â–€â–€â–€ â–€â–€â–€â–€  â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€       â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€
 /*-------------------------------------------------------------------------*/
 #endif
 /*-------------------------------------------------------------------------*/
@@ -1199,7 +1199,7 @@ void    GetNextLine()
 		if ( *PtDial == 0 )     break   ;
 		GetNextWord( PtDial, Word )     ;
 		if ( SizeLine+SizeSpace+SizeWord > DialMaxSize ) break  ;
-//------------- Caractere Sp‚ciaux, saut de ligne, de page, etc.
+//------------- Caractere SpÃ©ciaux, saut de ligne, de page, etc.
 		if ( *PtDial == 1 )
 		{
 			PtDial++        ;
@@ -1417,7 +1417,7 @@ void    Dial( LONG text )
 */
 	RestoreClip()   ;
 }
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	MyDial( WORD nummess )	// attends une touche si autre page sinon continue
 {
 	WORD	dialstat = 1 ;
@@ -1485,7 +1485,7 @@ void    Dial( LONG text )
 */
 	RestoreClip()   ;
 }
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	MyDial( WORD nummess )	// attends une touche si autre page sinon continue
 {
@@ -1507,7 +1507,7 @@ void	MyDial( WORD nummess )	// attends une touche si autre page sinon continue
 }
 #endif
 /*-------------------------------------------------------------------------*/
-// attention size max ou tronqu‚e … 255 car + 0
+// attention size max ou tronquÃ©e Ã  255 car + 0
 char    *GetMultiText( LONG text, char *dst )
 {
 	char    *pts    ;

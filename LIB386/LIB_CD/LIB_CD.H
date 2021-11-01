@@ -17,23 +17,23 @@ extern	LONG	FileCD_Size	;
 //      Initialiser le lesteur de cdrom, si pas verif alors chaine vide
 LONG    InitCDR( char *nameid )         ;
 
-//      Jouer seulement une track pr‚cise
+//      Jouer seulement une track prÃ©cise
 LONG    PlayTrackCDR( LONG track )      ;
 
 //      Arreter le PlayTrackCDR
 void    StopCDR()                       ;
 
-//      Verouiller ou d‚verouiller la porte du lecteur
+//      Verouiller ou dÃ©verouiller la porte du lecteur
 void    LockCDR()                       ;
 void    UnLockCDR()                     ;
 
 //      Reset, Init ou suite a une erreur par exemple
 void    ResetCDR()                      ;
 
-//      Ejecter le cdrom quand c'est possible ( pas toujours motoris‚ )
+//      Ejecter le cdrom quand c'est possible ( pas toujours motorisÃ© )
 void    EjectCDR()                      ;
 
-//      Fermer tiroir electrique quand c'est possible ( pas toujours motoris‚ )
+//      Fermer tiroir electrique quand c'est possible ( pas toujours motorisÃ© )
 void    CloseTrayCDR()                  ;
 
 //      Reprends une track apres un stopCDR

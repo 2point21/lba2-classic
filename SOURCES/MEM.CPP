@@ -1,6 +1,6 @@
 /*
 
-			Gestion de la m‚moire LBA2
+			Gestion de la mÃ©moire LBA2
 
 
 */
@@ -23,29 +23,29 @@ struct	SizeInfo {
 	S32	MaxTotalBodyDecors ;
 	} ;
 
-// penser … r‚aligner les pointeurs (par une macro ?)
+// penser Ã  rÃ©aligner les pointeurs (par une macro ?)
 
 T_MEM	ListMem[] = {
-	{(void**)&PtrZBuffer, SIZE_Z_BUFFER},	// Calcul‚ dynamiquement (GRILLE.CPP) -> InitBufferCube())
+	{(void**)&PtrZBuffer, SIZE_Z_BUFFER},	// CalculÃ© dynamiquement (GRILLE.CPP) -> InitBufferCube())
 	{(void**)&ScreenAux, 640*480+RECOVER_AREA},
 	{(void**)&BufSpeak, 640*480+RECOVER_AREA},
 	{(void**)&Screen, 640*480+RECOVER_AREA},
-	{(void**)&BufferMaskBrick,0},	// Calcul‚ dynamiquement (GRILLE.CPP -> InitBufferCube())
-	{(void**)&BufMap,0},	// Calcul‚ dynamiquement (GRILLE.CPP -> InitBufferCube())
-	{(void**)&TabBlock,0},	// Calcul‚ dynamiquement (GRILLE.CPP -> InitBufferCube())
+	{(void**)&BufferMaskBrick,0},	// CalculÃ© dynamiquement (GRILLE.CPP -> InitBufferCube())
+	{(void**)&BufMap,0},	// CalculÃ© dynamiquement (GRILLE.CPP -> InitBufferCube())
+	{(void**)&TabBlock,0},	// CalculÃ© dynamiquement (GRILLE.CPP -> InitBufferCube())
 	{(void**)&ListFlowDots, sizeof(S_ONE_DOT)*MAX_FLOW_DOTS*MAX_FLOWS},
 	{(void**)&PtrXplPalette, SIZE_XPL},
 	{(void**)&BufferSmack, 100000L},// tempo ?
 	} ;
 
-S32	SizeOfMemAllocated 	;	// calcul‚e dynamiquement
+S32	SizeOfMemAllocated 	;	// calculÃ©e dynamiquement
 U8	*MainBuffer		;
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-// Sp‚cifique … LBA2: redistribue la m‚moire disponible aux diff‚rents buffers
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+// SpÃ©cifique Ã  LBA2: redistribue la mÃ©moire disponible aux diffÃ©rents buffers
 void	AdjustLba2Mem( void )
 {
-	InitBufferCube() ;	// Calcule taille n‚cessaire … l'interieur
+	InitBufferCube() ;	// Calcule taille nÃ©cessaire Ã  l'interieur
 
 	// Load size plus grosse Scene
 	Load_HQR( PATH_RESSOURCE"scene.hqr", &PtrSceneMem, 0 ) ;
@@ -58,7 +58,7 @@ void	AdjustLba2Mem( void )
 	BufferImpactMem = HQF_ResSize( RESS_HQR_NAME, RESS_IMPACT ) + RECOVER_AREA ;
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 void	AdjustHQRMem( void )
 {
 	U32	memory  ;
@@ -117,7 +117,7 @@ void	AdjustHQRMem( void )
 	if( MapIntensityMem> MAX_MAP_INTENSITY_MEM ) 	MapIntensityMem= MAX_MAP_INTENSITY_MEM ;
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 void   InitMainBuffer( void )
 {
 	T_MEM	*ptrm = ListMem ;
@@ -126,13 +126,13 @@ void   InitMainBuffer( void )
 
 	AdjustLba2Mem() ;
 
-	// Calcule m‚moire n‚cessaire pour tous les buffers
+	// Calcule mÃ©moire nÃ©cessaire pour tous les buffers
 
 	SizeOfMemAllocated = 0 ;
 
 	for( t=0; t<NB_MEM_ELTS; t++, ptrm++ )
 	{
-		ptrm->Size = (ptrm->Size+15)&(~15) ;// aligne … 16
+		ptrm->Size = (ptrm->Size+15)&(~15) ;// aligne Ã  16
 
 		SizeOfMemAllocated += ptrm->Size ;
 	}
@@ -153,12 +153,12 @@ void   InitMainBuffer( void )
 		ptr += ptrm->Size ;
 	}
 
-	// Fixe Pointeurs partageant les mˆme buffer
+	// Fixe Pointeurs partageant les mÃªme buffer
 	BufCube = (U8*)*ListMem[MEM_PTR_ZBUFFER].AdrPtr ;
 	BufferBrick = BufCube+(SIZE_CUBE_X*SIZE_CUBE_Y*SIZE_CUBE_Z*2L) ;
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 void	InitMemory( void )
 {
 	// Alloue Memoire DOS si possible

@@ -14,8 +14,8 @@ typedef	struct	{	WORD	X1 ;		/* size/pos pixel box */
 			WORD	X2 ;
 			WORD	Y2 ;
 
-			WORD	Handle ;	/* info retourne si != -1 */
-			WORD	Flags ;		/* texte centr... */
+			WORD	Handle ;	/* info retournรฉe si != -1 */
+			WORD	Flags ;		/* texte centrรฉ... */
 
 			UBYTE	*PtrString ;
 
@@ -41,7 +41,7 @@ typedef	struct	{       WORD		NbBox ;
 		}	T_MENU ;
 
 
-/*ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ*/
+/*โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•*/
 
 WORD	OpenMenu(	T_MENU *ptrmenu,
 			WORD largeur, WORD hauteur,
@@ -58,7 +58,7 @@ void	DrawMenu( T_MENU *ptrmenu, WORD x1, WORD y1 )	;
 
 WORD	GereMenu( T_MENU *ptrmenu, WORD flagwaitclick )	;
 
-/*ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ*/
+/*โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€*/
 
 void	ChangeButtonFlags( T_MENU *ptrmenu, WORD handle, WORD flags, WORD flagaff ) ;
 WORD	GetButtonFlags( T_MENU *ptrmenu, WORD handle ) ;
@@ -66,4 +66,4 @@ WORD	GetButtonFlags( T_MENU *ptrmenu, WORD handle ) ;
 void	ChangeButtonString( T_MENU *ptrmenu, WORD handle, UBYTE *string, WORD flagaff ) ;
 UBYTE*	GetButtonString( T_MENU *ptrmenu, WORD handle ) ;
 
-/*ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ*/
+/*โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•*/

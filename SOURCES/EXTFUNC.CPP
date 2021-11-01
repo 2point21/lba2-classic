@@ -1,11 +1,11 @@
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-		 ÛÛÛÛ¿  ÛÛÛÛÛ¿          ÛÛÛÛÛÛ¿ ÛÛ¿ ÛÛ¿ ÛÛÛÛÛÛ¿
-		ÛÛÚÄÛÛ¿ ÛÛÚÄÛÛ¿         ÛÛÚÄÄÄÙ ÛÛ³ ÛÛ³ ÀÄÛÛÚÄÙ
-		ÀÄÙÛÛÚÙ ÛÛ³ ÛÛ³         ÛÛÛÛÛ¿  ÀÛÛÛÛÚÙ   ÛÛ³
-		ÛÛ¿ÀÛÛ¿ ÛÛ³ ÛÛ³         ÛÛÚÄÄÙ  ÛÛÚÄÛÛ¿   ÛÛ³
-		ÀÛÛÛÛÚÙ ÛÛÛÛÛÚÙ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛ³ ÛÛ³   ÛÛ³
-		 ÀÄÄÄÙ  ÀÄÄÄÄÙ  ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ   ÀÄÙ
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+		 â–ˆâ–ˆâ–ˆâ–ˆâ”  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”          â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+		â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ” â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”         â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜
+		â””â”€â”˜â–ˆâ–ˆâ”Œâ”˜ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚         â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”  â””â–ˆâ–ˆâ–ˆâ–ˆâ”Œâ”˜   â–ˆâ–ˆâ”‚
+		â–ˆâ–ˆâ”â””â–ˆâ–ˆâ” â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚         â–ˆâ–ˆâ”Œâ”€â”€â”˜  â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”   â–ˆâ–ˆâ”‚
+		â””â–ˆâ–ˆâ–ˆâ–ˆâ”Œâ”˜ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”Œâ”˜ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚
+		 â””â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜   â””â”€â”˜
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 #include "c_extern.h"
 
@@ -40,17 +40,17 @@ U16	GenAnimSkate ;	/* identificateur anim en cours */
 #define	SKATING_TIME_OUT	(25*20)	// 1/2s
 S32	TimerSkating	;
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			    Ûßßßß ÛßßßÛ ÛÜ ÜÛ Ûßßßß
-			    ÛÛ ßÛ ÛÛßßÛ ÛÛß Û ÛÛßß
-			    ßßßßß ßß  ß ßß  ß ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			    â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ â–ˆâ–€â–€â–€â–€
+			    â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€ â–ˆ â–ˆâ–ˆâ–€â–€
+			    â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
-// Initialisation des buffers n‚cessaires … la 3D Ext‚rieur: a appeler une
-// seule fois en d‚but de programme (PERSO.C)
+// Initialisation des buffers nÃ©cessaires Ã  la 3D ExtÃ©rieur: a appeler une
+// seule fois en dÃ©but de programme (PERSO.C)
 void	Init3DExt( )
 {
 	InitExternalView() ;			// mallocs
@@ -71,8 +71,8 @@ void	Init3DExt( )
 #endif
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Restaure buffers allou‚s pour la 3D Ext‚rieur: appel‚ en quittant le
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Restaure buffers allouÃ©s pour la 3D ExtÃ©rieur: appelÃ© en quittant le
 // programme (PERSO.C)
 void	Clear3dExt()
 {
@@ -80,8 +80,8 @@ void	Clear3dExt()
 	ClearExternalView() ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Positionne la cam‚ra pour la 3d Ext‚rieure
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Positionne la camÃ©ra pour la 3d ExtÃ©rieure
 void	Init3DExtView( void )
 {
 	SetProjection( 320, 240, CLIP_NEAR, ChampX, ChampZ ) ;
@@ -92,9 +92,9 @@ void	Init3DExtView( void )
 	SetLightVector( AlphaLight, BetaLight, 0 ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // a appeler a chaque fois que l'on change de cube en 3d exterieur
-// pour r‚initialiser la cam‚ra et les pointeurs de fonctions
+// pour rÃ©initialiser la camÃ©ra et les pointeurs de fonctions
 void	Init3DExtGame()
 {
 	Init3DExtView() ;
@@ -117,11 +117,11 @@ void	Init3DExtGame()
 	PtrInit3DView  	 	= Init3DExtView 	;
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			       ÛÜ ÜÛ ÛßßßÛ ÛßßßÛ
-			       ÛÛß Û ÛÛßßÛ ÛÛßßß
-			       ßß  ß ßß  ß ßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			       â–ˆâ–„ â–„â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ
+			       â–ˆâ–ˆâ–€ â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–€
+			       â–€â–€  â–€ â–€â–€  â–€ â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 // Charge grille lors d'un changement de cube
 #ifdef	LBA_EDITOR
@@ -299,7 +299,7 @@ void	InitGrilleExt( U32 numcube )
 	else
 	{
 #ifdef	DEMO
-		// Grosse rustine pour ne pas voir les plaques d'‚gouts
+		// Grosse rustine pour ne pas voir les plaques d'Ã©gouts
 		ListVarGame[164] = 1 ;
 		ListVarGame[165] = 1 ;
 #endif
@@ -308,8 +308,8 @@ void	InitGrilleExt( U32 numcube )
 }
 #endif
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Affiche la grille complŠte … la position actuelle de la cam‚ra
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Affiche la grille complÃ¨te Ã  la position actuelle de la camÃ©ra
 void	AffGrilleExt()
 {
 	SetFollowCamera(	VueOffsetX, VueOffsetY, VueOffsetZ,
@@ -359,15 +359,15 @@ void	AffGrilleExt()
 #endif
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			 Ûßßßß ÛßßßÛ ÛßßßÛ ÛßßßÛ Û   Û
-			 ÛÛ ßÛ ÛÛßÛß ÛÛßßÛ ÛÛßßß ÛÛßßÛ
-			 ßßßßß ßß  ß ßß  ß ßß    ßß  ß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			 â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆ   â–ˆ
+			 â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–ˆâ–€â–€â–ˆ
+			 â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€  â–€ â–€â–€    â–€â–€  â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 // Calcule le facteur de zoom d'un sprite pour l'afficher: a revoir si c'est
-// bon ! En int‚rieur, on le fixe a la valeur par d‚faut (afficher en taille
+// bon ! En intÃ©rieur, on le fixe a la valeur par dÃ©faut (afficher en taille
 // normale). D'ailleurs, cette fonction devrait se trouver dans INTEXT.C avec
 // pourquoi pas un pointeur sur fonction
 void	CalculeScaleFactorSprite( S32 x, S32 y, S32 z, S32 scaleorg )
@@ -393,11 +393,11 @@ void	CalculeScaleFactorSprite( S32 x, S32 y, S32 z, S32 scaleorg )
 	}
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-		   ÛßßßÛ ÛßßÛ      Û Ûßßßß Ûßßßß ßßÛßß ÛÛßßß
-		   ÛÛ  Û ÛÛßßÛ ÜÜ  Û ÛÛßß  ÛÛ      ÛÛ  ßßßßÛ
-		   ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß   ßß  ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+		   â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–ˆ      â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–€â–€â–ˆâ–€â–€ â–ˆâ–ˆâ–€â–€â–€
+		   â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–„â–„  â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ      â–ˆâ–ˆ  â–€â–€â–€â–€â–ˆ
+		   â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€   â–€â–€  â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 // Calcule coordonnees de l'ombre
 void	GetShadowExt( S32 xw, S32 yw, S32 zw )
@@ -426,9 +426,9 @@ void	GetShadowExt( S32 xw, S32 yw, S32 zw )
 }
 
 #ifndef	COMPILATOR
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Pour recentrage de la camera: teste si la camera se trouve … l'int‚rieur
-// d'un objet sc‚narique. si oui, on lŠve la que.. euh.. la cam‚ra
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Pour recentrage de la camera: teste si la camera se trouve Ã  l'intÃ©rieur
+// d'un objet scÃ©narique. si oui, on lÃ¨ve la que.. euh.. la camÃ©ra
 // (voir 3DEXT\MAPTOOLS.CPP --> SearchCameraPos() )
 
 void	TestCameraPosObjets( void )
@@ -466,7 +466,7 @@ void	TestCameraPosObjets( void )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Detecte collision avec le decors en un point (terrain + objets du decors)
 U8	WorldColBrickExt( S32 xw, S32 yw, S32 zw )
 {
@@ -501,7 +501,7 @@ U8	WorldColBrickExt( S32 xw, S32 yw, S32 zw )
 	return 0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 U8	WorldColBrickVisibleExt(S32 oldx, S32 oldy, S32 oldz,
 				S32 xw, S32 yw, S32 zw )
 {
@@ -519,10 +519,10 @@ U8	WorldColBrickVisibleExt(S32 oldx, S32 oldy, S32 oldz,
 					oldz+(zw-oldz)/2 ) ) ;
 	}
 
-	return( 0 ) ;// Ok, cette fois, on est s–r !:)
+	return( 0 ) ;// Ok, cette fois, on est sÃ»r !:)
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	ReajustPosExtraExt( T_EXTRA *ptrextra, U8 col, S16 *ptrymin )
 {
 	S32	y ;
@@ -534,7 +534,7 @@ void	ReajustPosExtraExt( T_EXTRA *ptrextra, U8 col, S16 *ptrymin )
 	if( y>ptrextra->PosY )	ptrextra->PosY = y ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Detecte collision des avec le decors entre deux positions
 // (uniquement en version jeu)
 U8	FullWorldColBrickExt(	S32 oldx, S32 oldy, S32 oldz,
@@ -560,12 +560,12 @@ U8	FullWorldColBrickExt(	S32 oldx, S32 oldy, S32 oldz,
 	return 0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// D‚tecte collision avec un objet du d‚cors en tenant compte de la ZV
-// de l'objet sc‚narique test‚.
-// La ZV pass‚e de l'objet sc‚narique est pr‚calcul‚e en absolu
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// DÃ©tecte collision avec un objet du dÃ©cors en tenant compte de la ZV
+// de l'objet scÃ©narique testÃ©.
+// La ZV passÃ©e de l'objet scÃ©narique est prÃ©calculÃ©e en absolu
 
-// Version ZVs absolues pr‚calcul‚es des Decors
+// Version ZVs absolues prÃ©calculÃ©es des Decors
 S32	TestZVDecorsZV( T_DECORS *objet,
 			S32 xpmin, S32 ypmin, S32 zpmin,
 			S32 xpmax, S32 ypmax, S32 zpmax )
@@ -584,8 +584,8 @@ S32	TestZVDecorsZV( T_DECORS *objet,
 	return TRUE ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// D‚tecte collision de l'objet sc‚narique courant avec les objets du d‚cors
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// DÃ©tecte collision de l'objet scÃ©narique courant avec les objets du dÃ©cors
 U8	WorldColBrickDecors( S32 xpmin, S32 ypmin, S32 zpmin,
 			     S32 xpmax, S32 ypmax, S32 zpmax )
 {
@@ -612,8 +612,8 @@ U8	WorldColBrickDecors( S32 xpmin, S32 ypmin, S32 zpmin,
 	return 0 ;
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-// Version ZVs absolues pr‚calcul‚es
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
+// Version ZVs absolues prÃ©calculÃ©es
 S32	TestZVDecorsXZFullY( S32 xmin, S32 zmin, S32 xmax, S32 zmax, S32 y0, S32 y1, T_DECORS *objet )
 {
 	if( objet->Body & DEC_INVISIBLE )	return FALSE ;
@@ -632,7 +632,7 @@ S32	TestZVDecorsXZFullY( S32 xmin, S32 zmin, S32 xmax, S32 zmax, S32 y0, S32 y1,
 	return TRUE ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S32	ReajustPosDecors( S32 xmin, S32 zmin,
 			  S32 xmax, S32 zmax,
 			  S32 y0, S32 y1 )
@@ -658,8 +658,8 @@ S32	ReajustPosDecors( S32 xmin, S32 zmin,
 	return y0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// D‚tecte collision de l'objet sc‚narique courant avec le terrain
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// DÃ©tecte collision de l'objet scÃ©narique courant avec le terrain
 U8	WorldColBrickFullExt( S32 xw, S32 yw, S32 zw )
 {
 	// terrain
@@ -670,8 +670,8 @@ U8	WorldColBrickFullExt( S32 xw, S32 yw, S32 zw )
 	return 0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Initialise la glissage dans les pench‚s interdits
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Initialise la glissage dans les penchÃ©s interdits
 void	InitSkating( void )
 {
 	S32	angle	;
@@ -694,7 +694,7 @@ void	InitSkating( void )
 		GenAnimSkate = GEN_ANIM_SKATE ;
 	}
 
-	// pass‚e en anim_all_then ici pour forcee l'anim
+	// passÃ©e en anim_all_then ici pour forcee l'anim
 	InitAnim( GenAnimSkate, ANIM_ALL_THEN, NUM_PERSO ) ;
 	APtObj->WorkFlags |= SKATING ;
 	StartYFalling = 0 ;
@@ -703,16 +703,16 @@ void	InitSkating( void )
 	InitBoundAngleMove( &APtObj->BoundAngle, APtObj->SRot, APtObj->Obj.Beta, beta ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	AnnuleSkating( void )
 {
 	InitAnim( GEN_ANIM_RIEN, ANIM_REPEAT, NUM_PERSO ) ;
 	APtObj->WorkFlags &= ~(SKATING) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// R‚ajuste hauteur (Nyw) de l'objet sc‚narique courant en fonction du terrain
-// et des objets du d‚cors
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// RÃ©ajuste hauteur (Nyw) de l'objet scÃ©narique courant en fonction du terrain
+// et des objets du dÃ©cors
 
 void	ReajustPosExt( U8 col )
 {
@@ -728,7 +728,7 @@ void	ReajustPosExt( U8 col )
 		{
 			Nyw = coly ;
 			PtrDecorsCol = NULL ;
-			APtObj->CarryBy = -1 ;// attention si port‚ par obj
+			APtObj->CarryBy = -1 ;// attention si portÃ© par obj
 					      // scenarique ?
 		}
 		else
@@ -771,7 +771,7 @@ void	ReajustPosExt( U8 col )
 					InitSkating() ;
 				}
 
-				// V‚rifie qu'il n'y ait pas d'objet scenarique ou du decors
+				// VÃ©rifie qu'il n'y ait pas d'objet scenarique ou du decors
 				// entre le sol et nous
 				FirstLoop = TRUE ;// Magouille pour bien passer par les tests
 				ny = AdjustShadowObjects( Nxw, Nzw, coly, Nyw ) ;
@@ -841,8 +841,8 @@ void	ReajustPosExt( U8 col )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Recale Twinsen contre un objet du d‚cors en X
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Recale Twinsen contre un objet du dÃ©cors en X
 
 #define	RecaleXExt(ptrd)				\
 {							\
@@ -856,8 +856,8 @@ void	ReajustPosExt( U8 col )
 	}						\
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Recale Twinsen contre un objet du d‚cors en Z
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Recale Twinsen contre un objet du dÃ©cors en Z
 
 #define	RecaleZExt(ptrd)				\
 {							\
@@ -871,8 +871,8 @@ void	ReajustPosExt( U8 col )
 	}						\
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Reajuste l'objet sc‚narique courant contre les objets du d‚cors
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Reajuste l'objet scÃ©narique courant contre les objets du dÃ©cors
 // probablement optimisable !
 
 S32    DoCornerReajustDecors( )
@@ -960,7 +960,7 @@ S32    DoCornerReajustDecors( )
 	return FALSE ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // reajust pos objet en 2D (x,z) sur le terrain uniquement au point chaud
 
 #define	SQR_2	1518500250	/* sqr(2)<<30 */
@@ -1178,7 +1178,7 @@ S32    DoCornerReajustExtPt( void )
 	return modif ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S32    GetSkateBeta( S32 nx, S32 nz )
 {
 	S32	numtriangle ;
@@ -1225,9 +1225,9 @@ S32    GetSkateBeta( S32 nx, S32 nz )
 }
 #endif	// COMPILATOR
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Gestion de l'animation de l'objet sc‚narique pass‚ (numobj) en mode
-// ext‚rieur. Fait appel … certaines fonctions utilis‚es aussi en int‚rieur
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Gestion de l'animation de l'objet scÃ©narique passÃ© (numobj) en mode
+// extÃ©rieur. Fait appel Ã  certaines fonctions utilisÃ©es aussi en intÃ©rieur
 void	DoAnimExt( U8 numobj  )
 {
 #ifndef	COMPILATOR
@@ -1255,7 +1255,7 @@ void	DoAnimExt( U8 numobj  )
 	if( numobj==NUM_PERSO )
 	{
 		LastValidePos = ValidePos ;
-		ValidePos     = TRUE	;	// considŠre par d‚faut qu'on
+		ValidePos     = TRUE	;	// considÃ¨re par dÃ©faut qu'on
 						// est sur une position valide
 	}
 	else	validepos = FALSE ;
@@ -1342,7 +1342,7 @@ void	DoAnimExt( U8 numobj  )
 			if( GenAnimSkate==GEN_ANIM_SKATEG )
 #endif
 			{
-				// Sur les genoux, on glisse en arriŠre !
+				// Sur les genoux, on glisse en arriÃ¨re !
 
 				beta += 2048 ;
 				beta &= 4095 ;
@@ -1380,7 +1380,7 @@ void	DoAnimExt( U8 numobj  )
 
 		YMap = 0 ;
 
-		/* reajuste le nyw (nouvelle pos) par rapport … la col en cours	*/
+		/* reajuste le nyw (nouvelle pos) par rapport Ã  la col en cours	*/
 		if( APtObj->CarryBy==-1
 		AND (col = WorldColBrickExt( OldX, OldY, OldZ )) != 0 )
 		{
@@ -1406,7 +1406,7 @@ void	DoAnimExt( U8 numobj  )
 			}
 		}
 
-// şşşşşşşşş 4 coins test la col de la nouvelle pos + size zv
+// â– â– â– â– â– â– â– â– â–  4 coins test la col de la nouvelle pos + size zv
 
 		memox = SaveNxw = Nxw ;
 		memoy = Nyw ;
@@ -1423,7 +1423,7 @@ void	DoAnimExt( U8 numobj  )
 // ATTENTION: peut-etre dangereux de mettre ca en commentaire
 			if( DoCornerReajustDecors( ) )
 			{
-				// on y est pas arriv‚, tant pis, on restore
+				// on y est pas arrivÃ©, tant pis, on restore
 				// sa position
 				if( WorldColBrickDecors( Nxw+APtObj->XMin, Nyw+APtObj->YMin+1, Nzw+APtObj->ZMin,
 							 Nxw+APtObj->XMax, Nyw+APtObj->YMax, Nzw+APtObj->ZMax ) )
@@ -1457,7 +1457,7 @@ void	DoAnimExt( U8 numobj  )
 							 Nxw+APtObj->XMax, Nyw+APtObj->YMax, Nzw+APtObj->ZMax )
 				OR  GiveTerrainCol( Nxw, Nzw ) )
 				{
-					// on m'a pouss‚ dans un objet du d‚cors
+					// on m'a poussÃ© dans un objet du dÃ©cors
 					Nxw = OldX ;
 					Nzw = OldZ ;
 				}
@@ -1470,8 +1470,8 @@ void	DoAnimExt( U8 numobj  )
 		OR  memoz!=Nzw )
 		{
 			// houullla !!!!!!!!!
-			// on s'est fait recaler par le decors, v‚rifie qu'on
-			// n'a pas ‚t‚ ‚jecter dans un objet sce
+			// on s'est fait recaler par le decors, vÃ©rifie qu'on
+			// n'a pas Ã©tÃ© Ã©jecter dans un objet sce
 
 			if( IsObjCol( numobj ) )
 			{
@@ -1484,7 +1484,7 @@ void	DoAnimExt( U8 numobj  )
 		//**************
 
 
-// şşşşşşşşş	test la col de la nouvelle pos reelle (pour le sol)
+// â– â– â– â– â– â– â– â– â– 	test la col de la nouvelle pos reelle (pour le sol)
 		if( (APtObj->Col = col = WorldColBrickExt( Nxw, Nyw, Nzw )) != 0 )
 		{
 			if( col == 1 )
@@ -1498,7 +1498,7 @@ void	DoAnimExt( U8 numobj  )
 				{
 			/* fait glisser (dernier recours) */
 
-/*şşşşşşşşş*/	/* regarde de dep X puis Z par rapport … old pos */
+/*â– â– â– â– â– â– â– â– â– */	/* regarde de dep X puis Z par rapport Ã  old pos */
 
 					if( (!(APtObj->WorkFlags & ANIM_MASTER_GRAVITY)
 					   OR (APtObj->WorkFlags &FLY_JETPACK))
@@ -1543,7 +1543,7 @@ void	DoAnimExt( U8 numobj  )
 					ReceptionObj() ;
 				}
 
-// orrection bug chariot dans descente twinsen touche col pench‚e
+// orrection bug chariot dans descente twinsen touche col penchÃ©e
 				if( APtObj->CarryBy == -1 )
 				{
 					ReajustPosExt( col ) ;
@@ -1663,12 +1663,12 @@ void	DoAnimExt( U8 numobj  )
 		}
 	}
 
-	// test pour le pingouin: bit 7 champ Col … 1 si touche mur
+	// test pour le pingouin: bit 7 champ Col Ã  1 si touche mur
 	if( Col1 != 0 )		ptrobj->Col |= 128 ;
 
 /* protege sortie du cube */
 
-	// … virer puisqu'on pourra descendre en dessous de 0
+	// Ã  virer puisqu'on pourra descendre en dessous de 0
 //	if( Nyw < 0 ) Nyw = 0 ;
 
 	// si on passe par l'un de ces tests, cela signifie que l'on n'est
@@ -1882,7 +1882,7 @@ findoanimext:
 			AND !FirstSave		// on vient de changer de cube
 			AND !FlagChgCube )	// on ne sauve pas le contexte
 						// si l'autosave n'a pas encore
-						// ‚t‚ faite
+						// Ã©tÃ© faite
 			{
 				SaveValidePos() ;
 			}
@@ -1900,15 +1900,15 @@ findoanimext:
 }
 
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			 ßßÛßß ÛßßßÛ ÛßßßÛ Û     ÛÛßßß
-			   ÛÛ  ÛÛ  Û ÛÛ  Û ÛÛ    ßßßßÛ
-			   ßß  ßßßßß ßßßßß ßßßßß ßßßßß
-		     (partie seulement utilis‚e dans l'outil)
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			 â–€â–€â–ˆâ–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆ     â–ˆâ–ˆâ–€â–€â–€
+			   â–ˆâ–ˆ  â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ    â–€â–€â–€â–€â–ˆ
+			   â–€â–€  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€
+		     (partie seulement utilisÃ©e dans l'outil)
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 #ifdef	LBA_EDITOR
-// Affiche la feuille (carr‚) d'un polygone index‚ par xi,zi
+// Affiche la feuille (carrÃ©) d'un polygone indexÃ© par xi,zi
 void	DrawGrilleFeuille3D( S32 xi, S32 zi )
 {
 	S32	x0,z0,x3,z3 ;
@@ -1984,8 +1984,8 @@ void	DrawGrilleFeuille3D( S32 xi, S32 zi )
 }
 #endif
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Affiche la table de fog dans un box pass‚ en paramŠtres
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Affiche la table de fog dans un box passÃ© en paramÃ¨tres
 void	AffFogTable( S32 x0, S32 y0, S32 x1, S32 y1 )
 {
 	S32	x, y, xl, yl, fi ;
@@ -2011,8 +2011,8 @@ void	AffFogTable( S32 x0, S32 y0, S32 x1, S32 y1 )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Affiche la palette a l'ecran (Eph‚mŠre car aucun rapport avec 3Dext)
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Affiche la palette a l'ecran (EphÃ©mÃ¨re car aucun rapport avec 3Dext)
 void AffPalette( )
 {
 	S32	t ;
@@ -2071,7 +2071,7 @@ void AffPalette( )
 	FirstTime = AFF_ALL_FLIP ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Affiche le terrain en mode "SPOTS"
 void	RedrawSpeedTerrain()
 {
@@ -2098,8 +2098,8 @@ void	RedrawSpeedTerrain()
 }
 
 #ifdef	LBA_EDITOR
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Rotation du terrain … la souris
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Rotation du terrain Ã  la souris
 S32	GereMouseMovements( S32 boutons )
 {
 	if( CubeMode!=CUBE_EXTERIEUR )	return FALSE ;
@@ -2132,8 +2132,8 @@ S32	GereMouseMovements( S32 boutons )
 }
 #endif
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Gestion zoom/pivot du terrain et position cam‚ra
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Gestion zoom/pivot du terrain et position camÃ©ra
 #ifdef	LBA_EDITOR
 S32	GereExtKeys( U32 key, U32 flagmenu )
 #else
@@ -2367,7 +2367,7 @@ S32	GereExtKeys( U32 key )
 	}
 #else	// LBA_EDITOR
 	// Mode Jeu uniquement
-// penser … remettre en DEBUG_TOOLS
+// penser Ã  remettre en DEBUG_TOOLS
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)
 	while( key==K_PAGE_DOWN )
 	{
@@ -2433,8 +2433,8 @@ S32	GereExtKeys( U32 key )
 #define	COUL_REPERE	YELLOW
 #define	TAILLE_REPERE	1000/35
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Dessine le repŠre dans un rectangle pour ... se rep‚rer !!!
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Dessine le repÃ¨re dans un rectangle pour ... se repÃ©rer !!!
 void	DrawRepereXYZ( S32 x0, S32 y0, S32 x1, S32 y1 )
 {
 	S32	x, z ;
@@ -2443,7 +2443,7 @@ void	DrawRepereXYZ( S32 x0, S32 y0, S32 x1, S32 y1 )
 
 	if( CubeMode!=CUBE_EXTERIEUR )	return ;
 
-	// repŠre des petits axes x, y et z
+	// repÃ¨re des petits axes x, y et z
 	SetProjection( x0+demiw, y0+demih, 10, 1024, 1024 ) ;
 	SetFollowCamera( 0, 0, 0, AlphaCam, BetaCam, GammaCam, 1000 ) ;
 
@@ -2484,7 +2484,7 @@ void	DrawRepereXYZ( S32 x0, S32 y0, S32 x1, S32 y1 )
 	PtrInit3DView( ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Le nom de la fonction est assez parlant, non ?
 void	DrawCameraInfos()
 {
@@ -2536,10 +2536,10 @@ void	DrawCameraInfos()
 #define	CREATE_ZONE_EST		4
 #define	CREATE_ZONE_OUEST	8
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Cherche le num‚ro d'un cube dans CUBE.LST d'aprŠs sa position dans la carte
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Cherche le numÃ©ro d'un cube dans CUBE.LST d'aprÃ¨s sa position dans la carte
 // Cette fonction va gicler car il n'y a plus de normalisation des noms de cubes
-// ext‚rieurs ! (domage !!!!)
+// extÃ©rieurs ! (domage !!!!)
 S16	SearchNumCube( S32 x, S32 y )
 {
 	char	*pt ;
@@ -2572,8 +2572,8 @@ S16	SearchNumCube( S32 x, S32 y )
 	return 0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Cr‚er une zone de changement de cube automatiquement
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// CrÃ©er une zone de changement de cube automatiquement
 void	CreateExtZone( S32 x0, S32 y0, S32 z0, S32 x1, S32 y1, S32 z1,
 		       S32 xd, S32 yd, S32 zd, S32 cubex, S32 cubey )
 {
@@ -2615,9 +2615,9 @@ void	CreateExtZone( S32 x0, S32 y0, S32 z0, S32 x1, S32 y1, S32 z1,
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Cr‚er toutes les zones de changement de cube s‚lectionn‚es dans un cube
-// ext‚rieur automatiquement
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// CrÃ©er toutes les zones de changement de cube sÃ©lectionnÃ©es dans un cube
+// extÃ©rieur automatiquement
 void	CreateExtZones( S32 zones, S32 hauteur )
 {
 	if( CubeMode!=CUBE_EXTERIEUR )	return ;
@@ -2647,8 +2647,8 @@ void	CreateExtZones( S32 zones, S32 hauteur )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Menu de cr‚ation automatique des zones de changement de cube
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Menu de crÃ©ation automatique des zones de changement de cube
 void	MenuCreateExtZones()
 {
 	T_MENU	menu ;
@@ -2659,8 +2659,8 @@ void	MenuCreateExtZones()
 	BackupScreen( TRUE ) ;
 
 	OpenMenu( &menu, 15, 9 ) ;
-	AddText(   &menu,     0, 0, 15,1, FLAG_CENTRE+FLAG_CONTOUR, "Cr‚ation des zones" ) ;
-	AddButton( &menu, 98, 0, 1,  1,1, NO_FLAG, "ş" ) ;
+	AddText(   &menu,     0, 0, 15,1, FLAG_CENTRE+FLAG_CONTOUR, "CrÃ©ation des zones" ) ;
+	AddButton( &menu, 98, 0, 1,  1,1, NO_FLAG, "â– " ) ;
 
 	AddSwitch( &menu,  1, 0, 1, 15,1, FLAG_CENTRE, "ZONE NORD", &zones, CREATE_ZONE_NORD ) ;
 	AddSwitch( &menu,  2, 0, 2, 15,1, FLAG_CENTRE, "ZONE SUD",  &zones, CREATE_ZONE_SUD ) ;

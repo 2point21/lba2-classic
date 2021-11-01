@@ -1,11 +1,11 @@
 #include	"c_extern.h"
 
-/*ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ*
-			 Û฿฿฿Û Û฿฿฿฿ Û฿฿฿Û ÛÛ฿฿฿ Û฿฿฿Û
-			 ÛÛ฿฿฿ ÛÛ฿฿  ÛÛ฿Û฿ ฿฿฿฿Û ÛÛ  Û
-			 ฿฿    ฿฿฿฿฿ ฿฿  ฿ ฿฿฿฿฿ ฿฿฿฿฿
- *ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ*/
-/*ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ*/
+/*โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•*
+			 โ–โ–€โ–€โ–€โ– โ–โ–€โ–€โ–€โ–€ โ–โ–€โ–€โ–€โ– โ–โ–โ–€โ–€โ–€ โ–โ–€โ–€โ–€โ–
+			 โ–โ–โ–€โ–€โ–€ โ–โ–โ–€โ–€  โ–โ–โ–€โ–โ–€ โ–€โ–€โ–€โ–€โ– โ–โ–  โ–
+			 โ–€โ–€    โ–€โ–€โ–€โ–€โ–€ โ–€โ–€  โ–€ โ–€โ–€โ–€โ–€โ–€ โ–€โ–€โ–€โ–€โ–€
+ *โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•*/
+/*โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€*/
 
 /*--------- divers ---------------------------*/
 #ifdef	ONE_GAME_DIRECTORY
@@ -18,7 +18,7 @@ S32	DistribVersion = ACTIVISION_VERSION ;
 
 char	MessageNoCD[50] ;
 
-S32	DemoSlide = FALSE ;	// Mode dmo non jouable
+S32	DemoSlide = FALSE ;	// Mode dรฉmo non jouable
 S32	RestartMusic = FALSE ;
 
 U8	FlagRain = FALSE ;
@@ -46,8 +46,8 @@ U8	*PtrTransPal   ;
 U8	*PtrXplPalette ;
 XPL_HEADER	*PtrXplHeader ;
 
-S32	IdxPalette = 0 ;	// numro de palette dans le HQR
-S32	LastIdxPalette = 0 ;	// numro de la palette prcdente dans le HQR
+S32	IdxPalette = 0 ;	// numรฉro de palette dans le HQR
+S32	LastIdxPalette = 0 ;	// numรฉro de la palette prรฉcรฉdente dans le HQR
 
 char	String[256] ;
 S32	Value ;
@@ -111,7 +111,7 @@ U32	MapPGroundMem	= MIN_MAP_PGROUND_MEM ;
 U32	ListTexDefMem	= MIN_LIST_TEXDEF_MEM ;
 U32	MapSommetYMem	= MIN_MAP_SOMMETY_MEM ;
 U32	MapIntensityMem	= MIN_MAP_INTENSITY_MEM ;
-U32	SCCMem = 0	;	// Calcul dynamiquement (contient le scenar)
+U32	SCCMem = 0	;	// Calculรฉ dynamiquement (contient le scenar)
 
 /*--------- ressources ---------------------------*/
 
@@ -246,11 +246,11 @@ S32	FirstTime = AFF_ALL_FLIP ;
 S32	FirstLoop = FALSE ;
 S32	FirstSave = FALSE ;
 
-/*ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ*
-	Liste des Globales sauves dans les fichiers de sauvegarde .LBA
- *ออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ*/
-/*ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ*/
-S32		NewCube	= -1 ;			// change cube demand
+/*โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•*
+	Liste des Globales sauvรฉes dans les fichiers de sauvegarde .LBA
+ *โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•*/
+/*โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€*/
+S32		NewCube	= -1 ;			// change cube demandรฉ
 U8		ListVarCube[MAX_VARS_CUBE] ;
 S16		ListVarGame[MAX_VARS_GAME] ;
 U8		Comportement = C_NORMAL ;
@@ -264,7 +264,7 @@ U8		NbLittleKeys = 0 ;
 S16		NbCloverBox = NB_CLOVER_BOX_DEFAULT ;
 S32		SceneStartX, SceneStartY, SceneStartZ ;
 U8		Weapon = FLAG_BALLE_MAGIQUE ;		// magicball
-		// TimerRef en extern sauv ici
+		// TimerRef en extern sauvรฉ ici
 //S32		LastFire = 0 ;
 U8		Bulle = TRUE ;
 U8		ActionNormal = FALSE ;
@@ -292,7 +292,7 @@ T_EXTRA		ListExtra[MAX_EXTRAS] ;
 S32		NbZones = 0 ;
 T_ZONE		*ListZone ;
 T_INCRUST_DISP	ListIncrustDisp[MAX_INCRUST_DISP] ;
-		// ListPartFlow en extern sauv ici
+		// ListPartFlow en extern sauvรฉ ici
 
 MOVE	SampleAlwaysMove ;	// pour repaner les samples always de tps en tps
 
@@ -305,7 +305,7 @@ S32	DefVueDistance[NB_VUE_CAMERA] = { 10500, 17000 } ;
 S32	DefAlphaCam[NB_VUE_CAMERA] = { 300, 530 } ;
 
 T_TABALLCUBE	TabAllCube[256]	;//	A mettre en define
-/*ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ*/
+/*โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€โ”€*/
 
 U8	NumObjDial = 0		;
 U8	SaveBodyHero = GEN_BODY_NORMAL  ;

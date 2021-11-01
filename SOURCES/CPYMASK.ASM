@@ -236,7 +236,7 @@ start:
 		mov	cl, byte ptr[OffsetBegin]; start x
 						; cl = nb pix count
 
-		mov	bh, byte ptr[NbPix]	; nb point … copier
+		mov	bh, byte ptr[NbPix]	; nb point Ã  copier
 
 		mov	esi, eax
 		mov	edi, edx		; new pos screen
@@ -265,14 +265,14 @@ l0:		inc	ebp
 		ret
 rptj:
 						; cl = - nb pix to jump
-		add	bh, cl			; reste … ecrire
+		add	bh, cl			; reste Ã  ecrire
 		jle	aplus
 		neg	cl
 		jmp	okdraw2
 
 rgtc:
 		neg	cl			; cl nb pix to copy
-		sub	bh, cl			; reste … ecrire
+		sub	bh, cl			; reste Ã  ecrire
 		jc	cpt			; copy pas tout
 		rep	movsb			; copy
 		jz	aplus
@@ -284,7 +284,7 @@ okjump:		inc	ebp
 		dec	bl
 		jz	aplus2
 		mov	cl, [ebp]		; nb pix to jump
-		sub	bh, cl			; reste … ecrire
+		sub	bh, cl			; reste Ã  ecrire
 		jle	aplus			; fini
 okdraw2:
 		add	edi, ecx
@@ -293,7 +293,7 @@ okdraw2:
 okdraw:		inc	ebp
 		dec	bl			; nb bloc--
 		mov	cl, [ebp]		; nb pix to copy
-		sub	bh, cl			; reste … ecrire
+		sub	bh, cl			; reste Ã  ecrire
 		jc	cpt			; copy pas tout
 		rep	movsb			; copy
 		jz	aplus			; tombe pile

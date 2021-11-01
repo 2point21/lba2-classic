@@ -10,13 +10,13 @@ typedef	struct	{	ULONG	SizeFile ;
 							/* 1 LZS */
 		}	T_HEADER ;
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-		   ÛßßßÛ Û     ÛßßßÛ Û  Üß Ûßßßß Û     ÛßßßÛ
-		   ÛÛßßß ÛÛ    ÛÛßßÛ ÛÛß   ÛÛßß  ÛÛ    ÛÛßßÛ
-		   ßß    ßßßßß ßß  ß ßß    ßß    ßßßßß ßß  ß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+		   â–ˆâ–€â–€â–€â–ˆ â–ˆ     â–ˆâ–€â–€â–€â–ˆ â–ˆ  â–„â–€ â–ˆâ–€â–€â–€â–€ â–ˆ     â–ˆâ–€â–€â–€â–ˆ
+		   â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€   â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€â–ˆ
+		   â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€    â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 #define FLI 2
 #define FLA 3
@@ -32,7 +32,7 @@ typedef	struct	{	ULONG	SizeFile ;
 #define	FLI_BRUN	15
 #define	FLI_COPY	16
 
-// Structures utilis‚es pour les fichiers format FLI
+// Structures utilisÃ©es pour les fichiers format FLI
 typedef struct
 	{
 	LONG	size		;
@@ -79,7 +79,7 @@ typedef struct
 #define	FLA_BRUN		8
 #define	FLA_COPY		9
 
-// Structures utilis‚es pour les fichiers format FLA
+// Structures utilisÃ©es pour les fichiers format FLA
 typedef struct                  // entete de fichier FLA
 	{
 		char	Version[5]	;
@@ -142,7 +142,7 @@ typedef struct			// structure d'une palette
 		UWORD	CouleurDepart;
 	} T_FLA_PALETTE;
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 UBYTE	*BufferFrame	;
 
@@ -389,7 +389,7 @@ WORD	InitFla( char *name )
 		HQR_Change_Ressource( HQR_Samples, string ) ;
 	}
 
-	// lecture de l'entˆte principale
+	// lecture de l'entÃªte principale
 	Read( HandleFla, &HeaderFla, sizeof(T_HEADER_FLA))	;
 
 	MaxFrame   =	HeaderFla.NbFrame;
@@ -536,12 +536,12 @@ void PlayAnimFla(char *name_anim)
 	}
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-		ÛßßßÜ  Û    ÛÛßßß Û  Üß       Ûßßßß Û     ÛßßßÛ
-		ÛÛ  Û  ÛÛ   ßßßßÛ ÛÛßÜ        ÛÛßß  ÛÛ    ÛÛßßÛ
-		ßßßß   ßß   ßßßßß ßß  ß ßßßßß ßß    ßßßßß ßß  ß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+		â–ˆâ–€â–€â–€â–„  â–ˆ    â–ˆâ–ˆâ–€â–€â–€ â–ˆ  â–„â–€       â–ˆâ–€â–€â–€â–€ â–ˆ     â–ˆâ–€â–€â–€â–ˆ
+		â–ˆâ–ˆ  â–ˆ  â–ˆâ–ˆ   â–€â–€â–€â–€â–ˆ â–ˆâ–ˆâ–€â–„        â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€â–ˆ
+		â–€â–€â–€â–€   â–€â–€   â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	CutPoint( UBYTE *ptr )
 {
@@ -560,7 +560,7 @@ void	CutPoint( UBYTE *ptr )
 	while( c!=0 ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 WORD	SearchFla( UBYTE *name_anim, UBYTE *ptrtxt, LONG maxsize, UBYTE *ptrlist )
 {
@@ -599,7 +599,7 @@ WORD	SearchFla( UBYTE *name_anim, UBYTE *ptrtxt, LONG maxsize, UBYTE *ptrlist )
 	return 0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	PlayDiskFla( UBYTE *name_anim )
 {
@@ -699,5 +699,5 @@ void	PlayDiskFla( UBYTE *name_anim )
 	HQM_Free( ptrtxt ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 

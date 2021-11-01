@@ -1,17 +1,17 @@
 /*
-  �������������������������������������������������������������������������
+  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
-                �����ۿ �����ۿ �ۿ �ۿ �����ۿ �����ۿ �����ۿ
-                ������� �����۳ ��ۿ�۳ ������� ������� �������
-                �۳     �۳ �۳ �����۳ ����ۿ    �۳   �۳��ۿ
-                �۳     �۳ �۳ �����۳ ������    �۳   �۳��۳
-                �����ۿ �����۳ �۳��۳ �۳     �����ۿ �����۳
-                ������� ������� ��� ��� ���     ������� �������
+                ██████┐ ██████┐ ██┐ ██┐ ██████┐ ██████┐ ██████┐
+                ██┌───┘ ██┌─██│ ███┐██│ ██┌───┘ └─██┌─┘ ██┌───┘
+                ██│     ██│ ██│ ██████│ █████┐    ██│   ██│███┐
+                ██│     ██│ ██│ ██┌███│ ██┌──┘    ██│   ██│└██│
+                ██████┐ ██████│ ██│└██│ ██│     ██████┐ ██████│
+                └─────┘ └─────┘ └─┘ └─┘ └─┘     └─────┘ └─────┘
 
                         (Menu de configuration du clavier)
 
-  �������������������������������������������������������������������������
-  �������������������������������������������������������������������������
+  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 */
 
 #include        "c_extern.h"
@@ -23,10 +23,10 @@
 #define START_MENUS_TXT         160
 #define START_KEYS_TXT          200
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 #define KEY_STRING_EMPTY        ".............."
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 #define STATUS_MENU     0
 #define STATUS_PRESS    1
 #define STATUS_ERROR    2
@@ -39,7 +39,7 @@
 #define CFG_TXT_LAST    4
 #define CFG_TXT_OK      5
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 S32     SelectConfig = 0 ;
 S32     SelectKey    = 0 ;
 
@@ -81,10 +81,10 @@ S32     SelectKey    = 0 ;
 #define COUL_KEY        (255)
 #define COUL_MENU       (10*16+14)
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 char    KeyStrings[MAX_INPUT*2][50] ;   // 14 char max
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 U8      ScanKnown[] =
 {
         K_NUMPAD_1      ,
@@ -169,7 +169,7 @@ U8      ScanKnown[] =
         0               // End
 } ;
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawConfigFire( S32 xmin, S32 ymin, S32 xmax, S32 ymax, S32 coul )
 {
         Struc_Point     TabPoint[4];
@@ -215,7 +215,7 @@ void    DrawConfigFire( S32 xmin, S32 ymin, S32 xmax, S32 ymax, S32 coul )
         Fill_Poly( POLY_TEXTURE, 0, 4, TabPoint );
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    GetKeyText(char *string, U32 scan)
 {
         S32             i               ;
@@ -323,7 +323,7 @@ end:
         string[14] = 0 ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    InitKeyStrings( void )
 {
         S32     n ;
@@ -335,7 +335,7 @@ void    InitKeyStrings( void )
         }
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawOneConfig( S32 n )
 {
         char    string[100] ;
@@ -445,7 +445,7 @@ void    DrawOneConfig( S32 n )
         GraphPrintf( FALSE, x, y, KeyStrings[n*2+1] ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawOneConfigMenu( S32 n )
 {
         char    txt[100] ;
@@ -493,7 +493,7 @@ void    DrawOneConfigMenu( S32 n )
         BoxStaticAdd( x0, y0, x1, y1 ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawCadreConfig( S32 x0, S32 y0, S32 x1, S32 y1, S32 flagclean )
 {
         if( flagclean )
@@ -518,7 +518,7 @@ void    DrawCadreConfig( S32 x0, S32 y0, S32 x1, S32 y1, S32 flagclean )
         }
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawStatusConfig( S32 num )
 {
         char txt[100] ;
@@ -539,7 +539,7 @@ void    DrawStatusConfig( S32 num )
         GraphPrintf( FALSE, 320-(strlen(txt)*SizeChar)/2, CFG_TXT_Y0+7, txt ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawScreenConfig( void )
 {
         S32     n ;
@@ -589,7 +589,7 @@ void    DrawScreenConfig( void )
         BoxStaticAdd( 0, 0, ModeDesiredX, ModeDesiredY ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 S32     CheckKeyConfig( S32 key )
 {
         S32     n ;
@@ -606,11 +606,11 @@ S32     CheckKeyConfig( S32 key )
         return -1 ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 #define REPEATDELAY     400
 #define REPEATRATE      40
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    MenuConfig( void )
 {
         S32     oldselect ;
@@ -953,14 +953,14 @@ void    MenuConfig( void )
                         {
                                 switch( (SelectConfig-MAX_INPUT) )
                                 {
-                                case 0: // Configuration par D�faut
+                                case 0: // Configuration par Défaut
                                         memcpy( MemoDefKeys, DefKeys, sizeof(T_DEF_KEY)*MAX_INPUT ) ;
                                         RestoreInput() ;
                                         InitKeyStrings() ;
                                         DrawScreenConfig() ;
                                         break ;
 
-                                case 1: // Restaurer Configuration Pr�c�dente
+                                case 1: // Restaurer Configuration Précédente
                                         memcpy( DefKeys, MemoDefKeys, sizeof(T_DEF_KEY)*MAX_INPUT ) ;
                                         InitKeyStrings() ;
                                         DrawScreenConfig() ;
@@ -1054,16 +1054,16 @@ endloop:
 	}
 }
 
-//�������������������������������������������������������������������������
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 //
 //              Petit Module pour demander l'insertion du CDROM
 //
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
 #define CONFIRM_SHADE_LVL        15
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DetourGraphPrintf( S32 flip, S32 coul, S32 x, S32 y, char *txt )
 {
         CoulText( 0, -1 ) ;
@@ -1081,7 +1081,7 @@ void    DetourGraphPrintf( S32 flip, S32 coul, S32 x, S32 y, char *txt )
         GraphPrintf( flip, x, y, txt ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawCadreConfirm( S32 x0, S32 y0, S32 x1, S32 y1 )
 {
         BackupAngles( x0, y0, x1, y1 ) ;
@@ -1091,7 +1091,7 @@ void    DrawCadreConfirm( S32 x0, S32 y0, S32 x1, S32 y1 )
         RestoreAngles( x0, y0, x1, y1 ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 void    DrawConfirmChoice( S32 xlen, S32 y0, char *txt, S32 select )
 {
         S32     x0, x1, y1, coul = COUL_MENU ;
@@ -1116,7 +1116,7 @@ void    DrawConfirmChoice( S32 xlen, S32 y0, char *txt, S32 select )
         BoxStaticAdd( x0, y0, x1, y1 ) ;
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 S32     ConfirmMenu( char *ask, char *ok, char *cancel )
 {
         char    *ptr            ;
@@ -1150,7 +1150,7 @@ S32     ConfirmMenu( char *ask, char *ok, char *cancel )
 
         CopyScreen( Log, Screen ) ;
 
-        // ATTENTION: pas blind� si question trop petite ...
+        // ATTENTION: pas blindé si question trop petite ...
         blen = ((x1-x0)/2)-80 ;
 
         InitWaitNoKey() ;// attente de relache de touche dans la boucle
@@ -1229,7 +1229,7 @@ S32     ConfirmMenu( char *ask, char *ok, char *cancel )
         return( flag^1 ) ;// ok=TRUE, cancel=FALSE
 }
 
-//�������������������������������������������������������������������������
+//▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 S32     AskForCD( void )
 {
         S32     ret             ;
@@ -1237,7 +1237,7 @@ S32     AskForCD( void )
         char    ok_txt[20]      ;
         char    cancel_txt[20]  ;
 
-        // ATTENTION: pour entrer l�, le InitDial(0) doit etre fait avant !
+        // ATTENTION: pour entrer là, le InitDial(0) doit etre fait avant !
 
 #ifndef _WIN32
         Load_HQR( SCREEN_HQR_NAME, Log, PCR_CDROM ) ;

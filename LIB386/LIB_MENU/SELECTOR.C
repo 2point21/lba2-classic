@@ -17,12 +17,12 @@
 #define	MAX_FILES	500	
 #define	MAX_DIRS	100
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-    Ûßßßß  Û    Û     Ûßßßß ÛÛßßß Ûßßßß Û     Ûßßßß Ûßßßß ßßÛßß ÛßßßÛ ÛßßßÛ
-    ÛÛßß   ÛÛ   ÛÛ    ÛÛßß  ßßßßÛ ÛÛßß  ÛÛ    ÛÛßß  ÛÛ      ÛÛ  ÛÛ  Û ÛÛßÛß
-    ßß     ßß   ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß   ßß  ßßßßß ßß  ß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+    â–ˆâ–€â–€â–€â–€  â–ˆ    â–ˆ     â–ˆâ–€â–€â–€â–€ â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆ     â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–€â–€â–ˆâ–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ
+    â–ˆâ–ˆâ–€â–€   â–ˆâ–ˆ   â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€  â–€â–€â–€â–€â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ    â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ      â–ˆâ–ˆ  â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€
+    â–€â–€     â–€â–€   â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€   â–€â–€  â–€â–€â–€â–€â–€ â–€â–€  â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 UBYTE	SelectorPathname [_MAX_PATH] ;
 UBYTE	SDrive[_MAX_DRIVE] ;
@@ -46,7 +46,7 @@ T_MENU	Selector ;
 T_WINLIST	FilesWindow ;
 T_WINLIST	DirsWindow ;
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	CutFileName( UBYTE *filename )
 {
@@ -55,7 +55,7 @@ void	CutFileName( UBYTE *filename )
 	*filename = 0 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	DrawListFiles( WORD flag )
 {
@@ -123,7 +123,7 @@ void	ScanFiles( UBYTE *selection, LONG flag )
 	DrawListFiles( flag ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 WORD	ThereIsFiles( UBYTE *path )
 {
@@ -184,7 +184,7 @@ void	ScanDirs( UBYTE *selection )
 	ShowMouse( 1 ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 void	ScanDrives()
 {
@@ -219,14 +219,14 @@ void	ScanDrives()
 	ShowMouse( 1 ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 LONG	NumDrive( UBYTE *drive )
 {
 	return ((*drive)&=~20)-'A'+1 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 WORD	FileSelector(	UBYTE *titre,
 			UBYTE *selection,
@@ -490,7 +490,7 @@ WORD	FileSelector(	UBYTE *titre,
 				if( FileSize( SelectorPathname ) != 0L )
 				{
 					strcpy( workstring, SelectorPathname ) ;
-					strcat( workstring, " existe d‚j… !" ) ;
+					strcat( workstring, " existe dÃ©jÃ  !" ) ;
 					if( Confirm(workstring, "Ecrase", "Oups") == 1 )
 					{	/* ok */
 						strcpy( defaultname, SelectorPathname ) ;
@@ -551,4 +551,4 @@ WORD	FileSelector(	UBYTE *titre,
 	return rcode ;
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/

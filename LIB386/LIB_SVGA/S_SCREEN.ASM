@@ -34,7 +34,7 @@ Cls			endp
 ;----------------------------------------------------------------------------
 ;			CopyScreen( UBYTE *src, UBYTE *dst )
 ;
-;	Attention:De m‚moire … m‚moire (pas sur vid‚o ram)
+;	Attention:De mÃ©moire Ã  mÃ©moire (pas sur vidÃ©o ram)
 ;
 CopyScreen		proc	uses esi edi,\
 			src:DWORD, dst:DWORD

@@ -3,14 +3,14 @@
 char	ConfigTxt[MAX_INPUT][100] = {
 	"Avancer",
 	"Reculer",
-	"Tourner … Gauche",
-	"Tourner … droite",
+	"Tourner Ã  Gauche",
+	"Tourner Ã  droite",
 	"Utilisation arme",
 	"Comportement Menu",
 	"Inventaire",
 	"Action du Comportement",
 	"Dialogue/Fouille",
-	"Recentrage cam‚ra",
+	"Recentrage camÃ©ra",
 	"Menus",
 	"Holomap",
 	"Pause",
@@ -24,8 +24,8 @@ char	ConfigTxt[MAX_INPUT][100] = {
 	"Charger",
 	"Options Menu",
 	"Tourner la camera",
-	"Niveau Cam‚ra suivant",
-	"Niveau Cam‚ra Precedent",
+	"Niveau CamÃ©ra suivant",
+	"Niveau CamÃ©ra Precedent",
 	"Arme 1",
 	"Arme 2",
 	"Arme 3",
@@ -33,7 +33,7 @@ char	ConfigTxt[MAX_INPUT][100] = {
 	"Arme 5",
 	"Arme 6",
 	"Arme 7",
-	"M‚caPingouin",
+	"MÃ©caPingouin",
 	"Jetpack On/Off",
 	"Sort de Protection",
 	"Sort de Foudre",
@@ -68,7 +68,7 @@ char	KeysTxt[89][13] = {
 	"P",		// K_P		25
 	"^",		// K_CHAPEAU	26
 	"$",		// K_DOLLAR	27
-	"Entr‚e",	// K_ENTER	28
+	"EntrÃ©e",	// K_ENTER	28
 	"CTRL",		// K_CTRL	29
 	"Q",		// K_Q		30
 	"S",		// K_S		31
@@ -80,8 +80,8 @@ char	KeysTxt[89][13] = {
 	"K",		// K_K		37
 	"L",		// K_L		38
 	"M",		// K_M		39
-	"—",		// K_OU		40
-	"ý",		// K_CARRE	41
+	"Ã¹",		// K_OU		40
+	"Â²",		// K_CARRE	41
 	"Shift Gauche",	// K_SHIFT_LEFT	42
 	"*",		// K_MUL	43
 	"W",		// K_W		44
@@ -111,7 +111,7 @@ char	KeysTxt[89][13] = {
 	"F10",		// K_F10	68
 	"Verr Num",	// K_NUMLOCK	69
 	"Scroll Lock",	// K_SCROLL_LCK	70
-	"D‚but",	// K_HOME	71
+	"DÃ©but",	// K_HOME	71
 	"Haut",		// K_UP		72
 	"PageUp",	// K_PAGE_UP	73
 	"-",		// K_MOINS	74

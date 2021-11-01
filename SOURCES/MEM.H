@@ -1,6 +1,6 @@
 /*
 
-	Gestion de la m‚moire LBA2
+	Gestion de la mÃ©moire LBA2
 
 
 */
@@ -26,7 +26,7 @@ typedef struct {
 
 extern	T_MEM	ListMem[] ;
 
-extern	S32	SizeOfMemAllocated 	;	// calcul‚e dynamiquement
+extern	S32	SizeOfMemAllocated 	;	// calculÃ©e dynamiquement
 extern	U8	*MainBuffer		;
 
 extern	void	AdjustLba2Mem( void ) ;

@@ -2,7 +2,7 @@
 #define	COMMON_H
 
 // j'en ai marre de planter sur des Rnd(0) !!!!!!!!!!!!!!!!!!!!!
-// MÃ©fie quand mÃªme Ã  ne pas passer d'affectation ou d'incrÃ©mentation de
+// M‚fie quand mˆme … ne pas passer d'affectation ou d'incr‚mentation de
 // pointeur !!!!!!!!!!!!
 #define	MyRnd(n)	(n!=0?Rnd(n):0)
 
@@ -22,7 +22,7 @@
 
 
 
-// Macro appelÃ©e lors d'une error
+// Macro appel‚e lors d'une error
 #ifdef	LBA_EDITOR
 #define	PlayErrorSample()	HQ_MixSample( COMMON_NUM_DEF, SAMPLE_ERROR, 0x1000, 0, 1, 64, 127 )
 #else
@@ -129,7 +129,7 @@ typedef	struct	{
 #define RESS_SKYSEA6		17	// Blafards/Plateforme
 #define	RESS_SKYSEA7		18	// Mosquibees
 #define	RESS_SKYSEA8		19	// Knartas
-#define	RESS_SKYSEA9		20	// IlÃ´t CX
+#define	RESS_SKYSEA9		20	// Il“t CX
 #define	RESS_SKYSEA10		21	// Ascenceur
 //#empty	;: 22
 //#empty	;: 23
@@ -145,7 +145,7 @@ typedef	struct	{
 #define RESS_XPL6		33	// Palette Blafards/Plateforme
 #define	RESS_XPL7		34	// Palette Mosquibees
 #define	RESS_XPL8		35	// Palette Knartas
-#define	RESS_XPL9		36	// Palette IlÃ´t CX
+#define	RESS_XPL9		36	// Palette Il“t CX
 #define	RESS_XPL10		37	// Palette Ascenceur
 //#empty	;: 38
 //#empty	;: 39
@@ -194,7 +194,7 @@ typedef	struct	{
 
 /*----------------- CUBE ----------------------*/
 
-// Cube Vide servant juste Ã  aller se noyer en extÃ©rieur
+// Cube Vide servant juste … aller se noyer en ext‚rieur
 #define	NUM_CUBE_PHANTOM	94
 
 #define SIZE_CUBE_X     64
@@ -217,7 +217,7 @@ typedef	struct	{
 
 // Valeurs par defaut de la camera
 #define	DEFAULT_GAMMA_CAM	0
-#define	DEFAULT_ALPHA_CAM	341	// (30Â°)
+#define	DEFAULT_ALPHA_CAM	341	// (30ø)
 #define	DEFAULT_DISTANCE_CAM	10500
 
 // Flag Activant une zone
@@ -228,7 +228,7 @@ typedef	struct	{
 // Flag Permettant de ne pas reajuster la position de Twinsen lors d'un
 // changement de cube
 #define	ZONE_DONT_REAJUST_POS_TWINSEN		2
-// Zone de changement de cube extÃ©rieur devant attendre que Twinsen rentre
+// Zone de changement de cube ext‚rieur devant attendre que Twinsen rentre
 // en collision avec la porte
 #define	ZONE_TEST_BRICK	2
 
@@ -277,14 +277,14 @@ typedef	struct	{
 #define	FLAG_DMKEY_SUP		32
 #define	FLAG_DMKEY_MOSQUI	33
 #define	FLAG_DMKEY_BLAFARD	34
-#define	FLAG_CLE_REINE		35	// ClÃ© Reine Mosquibies
+#define	FLAG_CLE_REINE		35	// Cl‚ Reine Mosquibies
 #define	FLAG_PIOCHE		36
 #define	FLAG_CLEF_BOURGMESTRE	37
 #define	FLAG_NOTE_BOURGMESTRE	38
 #define	FLAG_PROTECTION		39	// Sort de protection
 
 // ATTENTION: Magouille car le scaphandre ne fait pas parti de l'inventaire
-// donc on utilise un VAR_GAME scÃ©narique
+// donc on utilise un VAR_GAME sc‚narique
 #define	FLAG_SCAPHANDRE		40
 
 //	Autres
@@ -312,7 +312,7 @@ typedef	struct	{
 #define	TEMPETE_FINIE	(ListVarGame[FLAG_CHAPTER]>=2 AND !FlagRain)
 #endif
 
-#define	INV_MAX_VALUE	100	// CapacitÃ© des objets inventaires VALUE (conque)
+#define	INV_MAX_VALUE	100	// Capacit‚ des objets inventaires VALUE (conque)
 
 #define	BODY_3D_CLOVER		60	// voir objfix.lst
 
@@ -347,7 +347,7 @@ typedef	struct	{
 
 /*---------------- SAMPLES ------------------*/
 
-// Temps minimum en TimerSystemHR pour relancer un sample qui est dÃ©jÃ  en
+// Temps minimum en TimerSystemHR pour relancer un sample qui est d‚j… en
 // train de se jouer
 #define	SAMPLE_TIME_REPEAT	100	// 40
 
@@ -386,31 +386,31 @@ typedef	struct	{
 
 /*---------------- Angles des cadres (menus, messages,...) ---------------*/
 
-#define	DRAW_SG		(1<<0)	// Angle SupÃ©rieur Gauche des cadres
-#define	DRAW_IG		(1<<1)	// Angle InfÃ©rieur Gauche des cadres
-#define	DRAW_ID		(1<<2)	// Angle InfÃ©rieur Droit des cadres
-#define	DRAW_SD		(1<<3)	// Angle SupÃ©rieur Droit des cadres
+#define	DRAW_SG		(1<<0)	// Angle Sup‚rieur Gauche des cadres
+#define	DRAW_IG		(1<<1)	// Angle Inf‚rieur Gauche des cadres
+#define	DRAW_ID		(1<<2)	// Angle Inf‚rieur Droit des cadres
+#define	DRAW_SD		(1<<3)	// Angle Sup‚rieur Droit des cadres
 
-#define	ARROW_SG	(1<<4)	// FlÃ¨che SupÃ©rieur Gauche des cadres
-#define	ARROW_IG	(1<<5)	// FlÃ¨che InfÃ©rieur Gauche des cadres
-#define	ARROW_ID	(1<<6)	// FlÃ¨che InfÃ©rieur Droit des cadres
-#define	ARROW_SD	(1<<7)	// FlÃ¨che SupÃ©rieur Droit des cadres
+#define	ARROW_SG	(1<<4)	// FlŠche Sup‚rieur Gauche des cadres
+#define	ARROW_IG	(1<<5)	// FlŠche Inf‚rieur Gauche des cadres
+#define	ARROW_ID	(1<<6)	// FlŠche Inf‚rieur Droit des cadres
+#define	ARROW_SD	(1<<7)	// FlŠche Sup‚rieur Droit des cadres
 
 #define	BACKUP_ANGLES	(1<<8)	// Backup puis Restore les pixels autour des angles
 
 #define	CADRE_RED	(1<<16)	// Cadres rouges
 
-#define	A_FLIP		(1<<31)	// Flip les boites dessinÃ©es
+#define	A_FLIP		(1<<31)	// Flip les boites dessin‚es
 
 #define	ALL_ANGLES	(DRAW_SG|DRAW_IG|DRAW_ID|DRAW_SD)
 #define	ALL_ARROWS	(ARROW_SG|ARROW_IG|ARROW_ID|ARROW_SD)
 
 /*---------------- SPRITES SYSTEMES (GOODIES) ------------------*/
 
-#define	SYS_SPRITE_SG	0	// Angle SupÃ©rieur Gauche des cadres
-#define	SYS_SPRITE_IG	1	// Angle InfÃ©rieur Gauche des cadres
-#define	SYS_SPRITE_ID	2	// Angle InfÃ©rieur Droit des cadres
-#define	SYS_SPRITE_SD	3	// Angle SupÃ©rieur Droit des cadres
+#define	SYS_SPRITE_SG	0	// Angle Sup‚rieur Gauche des cadres
+#define	SYS_SPRITE_IG	1	// Angle Inf‚rieur Gauche des cadres
+#define	SYS_SPRITE_ID	2	// Angle Inf‚rieur Droit des cadres
+#define	SYS_SPRITE_SD	3	// Angle Sup‚rieur Droit des cadres
 
 #define	SYS_SPRITE_INV	13	// Objet inventaire inutilisable
 #define	SYS_SPRITE_BALD	14	// Vignette Radio Baldino
@@ -496,7 +496,7 @@ typedef	struct	{
 #define	MAX_TRI	(MAX_OBJETS+MAX_EXTRAS+MAX_DARTS+MAX_FLOWS)
 #endif
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 #define	PAUSE_CLOVER	1
 #define	PAUSE_MESSAGE	2
@@ -508,7 +508,7 @@ typedef	struct	{
 #define	NB_CLOVER_BOX_DEFAULT	2
 #define	NB_CLOVER_DEFAULT	1
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 /* type objet pour affscene */
 
 #define TYPE_OBJ_3D             (1024*0)
@@ -526,7 +526,7 @@ typedef	struct	{
 
 #define	SORT_NO_PRECLIP		(0x4000)
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 
 /* work flags */
@@ -554,17 +554,17 @@ typedef	struct	{
 #define	SKATING			(1<<13)	// Ouch! je glisse dans une collision
                                         // interdite
 
-#define	OK_RENVOIE		(1<<14)	// prÃªt Ã  renvoyer un projectile
+#define	OK_RENVOIE		(1<<14)	// prˆt … renvoyer un projectile
 
-#define	LEFT_JUMP		(1<<15)	// prÃªt Ã  sauter du pied gauche
-#define	RIGHT_JUMP		(1<<16)	// prÃªt Ã  sauter du pied droit
+#define	LEFT_JUMP		(1<<15)	// prˆt … sauter du pied gauche
+#define	RIGHT_JUMP		(1<<16)	// prˆt … sauter du pied droit
 #define WAIT_SUPER_HIT          (1<<17)	// attend la fin de l'anim avant de redonner un super_hit
 #define	TRACK_MASTER_ROT	(1<<18)	// c'est le track qui gere la direction
 #define	FLY_JETPACK		(1<<19) // en train de voler avec le Jetpack
 #define	DONT_PICK_CODE_JEU	(1<<20)	// Magouille Zones Tapis Roulant
 #define	MANUAL_INTER_FRAME	(1<<21)	// Fait le ObjectSetInterFrame() manuellement
-#define	WAIT_COORD		(1<<22)	// attend d'avoir Ã©tÃ© affichÃ© pour passer les coordonnÃ©es d'1 point Ã  1 extra
-#define	CHECK_FALLING		(1<<23)	// force objet Ã  tester le FALLING pdt une frame
+#define	WAIT_COORD		(1<<22)	// attend d'avoir ‚t‚ affich‚ pour passer les coordonn‚es d'1 point … 1 extra
+#define	CHECK_FALLING		(1<<23)	// force objet … tester le FALLING pdt une frame
 
 /* Flags */
 
@@ -589,12 +589,12 @@ typedef	struct	{
 #define OBJ_CARRIER             (1<<14)	// peut porter et deplacer un obj
 
 #define MINI_ZV                 (1<<15)	// zv carre sur plus petit cote (si 3DO)
-#define POS_INVALIDE            (1<<16)	// Carrier considÃ©rÃ© comme Pos invalide
-#define	NO_CHOC			(1<<17)	// Ne dÃ©clenche pas d'anim choc
+#define POS_INVALIDE            (1<<16)	// Carrier consid‚r‚ comme Pos invalide
+#define	NO_CHOC			(1<<17)	// Ne d‚clenche pas d'anim choc
 #define	ANIM_3DS		(1<<18)	// Animation 3DS (extension de sprite_3D)
-#define	NO_PRE_CLIP		(1<<19)	// Ne prÃ©clippe pas l'objet (pour les grands objets)
-#define	OBJ_ZBUFFER		(1<<20)	// Affiche objet en ZBuffer (extÃ©rieur only !)
-#define	OBJ_IN_WATER		(1<<21)	// Affiche objet en ZBuffer dans l'eau (extÃ©rieur only !)
+#define	NO_PRE_CLIP		(1<<19)	// Ne pr‚clippe pas l'objet (pour les grands objets)
+#define	OBJ_ZBUFFER		(1<<20)	// Affiche objet en ZBuffer (ext‚rieur only !)
+#define	OBJ_IN_WATER		(1<<21)	// Affiche objet en ZBuffer dans l'eau (ext‚rieur only !)
 
 /* Option Flags */
 
@@ -622,11 +622,11 @@ typedef	struct	{
 
 #define	TEMPO_PROTO_AUTO	500
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 //                              CODES JEU
 
 #define CJ_WATER                1       // eau
-#define CJ_ELECTRIC             2       // Pseudo Ã©lectrifiÃ© (mort instantanÃ©e)
+#define CJ_ELECTRIC             2       // Pseudo ‚lectrifi‚ (mort instantan‚e)
 #define CJ_ESCALATOR_OUEST      3       // Tapis roulant OUEST
 #define CJ_ESCALATOR_EST        4       // Tapis roulant EST
 #define CJ_ESCALATOR_NORD       5       // Tapis roulant NORD
@@ -636,13 +636,13 @@ typedef	struct	{
 #define	CJ_POS_INVALID		8	// Position non valide
 #define	CJ_LAVE			9	// psshhht !
 #define	CJ_GAZ			11	// prout !
-#define	CJ_FOOT_WATER		12	// Eau oÃ¹ l'on a pied
+#define	CJ_FOOT_WATER		12	// Eau o— l'on a pied
 #define	CJ_ANIMATED_LAVE	13
 #define	CJ_ANIMATED_GAZ		14
-#define CJ_ANIMATED_WATER	15      // eau animÃ©e oÃ¹ on se noie
+#define CJ_ANIMATED_WATER	15      // eau anim‚e o— on se noie
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 
 #define EXTRA_TIME_OUT          (1L<<0L)
@@ -669,11 +669,11 @@ typedef	struct	{
 #define	EXTRA_TRAINEE		(1L<<19L)	// Trainee balle magique
 #define	EXTRA_NEW_IMPACT	(1L<<20L)	// Genere un impact
 #define	EXTRA_ANIM_SPRITE	(1L<<21L)	// Animation de sprite
-#define	EXTRA_RENVOYABLE	(1L<<22L)	// Peut etre renvoyÃ© par le gant
+#define	EXTRA_RENVOYABLE	(1L<<22L)	// Peut etre renvoy‚ par le gant
 #define	EXTRA_TRANSPARENT	(1L<<23L)	// Sprite Transparent
-#define	EXTRA_HIT_ANY		(1L<<24L)	// Porte un coup mÃªme Ã  son propriÃ©taire
+#define	EXTRA_HIT_ANY		(1L<<24L)	// Porte un coup mˆme … son propri‚taire
 #define	EXTRA_WAIT_NO_COL_OWNER	(1L<<25L)	// Attend de sortir de la collision de
-						// son propriÃ©taire avant de valider la collision
+						// son propri‚taire avant de valider la collision
 #define	EXTRA_FALLING		(1L<<26L)	// Extra en train de chuter
 #define	EXTRA_FOUDRE_STEP1	(1L<<27L)	// Foudre etape 1
 #define	EXTRA_FOUDRE_STEP2	(1L<<28L)	// Foudre etape 2
@@ -685,7 +685,7 @@ typedef	struct	{
 // on, sait si l'extra est une arme et laquelle !!
 #define	EXTRA_MASK_WEAPON       (EXTRA_MAGIC_BALL|EXTRA_DART|EXTRA_CONQUE)
 
-typedef struct	// Normalement bien alignÃ©e
+typedef struct	// Normalement bien align‚e
 {
 	S32    	PosX ;
 	S32    	PosY ;
@@ -726,7 +726,7 @@ typedef struct	// Normalement bien alignÃ©e
 	U8	NewForce ;		// HitForce des extras renvoyables
 
 #ifdef	LBA_EDITOR
-	char	Impact[13] ;		// Impact a gÃ©nÃ©rer
+	char	Impact[13] ;		// Impact a g‚n‚rer
 	S32	Angle ;
 #else
 	S32	Impact ;
@@ -734,31 +734,31 @@ typedef struct	// Normalement bien alignÃ©e
 	S32	Scale  ;		// Facteur de zoom
 }       T_EXTRA ;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 // Specifique a la balle magique, pour MagicBallFlags
 
 #define MAGIC_BALL_LANCEE       1
 #define MAGIC_BALL_LACHEE       2
 #define MAGIC_BALL_RAPPELEE     4
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 // Sort de Protection
 
 #define	PROTECT_SPEED_MAGIC	2	// Nb Pts Magie Par Seconde
-#define	PROTECT_ALARME_SEUIL	15	// Pts de Magie Ã  partir duquel
+#define	PROTECT_ALARME_SEUIL	15	// Pts de Magie … partir duquel
 					// le sort clignote
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 // Anim 3DS
 
 typedef struct
 {
 	char 	Name[4] ;	// Nom de l'anim
-	S16	Deb ;		// Frame de dÃ©but dans le HQR
+	S16	Deb ;		// Frame de d‚but dans le HQR
 	S16	Fin ;		// Frame de fin dans le HQR
 }       T_ANIM_3DS ;
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 
 typedef struct
 {
@@ -834,7 +834,7 @@ typedef struct  {       S16    Num ;
 #define C_AGRESSIF      	2	// Agressif
 #define C_DISCRET       	3	// Discret
 #define C_PROTOPACK     	4	// Protopack
-#define	C_DOUBLE		5	// Twinsen + ZoÃ©
+#define	C_DOUBLE		5	// Twinsen + Zo‚
 #define	C_CONQUE		6	// Conque
 #define	C_SCAPH_INT_NORM	7	// Scaphandre Interieur Normal
 #define	C_JETPACK		8	// SuperJetPack
@@ -850,7 +850,7 @@ typedef struct  {       S16    Num ;
 
 typedef struct	{
 #ifdef	LBA_EDITOR
-	char	Name[50] ;	// Nom du comportement (pour l'Ã©diteur)
+	char	Name[50] ;	// Nom du comportement (pour l'‚diteur)
 #endif
 
 	S32	Menu ;		// Index sur ListMenuComp
@@ -863,7 +863,7 @@ typedef struct	{
 						// comportement)
 #endif
 
-	U32	Flags ;				// CaractÃ©ristiques du comportement
+	U32	Flags ;				// Caract‚ristiques du comportement
 
 	}	T_COMPORTEMENT ;
 
@@ -873,9 +873,9 @@ typedef struct	{
 					// (Uniquement en mode jeu)
 #define	CF_INVENTORY		(1<<1)	// Acces au menu Inventory
 #define	CF_WALK_ON_CODES_JEU	(1<<2)	// Peut marcher sur les codes jeux (Protopack)
-#define	CF_CLIMB		(1<<3)	// Peut grimper aux Ã©chelles
+#define	CF_CLIMB		(1<<3)	// Peut grimper aux ‚chelles
 #define	CF_WEAPON		(1<<4)	// Peut utiliser la touche <ALT>
-#define	CF_HOLOMAP		(1<<5)	// Acces direct Ã  l'Holomap (touche H)
+#define	CF_HOLOMAP		(1<<5)	// Acces direct … l'Holomap (touche H)
 #define	CF_SHIELD		(1<<6)	// Acces au bouclier (touche ?)
 
 #define	CF_STANDARD	CF_COMPORTEMENT|CF_INVENTORY|CF_CLIMB|CF_WEAPON|CF_HOLOMAP|CF_SHIELD
@@ -883,7 +883,7 @@ typedef struct	{
 /*---------------- Menus Comportement ------------------*/
 typedef struct {
 	S32	Enable ;	// ce comportement-menu est-il disponible ?
-	S32	Previous ;	// comportement-menu prÃ©cÃ©dent
+	S32	Previous ;	// comportement-menu pr‚c‚dent
 	S32	Next ;		// comportement-menu suivant
 	S32	NbComps ;	// nombre de comportement
 	S32	Comps[4]  ;	// Liste des comportements du menu
@@ -1348,7 +1348,7 @@ extern	T_MENU_COMP	ListMenuComp[MAX_MENUS_COMP] ;
 
 #define NB_HEADER       13
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 //			Inventory
 //	Tout a mettre dans common.h normalement...
 #define	COUL_SELECT_MENU	166

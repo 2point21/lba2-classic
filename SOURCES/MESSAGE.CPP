@@ -2,12 +2,12 @@
 #ifdef  TITRE
 /*-------------------------------------------------------------------------*/
 
-            â–ˆâ”   â–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
-//          â–ˆâ–ˆâ” â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜
-            â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚â–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
-//          â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”˜  â””â”€â”€â”€â–ˆâ–ˆâ”‚ â””â”€â”€â”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚â””â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”Œâ”€â”€â”˜
-            â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
-            â””â”€â”˜ â””â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜ â””â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”˜
+            Û¿   Û¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿
+//          ÛÛ¿ ÛÛ³ ÛÛÚÄÄÄÙ ÛÛÚÄÄÄÙ ÛÛÚÄÄÄÙ ÛÛÚÄÛÛ³ ÛÛÚÄÄÄÙ ÛÛÚÄÄÄÙ
+            ÛÛÛÛÛÛ³ ÛÛÛÛÛ¿  ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ³ ÛÛ³ÛÛÛ¿ ÛÛÛÛÛ¿
+//          ÛÛÚÄÛÛ³ ÛÛÚÄÄÙ  ÀÄÄÄÛÛ³ ÀÄÄÄÛÛ³ ÛÛÚÄÛÛ³ ÛÛ³ÀÛÛ³ ÛÛÚÄÄÙ
+            ÛÛ³ ÛÛ³ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ³ ÛÛÛÛÛÛ³ ÛÛ³ ÛÛ³ ÛÛÛÛÛÛ³ ÛÛÛÛÛÛ¿
+            ÀÄÙ ÀÄÙ ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ ÀÄÄÄÄÄÙ ÀÄÄÄÄÄÙ
 /*-------------------------------------------------------------------------*/
 #endif
 
@@ -173,9 +173,9 @@ S32     LastFileInit=-1 ;
 char    *TabLanguage[] = {
                         //      Ne pas toucher l'ordre cause HQR
         "English",
-        "FranÃ§ais",
+        "Fran‡ais",
         "Deutsch",
-        "EspaÃ±ol",
+        "Espa¤ol",
         "Italiano",
         "Portugues"     }       ;
 
@@ -254,7 +254,7 @@ typedef struct
 T_FILEONHD      TabFileOnHD[MAX_FILE_VOICE] ;
 
 U32     TotalSizeFileHD = 0             ;
-S32     LanguageCD = 0                  ;// FranÃ§ais, a changer of course!
+S32     LanguageCD = 0                  ;// Fran‡ais, a changer of course!
 S32     NbFileOnHD = 0                  ;// No File for the moment
 S32     MaxVoice=0                      ;
 
@@ -436,14 +436,14 @@ S32    FindText( S32 text )
 }
 #ifdef  TITRE
 /*-------------------------------------------------------------------------*/
-          â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–„ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ       â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–€â–€â–ˆâ–€â–€
-//        â–ˆâ–ˆ    â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€ â–ˆ       â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€   â–ˆâ–ˆ
-          â–€â–€â–€â–€â–€ â–€â–€â–€â–€  â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€       â–€â–€    â–€â–€  â–€ â–€â–€  â–€   â–€â–€
+          Ûßßßß ÛßßßÜ ÛßßßÛ ÛßßßÛ ÛÜ ÜÛ       ÛßßßÛ ÛßßßÛ ÛßßßÛ ßßÛßß
+//        ÛÛ    ÛÛ  Û ÛÛßÛß ÛÛ  Û ÛÛß Û       ÛÛßßß ÛÛßßÛ ÛÛßÛß   ÛÛ
+          ßßßßß ßßßß  ßß  ß ßßßßß ßß  ß       ßß    ßß  ß ßß  ß   ßß
 /*-------------------------------------------------------------------------*/
 #endif
 #ifdef  CDROM
 /*-------------------------------------------------------------------------*/
-//      Pour prendre en compte les eventuels fichiers dÃ©jÃ  sur HD
+//      Pour prendre en compte les eventuels fichiers d‚j… sur HD
 void    InitVoiceFile()
 {
         char    pathname[_MAX_PATH];
@@ -572,7 +572,7 @@ void    DeleteOlderFileHD()
         S32     i               ;
         U32     min		;
 
-        min = 0xFFFFFFFFL       ;//     le plus rÃ©cent, non?
+        min = 0xFFFFFFFFL       ;//     le plus r‚cent, non?
 
         pt = TabFileOnHD        ;
 
@@ -755,7 +755,7 @@ S32     TryCopyFileCD_HD( char *filecd, char *filehd )
         }
         while( freesize < size );       // Keep hope... :-)
 
-//----------------------------- Ok, maintenant on a forcÃ©ment la place...
+//----------------------------- Ok, maintenant on a forc‚ment la place...
 
         ret = CopyFileCD_HD( filecd, filehd )   ;//  ;-)
 
@@ -797,7 +797,7 @@ void    InitFileNar( char *file, S32 from )
 
         MaxVoice = (offset/4)-1                 ;// Normalement en phase
                                                  // avec MaxText mais bon,
-                                                 // en chantier... {:) --D      (un ouvrier, je sais, il est nul celui la, dÃ©solÃ©...)
+                                                 // en chantier... {:) --D      (un ouvrier, je sais, il est nul celui la, d‚sol‚...)
         Seek( FdNar, 0L, SEEK_START )           ;
 
         if ( Read( FdNar, BufMemoSeek, offset ) != offset )
@@ -948,7 +948,7 @@ S32     TestSpk( S32 fd )
         if ( !FlagSpeak )       return(0)       ;//     Le joueur ne veut pas
         if ( !fd )              return(0)       ;//     Le programme ne peut pas
 
-        if ( IsSamplePlaying( SPEAK_SAMPLE ))   return(1);// Ã§a joue...
+        if ( IsSamplePlaying( SPEAK_SAMPLE ))   return(1);// ‡a joue...
 
         if ( FlagNextVoc )                      // Ya une suite...
         {
@@ -1072,7 +1072,7 @@ S32    Speak( S32 text )
         num = FindText( text )  ;
 
         if (( num == -1 )
-        OR  ( num >= MaxVoice )) return(0L)     ;//     Ne doit pas arrivÃ©,
+        OR  ( num >= MaxVoice )) return(0L)     ;//     Ne doit pas arriv‚,
                                                  //     sauf en cours de dvp...
         offset = BufMemoSeek[num]       ;
 
@@ -1130,9 +1130,9 @@ void    StopSpeak()
 #else
 
 //-------------------------------------------------------------------------
-//           â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–„ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ       â–ˆâ–€â–€â–€â–€ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–„
-//           â–ˆâ–ˆ    â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€ â–ˆ       â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆ  â–ˆ
-//           â–€â–€â–€â–€â–€ â–€â–€â–€â–€  â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€       â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€
+//           Ûßßßß ÛßßßÜ ÛßßßÛ ÛßßßÛ ÛÜ ÜÛ       Ûßßßß ÛÛÜ Û ÛßßßÜ
+//           ÛÛ    ÛÛ  Û ÛÛßÛß ÛÛ  Û ÛÛß Û       ÛÛßß  ÛÛßÛÛ ÛÛ  Û
+//           ßßßßß ßßßß  ßß  ß ßßßßß ßß  ß       ßßßßß ßß  ß ßßßß
 //-------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------
@@ -1500,7 +1500,7 @@ void    TestAndDrawRadio( void )
 
                 if( ListObjet[NumObjDial].CoulObj==COUL_ZOE )
                 {
-                        // c'est zoÃ© qui cause
+                        // c'est zo‚ qui cause
                         sprite = SYS_SPRITE_ZOE ;
                 }
                 else
@@ -1514,13 +1514,13 @@ void    TestAndDrawRadio( void )
 
                 if( FlagDisplayText )
                 {
-                        // affichÃ© en haut Ã  droite de la fenetre de dialogue
+                        // affich‚ en haut … droite de la fenetre de dialogue
                         mindx += Dial_X1 ;
                         mindy += Dial_Y0 ;
                 }
                 else
                 {
-                        // affichÃ© en haut Ã  droite de l'ecran
+                        // affich‚ en haut … droite de l'ecran
                         mindx += ModeDesiredX-1 ;
                         mindy += ClipWindowYMin ;
                 }
@@ -1690,7 +1690,7 @@ void    GetNextLine()
                 if ( *PtDial == 0 )     break   ;
                 GetNextWord( PtDial, Word )     ;
                 if ( SizeLine+SizeSpace+SizeWord > DialMaxSize ) break  ;
-//------------- Caractere SpÃ©ciaux, saut de ligne, de page, etc.
+//------------- Caractere Sp‚ciaux, saut de ligne, de page, etc.
                 if ( *PtDial == 1 )
                 {
                         PtDial++        ;
@@ -2006,9 +2006,9 @@ void    SpeakAnimation()
         ManageTime()    ;
         MyGetInput()    ;
 }
-//â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
 //                                 D I A L
-//â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
 void    Dial( S32 text, S32 drawscene )
 {
         S32     ret = 0         ;
@@ -2029,12 +2029,12 @@ void    Dial( S32 text, S32 drawscene )
         NormalWinDial( )        ;//     By default
         FlagMessageShade = TRUE ;
 
-        if( !GetText( text ) )  return ;        // Test rajoutÃ©  pour
-                                                // Ã©viter plantage.
+        if( !GetText( text ) )  return ;        // Test rajout‚  pour
+                                                // ‚viter plantage.
         if( GereFlagDial( text ) )      return ;
 
 //----- Si CAM_FOLLOW juste avant MESSAGE ( cas dans grot01 )
-// DÃ©placÃ© le 30/05/97
+// D‚plac‚ le 30/05/97
         if ( FirstTime == AFF_ALL_FLIP )// Si CAM_FOLLOW juste avant MESSAGE
         {
                 AffScene( AFF_ALL_FLIP )        ;
@@ -2047,7 +2047,7 @@ void    Dial( S32 text, S32 drawscene )
         }
 //-----
 
-        DialNbLine = 0 ;        //  pour la dÃ©mo le 02/08/96
+        DialNbLine = 0 ;        //  pour la d‚mo le 02/08/96
 
         SaveTimer( ) ;
 
@@ -2192,7 +2192,7 @@ void    Dial( S32 text, S32 drawscene )
 
         RestoreTimer( ) ;
 }
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
 S32     MyDial( S32 nummess )   // attends une touche si autre page sinon continue
 {
 //      S32     memoflagdisplaytext ;
@@ -2233,10 +2233,10 @@ S32     MyDial( S32 nummess )   // attends une touche si autre page sinon contin
                 NormalWinDial( )        ;
                 FlagMessageShade = TRUE ;
 
-                if( !GetText( nummess ) )       return FALSE ;  // Test rajoutÃ© pour
-                                                                // Ã©viter plantage.
+                if( !GetText( nummess ) )       return FALSE ;  // Test rajout‚ pour
+                                                                // ‚viter plantage.
 
-/*              // Magouille pour etre sÃ¹r d'incruster la bulle en BoxStaticAdd
+/*              // Magouille pour etre s—r d'incruster la bulle en BoxStaticAdd
                 // quand FlagDisplayText=FALSE (cf DrawBulle())
                 memoflagdisplaytext = FlagDisplayText ;
                 FlagDisplayText = TRUE ;
@@ -2297,8 +2297,8 @@ S32     MyDial( S32 nummess )   // attends une touche si autre page sinon contin
 
         return esc ;
 }
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-// attention size max ou tronquÃ©e Ã  255 car + 0
+/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+// attention size max ou tronqu‚e … 255 car + 0
 char    *GetMultiText( S32 text, char *dst )
 {
         char    *pts    ;

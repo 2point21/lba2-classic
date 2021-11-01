@@ -1,3 +1,0 @@
-extern void InitIncrustDisp(short ,short ,short ,short ,short ,short ,short );
-extern void ChangeIncrustPos(short ,short ,short ,short );
-extern void DrawBulle(short );

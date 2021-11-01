@@ -195,7 +195,7 @@ exit_loop:
 				text = 7 ;
 				break ;
 
-			case CHEAT_CLOVERBOX:// boite Ã  Trefle
+			case CHEAT_CLOVERBOX:// boite … Trefle
 				if( NbCloverBox<10 )
 				{
 					NbCloverBox++ ;
@@ -205,7 +205,7 @@ exit_loop:
 				}
 				break ;
 
-			case CHEAT_PINGOUIN:// MÃ©caPingouin
+			case CHEAT_PINGOUIN:// M‚caPingouin
 				if( ListVarGame[FLAG_MECA_PINGOUIN]<10 )
 				{
 					ListVarGame[FLAG_MECA_PINGOUIN]+=5 ;

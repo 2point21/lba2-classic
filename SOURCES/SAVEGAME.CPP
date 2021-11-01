@@ -1,9 +1,9 @@
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-	     ÛÛßßß ÛßßßÛ Û   Û Ûßßßß       Ûßßßß ÛßßßÛ ÛÜ ÜÛ Ûßßßß
-	     ßßßßÛ ÛÛßßÛ ÛÛ Üß ÛÛßß        ÛÛ ßÛ ÛÛßßÛ ÛÛß Û ÛÛßß
-	     ßßßßß ßß  ß ßßß   ßßßßß       ßßßßß ßß  ß ßß  ß ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+	     â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆ   â–ˆ â–ˆâ–€â–€â–€â–€       â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ â–ˆâ–€â–€â–€â–€
+	     â–€â–€â–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆ â–„â–€ â–ˆâ–ˆâ–€â–€        â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€ â–ˆ â–ˆâ–ˆâ–€â–€
+	     â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€   â–€â–€â–€â–€â–€       â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
 #include 	"c_extern.h"
 
@@ -44,11 +44,11 @@ char	*ListDemoSave[NB_DEMOSAVE] = {
 	} ;
 #endif
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-    ÛßßÛ  Û   Û Ûßßßß Ûßßßß Ûßßßß ÛßßßÛ       Ûßßßß Û   Û ÛÛÜ Û Ûßßßß ÛÛßßß
-    ÛÛßßÛ ÛÛ  Û ÛÛßß  ÛÛßß  ÛÛßß  ÛÛßÛß       ÛÛßß  ÛÛ  Û ÛÛßÛÛ ÛÛ    ßßßßÛ
-    ßßßßß ßßßßß ßß    ßß    ßßßßß ßß  ß       ßß    ßßßßß ßß  ß ßßßßß ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+    â–ˆâ–€â–€â–ˆ  â–ˆ   â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ       â–ˆâ–€â–€â–€â–€ â–ˆ   â–ˆ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–ˆâ–€â–€â–€
+    â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–ˆâ–€       â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆ    â–€â–€â–€â–€â–ˆ
+    â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€    â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€       â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 #define	PtrOpen()	PtrSave=Screen
 
 //-------- Lecture
@@ -75,7 +75,7 @@ char	*ListDemoSave[NB_DEMOSAVE] = {
 #define	LbaWriteLong(val)	*(S32*)PtrSave = val ;\
 				PtrSave += 4 ;
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Resultat pas terrible
 #ifndef	EDITLBA2
 void	RemapPicture( U8 *buf, U32 size )
@@ -141,12 +141,12 @@ S32	SetDemoSaveGame( S32 num )
 }
 #endif	// DEMO
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-	  ÛßßßÜ  Û    ÛÛßßß Û  Üß       Ûßßßß Û   Û ÛÛÜ Û Ûßßßß ÛÛßßß
-	  ÛÛ  Û  ÛÛ   ßßßßÛ ÛÛßÜ        ÛÛßß  ÛÛ  Û ÛÛßÛÛ ÛÛ    ßßßßÛ
-	  ßßßß   ßß   ßßßßß ßß  ß       ßß    ßßßßß ßß  ß ßßßßß ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+	  â–ˆâ–€â–€â–€â–„  â–ˆ    â–ˆâ–ˆâ–€â–€â–€ â–ˆ  â–„â–€       â–ˆâ–€â–€â–€â–€ â–ˆ   â–ˆ â–ˆâ–ˆâ–„ â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–ˆâ–€â–€â–€
+	  â–ˆâ–ˆ  â–ˆ  â–ˆâ–ˆ   â–€â–€â–€â–€â–ˆ â–ˆâ–ˆâ–€â–„        â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–ˆ â–ˆâ–ˆ    â–€â–€â–€â–€â–ˆ
+	  â–€â–€â–€â–€   â–€â–€   â–€â–€â–€â–€â–€ â–€â–€  â–€       â–€â–€    â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Version Jeu uniquement
 void	AutoSaveGame()
 {
@@ -194,7 +194,7 @@ void	AutoSaveGame()
 #endif	// DEMO
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	CurrentSaveGame()
 {
 	U8	memonumversion = NumVersion ;
@@ -240,7 +240,7 @@ void	CurrentSaveGame()
 }
 #endif	// EDITLBA2
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	SaveGame( S32 flagmess )
 {
 	U8	*sizeptr ;
@@ -318,7 +318,7 @@ void	SaveGame( S32 flagmess )
 	SaveContexte( savetimerrefhr ) ;
 #endif
 
-	// sauve position valide si n‚cessaire
+	// sauve position valide si nÃ©cessaire
 	LbaWriteLong( ValidePos ) ;
 	LbaWriteLong( LastValidePos ) ;
 
@@ -355,7 +355,7 @@ void	SaveGame( S32 flagmess )
 				PtrSave = (U8*)Screen ;
 
 #ifndef	EDITLBA2
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	LoadGameNumCube( )
 {
 	U8	numversion ;
@@ -395,7 +395,7 @@ void	LoadGameNumCube( )
 	LbaRead( ListVarGame, MAX_VARS_GAME*sizeof(ListVarGame[0]) ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	LoadGamePlayerName( )
 {
 	U8	wbyte ;
@@ -425,7 +425,7 @@ void	LoadGamePlayerName( )
 
 #define	NB_GAME_CHOICE	5
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 U8	*LoadGameScreen( )
 {
 	U8	wbyte ;
@@ -471,7 +471,7 @@ U8	*LoadGameScreen( )
 	return( PtrSave ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S32	LoadGame( void )
 {
 	U8	*ptr ;
@@ -530,7 +530,7 @@ S32	LoadGame( void )
 	flaginit = LoadContexte( &savetimerrefhr ) ;
 #endif
 
-	// recupere position valide si n‚cessaire
+	// recupere position valide si nÃ©cessaire
 	LbaReadLong( ValidePos ) ;
 	LbaReadLong( LastValidePos ) ;
 
@@ -555,7 +555,7 @@ S32	LoadGame( void )
 #endif
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S32	LoadGameOldVersion( void )
 {
 	T_INV_OBJ	*ptri ;
@@ -698,7 +698,7 @@ S32	LoadGameOldVersion( void )
 	return TRUE ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Sauvegarde de l'etat du jeu dans PtrSave
 void	SaveContexte( S32 savetimerrefhr )
 {
@@ -774,7 +774,7 @@ void	SaveContexte( S32 savetimerrefhr )
 
 	LbaWriteLong( Checksum )	;
 
-	// Debut d'incompatibilit‚ des sauvegardes
+	// Debut d'incompatibilitÃ© des sauvegardes
 
 	LbaWriteLong( LastMyFire ) ;
 	LbaWriteLong( LastMyJoy ) ;
@@ -1072,7 +1072,7 @@ void	SaveContexte( S32 savetimerrefhr )
 	LbaWriteLong( VueCamera ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Chargement d'une partie se trouvant dans PtrSave
 S32	LoadContexte( S32 *savetimerrefhr )
 {
@@ -1165,7 +1165,7 @@ S32	LoadContexte( S32 *savetimerrefhr )
 	if( wlong!=Checksum )
 	{
 #if defined(DEBUG_TOOLS) || defined(TEST_TOOLS)
-		Message( "Warning: La sauvegarde ne correspond pas au sc‚nario !", TRUE ) ;
+		Message( "Warning: La sauvegarde ne correspond pas au scÃ©nario !", TRUE ) ;
 #endif
 		SceneStartX=-1 ;
 	}
@@ -1195,8 +1195,8 @@ S32	LoadContexte( S32 *savetimerrefhr )
 			CameraCenter( 0 ) ;
 		}
 
-		// Magouille : Pour r‚cup‚rer le body du heros lors d'un
-		// START_POS dans EDITLBA2, il est sauv‚ dans le dernier
+		// Magouille : Pour rÃ©cupÃ©rer le body du heros lors d'un
+		// START_POS dans EDITLBA2, il est sauvÃ© dans le dernier
 		// VAR_CUBE par EDITLBA2
 
 		ListObjet[NUM_PERSO].GenBody = ListVarCube[MAX_VARS_CUBE-1] ;
@@ -1206,11 +1206,11 @@ S32	LoadContexte( S32 *savetimerrefhr )
 	else
 #endif
 	{
-	// Debut incompatibilit‚ des sauvegardes
+	// Debut incompatibilitÃ© des sauvegardes
 
 
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)||defined(EDITLBA2)
-	if( NumVersion<34 )// Compatibilit‚ sauvegardes
+	if( NumVersion<34 )// CompatibilitÃ© sauvegardes
 	{
 		LbaReadLong( LastStepFalling ) ;
 		LbaReadLong( LastStepShifting ) ;
@@ -1232,7 +1232,7 @@ S32	LoadContexte( S32 *savetimerrefhr )
 	LbaReadLong( StartYFalling ) ;
 
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)||defined(EDITLBA2)
-	if( NumVersion<34 )// Compatibilit‚ sauvegardes
+	if( NumVersion<34 )// CompatibilitÃ© sauvegardes
 	{
 		LbaRead( &RealFalling, sizeof( RealFalling ) ) ;
 		LbaReadLong( StepFalling ) ;
@@ -1313,7 +1313,7 @@ S32	LoadContexte( S32 *savetimerrefhr )
 		LbaReadLong( ptrobj->OldBeta ) ;
 
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)||defined(EDITLBA2)
-		if( NumVersion<34 )// Compatibilit‚ sauvegardes
+		if( NumVersion<34 )// CompatibilitÃ© sauvegardes
 		{
 			LbaRead( &TempoRealAngle, sizeof(TempoRealAngle) ) ;
 		}
@@ -1343,12 +1343,12 @@ S32	LoadContexte( S32 *savetimerrefhr )
 //	S16	MessageChapter[MAX_CHAPTER] ;
 
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)||defined(EDITLBA2)
-		if( NumVersion>=35 )// Compatibilit‚ sauvegardes
+		if( NumVersion>=35 )// CompatibilitÃ© sauvegardes
 #endif
 			LbaReadLong( ptrobj->SampleAlways ) ;
 
 #if defined(DEBUG_TOOLS)||defined(TEST_TOOLS)||defined(EDITLBA2)
-		if( NumVersion>=36 )// Compatibilit‚ sauvegardes
+		if( NumVersion>=36 )// CompatibilitÃ© sauvegardes
 #endif
 			LbaReadByte( ptrobj->SampleVolume ) ;
 
@@ -1403,8 +1403,8 @@ S32	LoadContexte( S32 *savetimerrefhr )
 	LbaRead( ListExtra, sizeof(T_EXTRA)*wbyte ) ;
 
 #ifndef	EDITLBA2
-	// Magouille pour ‚viter de changer le format des sauvegardes
-	// Pourrait etre chang‚ en version finale en sauvant ProtectActif
+	// Magouille pour Ã©viter de changer le format des sauvegardes
+	// Pourrait etre changÃ© en version finale en sauvant ProtectActif
 	ProtectActif = 0 ;
 	ptrextra = ListExtra ;
 

@@ -78,24 +78,24 @@
 @echo ****
 @echo **** Makefile pour compiler la version jeu de LBA2
 @echo ****
-@echo ÿ
+@echo Â 
 @echo   M             - Compile LBA0.EXE pour la version LBA2OK.EXE
 @echo   M clean       - Compile LBA0.EXE pour la version LBA2OK.EXE
 @echo                   en copiant tous les fichiers commun de l'outil
-@echo ÿ
+@echo Â 
 @echo   M hd          - Compile LBA0.EXE pour la version LBA2HD.EXE
 @echo   M hd clean    - Compile LBA0.EXE pour la version LBA2HD.EXE
 @echo                   en copiant tous les fichiers commun de l'outil
-@echo ÿ
+@echo Â 
 @echo   M demo        - Compile LBA0.EXE pour la version LBA2DEMO.EXE
 @echo   M demo clean  - Compile LBA0.EXE pour la version LBA2DEMO.EXE
 @echo                   en copiant tous les fichiers commun de l'outil
-@echo ÿ
+@echo Â 
 @echo ****
 
 @goto fin
 
-@rem ******** Mise … jour des fichiers communs avec l'outil
+@rem ******** Mise Ã  jour des fichiers communs avec l'outil
 :isclean
 
 @if "%1"=="clean" goto clean

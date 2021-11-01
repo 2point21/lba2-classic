@@ -18,14 +18,14 @@
 	CTRL	Menu Comportement
 	ALT	Utilisation de l'arme courante
 	SPACE	Action du Comportement courant
-	+	Passe au niveau de cam‚ra sup‚rieur
-	-	Passe au niveau de cam‚ra inf‚rieur
-	ı	Tourne la cam‚ra autour de Twinsen
+	+	Passe au niveau de camÃ©ra supÃ©rieur
+	-	Passe au niveau de camÃ©ra infÃ©rieur
+	Â²	Tourne la camÃ©ra autour de Twinsen
 	W	Action Normale
 	END	Action Normale
-	RETURN	Recentre Cam‚ra derriŠre Twinsen
+	RETURN	Recentre CamÃ©ra derriÃ¨re Twinsen
 	1	Balle Magique
-	2	Fl‚chettes
+	2	FlÃ©chettes
 	3	Sarbacane/Sarbatron
 	4	Conque
 	5	Gant
@@ -38,4 +38,4 @@
 	S	Sauvegarde
 	L	Chargement
 	J	Protopack/Jetpack
-	P	M‚ca-Pingouin
+	P	MÃ©ca-Pingouin

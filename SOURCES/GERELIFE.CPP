@@ -13,14 +13,14 @@ extern	S32	InvSelect ;	// INVENT.CPP
 
 #define	CONE_VIEW	1024
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-		   ÛßßßÜ ÛßßßÛ       Û      Û    Ûßßßß Ûßßßß
-		   ÛÛ  Û ÛÛ  Û       ÛÛ     ÛÛ   ÛÛßß  ÛÛßß
-		   ßßßß  ßßßßß ßßßßß ßßßßß  ßß   ßß    ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+		   â–ˆâ–€â–€â–€â–„ â–ˆâ–€â–€â–€â–ˆ       â–ˆ      â–ˆ    â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€
+		   â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ  â–ˆ       â–ˆâ–ˆ     â–ˆâ–ˆ   â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆâ–€â–€
+		   â–€â–€â–€â–€  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€  â–€â–€   â–€â–€    â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 
 void	DoFuncLife( T_OBJET *ptrobj )
 {
@@ -276,7 +276,7 @@ void	DoFuncLife( T_OBJET *ptrobj )
 			num = *PtrPrg++ ;	// var game
 
 			if( InventoryAction == num )
-			{ // action ‚mise depuis l'inventaire … cette boucle
+			{ // action Ã©mise depuis l'inventaire Ã  cette boucle
 				Value = TRUE ;
 			}
 			else
@@ -579,7 +579,7 @@ void	DoFuncLife( T_OBJET *ptrobj )
 	}
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 
 S32    DoTest()
 {
@@ -691,7 +691,7 @@ S32    DoTest()
 	return FALSE ;
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 
 void	CleanTrack( T_OBJET *ptrobj )
 {
@@ -735,7 +735,7 @@ void	CleanTrack( T_OBJET *ptrobj )
 	}
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 
 void	AdjustDirObject( T_OBJET *ptrobj, S32 oldmove )
 {
@@ -754,7 +754,7 @@ void	AdjustDirObject( T_OBJET *ptrobj, S32 oldmove )
 
 			if( nu!=-1 AND !(nu&CARRY_BY_DECORS) )
 			{
-				ptrobj->CarryBy = -1 ;// on verra … la prochaine boucle
+				ptrobj->CarryBy = -1 ;// on verra Ã  la prochaine boucle
 			}
 
 		case MOVE_FOLLOW:
@@ -792,7 +792,7 @@ void	AdjustDirObject( T_OBJET *ptrobj, S32 oldmove )
 	}
 }
 
-//ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+//â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€
 
 void	DoLife( U8 numobj )
 {
@@ -887,8 +887,8 @@ void	DoLife( U8 numobj )
 				StartYCube = ((ListObjet[NumObjFollow].Obj.Y+SIZE_BRICK_Y)/SIZE_BRICK_Y) ;
 				StartZCube = ((ListObjet[NumObjFollow].Obj.Z)/SIZE_BRICK_XZ) ;
 
-				// Pour v‚rifier si l'objet … suivre se trouve dans une
-				// zone cam‚ra
+				// Pour vÃ©rifier si l'objet Ã  suivre se trouve dans une
+				// zone camÃ©ra
 				CheckZoneSce( &ListObjet[NumObjFollow], NumObjFollow ) ;
 
 				CameraCenter( 0 ) ;
@@ -1186,7 +1186,7 @@ void	DoLife( U8 numobj )
 				break ;
 
 //---------------------------------------------------------------------------
-			case LM_SNIF:	/* swif invers‚ tjrs jump jusqu'a cond inverse */
+			case LM_SNIF:	/* swif inversÃ© tjrs jump jusqu'a cond inverse */
 				DoFuncLife( ptrobj ) ;
 				if( !DoTest() )
 				{
@@ -1217,7 +1217,7 @@ void	DoLife( U8 numobj )
 				break ;
 
 //---------------------------------------------------------------------------
-			case LM_OFFSET: 	/* jmp … offset */
+			case LM_OFFSET: 	/* jmp Ã  offset */
 				PtrPrg = ptrobj->PtrLife + *(S16*)PtrPrg ;
 				break ;
 
@@ -1317,7 +1317,7 @@ void	DoLife( U8 numobj )
 #endif
 					NumObjDial = (U8)num ;
 
-					// au cas ou l'on soit appel‚ pendant un eclair
+					// au cas ou l'on soit appelÃ© pendant un eclair
 					Palette( PtrPal ) ;
 
 					Dial( *(S16*)PtrPrg, TRUE ) ;
@@ -1335,7 +1335,7 @@ void	DoLife( U8 numobj )
 #endif
 					NumObjDial = (U8)num ;
 
-					// au cas ou l'on soit appel‚ pendant un eclair
+					// au cas ou l'on soit appelÃ© pendant un eclair
 					Palette( PtrPal ) ;
 
 					Dial( *(S16*)PtrPrg, TRUE ) ;
@@ -1350,7 +1350,7 @@ void	DoLife( U8 numobj )
 #endif
 				NumObjDial = numobj ;
 
-				// au cas ou l'on soit appel‚ pendant un eclair
+				// au cas ou l'on soit appelÃ© pendant un eclair
 				Palette( PtrPal ) ;
 
 				Dial( *(S16*)PtrPrg, TRUE ) ;
@@ -1364,7 +1364,7 @@ void	DoLife( U8 numobj )
 #endif
 				NumObjDial = numobj ;
 
-				// au cas ou l'on soit appel‚ pendant un eclair
+				// au cas ou l'on soit appelÃ© pendant un eclair
 				Palette( PtrPal ) ;
 
 				Dial( *(S16*)PtrPrg, TRUE ) ;
@@ -1379,7 +1379,7 @@ void	DoLife( U8 numobj )
 				NumObjDial = NUM_PERSO ;
 				ListObjet[NUM_PERSO].CoulObj = COUL_ZOE ;
 
-				// au cas ou l'on soit appel‚ pendant un eclair
+				// au cas ou l'on soit appelÃ© pendant un eclair
 				Palette( PtrPal ) ;
 
 				Dial( *(S16*)PtrPrg, TRUE ) ;
@@ -1823,15 +1823,15 @@ void	DoLife( U8 numobj )
 					ptrobj->Info3 = 0 ;
 				}
 
-				// Pour v‚rifier si l'objet … suivre se trouve dans une
-				// zone cam‚ra
+				// Pour vÃ©rifier si l'objet Ã  suivre se trouve dans une
+				// zone camÃ©ra
 				CheckZoneSce( ptrobj, numobj ) ;
 
-				// Pour dire … un objet qu'il n'est plus port‚
+				// Pour dire Ã  un objet qu'il n'est plus portÃ©
 				// par moi
 				CheckCarrier( numobj ) ;
 
-				// si je suis port‚ par un objet
+				// si je suis portÃ© par un objet
 				nu = ptrobj->CarryBy ;
 
 				if( nu!=-1 AND !(nu&CARRY_BY_DECORS) )
@@ -1887,7 +1887,7 @@ void	DoLife( U8 numobj )
 					TestCoulDial( ptrobj->CoulObj ) ;
 					NumObjDial = numobj ;
 
-					// au cas ou l'on soit appel‚ pendant un eclair
+					// au cas ou l'on soit appelÃ© pendant un eclair
 					Palette( PtrPal ) ;
 
 					GameAskChoice( *(S16*)PtrPrg ) ;
@@ -1909,7 +1909,7 @@ void	DoLife( U8 numobj )
 						TestCoulDial( ListObjet[num].CoulObj ) ;
 						NumObjDial = (U8)num ;
 
-						// au cas ou l'on soit appel‚ pendant un eclair
+						// au cas ou l'on soit appelÃ© pendant un eclair
 						Palette( PtrPal ) ;
 
 						GameAskChoice( *(S16*)PtrPrg ) ;
@@ -2211,14 +2211,14 @@ void	DoLife( U8 numobj )
 
 					APtObj = ptrobj ;
 
-					// SizeSHit contient le num‚ro de la brick sous le wagon
+					// SizeSHit contient le numÃ©ro de la brick sous le wagon
 					// teste position de l'essieu avant
 					AdjustEssieuWagonAvant( ptrobj->SizeSHit ) ;
 					// teste position de l'essieu arriere
 					AdjustEssieuWagonArriere( ptrobj->SizeSHit ) ;
 				}
 
-				// Pour dire … un objet qu'il n'est plus port‚
+				// Pour dire Ã  un objet qu'il n'est plus portÃ©
 				// par moi
 				CheckCarrier( numobj ) ;
 				break ;

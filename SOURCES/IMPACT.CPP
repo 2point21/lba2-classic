@@ -1,7 +1,7 @@
 #include	"c_extern.h"
 
 //
-// Uniquement en version Outil: interpr‚tation des impacts
+// Uniquement en version Outil: interprÃ©tation des impacts
 //
 // ATTENTION: Utilise ScreenAux pour charger les impacts
 //
@@ -16,7 +16,7 @@ U32		NbImpacts = 0 ;
 T_IMPACT	ListImpact[MAX_IMPACT] ;
 
 // ATTENTION: Laisser imperativement les instructions FLOW et THROW avant les
-// autres FLOW_xxx et THROW_xxx, sinon le principe ne marche plus … cause du
+// autres FLOW_xxx et THROW_xxx, sinon le principe ne marche plus Ã  cause du
 // strnicmp(). (Voir GetImpCommand()).
 
 char	*ImpCommandList[NB_IMP_COMMAND] = {
@@ -38,7 +38,7 @@ U8	*BufferImpact ;
 #endif
 
 #ifdef	LBA_EDITOR
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S8	GetImpCommand( void )
 {
 	char	*ptr ;
@@ -88,13 +88,13 @@ S8	GetImpCommand( void )
 	return (S8)IMP_NOP ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S32	GetNumDef( char *pathdef, char *name )
 {
 	S32	n = 0 ;
 	S32	len ;
 	char	*ptr ;
-	char	*com ;	// Pointeur sur commentaire ‚ventuel
+	char	*com ;	// Pointeur sur commentaire Ã©ventuel
 
 	strupr( name ) ;
 	len = strlen( name ) ;
@@ -107,7 +107,7 @@ S32	GetNumDef( char *pathdef, char *name )
 
 		if( ptr )
 		{
-			// Vire commentaire ‚ventuel
+			// Vire commentaire Ã©ventuel
 			com = (char *) strchr( ptr, ';' ) ;
 			if( com )	*com = '\0' ;
 
@@ -125,7 +125,7 @@ S32	GetNumDef( char *pathdef, char *name )
 	return -1 ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 S32	GetNumDefAddIfNot( char *pathdef, char *name, char *rem )
 {
 	char	ch[256] ;
@@ -180,7 +180,7 @@ S32	GetNumDefAddIfNot( char *pathdef, char *name, char *rem )
 	// rajoute en fin de liste
 	strcpy( ch, name ) ;
 	strcat( ch, " ; " ) ;
-	strcat( ch, rem  ) ;	// ajoute une remarque ‚ventuelle
+	strcat( ch, rem  ) ;	// ajoute une remarque Ã©ventuelle
 
 	DefFileBufferWriteString( Itoa(n), ch ) ;
 
@@ -191,9 +191,9 @@ S32	GetNumDefAddIfNot( char *pathdef, char *name, char *rem )
 	return n ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Entr‚e: impact en mode texte
-// Sortie: impact en mode compil‚ dans le mˆme buffer
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// EntrÃ©e: impact en mode texte
+// Sortie: impact en mode compilÃ© dans le mÃªme buffer
 S32	CompileImpact( U8 *buffer )
 {
 	U8	*ptr = buffer ;
@@ -369,11 +369,11 @@ S32	CompileImpact( U8 *buffer )
 
 	*ptr++ = IMP_END ;
 
-	// retourne taille compil‚e
+	// retourne taille compilÃ©e
 	return( ptr-buffer ) ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 U8	*SearchImpact( char *name )
 {
 	char path[ADELINE_MAX_PATH] ;
@@ -418,7 +418,7 @@ U8	*SearchImpact( char *name )
 }
 #endif	// LBA_EDITOR
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 #ifndef	COMPILATOR
 #ifdef	LBA_EDITOR
 void	DoImpact( char *name, S32 x, S32 y, S32 z, U8 owner )
@@ -446,7 +446,7 @@ void   	DoImpact( S32 num, S32 x, S32 y, S32 z, U8 owner )
 
 	if( ptr )
 	{
-		// Ex‚cution de l'impact
+		// ExÃ©cution de l'impact
 
 		if( owner!=255 )
 		{

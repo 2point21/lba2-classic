@@ -1,16 +1,16 @@
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
 
-	ÛÛÛÛÛÛ¿ ÛÛ¿ ÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛÛÛÛÛ¿ ÛÛ¿ ÛÛ¿ ÛÛÛÛÛÛ¿         ÛÛÛÛÛÛ¿
-	ÀÄÛÛÚÄÙ ÛÛÛ¿ÛÛ³ ÀÄÛÛÚÄÙ ÛÛÚÄÄÄÙ ÛÛ³ ÛÛ³ ÀÄÛÛÚÄÙ         ÛÛÚÄÄÄÙ
-	  ÛÛ³   ÛÛÛÛÛÛ³   ÛÛ³   ÛÛÛÛÛ¿  ÀÛÛÛÛÚÙ   ÛÛ³           ÛÛ³
-	  ÛÛ³   ÛÛÚÛÛÛ³   ÛÛ³   ÛÛÚÄÄÙ  ÛÛÚÄÛÛ¿   ÛÛ³           ÛÛ³
-	ÛÛÛÛÛÛ¿ ÛÛ³ÀÛÛ³   ÛÛ³   ÛÛÛÛÛÛ¿ ÛÛ³ ÛÛ³   ÛÛ³     ÛÛ¿   ÛÛÛÛÛÛ¿
-	ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ   ÀÄÙ   ÀÄÄÄÄÄÙ ÀÄÙ ÀÄÙ   ÀÄÙ     ÀÄÙ   ÀÄÄÄÄÄÙ
+	â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ” â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”         â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+	â””â”€â–ˆâ–ˆâ”Œâ”€â”˜ â–ˆâ–ˆâ–ˆâ”â–ˆâ–ˆâ”‚ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜ â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜ â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚ â””â”€â–ˆâ–ˆâ”Œâ”€â”˜         â–ˆâ–ˆâ”Œâ”€â”€â”€â”˜
+	  â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”  â””â–ˆâ–ˆâ–ˆâ–ˆâ”Œâ”˜   â–ˆâ–ˆâ”‚           â–ˆâ–ˆâ”‚
+	  â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”Œâ–ˆâ–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”Œâ”€â”€â”˜  â–ˆâ–ˆâ”Œâ”€â–ˆâ–ˆâ”   â–ˆâ–ˆâ”‚           â–ˆâ–ˆâ”‚
+	â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ”‚â””â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ” â–ˆâ–ˆâ”‚ â–ˆâ–ˆâ”‚   â–ˆâ–ˆâ”‚     â–ˆâ–ˆâ”   â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ”
+	â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜   â””â”€â”˜   â””â”€â”€â”€â”€â”€â”˜ â””â”€â”˜ â””â”€â”˜   â””â”€â”˜     â””â”€â”˜   â””â”€â”€â”€â”€â”€â”˜
 
 	Module commun aux mondes interieurs et exterieurs encapsulant
 	certaines fonctions.
 
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 #include	"c_extern.h"
 
@@ -43,14 +43,14 @@ Func_InitGrille	*PtrInitGrille	= InitGrille 	;
 Func_FullWorldColBrick	*PtrFullWorldColBrick = FullWorldColBrick ;
 #endif
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			    Ûßßßß ÛßßßÛ ÛÜ ÜÛ Ûßßßß
-			    ÛÛ ßÛ ÛÛßßÛ ÛÛß Û ÛÛßß
-			    ßßßßß ßß  ß ßß  ß ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			    â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–„ â–„â–ˆ â–ˆâ–€â–€â–€â–€
+			    â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€ â–ˆ â–ˆâ–ˆâ–€â–€
+			    â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 // Initialise la projection de la camera ainsi que les pointeurs de fonctions
-// suivant le mode du cube courant (int‚rieur ou ext‚rieur)
+// suivant le mode du cube courant (intÃ©rieur ou extÃ©rieur)
 void	PtrInit3DGame()
 {
 	if( CubeMode==CUBE_INTERIEUR )
@@ -63,14 +63,14 @@ void	PtrInit3DGame()
 	}
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-		   ÛßßßÛ ÛßßÛ      Û Ûßßßß Ûßßßß ßßÛßß ÛÛßßß
-		   ÛÛ  Û ÛÛßßÛ ÜÜ  Û ÛÛßß  ÛÛ      ÛÛ  ßßßßÛ
-		   ßßßßß ßßßßß ßßßßß ßßßßß ßßßßß   ßß  ßßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+		   â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–ˆ      â–ˆ â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–€ â–€â–€â–ˆâ–€â–€ â–ˆâ–ˆâ–€â–€â–€
+		   â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–„â–„  â–ˆ â–ˆâ–ˆâ–€â–€  â–ˆâ–ˆ      â–ˆâ–ˆ  â–€â–€â–€â–€â–ˆ
+		   â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€   â–€â–€  â–€â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
-// Routine de recouvrement: trouver le moyen de passer les mˆmes paramŠtres
-// en ext‚rieur et en int‚rieur pour optimiser avec un pointeur de fonction
+// Routine de recouvrement: trouver le moyen de passer les mÃªmes paramÃ¨tres
+// en extÃ©rieur et en intÃ©rieur pour optimiser avec un pointeur de fonction
 S32	DrawRecover( S32 xw, S32 yw, S32 zw, S32 ymax, S32 zvmax )
 {
 	S32	flagbox ;
@@ -91,14 +91,14 @@ S32	DrawRecover( S32 xw, S32 yw, S32 zw, S32 ymax, S32 zvmax )
 
 		LongWorldRotatePoint( xw, yw, zw ) ;
 
-//		z0 = CameraZr-Z0-256 ;	// calculer par rapport … la zv
-		z0 = CameraZr-Z0-zvmax ;// calculer par rapport … la zv
+//		z0 = CameraZr-Z0-256 ;	// calculer par rapport Ã  la zv
+		z0 = CameraZr-Z0-zvmax ;// calculer par rapport Ã  la zv
 
 		LongWorldRotatePoint( xw, yw+ymax, zw ) ;
 
 		// ~ max [ (xmax-xmin)/2, (zmax-zmin)/2 ]
-//		z1 = CameraZr-Z0-256 ;	// calculer par rapport … la zv
-		z1 = CameraZr-Z0-zvmax ;// calculer par rapport … la zv
+//		z1 = CameraZr-Z0-256 ;	// calculer par rapport Ã  la zv
+		z1 = CameraZr-Z0-zvmax ;// calculer par rapport Ã  la zv
 
 		flagbox = ZBufBoxOverWrite2( z0, z1, ClipXMin, ClipYMin, ClipXMax, ClipYMax ) ;
 
@@ -108,9 +108,9 @@ S32	DrawRecover( S32 xw, S32 yw, S32 zw, S32 ymax, S32 zvmax )
 	return flagbox ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Routine de recouvrement des sprites: trouver le moyen de passer les mˆmes paramŠtres
-// en ext‚rieur et en int‚rieur pour optimiser avec un pointeur de fonction
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Routine de recouvrement des sprites: trouver le moyen de passer les mÃªmes paramÃ¨tres
+// en extÃ©rieur et en intÃ©rieur pour optimiser avec un pointeur de fonction
 void	DrawRecover3( S32 xw, S32 yw, S32 zw, S32 ymax, S32 zvmax )
 {
 	S32	flagbox ;
@@ -130,8 +130,8 @@ void	DrawRecover3( S32 xw, S32 yw, S32 zw, S32 ymax, S32 zvmax )
 
 		LongWorldRotatePoint( xw, yw, zw ) ;
 
-//		z0 = CameraZr-Z0-256 ;	// calculer par rapport … la zv
-		z0 = CameraZr-Z0-zvmax ;	// calculer par rapport … la zv
+//		z0 = CameraZr-Z0-256 ;	// calculer par rapport Ã  la zv
+		z0 = CameraZr-Z0-zvmax ;	// calculer par rapport Ã  la zv
 
 		flagbox = ZBufBoxOverWrite2( z0, z0, ClipXMin, ClipYMin, ClipXMax, ClipYMax ) ;
 
@@ -140,11 +140,11 @@ void	DrawRecover3( S32 xw, S32 yw, S32 zw, S32 ymax, S32 zvmax )
 }
 
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			       ÛÜ ÜÛ ÛßßßÛ ÛßßßÛ
-			       ÛÛß Û ÛÛßßÛ ÛÛßßß
-			       ßß  ß ßß  ß ßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			       â–ˆâ–„ â–„â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ
+			       â–ˆâ–ˆâ–€ â–ˆ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–€
+			       â–€â–€  â–€ â–€â–€  â–€ â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 // Affiche la grille complete
 void	RefreshGrille()
@@ -175,8 +175,8 @@ void	RefreshGrille()
 }
 
 #ifdef	LBA_EDITOR
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Affiche la grille clipp‚e
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Affiche la grille clippÃ©e
 void	RefreshClippedGrille()
 {
 	if( CubeMode==CUBE_INTERIEUR )
@@ -185,13 +185,13 @@ void	RefreshClippedGrille()
 	}
 	else
 	{
-		// inserer affichage clipp‚ en mode ext‚rieur ? ben voyons !
+		// inserer affichage clippÃ© en mode extÃ©rieur ? ben voyons !
 		AffGrilleExt() ;
 	}
 }
 #endif
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Recupere numero code jeu ou sample en xw,yw,zw
 
 U8	PtrWorldCodeBrick( S32 xw, S32 yw, S32 zw )
@@ -214,7 +214,7 @@ U8	PtrWorldCodeBrick( S32 xw, S32 yw, S32 zw )
 
 			if( APtObj->CarryBy&CARRY_BY_DECORS )
 				return( (U8)(ListDecors[APtObj->CarryBy&~(CARRY_BY_DECORS)].CodeJeu) ) ;
-			else	return 0 ;	// port‚ par un objet sc‚narique
+			else	return 0 ;	// portÃ© par un objet scÃ©narique
 		}
 		else if( !(APtObj->WorkFlags&FALLING)
 		     AND  (APtObj->Flags&OBJ_FALLABLE) )
@@ -227,7 +227,7 @@ U8	PtrWorldCodeBrick( S32 xw, S32 yw, S32 zw )
 }
 
 #ifdef	LBA_EDITOR
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 void	PtrSearchFirstPseudo()
 {
 	if( CubeMode==CUBE_INTERIEUR )
@@ -237,12 +237,12 @@ void	PtrSearchFirstPseudo()
 	else
 	{
 		// Toujours en 0,0,0 donc il vaut mieux laisser la camera
-		// l… o— elle est, puisque de toute maniŠre on ne peut pas
+		// lÃ  oÃ¹ elle est, puisque de toute maniÃ¨re on ne peut pas
 		// atterrir dans une zone noire
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Recupere les coordonnees brick a la position ecran xp,yp (pour la souris)
 // dans X0, Y0 et Z0
 S32	PtrGetScreenBrick( S32 xp, S32 yp )
@@ -266,11 +266,11 @@ S32	PtrGetScreenBrick( S32 xp, S32 yp )
 }
 #endif
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			 Ûßßßß ÛßßßÛ ÛßßßÛ ÛßßßÛ Û   Û
-			 ÛÛ ßÛ ÛÛßÛß ÛÛßßÛ ÛÛßßß ÛÛßßÛ
-			 ßßßßß ßß  ß ßß  ß ßß    ßß  ß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			 â–ˆâ–€â–€â–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆ   â–ˆ
+			 â–ˆâ–ˆ â–€â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆâ–€â–€â–ˆ â–ˆâ–ˆâ–€â–€â–€ â–ˆâ–ˆâ–€â–€â–ˆ
+			 â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€  â–€ â–€â–€    â–€â–€  â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 // Calcule les coordonnees du sprite (SCENARIQUE) suivant le mode
 void	PtrProjectSprite( S32 xw, S32 yw, S32 zw, S32 sprite )
@@ -298,7 +298,7 @@ void	PtrProjectSprite( S32 xw, S32 yw, S32 zw, S32 sprite )
 	SpriteY = Yp + mindy ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Calcule la taille du sprite suivant le mode
 void	PtrGetDxDyGraph( S32 sprite, S32 *dx, S32 *dy )
 {
@@ -320,10 +320,10 @@ void	PtrGetDxDyGraph( S32 sprite, S32 *dx, S32 *dy )
 	*dy = zvptr[ sprite*8 + 3 ] ;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Affiche un sprite (GPH en int‚rieur, RAW en ext‚rieur pour le zoomer).
-// Trouver un moyen pour avoir les mˆmes paramŠtres pour optimiser avec
-// un pointeur de fonction (aligner la fonction int‚rieur sur ext‚rieur)
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Affiche un sprite (GPH en intÃ©rieur, RAW en extÃ©rieur pour le zoomer).
+// Trouver un moyen pour avoir les mÃªmes paramÃ¨tres pour optimiser avec
+// un pointeur de fonction (aligner la fonction intÃ©rieur sur extÃ©rieur)
 void	PtrAffGraph( S32 xp, S32 yp, S32 sprite )
 {
 	if( sprite>=100 )	// c'est un sprite goodies (interieur)
@@ -336,7 +336,7 @@ void	PtrAffGraph( S32 xp, S32 yp, S32 sprite )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 U8	*GetPtrSprite( S32 sprite )
 {
 	if( sprite>=100 )
@@ -349,15 +349,15 @@ U8	*GetPtrSprite( S32 sprite )
 	}
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			 Û   Û ÛßßßÛ ÛßßßÛ Û     ÛßßßÜ
-			 ÛÛßÜÛ ÛÛ  Û ÛÛßÛß ÛÛ    ÛÛ  Û
-			 ß   ß ßßßßß ßß  ß ßßßßß ßßßß
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			 â–ˆ   â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆ     â–ˆâ–€â–€â–€â–„
+			 â–ˆâ–ˆâ–€â–„â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆâ–€â–ˆâ–€ â–ˆâ–ˆ    â–ˆâ–ˆ  â–ˆ
+			 â–€   â–€ â–€â–€â–€â–€â–€ â–€â–€  â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 // Project un point dans l'espace. Comment faire pour passer ici par un
-// pointeur de fonction vu que LongProjectPoint est d‚clar‚ en passage de
-// paramŠtres par registres (voir lib_3D)
+// pointeur de fonction vu que LongProjectPoint est dÃ©clarÃ© en passage de
+// paramÃ¨tres par registres (voir lib_3D)
 S32	PtrProjectPoint( S32 xw, S32 yw, S32 zw )
 {
 	if( CubeMode==CUBE_INTERIEUR )
@@ -371,7 +371,7 @@ S32	PtrProjectPoint( S32 xw, S32 yw, S32 zw )
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Recentre la camera.
 //
 //	En mode exterieur, flagbeta peut avoir les valeurs suivantes:
@@ -379,7 +379,7 @@ S32	PtrProjectPoint( S32 xw, S32 yw, S32 zw )
 //		1 --> Reorienter la camera derriere NumObjFollow
 //		2 --> Reorienter la camera derriere NumObjFollow en tenant
 //		      compte de AddBetaCam (cameras orientees)
-//		3 --> Don't touch Globales. Juste appel des fonctions Cam‚ras
+//		3 --> Don't touch Globales. Juste appel des fonctions CamÃ©ras
 
 void	CameraCenter( S32 flagbeta )
 {
@@ -482,7 +482,7 @@ void	CameraCenter( S32 flagbeta )
 	}
 
 	SampleAlwaysMove.Acc = 1000 ;	// On veut reforcer les samples
-					// … se repaner lors d'1 chgt de camera
+					// Ã  se repaner lors d'1 chgt de camera
 }
 
 
@@ -577,7 +577,7 @@ void	FlyCamera( 	S32 offx, S32 offy, S32 offz,
 }
 #endif
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Sauve etat actuel de la camera
 void	SaveCamera()
 {
@@ -595,8 +595,8 @@ void	SaveCamera()
 	SaveBetaLight	= BetaLight	;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// Restaure la camera pr‚c‚demment sauv‚e avec SaveCamera
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// Restaure la camera prÃ©cÃ©demment sauvÃ©e avec SaveCamera
 void	RestoreCamera()
 {
 	VueOffsetX	= SaveVueOffsetX 	;
@@ -613,7 +613,7 @@ void	RestoreCamera()
 	BetaLight	= SaveBetaLight		;
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
 // Calculte la hauteur du decors sous un point 3D
 S32	PtrCalculAltitudeY( S32 x, S32 z )
 {
@@ -627,12 +627,12 @@ S32	PtrCalculAltitudeY( S32 x, S32 z )
 	}
 }
 
-/*ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*
-			 ßßÛßß ÛßßßÛ ÛßßßÛ Û     ÛÛßßß
-			   ÛÛ  ÛÛ  Û ÛÛ  Û ÛÛ    ßßßßÛ
-			   ßß  ßßßßß ßßßßß ßßßßß ßßßßß
-		     (partie seulement utilis‚e dans l'outil)
- *ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ*/
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*
+			 â–€â–€â–ˆâ–€â–€ â–ˆâ–€â–€â–€â–ˆ â–ˆâ–€â–€â–€â–ˆ â–ˆ     â–ˆâ–ˆâ–€â–€â–€
+			   â–ˆâ–ˆ  â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ  â–ˆ â–ˆâ–ˆ    â–€â–€â–€â–€â–ˆ
+			   â–€â–€  â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€ â–€â–€â–€â–€â–€
+		     (partie seulement utilisÃ©e dans l'outil)
+ *â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
 
 #ifdef	LBA_EDITOR
 // Appelee lors d'un click sur le decors pour la gestion du BrickMenu
@@ -735,8 +735,8 @@ void	GereBrickMouse()
 	}
 }
 
-/*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*/
-// La gestion des touches est diff‚rente suivant le mode du cube.
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+// La gestion des touches est diffÃ©rente suivant le mode du cube.
 // Mettre un pointeur de fonction ? Bof, c'est juste pour l'outil !
 S32	PtrGereKeys( U32 key, U32 flagmenu )
 {

@@ -462,7 +462,7 @@ WorldCodeBrick	endp
 ;	void Map2Screen( S32 xm, S32 ym, S32 zm )  ;
 ;                          eax     ecx     edx
 ;
-; optimis‚ le 09/04/96 (esi + 1 instruction ‚conomis‚s)
+; optimisÃ© le 09/04/96 (esi + 1 instruction Ã©conomisÃ©s)
 ;
 ;----------------------------------------------------------------------------
 
@@ -502,7 +502,7 @@ Map2Screen		endp
 ;	void DecompColonne( U8 *pts, U8 *ptd )  ;
 ;			     	esi      edi
 ;
-; optimis‚ (ebx ‚conomis‚) le 09/04/96
+; optimisÃ© (ebx Ã©conomisÃ©) le 09/04/96
 ;
 DecompColonne	proc
 			xor	ecx, ecx

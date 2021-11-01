@@ -1,131 +1,131 @@
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	LIB_SYSTEM
 
 #error ADELINE: you need to include SYSTEM.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifdef	DEBUG_MALLOC
 
 	atexit(SafeErrorMallocMsg)	;
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	inits
 
 #error ADELINE: you need to define inits before including INITADEL.C
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	lname
 
 #error ADELINE: you need to define lname before including INITADEL.C
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	_STDLIB_H_INCLUDED
 
 #error ADELINE: you need to include STDLIB.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	_STDIO_H_INCLUDED
 
 #error ADELINE: you need to include STDIO.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	_STRING_H_INCLUDED
 
 #error ADELINE: you need to include STRING.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	_DOS_H_INCLUDED
 
 #error ADELINE: you need to include DOS.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	_DIRECT_H_INCLUDED
 
 #error ADELINE: you need to include DIRECT.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	_CTYPE_H_INCLUDED
 
 #error ADELINE: you need to include CTYPE.H
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	RESOLUTION_X
 
 #define	RESOLUTION_X		640
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	RESOLUTION_Y
 
 #define	RESOLUTION_Y		480
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	RESOLUTION_DEPTH
 
 #define	RESOLUTION_DEPTH	8
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #if	(RESOLUTION_X&7)
 
 #error ADELINE: horizontal resolution must be a multiple of 8
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 {
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
         char    *Adeline="ADELINE" 	;
         char    *name=lname	 	;
 	char	*defname		;
 	char	old_path[_MAX_PATH]=""	;
 	char	old_path2[_MAX_PATH]=""	;
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #if	defined(_WIN32)&&!defined(_ARG)
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #ifndef	APPNAME
 #define	APPNAME	"DefaultName"
 #endif//APPNAME
 
 	InitWindow(hInstance, nCmdShow, APPNAME)	;
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 #endif//defined(_WIN32)&&!defined(_ARG)
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // Quiet Log
 #if	((inits) & INIT_QUIET)
 	QuietLog = TRUE			;
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 	getcwd(old_path, _MAX_PATH)	;
 
 	PathConfigFile[0] = 0		;
@@ -175,13 +175,13 @@
 		chdir("Drivers")		;
 	}
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // LOG
 #if	((inits) & INIT_LOG)
 		CreateLog(PathConfigFile)	;
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // Config File
 	if(name&&!FileSize(PathConfigFile))
 	{
@@ -189,7 +189,7 @@
 		exit(1);
 	}
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // CMDLINE
 
 #if	defined(_WIN32)&&!defined(_ARG)
@@ -198,7 +198,7 @@
 	GetCmdLine(argc, argv)	;
 #endif//defined(_WIN32)&&!defined(_ARG)
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // OS
 	LogPuts("\nIdentifying Operating System. Please wait...\n");
 
@@ -216,7 +216,7 @@
 		DisplayOS()		;
 	}
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // CPU
 	LogPuts("\nIdentifying CPU. Please wait...\n");
 
@@ -234,7 +234,7 @@
 		DisplayCPU()		;
 	}
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // CmdLine Parser
 #ifdef	paramparser
 
@@ -255,12 +255,12 @@
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // AIL API init (for vmm_lock/timer)
 
 	InitAIL() ;
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // svga
 #ifdef _WIN32
 #if   ((inits) & (INIT_SVGA|INIT_VESA))
@@ -286,7 +286,7 @@
 #endif
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // Midi device
 
 #if ((inits) & INIT_MIDI)
@@ -303,7 +303,7 @@
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // Sample device
 
 #if ((inits) & INIT_SAMPLE)
@@ -320,7 +320,7 @@
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // Smacker
 
 #if ((inits) & INIT_SMACKER)
@@ -337,7 +337,7 @@
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // keyboard
 #if   ((inits) & INIT_KEYB)
 
@@ -345,7 +345,7 @@
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // svga
 #ifndef _WIN32
 #if   ((inits) & (INIT_SVGA|INIT_VESA))
@@ -371,14 +371,14 @@
 #endif
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // mouse
 #if   ((inits) & INIT_MOUSE)
 
         InitMouse()	;
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // init Timer
 
 #if   ((inits) & INIT_TIMER)
@@ -399,7 +399,7 @@
 
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 	if(defname)
 	{
 		chdir(old_path2);
@@ -407,13 +407,13 @@
 
 	ChDiskDir(old_path)	;
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // Quiet Log
 #if	!((inits) & INIT_QUIET)
 	QuietLog = TRUE			;
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 // DefFile
 #if	((inits) & INIT_DEFFILE)
 
@@ -431,7 +431,7 @@
 	DefFileBufferInit(PathConfigFile, (void*)(ibuffer), ibuffersize);
 #endif
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路
 }
 
-//
+//路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路路

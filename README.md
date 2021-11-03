@@ -21,7 +21,7 @@ You can also help to build the official documentation here : https://github.com/
 ## Links:
 **Official Website:** https://www.2point21.com/games/little-big-adventure-2-twinsen-odyssey
 
-**Discord:** https://discord.gg/wQse6WB6
+**Discord:** https://discord.gg/gfzna5SfZ5
 
 **Docs:** https://lba-classic-doc.readthedocs.io/
 

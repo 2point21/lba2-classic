@@ -11,7 +11,7 @@ This source code is licensed under the [GNU General Public License](https://gith
 
 Please note this license only applies to **Little Big Adventure 2** engine source code. **Little Big Adventure 2** game assets (art, models, textures, audio, etc.) are not open-source and therefore aren't redistributable.
 
-## How can I contirubute ?
+## How can I contribute ?
 This project is the historic version of the open source project and meant to be kept as it was developed in 1997 !  Pull requests to this repository are **not** accepted.
 
 You can contribute to the community project here : https://github.com/2point21/lba2-classic-community

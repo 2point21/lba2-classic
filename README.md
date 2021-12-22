@@ -19,7 +19,7 @@ You can contribute to the community project here : https://github.com/2point21/l
 You can also help to build the official documentation here : https://github.com/2point21/lba-classic-doc
 
 ## Links:
-**Official Website:** https://www.2point21.com/games/little-big-adventure-2-twinsen-odyssey
+**Official Website:** https://twinsenslittlebigadventure.com/
 
 **Discord:** https://discord.gg/gfzna5SfZ5
 
